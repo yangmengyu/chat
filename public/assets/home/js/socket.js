@@ -187,6 +187,13 @@
             //发送消息
             RongIMClient.getInstance().sendMessage(conversationType, targetId, detail, {
                 onSuccess: function (message) {
+                    console.log(message)
+                    var sendData = {from:message.senderUserId,to:targetId,content:message.content.content,sendtime:message.sentTime,type:message.content.type}
+                    $.post(cachedata.base.addchatlog, sendData, function (res) {
+                        if (data.code != 0) {
+                            console.log('message record fail');
+                        }
+                    });
                     console.log('发送消息成功');
                 },
                 onError: function (errorCode, message) {
@@ -207,6 +214,9 @@
             });
         },
         getInformation: function(data){
+            if(!cachedata.base.information){
+                return layer.msg('未开启查看好友资料');
+            }
             var id = data.id || {},type = data.type || {};
             var index = layer.open({
                 type: 2
@@ -220,6 +230,23 @@
                 ,content: cachedata.base.information+'?id='+id+'&type='+type
             });
         },
+        getChatLog: function (data){
+            if(!cachedata.base.chatLog){
+                return layer.msg('未开启更多聊天记录');
+            }
+            var index = layer.open({
+                type: 2
+                ,maxmin: true
+                ,title: '与 '+ data.name +' 的聊天记录'
+                ,area: ['450px', '600px']
+                ,shade: false
+                ,skin: 'layui-box'
+                ,anim: 2
+                ,id: 'layui-layim-chatlog'
+                ,content: cachedata.base.chatLog + '?id=' + data.id + '&type=' + data.type
+            });
+        },
+
     };
 
     var ext = {

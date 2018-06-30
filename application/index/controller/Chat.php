@@ -16,7 +16,7 @@ use think\Db;
 class Chat extends Frontend
 {
     protected $noNeedLogin = '';
-    protected $noNeedRight = 'sendmsg,addchatlog';
+    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal'];
     protected $layout = '';
 
     public function _initialize()
@@ -48,35 +48,96 @@ class Chat extends Frontend
     public function find(){
         return $this->fetch();
     }
-    //获取好友资料
+    //获取好友资料页面
     public function information(){
+
+        return $this->fetch();
+    }
+    //获取好友资料接口
+    public function getinformation(){
         $user_id = $this->request->request('id');
         $type = $this->request->request('type');
         switch ($type){
             case 'friend':
                 $data = Db::name('user')->field('id,avatar,nickname,gender,birthday,bio')->find($user_id);
-                $this->assign('data',$data);
+                $this->success('','',$data);
                 break;
         }
+    }
+    //获取好友记录页面
+    public function chatlog(){
         return $this->fetch();
+    }
+    //获取聊天记录总数
+    public function chatLogTotal(){
+        $get = $this->request->get();
+        $id = $get['id'];  //  好友/群 id
+        $type = $get['type']; // 好友/群 类别
+        $user_id = $this->auth->id;//当前用户id
+        $count = Db::name('chatlog')->where(function ($query) use ($id,$user_id) {
+            $query->where('to', $id)->where('from', $user_id) ->where('status',1);
+        })->whereOr(function ($query) use ($id,$user_id) {
+            $query->where('to',$user_id)->where('from',$id) ->where('status',1);
+        })
+        ->count();
+        $data['count'] = $count;
+        $data['limit'] = 20;
+        if($data['count']){
+            $this->result($data);
+        }else{
+            $this->result($data,'-1',__('chat records are empty'));
+        }
+
+    }
+    //获取好友记录接口
+    public function getChatLog(){
+        $request = $this->request->request();
+        $id = $request['id'];  //  好友/群 id
+        $type = $request['type']; // 好友/群 类别
+        $page = $request['page']; //页码
+        $limit = $request['limit']; //每页条数
+
+        $user_id = $this->auth->id;//当前用户id
+        switch ($type){
+            case 'friend':
+                $subQuery = Db::name('chatlog')->where(function ($query) use ($id,$user_id) {
+                    $query->where('to', $id)->where('from', $user_id) ->where('status',1);
+                })->whereOr(function ($query) use ($id,$user_id) {
+                    $query->where('to',$user_id)->where('from',$id) ->where('status',1);
+                })->order('sendtime desc')->limit($limit)->page($page)->buildSql();
+                $data = Db::table($subQuery.' c')
+                    ->join('user u','c.from=u.id')
+                    ->field('u.nickname as username,u.id,u.avatar,c.sendtime as timestamp,c.content')
+                    ->select();
+                break;
+            case 'group':
+                break;
+        }
+        if($data){
+            $this->result($data);
+        }else{
+            $this->result('','-1',__('An unexpected error occurred'));
+        }
+
     }
     //记录聊天记录,并进行敏感词过滤。
     public function addchatlog(){
 
         $post = $this->request->post();
-        $user_id = $this->auth->id;
-        $data['from'] = $user_id;
-        $data['to'] = $post['to']['user_id'];
-        $data['content'] = $post['mine']['content'] = $this->sendmsg($post['mine']['content']);
-        $data['sendtime'] = time();
-        $data['type'] = $post['to']['type'];
-        Db::name('chatlog')->insert($data);
-        $this->success('','',$post);
+        $res = Db::name('chatlog')->insert($post);
+        if($res){
+            $this->result('',0);
+        }else{
+            $this->result('','-1');
+        }
+
     }
 
     //检测聊天记录，发送消息
-    public function sendmsg($str){
-        return $str.'通过';
+    public function msgreplace($str){
+        $post = $this->request->post();
+        $data = str_replace('傻逼','**',$str);
+        $this->success('','',$data);
     }
 
 }

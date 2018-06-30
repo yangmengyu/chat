@@ -75,10 +75,10 @@
             , notice: true //是否开启桌面消息提醒，默认false
             , msgbox: layui.cache.dir + 'css/modules/layim/html/msgbox.html' //消息盒子页面地址，若不开启，剔除该项即可
            /* , find:'{:url("chat/find")}' //发现页面地址，若不开启，剔除该项即可*/
-            , chatLog: layui.cache.dir + 'css/modules/layim/html/chatLog.html' //聊天记录页面地址，若不开启，剔除该项即可
-
+            , chatLog: '{:url("chat/chatlog")}' //聊天记录页面地址，若不开启，剔除该项即可
             ,information: '{:url("chat/information")}' //获取好友资料页面
             ,addchatlog: '{:url("chat/addchatlog")}' //添加聊天记录接口
+            ,msgreplace: '{:url("chat/msgreplace")}' //敏感词屏蔽接口
         });
 
     });
