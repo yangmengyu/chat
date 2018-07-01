@@ -10,6 +10,7 @@ namespace app\index\controller;
 
 
 use app\common\controller\Frontend;
+use think\Config;
 use think\Cookie;
 use think\Db;
 
@@ -27,6 +28,8 @@ class Chat extends Frontend
     public function get_user_data(){
         //获取我的信息
         $user_id = $this->auth->id;
+        $site = Config::get("site");
+        $RY_api = new \app\api\controller\rongyunapi\RongCloud($site['ry_key'],$site['ry_secret']);
 
         //获取我的好友分组
         $mygroup = Db::name('mygroup')->where('user_id',$user_id)->order('weight asc')->select();
@@ -37,6 +40,11 @@ class Chat extends Frontend
                 ->join('user u','f.user_id=u.id')
                 ->where('f.mygroup_id',$value['id'])
                 ->select();
+            /*foreach ($myfriend as $k=>$v){
+                $res = $RY_api->User()->checkOnline(1);
+                $isOnline = json_decode($res);
+                $myfriend['status'] = $isOnline;
+            }*/
             $mygroup[$key]['list']=$myfriend;
         }
 

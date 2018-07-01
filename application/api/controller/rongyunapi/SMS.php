@@ -1,6 +1,6 @@
 <?php
 
-namespace app\index\controller\rongyunapi;
+namespace app\api\controller\rongyunapi;
 
 class SMS{
 

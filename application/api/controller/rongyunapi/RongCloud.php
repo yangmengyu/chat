@@ -1,6 +1,6 @@
 <?php
 
-namespace app\index\controller\rongyunapi;
+namespace app\api\controller\rongyunapi;
 /**
  * 融云 Server API PHP 客户端
  * create by kitName
@@ -8,14 +8,14 @@ namespace app\index\controller\rongyunapi;
  * 
  * v2.0.1
  */
-use app\index\controller\rongyunapi\SendRequest;
-use app\index\controller\rongyunapi\User;
-use app\index\controller\rongyunapi\Message;
-use app\index\controller\rongyunapi\Wordfilter;
-use app\index\controller\rongyunapi\Group;
-use app\index\controller\rongyunapi\Chatroom;
-use app\index\controller\rongyunapi\Push;
-use app\index\controller\rongyunapi\SMS;
+use app\api\controller\rongyunapi\SendRequest;
+use app\api\controller\rongyunapi\User;
+use app\api\controller\rongyunapi\Message;
+use app\api\controller\rongyunapi\Wordfilter;
+use app\api\controller\rongyunapi\Group;
+use app\api\controller\rongyunapi\Chatroom;
+use app\api\controller\rongyunapi\Push;
+use app\api\controller\rongyunapi\SMS;
 
 class RongCloud {
 
