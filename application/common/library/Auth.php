@@ -2,9 +2,9 @@
 
 namespace app\common\library;
 
+use app\api\controller\rongyunapi\RongCloud;
 use app\common\model\User;
 use app\common\model\UserRule;
-use app\index\controller\rongyunapi\RongCloud;
 use fast\Random;
 use think\Config;
 use think\Cookie;

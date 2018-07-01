@@ -128,7 +128,7 @@ class Chat extends Frontend
         }
 
     }
-    //记录聊天记录,并进行敏感词过滤。
+    //记录聊天记录
     public function addchatlog(){
 
         $post = $this->request->post();
@@ -147,5 +147,47 @@ class Chat extends Frontend
         $data = str_replace('傻逼','**',$str);
         $this->success('','',$data);
     }
+    //添加好友分组
+    public function addMyGroup(){
+        $user_id = $this->auth->id;
+        $count = Db::name('mygroup')->where('user_id',$user_id)->count();
+        $max_num = 20;
+        if($count>=$max_num){
+            $this->result('','-1',__('Create %s groups at most',$max_num));
+        }else{
+            $data['user_id'] = $user_id;
+            $res['name'] = $data['groupname'] = __('Unnaming');
+            $data['weight'] = ++$count;
+            $res['id'] = Db::name('mygroup')->insertGetId($data);
+            $this->result($res,0,__('Create success'));
+        }
+    }
+    //修改好友分组名称
+    public function editMyGroup(){
+        $post = $this->request->post();
+        $groupid = $post['groupid'];
+        $groupname = $post['groupname'];
+        $user_id = $this->auth->id;
+        $data = Db::name('mygroup')->field('id')->where(['user_id'=>$user_id,'groupname'=>$groupname])->find();
+        if(isset($data['id'])&&$data['id'] == $groupid){
+            $this->error(__('The group name has already existed'));
+        }else{
+            $res = Db::name('mygroup')->where('id',$groupid)->update(['groupname'=>$groupname]);
+            if($res){
+                $this->success(__('Modifying group success'));
+            }else{
+                $this->error(__('An unexpected error occurred   '));
+            }
+        }
+    }
+    //删除好友分组
+    public function delMyGroup(){
+        $post = $this->request->post();
+        $groupid = $post['groupid'];
+        $user_id = $this->auth->id;
+        $count = Db::name('mygroup')->where(['user_id'=>$user_id,'id'=>$groupid])->count();
+        if($count){
 
+        }
+    }
 }
