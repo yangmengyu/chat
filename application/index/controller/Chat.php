@@ -72,6 +72,19 @@ class Chat extends Frontend
                 break;
         }
     }
+    //移动好友接口
+    public function moveFriend(){
+        $friend_id = $this->request->post('friend_id');
+        $groupid = $this->request->post('groupid');
+        $user_id = $this->auth->id;
+        $myfriend_id = Db::name('mygroup')->field('f.id as friend_id')->alias('g')->join('myfriend f','g.id=f.mygroup_id')->where(['g.user_id'=>$user_id,'f.user_id'=>$friend_id])->find();
+        if($myfriend_id){
+            Db::name('myfriend')->where('id',$myfriend_id['friend_id'])->update(['mygroup_id'=>$groupid]);
+            $this->success(__('Mobile friends succeed'),'',$groupid);
+        }else{
+            $this->error(__('An unexpected error occurred'));
+        }
+    }
     //获取好友记录页面
     public function chatlog(){
         return $this->fetch();
@@ -122,9 +135,9 @@ class Chat extends Frontend
                 break;
         }
         if($data){
-            $this->result($data);
+            $this->success('','',$data);
         }else{
-            $this->result('','-1',__('An unexpected error occurred'));
+            $this->error(__('An unexpected error occurred'));
         }
 
     }
@@ -153,13 +166,13 @@ class Chat extends Frontend
         $count = Db::name('mygroup')->where('user_id',$user_id)->count();
         $max_num = 20;
         if($count>=$max_num){
-            $this->result('','-1',__('Create %s groups at most',$max_num));
+            $this->error(__('Create %s groups at most',$max_num));
         }else{
             $data['user_id'] = $user_id;
             $res['name'] = $data['groupname'] = __('Unnaming');
             $data['weight'] = ++$count;
             $res['id'] = Db::name('mygroup')->insertGetId($data);
-            $this->result($res,0,__('Create success'));
+            $this->success(__('Create success'),'',$res);
         }
     }
     //修改好友分组名称
@@ -176,7 +189,7 @@ class Chat extends Frontend
             if($res){
                 $this->success(__('Modifying group success'));
             }else{
-                $this->error(__('An unexpected error occurred   '));
+                $this->error(__('An unexpected error occurred'));
             }
         }
     }
@@ -187,7 +200,21 @@ class Chat extends Frontend
         $user_id = $this->auth->id;
         $count = Db::name('mygroup')->where(['user_id'=>$user_id,'id'=>$groupid])->count();
         if($count){
-
+            $default_group = Db::name('mygroup')->where('user_id',$user_id)->order('weight asc')->field('id')->find();
+            $default_groupid = $default_group['id'];
+            if($groupid == $default_groupid){
+                $this->error(__('The default group cannot be deleted'));
+            }
+            $friends = Db::name('myfriend')->field('id')->where('mygroup_id',$groupid)->select();
+            $friendids = [];
+            foreach ($friends as $key => $value){
+                $friendids[] = $value['id'];
+            }
+            Db::name('myfriend')->whereIn('id',$friendids)->update(['mygroup_id'=>$default_groupid]);
+            Db::name('mygroup')->where('id',$groupid)->delete();
+            $this->success(__('The group was successfully deleted'),'',$default_groupid);
+        }else{
+            $this->error(__('An unexpected error occurred'));
         }
     }
 }

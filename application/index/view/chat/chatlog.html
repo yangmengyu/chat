@@ -82,16 +82,23 @@
                     }
                     var url = '{:url("chat/getChatLog")}';
                     $.post(url+param, {page: obj.curr,limit:obj.limit}, function(res){
-                        if(res.code != 0){
+                        if(res.code !== 0){
+                            layui.each(res.data, function(index, item){
+                                res.data[index]['timestamp'] =  formatDate(item.timestamp);
+                            });
+                            var html = laytpl(LAY_tpl.value).render({
+                                data: res.data
+                            });
+                            $('#LAY_view').html(html);
+                        }else{
+                            setTimeout(function () {
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+
+                            },3000);
                             return layer.msg(res.msg);
                         }
-                        layui.each(res.data, function(index, item){
-                            res.data[index]['timestamp'] =  formatDate(item.timestamp);
-                        });
-                        var html = laytpl(LAY_tpl.value).render({
-                            data: res.data
-                        });
-                        $('#LAY_view').html(html);
+
                     });
 
                 }

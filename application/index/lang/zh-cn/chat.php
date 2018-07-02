@@ -13,5 +13,8 @@ return [
     'Create success'=>'创建成功',
     'The group name has already existed'=>'分组名称已存在',
     'Modifying group success'=>'修改分组成功',
+    'The default group cannot be deleted'=>'默认分组不可删除',
+    'The group was successfully deleted'=>'成功删除该分组',
+    'Mobile friends succeed'=>'移动好友成功',
 
 ];
