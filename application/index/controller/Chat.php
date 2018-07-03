@@ -9,6 +9,7 @@
 namespace app\index\controller;
 
 
+use app\api\controller\Rongcloud;
 use app\common\controller\Frontend;
 use think\Config;
 use think\Cookie;
@@ -28,8 +29,7 @@ class Chat extends Frontend
     public function get_user_data(){
         //获取我的信息
         $user_id = $this->auth->id;
-        $site = Config::get("site");
-        $RY_api = new \app\api\controller\rongyunapi\RongCloud($site['ry_key'],$site['ry_secret']);
+
 
         //获取我的好友分组
         $mygroup = Db::name('mygroup')->where('user_id',$user_id)->order('weight asc')->select();
@@ -67,12 +67,18 @@ class Chat extends Frontend
         $post['from'] = $this->auth->id;
         $post['sendtime'] = time();
         $post['status'] = 1;
+        $site = Config::get("site");
+        $RY_api  = new Rongcloud($site['ry_key'],$site['ry_secret']);
+        $Message = $RY_api->message();
+        $res = $Message->PublishSystem($post['from'],$post['to'],'LAYIM:SYS',$post['remark'],'','',1,1);
+        dump($res);exit;
         $res = Db::name('mymsg')->where(['from'=>$post['from'],'to'=>$post['to']])->field('id')->find();
         if($res){
             $success = Db::name('mymsg')->where('id',$res['id'])->update($post);
         }else{
             $success = Db::name('mymsg')->insert($post);
         }
+
         if($success){
             $this->success(__('send add friend success'));
         }else{
@@ -175,7 +181,6 @@ class Chat extends Frontend
         }else{
             $this->error();
         }
-
     }
 
     //检测聊天记录，发送消息

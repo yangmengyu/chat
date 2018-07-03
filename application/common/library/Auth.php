@@ -2,7 +2,7 @@
 
 namespace app\common\library;
 
-use app\api\controller\rongyunapi\RongCloud;
+use app\api\controller\Rongcloud;
 use app\common\model\User;
 use app\common\model\UserRule;
 use fast\Random;
@@ -256,7 +256,7 @@ class Auth
         $site = Config::get("site");
         $appKey = $site['ry_key'];
         $appSecret = $site['ry_secret'];
-        $RongCloud = new RongCloud($appKey, $appSecret);
+        $RongCloud = new Rongcloud($appKey, $appSecret);
         if ($RongCloud) {
             //获取token，成功则保存session
             $arr = array(

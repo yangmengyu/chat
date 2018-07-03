@@ -128,9 +128,13 @@
             RongIMClient.setOnReceiveMessageListener({// 消息监听器
                 onReceived: function (message) { // 接收到的消息
                     console.log(message);
-                    switch (message.messageType) { // 判断消息类型
-                        case RongIMClient.MessageType.LAYIM_TEXT_MESSAGE:
+                    switch (message.objectName) { // 判断消息类型
+                        case 'LAYIM:CHAT':
                             conf.layim.getMessage(message.content);
+                            break;
+                        case 'LAYIM:SYS':
+                            var num = $('.layim-tool-msgbox').find('span').text();
+                            conf.layim.msgbox(parseInt(num)+1);
                             break;
                     }
                 }

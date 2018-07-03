@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : MY
+Source Server         : my
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : fastadmin
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-03 18:35:11
+Date: 2018-07-03 22:58:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for fa_admin
+-- Table structure for `fa_admin`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_admin`;
 CREATE TABLE `fa_admin` (
@@ -47,7 +47,7 @@ INSERT INTO `fa_admin` VALUES ('4', 'admin22', 'admin22', '1c1a0aa0c3c56a8c1a908
 INSERT INTO `fa_admin` VALUES ('5', 'admin32', 'admin32', 'ade94d5d7a7033afa7d84ac3066d0a02', 'FvYK0u', '/assets/img/avatar.png', 'admin32@fastadmin.net', '0', '0', '1492186263', '1492186263', '', 'normal');
 
 -- ----------------------------
--- Table structure for fa_admin_log
+-- Table structure for `fa_admin_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_admin_log`;
 CREATE TABLE `fa_admin_log` (
@@ -155,7 +155,7 @@ INSERT INTO `fa_admin_log` VALUES ('85', '1', 'admin', '/admin/user/rule/add?dia
 INSERT INTO `fa_admin_log` VALUES ('86', '1', 'admin', '/admin/user/group/edit/ids/1?dialog=1', '会员管理 会员分组 编辑', '{\"dialog\":\"1\",\"row\":{\"rules\":\"1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25\",\"name\":\"\\u9ed8\\u8ba4\\u7ec4\",\"status\":\"normal\"},\"ids\":\"1\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', '1530606019');
 
 -- ----------------------------
--- Table structure for fa_area
+-- Table structure for `fa_area`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_area`;
 CREATE TABLE `fa_area` (
@@ -3928,7 +3928,7 @@ INSERT INTO `fa_area` VALUES ('3747', '3738', '路环岛', '路环岛', '中国,
 INSERT INTO `fa_area` VALUES ('3748', '3747', '圣方济各堂区', '圣方济各堂区', '中国,澳门特别行政区,路环岛,圣方济各堂区', '3', 'stfrancisxavier\'sparish', '00853', '999078', 'S', '113.559954', '22.123486');
 
 -- ----------------------------
--- Table structure for fa_attachment
+-- Table structure for `fa_attachment`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_attachment`;
 CREATE TABLE `fa_attachment` (
@@ -3959,7 +3959,7 @@ INSERT INTO `fa_attachment` VALUES ('2', '0', '3', '/uploads/20180629/49dd78b1b4
 INSERT INTO `fa_attachment` VALUES ('3', '0', '2', '/uploads/20180629/5b0ff972dbccc5cae444d03c8253ab06.gif', '128', '127', 'gif', '0', '2342', 'image/gif', '', '1530265581', '1530265581', '1530265581', 'local', '83129037402bf4b16933c99b16dd6153c3f251cb');
 
 -- ----------------------------
--- Table structure for fa_auth_group
+-- Table structure for `fa_auth_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_auth_group`;
 CREATE TABLE `fa_auth_group` (
@@ -3983,7 +3983,7 @@ INSERT INTO `fa_auth_group` VALUES ('4', '1', 'Second group 2', '1,4,13,14,15,16
 INSERT INTO `fa_auth_group` VALUES ('5', '2', 'Third group 2', '1,2,6,7,8,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34', '1490883540', '1502205344', 'normal');
 
 -- ----------------------------
--- Table structure for fa_auth_group_access
+-- Table structure for `fa_auth_group_access`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_auth_group_access`;
 CREATE TABLE `fa_auth_group_access` (
@@ -4004,7 +4004,7 @@ INSERT INTO `fa_auth_group_access` VALUES ('4', '5');
 INSERT INTO `fa_auth_group_access` VALUES ('5', '5');
 
 -- ----------------------------
--- Table structure for fa_auth_rule
+-- Table structure for `fa_auth_rule`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_auth_rule`;
 CREATE TABLE `fa_auth_rule` (
@@ -4123,7 +4123,7 @@ INSERT INTO `fa_auth_rule` VALUES ('90', 'file', '85', 'command/del', '删除', 
 INSERT INTO `fa_auth_rule` VALUES ('91', 'file', '85', 'command/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
 
 -- ----------------------------
--- Table structure for fa_category
+-- Table structure for `fa_category`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_category`;
 CREATE TABLE `fa_category` (
@@ -4164,7 +4164,7 @@ INSERT INTO `fa_category` VALUES ('12', '0', 'test', '测试1', 'test1', 'recomm
 INSERT INTO `fa_category` VALUES ('13', '0', 'test', '测试2', 'test2', 'recommend', '/assets/img/qrcode.png', '', '', 'test2', '1497015738', '1497015738', '13', 'normal');
 
 -- ----------------------------
--- Table structure for fa_chatlog
+-- Table structure for `fa_chatlog`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_chatlog`;
 CREATE TABLE `fa_chatlog` (
@@ -4176,7 +4176,7 @@ CREATE TABLE `fa_chatlog` (
   `type` enum('chatroom','group','friend') DEFAULT 'friend',
   `status` tinyint(1) DEFAULT '1' COMMENT '1 可以正常访问 2禁止访问',
   PRIMARY KEY (`id`,`from`,`to`)
-) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_chatlog
@@ -4195,9 +4195,25 @@ INSERT INTO `fa_chatlog` VALUES ('00000000000000000102', '1000', '3', 'ces', '15
 INSERT INTO `fa_chatlog` VALUES ('00000000000000000103', '1000', '3', 'ces', '1530613236131', 'friend', '1');
 INSERT INTO `fa_chatlog` VALUES ('00000000000000000104', '1000', '3', '1', '1530613441089', 'friend', '1');
 INSERT INTO `fa_chatlog` VALUES ('00000000000000000105', '1000', '3', '1', '1530613857017', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000106', '3', '1000', '1', '1530628272303', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000107', '3', '1000', '2', '1530628284489', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000108', '3', '1000', '3', '1530628359501', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000109', '3', '1000', '1', '1530628418600', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000110', '3', '1000', '2', '1530628519435', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000111', '3', '1000', '32', '1530628525394', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000112', '3', '1000', '123', '1530628627104', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000113', '3', '1000', '123123', '1530628646253', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000114', '3', '1000', '21312', '1530628667757', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000115', '3', '1000', '123', '1530628861998', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000116', '3', '1000', '123', '1530628874332', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000117', '1000', '3', 'c ', '1530628880976', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000118', '3', '1000', '123', '1530628908567', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000119', '3', '1000', '123', '1530628925329', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000120', '3', '1000', '12', '1530628931872', 'friend', '1');
+INSERT INTO `fa_chatlog` VALUES ('00000000000000000121', '3', '1000', '123', '1530628941795', 'friend', '1');
 
 -- ----------------------------
--- Table structure for fa_cms_addonnews
+-- Table structure for `fa_cms_addonnews`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_addonnews`;
 CREATE TABLE `fa_cms_addonnews` (
@@ -4243,7 +4259,7 @@ INSERT INTO `fa_cms_addonnews` VALUES ('34', '<p>本周我们正在研究Leap Mo
 INSERT INTO `fa_cms_addonnews` VALUES ('35', '<p>据外媒报道，研究人员正在利用VR技术帮助教师们了解自闭症学生进而能够真正地去帮助他们。近日，来自马耳他大学的一个研究小组决定通过VR技术帮助教师理解自闭症儿童的生活体验。通过利用自闭症儿童的音频和视觉技巧，研究团队开发出一个VR应用，它能模拟出自闭症儿童在教室里的体验情况。</p>\r\n<p><img src=\"https://cdn.fastadmin.net/uploads/20180416/5ad44128db3ed0.png\" alt=\"austim.png\" /></p>\r\n<p>参与了软件开发工作的马耳他大学人工智能系讲师Vanessa Camilleri博士表示，他们希望让教师走进自闭症儿童的世界里了解他们的真实情况同时也希望VR能够成为一台同理心机器。与此同时，他们还希望能从中学到更多的东西进而能设计出能帮助改善自闭症儿童生活质量的工具。</p>\r\n<p>实际上将VR作为一种共情工具的想法已经存在一段时间了。电影制作人Chris Milk就曾和联合国联合制作过一部展示叙利亚难民营生活的VR影片《Clouds Over Sidra》。</p>\r\n<p>目前，研究小组的这款软件还不能使用，但他们希望未来能通过Samsung Gear头套让教师们用上它。</p>\r\n<p>Camilleri还强调，该项目并不能做到模拟出自闭症儿童的各个方面，如嗅觉、触觉。另外他还表示，他们开发的应用更多的是让老师们去了解他们的学生而不是教授他们如何去帮助自闭症学生。</p>\r\n<p>获悉，该团队希望最终还能为父母或家庭成员开发出另一个不同版本的同类型软件。</p>', 'cnbeta', 'domestic', 'ar');
 
 -- ----------------------------
--- Table structure for fa_cms_addonproduct
+-- Table structure for `fa_cms_addonproduct`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_addonproduct`;
 CREATE TABLE `fa_cms_addonproduct` (
@@ -4264,7 +4280,7 @@ INSERT INTO `fa_cms_addonproduct` VALUES ('36', '<p>test</p>', '/uploads/2018060
 INSERT INTO `fa_cms_addonproduct` VALUES ('37', '<p>sdf</p>', '/uploads/20180604/0c8ede3198b263d401c35fa410431d5f.png');
 
 -- ----------------------------
--- Table structure for fa_cms_archives
+-- Table structure for `fa_cms_archives`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_archives`;
 CREATE TABLE `fa_cms_archives` (
@@ -4333,7 +4349,7 @@ INSERT INTO `fa_cms_archives` VALUES ('36', '10', '2', '首页幻灯片', '', ''
 INSERT INTO `fa_cms_archives` VALUES ('37', '10', '2', '测试', '', '', '地方', 'sdf', 'test,tettt', '37', '3', '0', '0', '1', '', '1528079859', '1528079859', '1528041600', null, 'normal');
 
 -- ----------------------------
--- Table structure for fa_cms_block
+-- Table structure for `fa_cms_block`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_block`;
 CREATE TABLE `fa_cms_block` (
@@ -4363,7 +4379,7 @@ INSERT INTO `fa_cms_block` VALUES ('8', 'other', 'sidebarad1', '边栏广告1', 
 INSERT INTO `fa_cms_block` VALUES ('9', 'other', 'sidebarad2', '边栏广告2', '/assets/addons/cms/img/sidebar/2.jpg', 'http://www.fastadmin.net', '', '0', '0', 'normal');
 
 -- ----------------------------
--- Table structure for fa_cms_channel
+-- Table structure for `fa_cms_channel`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_channel`;
 CREATE TABLE `fa_cms_channel` (
@@ -4411,7 +4427,7 @@ INSERT INTO `fa_cms_channel` VALUES ('42', 'link', '1', '0', '交流社区', '',
 INSERT INTO `fa_cms_channel` VALUES ('43', 'link', '1', '0', '文档', '', '', '', '', 'docs', 'http://doc.fastadmin.net', '0', '2', 'channel.html', '', '', '10', '1508994788', '1508994788', 'normal');
 
 -- ----------------------------
--- Table structure for fa_cms_comment
+-- Table structure for `fa_cms_comment`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_comment`;
 CREATE TABLE `fa_cms_comment` (
@@ -4444,7 +4460,7 @@ INSERT INTO `fa_cms_comment` VALUES ('6', '1', 'archives', '27', '0', '测试评
 INSERT INTO `fa_cms_comment` VALUES ('7', '1', 'archives', '27', '0', '测试评论内容22', '0', '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1804120 MicroMessenger/6.5.7 Language/zh_CN webview/', '0', '1523806323', '1523806323', 'normal');
 
 -- ----------------------------
--- Table structure for fa_cms_fields
+-- Table structure for `fa_cms_fields`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_fields`;
 CREATE TABLE `fa_cms_fields` (
@@ -4482,7 +4498,7 @@ INSERT INTO `fa_cms_fields` VALUES ('138', '1', 'device', 'radio', '设备', 'vr
 INSERT INTO `fa_cms_fields` VALUES ('139', '2', 'productdata', 'images', '产品列表', 'value1|title1\r\nvalue2|title2', '', 'required', '', '', '', '0', '1500', '0', '20', '', '139', '1508992518', '1508992518', '1', 'normal');
 
 -- ----------------------------
--- Table structure for fa_cms_model
+-- Table structure for `fa_cms_model`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_model`;
 CREATE TABLE `fa_cms_model` (
@@ -4506,7 +4522,7 @@ INSERT INTO `fa_cms_model` VALUES ('1', '新闻', 'cms_addonnews', 'author,area,
 INSERT INTO `fa_cms_model` VALUES ('2', '产品', 'cms_addonproduct', 'productdata', 'channel.html', 'list_product.html', 'show_product.html', '1508992445', '1508992445', '');
 
 -- ----------------------------
--- Table structure for fa_cms_page
+-- Table structure for `fa_cms_page`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_page`;
 CREATE TABLE `fa_cms_page` (
@@ -4538,7 +4554,7 @@ CREATE TABLE `fa_cms_page` (
 INSERT INTO `fa_cms_page` VALUES ('28', '0', 'page', '基于ThinkPHP5和Bootstrap的极速后台开发框架', '', '', '', 'fds', '<p>基于ThinkPHP5和Bootstrap进行二次开发,手机、平板、PC均自动适配,无需要担心兼容性问题</p>', '', '0', '0', 'aboutus', 'page', '1508933935', '1508934150', '28', 'normal');
 
 -- ----------------------------
--- Table structure for fa_cms_tags
+-- Table structure for `fa_cms_tags`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_cms_tags`;
 CREATE TABLE `fa_cms_tags` (
@@ -4579,7 +4595,7 @@ INSERT INTO `fa_cms_tags` VALUES ('22', 'test', '36,37', '2');
 INSERT INTO `fa_cms_tags` VALUES ('23', 'tettt', '36,37', '2');
 
 -- ----------------------------
--- Table structure for fa_command
+-- Table structure for `fa_command`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_command`;
 CREATE TABLE `fa_command` (
@@ -4634,7 +4650,7 @@ INSERT INTO `fa_command` VALUES ('40', 'crud', '[\"--force=1\",\"--table=fa_webs
 INSERT INTO `fa_command` VALUES ('41', 'crud', '[\"--force=1\",\"--table=fa_website\",\"--controller=website\\/website\"]', 'php think crud --force=1 --table=fa_website --controller=website/website', 'Build Successed', '1529573059', '1529573059', '1529573059', 'successed');
 
 -- ----------------------------
--- Table structure for fa_config
+-- Table structure for `fa_config`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_config`;
 CREATE TABLE `fa_config` (
@@ -4676,7 +4692,7 @@ INSERT INTO `fa_config` VALUES ('18', 'ry_key', 'example', '融云App Key', '', 
 INSERT INTO `fa_config` VALUES ('19', 'ry_secret', 'example', '融云App Secret', '', 'string', 'aT0f2lpquPm0p', '', '', '');
 
 -- ----------------------------
--- Table structure for fa_createhtml
+-- Table structure for `fa_createhtml`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_createhtml`;
 CREATE TABLE `fa_createhtml` (
@@ -4697,7 +4713,7 @@ INSERT INTO `fa_createhtml` VALUES ('7', '1', '1', '简介', '/uploads/20180621/
 INSERT INTO `fa_createhtml` VALUES ('6', '1', '1', '红色教育', '/uploads/20180621/67e96ba2868cc208200ba644e0efacb0.jpg', '1529573560', '1529573560');
 
 -- ----------------------------
--- Table structure for fa_customer
+-- Table structure for `fa_customer`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_customer`;
 CREATE TABLE `fa_customer` (
@@ -4721,7 +4737,7 @@ CREATE TABLE `fa_customer` (
 INSERT INTO `fa_customer` VALUES ('3', '6', '测试', 'ces ', '17603852737', '安徽省/芜湖市/弋江区', '2018-06-13', '测试', '1528860366', '1529572970', 'normal');
 
 -- ----------------------------
--- Table structure for fa_ems
+-- Table structure for `fa_ems`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_ems`;
 CREATE TABLE `fa_ems` (
@@ -4740,7 +4756,7 @@ CREATE TABLE `fa_ems` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for fa_mobile_code
+-- Table structure for `fa_mobile_code`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_mobile_code`;
 CREATE TABLE `fa_mobile_code` (
@@ -4758,7 +4774,7 @@ CREATE TABLE `fa_mobile_code` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for fa_myfriend
+-- Table structure for `fa_myfriend`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_myfriend`;
 CREATE TABLE `fa_myfriend` (
@@ -4767,15 +4783,16 @@ CREATE TABLE `fa_myfriend` (
   `user_id` int(11) DEFAULT NULL,
   `nickname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_myfriend
 -- ----------------------------
 INSERT INTO `fa_myfriend` VALUES ('0000000001', '1', '3', '');
+INSERT INTO `fa_myfriend` VALUES ('0000000002', '2', '1000', null);
 
 -- ----------------------------
--- Table structure for fa_mygroup
+-- Table structure for `fa_mygroup`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_mygroup`;
 CREATE TABLE `fa_mygroup` (
@@ -4784,19 +4801,20 @@ CREATE TABLE `fa_mygroup` (
   `groupname` varchar(255) DEFAULT NULL COMMENT '分组名称',
   `weight` tinyint(2) DEFAULT '1' COMMENT '权重',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_mygroup
 -- ----------------------------
 INSERT INTO `fa_mygroup` VALUES ('0000000001', '1000', '我的好友', '1');
-INSERT INTO `fa_mygroup` VALUES ('0000000002', '1000', '未命3名45', '2');
+INSERT INTO `fa_mygroup` VALUES ('0000000002', '3', '未命3名45', '2');
 INSERT INTO `fa_mygroup` VALUES ('0000000003', '1000', '未命名', '3');
-INSERT INTO `fa_mygroup` VALUES ('0000000004', '1000', '未命名', '4');
+INSERT INTO `fa_mygroup` VALUES ('0000000004', '3', '未命名', '4');
 INSERT INTO `fa_mygroup` VALUES ('0000000005', '1000', '未命名', '5');
+INSERT INTO `fa_mygroup` VALUES ('0000000006', '1', '我的好友', '1');
 
 -- ----------------------------
--- Table structure for fa_mymsg
+-- Table structure for `fa_mymsg`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_mymsg`;
 CREATE TABLE `fa_mymsg` (
@@ -4816,10 +4834,10 @@ CREATE TABLE `fa_mymsg` (
 -- Records of fa_mymsg
 -- ----------------------------
 INSERT INTO `fa_mymsg` VALUES ('0000000001', '1', '1000', '3', '1', '', '1530613112', null, '1');
-INSERT INTO `fa_mymsg` VALUES ('0000000002', '1', '1000', '1', '1', '', '1530614019', null, '1');
+INSERT INTO `fa_mymsg` VALUES ('0000000002', '1', '1000', '1', '1', '', '1530626324', null, '1');
 
 -- ----------------------------
--- Table structure for fa_sms
+-- Table structure for `fa_sms`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_sms`;
 CREATE TABLE `fa_sms` (
@@ -4838,7 +4856,7 @@ CREATE TABLE `fa_sms` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for fa_test
+-- Table structure for `fa_test`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_test`;
 CREATE TABLE `fa_test` (
@@ -4880,7 +4898,7 @@ CREATE TABLE `fa_test` (
 INSERT INTO `fa_test` VALUES ('1', '0', '12', '12,13', 'monday', 'hot,index', 'male', 'music,reading', '我是一篇测试文章', '<p>我是测试内容</p>', '/assets/img/avatar.png', '/assets/img/avatar.png,/assets/img/qrcode.png', '/assets/img/avatar.png', '关键字', '描述', '广西壮族自治区/百色市/平果县', '0.00', '0', '2017-07-10', '2017-07-10 18:24:45', '2017', '18:24:45', '1499682285', '1499682526', '1499682526', '0', '1', 'normal', '1');
 
 -- ----------------------------
--- Table structure for fa_testtest
+-- Table structure for `fa_testtest`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_testtest`;
 CREATE TABLE `fa_testtest` (
@@ -4897,7 +4915,7 @@ CREATE TABLE `fa_testtest` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for fa_user
+-- Table structure for `fa_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_user`;
 CREATE TABLE `fa_user` (
@@ -4937,12 +4955,12 @@ CREATE TABLE `fa_user` (
 -- ----------------------------
 -- Records of fa_user
 -- ----------------------------
-INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', '0', '1', '1', '1516170492', '1516171614', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1516171614', '', 'normal', '');
-INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/20180629/49dd78b1b471f3320586fd718b8bc9e0.gif', '1', '0', '2018-06-30', '', '0', '1', '2', '1530369231', '1530609338', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1530609338', '', 'normal', '');
-INSERT INTO `fa_user` VALUES ('1000', '1', 'yangmengyu', 'yangmengyu', 'ccc8c548c0d1c14e3e626d3d41586160', 'kC9MhU', '363126523@qq.com', '17603852737', '/uploads/20180629/5b0ff972dbccc5cae444d03c8253ab06.gif', '1', '0', '0000-00-00', '', '0', '1', '3', '1530611543', '1530613922', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1530613922', '', 'normal', '');
+INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', '0', '1', '1', '1530627857', '1530629196', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1530629196', '', 'normal', '');
+INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/20180629/49dd78b1b471f3320586fd718b8bc9e0.gif', '1', '0', '2018-06-30', '', '0', '1', '2', '1530609338', '1530628178', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1530628178', '', 'normal', '');
+INSERT INTO `fa_user` VALUES ('1000', '1', 'yangmengyu', 'yangmengyu', 'ccc8c548c0d1c14e3e626d3d41586160', 'kC9MhU', '363126523@qq.com', '17603852737', '/uploads/20180629/5b0ff972dbccc5cae444d03c8253ab06.gif', '1', '0', '0000-00-00', '', '0', '1', '3', '1530628609', '1530628893', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1530628893', '', 'normal', '');
 
 -- ----------------------------
--- Table structure for fa_user_group
+-- Table structure for `fa_user_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_user_group`;
 CREATE TABLE `fa_user_group` (
@@ -4961,7 +4979,7 @@ CREATE TABLE `fa_user_group` (
 INSERT INTO `fa_user_group` VALUES ('1', '默认组', '1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25', '1515386468', '1530606019', 'normal');
 
 -- ----------------------------
--- Table structure for fa_user_rule
+-- Table structure for `fa_user_rule`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_user_rule`;
 CREATE TABLE `fa_user_rule` (
@@ -5006,7 +5024,7 @@ INSERT INTO `fa_user_rule` VALUES ('24', '13', 'index/chat/movefriend', '移动�
 INSERT INTO `fa_user_rule` VALUES ('25', '13', 'index/chat/addmsg', '添加好友', '', '0', '1530606008', '1530606008', '25', 'normal');
 
 -- ----------------------------
--- Table structure for fa_user_score_log
+-- Table structure for `fa_user_score_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_user_score_log`;
 CREATE TABLE `fa_user_score_log` (
@@ -5025,7 +5043,7 @@ CREATE TABLE `fa_user_score_log` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for fa_user_token
+-- Table structure for `fa_user_token`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_user_token`;
 CREATE TABLE `fa_user_token` (
@@ -5048,6 +5066,7 @@ INSERT INTO `fa_user_token` VALUES ('1fbda412a0c6677d36281f0d295194ced181f2e4', 
 INSERT INTO `fa_user_token` VALUES ('20acfb91e7dd1430ef142fd15e966dd4da293074', '1000', '1530598551', '1533190551');
 INSERT INTO `fa_user_token` VALUES ('2254a865657ebe719a5f3375108207b75b531950', '2', '1530359272', '1532951272');
 INSERT INTO `fa_user_token` VALUES ('23792f0f1d5535fbd74ce27499469370d3f795d3', '2', '1530359354', '1532951354');
+INSERT INTO `fa_user_token` VALUES ('276ca2967ee96d5c60eeacbe25dad189c585f29d', '1', '1530627857', '1533219857');
 INSERT INTO `fa_user_token` VALUES ('416466573a4b9ad5adfcfe2dd0f00dfc64b3a4e9', '2', '1530345326', '1532937326');
 INSERT INTO `fa_user_token` VALUES ('4488fa03016b28a0d4e29da62c0e23db36a906cb', '1000', '1530369460', '1532961460');
 INSERT INTO `fa_user_token` VALUES ('483ebdf647ecafd6a99e6595a8d4e1e44cb0574a', '2', '1530345191', '1532937191');
@@ -5070,15 +5089,20 @@ INSERT INTO `fa_user_token` VALUES ('89acae6e2a2888162fb8d2782466a4acbbb2745a', 
 INSERT INTO `fa_user_token` VALUES ('8f175656a4d0afa45f3cd599a78edb5641e16732', '1000', '1530613922', '1533205922');
 INSERT INTO `fa_user_token` VALUES ('907fb008641e611d238e69b17c05a6433fbb9152', '1000', '1530610023', '1533202023');
 INSERT INTO `fa_user_token` VALUES ('9e1a67871bc5a5a653efa8b3e47146959f780a03', '1000', '1530422881', '1533014881');
+INSERT INTO `fa_user_token` VALUES ('afcc035f4d91d1e15eaa114d487caadea5302178', '1', '1530629196', '1533221196');
 INSERT INTO `fa_user_token` VALUES ('b4c5c51600978725a7324d8c6461b2a4860dcad0', '2', '1530358954', '1532950954');
 INSERT INTO `fa_user_token` VALUES ('b87a691e6a1d1710cd0e87b652b86d5ce5d469ec', '2', '1530323909', '1532915909');
 INSERT INTO `fa_user_token` VALUES ('bcbb31cd2db8c9e94421015df67491fcf8f59fea', '3', '1530358815', '1532950815');
 INSERT INTO `fa_user_token` VALUES ('bd6273e0d9d6dd87827058d10219373f9130c765', '2', '1530360081', '1532952081');
+INSERT INTO `fa_user_token` VALUES ('c160c2aff52ceb929d505854c9ff20af6712a6d9', '1000', '1530628609', '1533220609');
 INSERT INTO `fa_user_token` VALUES ('c399a3bf425dcc5d6abe748d5ac7a65d64799aad', '2', '1530358358', '1532950358');
 INSERT INTO `fa_user_token` VALUES ('c3b849e5882b3e385b338f2be5772b946e69daa2', '3', '1530359316', '1532951316');
+INSERT INTO `fa_user_token` VALUES ('c8b6aedaf074ed7d05b08778da69d38681e76a7a', '3', '1530628178', '1533220178');
 INSERT INTO `fa_user_token` VALUES ('c945ea5e9bb1d750e16173132f5531e890737c82', '2', '1530347155', '1532939155');
+INSERT INTO `fa_user_token` VALUES ('cbaacde9e52f28d0a23ec93580ba7708d5864ea8', '1000', '1530628400', '1533220400');
 INSERT INTO `fa_user_token` VALUES ('eac0da5bc802abc6f57c114ea0e6b1cbf75fbb2a', '1000', '1530423576', '1533015576');
 INSERT INTO `fa_user_token` VALUES ('eb037824e38c98bfe680a60601d19e98fbc9f111', '2', '1530340919', '1532932919');
+INSERT INTO `fa_user_token` VALUES ('ebacd830cc1e433707b532ba53f73b2607f0d4c1', '1000', '1530628893', '1533220893');
 INSERT INTO `fa_user_token` VALUES ('ed4f9808f838407be665c536ec0b3053f92b4de3', '2', '1530359518', '1532951518');
 INSERT INTO `fa_user_token` VALUES ('ed99f086b09b6cb1ead1663bf440d9d0367f9211', '1000', '1530418567', '1533010567');
 INSERT INTO `fa_user_token` VALUES ('f057bdef5cc1ee0511a60f6885582ede614c104c', '2', '1530358242', '1532950242');
@@ -5088,7 +5112,7 @@ INSERT INTO `fa_user_token` VALUES ('f760696f66bb5ccc927dc2f628b88c4fe8e97291', 
 INSERT INTO `fa_user_token` VALUES ('fa3db414b9bd9c468fd004ebc03dafcb76fbd06b', '2', '1530346465', '1532938465');
 
 -- ----------------------------
--- Table structure for fa_version
+-- Table structure for `fa_version`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_version`;
 CREATE TABLE `fa_version` (
@@ -5112,7 +5136,7 @@ CREATE TABLE `fa_version` (
 INSERT INTO `fa_version` VALUES ('1', '1.1.1,2', '1.2.1', '20M', '更新内容', 'https://www.fastadmin.net/download.html', '1', '1520425318', '0', '0', 'normal');
 
 -- ----------------------------
--- Table structure for fa_website
+-- Table structure for `fa_website`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_website`;
 CREATE TABLE `fa_website` (
@@ -5130,7 +5154,7 @@ CREATE TABLE `fa_website` (
 INSERT INTO `fa_website` VALUES ('0000000001', '新时代', '1529572761', '1529572945', '1');
 
 -- ----------------------------
--- Table structure for fa_wechat_autoreply
+-- Table structure for `fa_wechat_autoreply`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_wechat_autoreply`;
 CREATE TABLE `fa_wechat_autoreply` (
@@ -5152,7 +5176,7 @@ INSERT INTO `fa_wechat_autoreply` VALUES ('1', '输入hello', 'hello', '58c7d908
 INSERT INTO `fa_wechat_autoreply` VALUES ('2', '输入你好', '你好', '58fdfaa9e1965', 'sad', '1493704976', '1493704976', 'normal');
 
 -- ----------------------------
--- Table structure for fa_wechat_config
+-- Table structure for `fa_wechat_config`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_wechat_config`;
 CREATE TABLE `fa_wechat_config` (
@@ -5174,7 +5198,7 @@ INSERT INTO `fa_wechat_config` VALUES ('2', 'service', '客服配置', '{\"onlin
 INSERT INTO `fa_wechat_config` VALUES ('3', 'signin', '连续登录配置', '{\"s1\":\"100\",\"s2\":\"200\",\"s3\":\"300\",\"sn\":\"500\"}', '1497429711', '1497429711');
 
 -- ----------------------------
--- Table structure for fa_wechat_context
+-- Table structure for `fa_wechat_context`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_wechat_context`;
 CREATE TABLE `fa_wechat_context` (
@@ -5196,7 +5220,7 @@ CREATE TABLE `fa_wechat_context` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for fa_wechat_response
+-- Table structure for `fa_wechat_response`
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_wechat_response`;
 CREATE TABLE `fa_wechat_response` (

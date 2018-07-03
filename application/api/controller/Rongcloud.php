@@ -1,6 +1,6 @@
 <?php
 
-namespace app\api\controller\rongyunapi;
+namespace app\api\controller;
 /**
  * 融云 Server API PHP 客户端
  * create by kitName
@@ -16,8 +16,13 @@ use app\api\controller\rongyunapi\Group;
 use app\api\controller\rongyunapi\Chatroom;
 use app\api\controller\rongyunapi\Push;
 use app\api\controller\rongyunapi\SMS;
+use app\common\controller\Api;
 
-class RongCloud {
+class Rongcloud extends Api {
+    // 无需登录的接口,*表示全部
+    protected $noNeedLogin = ['*'];
+    // 无需鉴权的接口,*表示全部
+    protected $noNeedRight = ['*'];
 
     /**
      * 参数初始化
@@ -28,7 +33,6 @@ class RongCloud {
     public function __construct($appKey, $appSecret, $format = 'json') {
         $this->SendRequest = new SendRequest($appKey, $appSecret, $format);
     }
-
     public function User() {
         $User = new User($this->SendRequest);
         return $User;
