@@ -174,7 +174,7 @@
                 },3000);
                 return layer.msg(res.msg);
             }
-            console.log(res);
+            //console.log(res);
             var html = laytpl(LAY_tpl.innerHTML).render({
                 data: res.data,
                 mine: cache.mine.id
@@ -193,6 +193,8 @@
                 ,avatar: avatar
                 ,id: uid
             });
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
         }
 
         $("#close").click(function(){

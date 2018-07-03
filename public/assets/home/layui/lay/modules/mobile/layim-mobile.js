@@ -322,7 +322,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
   var sendMessage = function(){
     var data = {
       username: cache.mine ? cache.mine.username : '访客'
-      ,avatar: cache.mine ? cache.mine.avatar : (layui.cache.dir+'css/pc/layim/skin/logo.jpg')
+      ,avatar: cache.mine ? cache.mine.avatar : (layui.cache.dir+'css/pc/layim/skin/default_avatar.jpg')
       ,id: cache.mine ? cache.mine.id : null
       ,mine: true
     };

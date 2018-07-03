@@ -89,6 +89,10 @@
                 });
             }
         },
+        senSystem:function (data) {
+            /*console.log(data);*/
+            im.sendMsg(data);
+        }
     };
 
     var im = {
@@ -163,11 +167,12 @@
 
         },
         sendMsg: function (data) {  //根据layim提供的data数据，进行解析
+
             var mine = data.mine;
             var to = data.to;
             var id = mine.id;   //当前用户id
-            var group = to.type == 'group';
-            if (group) {
+            var type = to.type;
+            if (type == 'group') {
                 id = to.id;     //如果是group类型，id就是当前groupid，切记不可写成 mine.id否则会出现一些问题。
             }
             //构造消息
@@ -179,7 +184,14 @@
                 , content: mine.content
             };
             //这里要判断消息类型
-            var conversationType = group ? lib.ConversationType.GROUP : lib.ConversationType.PRIVATE; //私聊,其他会话选择相应的消息类型即可。
+            if(type == 'friend'){
+                var conversationType = lib.ConversationType.PRIVATE; //私聊,其他会话选择相应的消息类型即可。
+            }else if(type == 'group'){
+                var conversationType = lib.ConversationType.GROUP;
+            }else{
+                var conversationType = lib.ConversationType.SYSTEM;
+            }
+            /*var conversationType = group ? lib.ConversationType.GROUP : lib.ConversationType.PRIVATE; //私聊,其他会话选择相应的消息类型即可。*/
             var targetId = to.id.toString();        //这里的targetId必须是string类型，否则会报错
             //构造消息体，这里就是我们刚才已经注册过的自定义消息
             console.log(msg);
@@ -190,11 +202,13 @@
                     console.log(message)
                     var sendData = {from:message.senderUserId,to:targetId,content:message.content.content,sendtime:message.sentTime,type:message.content.type}
                     $.post(cachedata.base.addchatlog, sendData, function (res) {
-                        if (data.code != 0) {
+                        if (data.code !== 0) {
+                            console.log('发送消息成功');
+                        }else{
                             console.log('message record fail');
                         }
                     });
-                    console.log('发送消息成功');
+
                 },
                 onError: function (errorCode, message) {
                     console.log('发送失败:' + errorCode);
@@ -322,7 +336,7 @@
                     layer.msg(res.msg,{icon:2});
                 }
             });
-        }
+        },
 
     };
 
@@ -339,7 +353,7 @@
             movehtml += '</ul>';
 
             //好友右键操作
-            $(".layim-list-friend >li > ul > li").contextMenu({
+            $(".layim-list-friend >li > ul > li:not([class])").contextMenu({
                 width: 140, // width
                 itemHeight: 30, // 菜单项height
                 bgColor: "#fff", // 背景颜色
@@ -351,7 +365,6 @@
                     $(".ul-context-menu").attr("data-id",ele[0].id);
                     $(".ul-context-menu").attr("data-name",ele.find("span").html());
                     $(".ul-context-menu").attr("data-img",ele.find("img").attr('src'));
-
                 },
                 menu: [
                     { // 菜单项

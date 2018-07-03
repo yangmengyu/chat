@@ -17,7 +17,7 @@ use think\Db;
 class Chat extends Frontend
 {
     protected $noNeedLogin = '';
-    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal'];
+    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend'];
     protected $layout = '';
 
     public function _initialize()
@@ -56,6 +56,30 @@ class Chat extends Frontend
     public function find(){
         return $this->fetch();
     }
+    //推荐好友接口
+    public function getRecommend(){
+        $data = Db::name('user')->field('id,nickname,bio,avatar')->select();
+        $this->success('','',$data);
+    }
+    //添加申请好友信息接口
+    public function addMsg(){
+        $post = $this->request->post();
+        $post['from'] = $this->auth->id;
+        $post['sendtime'] = time();
+        $post['status'] = 1;
+        $res = Db::name('mymsg')->where(['from'=>$post['from'],'to'=>$post['to']])->field('id')->find();
+        if($res){
+            $success = Db::name('mymsg')->where('id',$res['id'])->update($post);
+        }else{
+            $success = Db::name('mymsg')->insert($post);
+        }
+        if($success){
+            $this->success(__('send add friend success'));
+        }else{
+            $this->error(__('send add friend error'));
+        }
+    }
+
     //获取好友资料页面
     public function information(){
 
@@ -147,9 +171,9 @@ class Chat extends Frontend
         $post = $this->request->post();
         $res = Db::name('chatlog')->insert($post);
         if($res){
-            $this->result('',0);
+            $this->success();
         }else{
-            $this->result('','-1');
+            $this->error();
         }
 
     }
