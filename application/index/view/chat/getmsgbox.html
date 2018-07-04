@@ -361,10 +361,10 @@
             }
         };
         //打开页面即把系统消息标记为已读
-       /* $(function(){
-            $.get('../../../../../../class/doAction.php?action=set_allread', {}, function (res) {
+       $(function(){
+            $.get('{:url("chat/setAllRead")}', {}, function (res) {
             });
-        });*/
+        });
         $('body').on('click', '.layui-btn', function () {
             var othis = $(this), type = othis.data('type');
             active[type] ? active[type].call(this, othis) : '';

@@ -19,7 +19,7 @@ use think\Request;
 class Chat extends Frontend
 {
     protected $noNeedLogin = '';
-    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend'];
+    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend','getmsgboxnum','setAllRead'];
     protected $layout = '';
 
     public function _initialize()
@@ -287,6 +287,20 @@ class Chat extends Frontend
             $this->error(__('An unexpected error occurred'));
         }
     }
+    //获取消息盒子数量
+    public function getmsgboxnum(){
+        $user_id = $this->auth->id;
+        $count = Db::name('mymsg')->where(function ($query) use ($user_id){
+            $query->where('to',$user_id)->where('status',UNREAD);
+        })->whereOr(function ($query) use ($user_id){
+            $query->where('from',$user_id)->whereIn('status',[AGREE_BY_TO,DISAGREE_BY_TO]);
+        })->count();
+        if($count){
+            $this->success('','',$count);
+        }else{
+            $this->error();
+        }
+    }
     //获取消息盒子
     public function getmsgbox(){
         if($this->request->isAjax()){
@@ -372,5 +386,17 @@ class Chat extends Frontend
         }
         $this->success('','',$data);
     }
-
+    //全部设为已读
+    public function setAllRead(){
+        $user_id = $this->auth->id;
+        $agree_by_to = AGREE_BY_TO;
+        $disagree_by_to = DISAGREE_BY_TO;
+        $data = Db::name('mymsg')->where(function ($query) use ($agree_by_to,$disagree_by_to){
+            $query->where('status',$agree_by_to)->whereOr('status',$disagree_by_to);
+        })->where('from',$user_id)->select();
+        foreach ($data as $key=>$value){
+            $status['status'] = $value['status']+2;
+            Db::name('mymsg')->where('id',$value['id'])->update($status);
+        }
+    }
 }

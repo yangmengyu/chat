@@ -48,6 +48,11 @@
                 layim.on('ready', function (res) {
                     //console.log(res.mine);
                     /*layim.msgbox(5);*/ //模拟消息盒子有新消息，实际使用时，一般是动态获得
+                    $.post(cachedata.base.getmsgboxnum,'',function (res) {
+                        if(res.code !== 0){
+                            layim.msgbox(res.data);
+                        }
+                    });
                     //添加好友（如果检测到该socket）
                      layui.ext.init(); //更新右键点击事件
                     layim.addList({
