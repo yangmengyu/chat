@@ -20,5 +20,7 @@ return [
     'send add friend success'=>'您的添加好友申请已发送，请等待对方确认',
     'send add friend error'=>'您的添加好友申请失败，请刷新浏览器后重新操作',
     'This user is already your friend'=>'该用户已是您的好友',
+    'Platform to inform'=>'平台通知',
+    'No relevant member was found'=>'没有找到相关会员',
 
 ];

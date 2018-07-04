@@ -1209,6 +1209,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
                 listElem.find('.layim-null').remove();
             }
         }
+        parent.layui.ext.init();
     };
 
     //移出好友或群

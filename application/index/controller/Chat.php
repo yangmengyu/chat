@@ -14,11 +14,12 @@ use app\common\controller\Frontend;
 use think\Config;
 use think\Cookie;
 use think\Db;
+use think\Request;
 
 class Chat extends Frontend
 {
     protected $noNeedLogin = '';
-    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend'];
+    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend'];
     protected $layout = '';
 
     public function _initialize()
@@ -61,6 +62,45 @@ class Chat extends Frontend
         $data = Db::name('user')->field('id,nickname,bio,avatar')->select();
         $this->success('','',$data);
     }
+    //获取查找好友总数
+    public function friendtotal(){
+        $post = $this->request->post();
+        $keyword = $post['value'];
+        $type = $post['type'];
+        $limit = 16;//每页显示数量
+        if($type == 'friend'){
+            $count = Db::name('user')
+                ->where('id|nickname|mobile|email','like',$keyword)
+                ->where('status','normal')->count();
+            if($count){
+                $data['count'] = $count;
+                $data['limit'] = $limit;
+                $this->success('','',$data);
+            }else{
+                $this->error(__('No relevant member was found'));
+            }
+        }else{
+            $this->error(__('An unexpected error occurred'));
+        }
+
+    }
+    //获取查找好友信息
+    public function getFindFriend(){
+        $post = $this->request->post();
+        $keyword = $post['value'];
+        $type = $post['type'];
+        $limit = 16;//每页显示数量
+        $page = $post['page'];
+        if($type == 'friend'){
+            $data = Db::name('user')
+                ->field('avatar,bio,id,nickname')
+                ->where('id|nickname|mobile|email','like',$keyword)
+                ->where('status','normal')->select();
+            $this->success('','',$data);
+        }else{
+            $this->error(__('An unexpected error occurred'));
+        }
+    }
     //添加申请好友信息接口
     public function addMsg(){
         $post = $this->request->post();
@@ -68,15 +108,16 @@ class Chat extends Frontend
         $post['sendtime'] = time();
         $post['status'] = 1;
         $site = Config::get("site");
-        $RY_api  = new Rongcloud($site['ry_key'],$site['ry_secret']);
-        $Message = $RY_api->message();
-        $res = $Message->PublishSystem($post['from'],$post['to'],'LAYIM:SYS',$post['remark'],'','',1,1);
-        dump($res);exit;
+
+        $post['remark'] = $post['remark']?$post['remark']:' ';
         $res = Db::name('mymsg')->where(['from'=>$post['from'],'to'=>$post['to']])->field('id')->find();
         if($res){
             $success = Db::name('mymsg')->where('id',$res['id'])->update($post);
         }else{
             $success = Db::name('mymsg')->insert($post);
+            $RY_api  = new Rongcloud($site['ry_key'],$site['ry_secret']);
+            $Message = $RY_api->message();
+            $Message->PublishSystem($post['from'],$post['to'],'LAYIM:SYS',$post['remark'],'','',1,1);
         }
 
         if($success){
@@ -246,4 +287,90 @@ class Chat extends Frontend
             $this->error(__('An unexpected error occurred'));
         }
     }
+    //获取消息盒子
+    public function getmsgbox(){
+        if($this->request->isAjax()){
+            $post = $this->request->post();
+            $user_id = $this->auth->id;
+            $limit = $post['limit'];
+            $page = $post['page'];
+            $msgBox = Db::name('mymsg')->where(function ($query) use ($user_id){
+                $query->where('from',$user_id)->whereOr('to',$user_id);
+            })->order('sendtime desc')->limit($limit)->page($page)->select();
+            foreach ($msgBox as $key=>$value){
+                if ($value['msgType'] == ADD_USER_MSG || $value['msgType'] == ADD_USER_SYS) {
+                    if ($value['to'] == $user_id) {
+                        $userId = $value['from'];//收到加好友消息（被添加者接收消息）
+                    } elseif ($value['from'] == $user_id) {
+                        $userId = $value['to'];//收到系统消息(申请是否通过) 加好友消息（添加者接收消息）
+                    }
+                }
+                if($userId){
+                    $user = Db::name('user')->where('id',$userId)->field('nickname,bio,avatar')->find();
+                    $msgBox[$key]['sign'] = $user['bio'];
+                    $msgBox[$key]['username'] = $user['nickname'];
+                    $msgBox[$key]['avatar'] = $user['avatar'];
+                }else{
+                    $msgBox[$key]['username'] = __('Platform to inform');
+                }
+            }
+            $count = Db::name('mymsg')->where(function ($query) use ($user_id){
+                $query->where('from',$user_id)->whereOr('to',$user_id);
+            })->count();
+            $data['userid'] = $user_id;
+            $data['msgbox'] = $msgBox;
+            $data['pages'] = ceil($count/$limit);
+            $this->success('','',$data);
+        }
+        return $this->fetch();
+    }
+    //修改添加状态
+    public function modifyMsg(){
+        $post = $this->request->post();
+        $data['msgType'] = $post['msgType'];
+        $msgId = $post['msgId'];
+        $status = $post['status'];
+        $data['status'] = $status == AGREE_BY_TO?AGREE_BY_TO:DISAGREE_BY_TO;
+        $user_id = $this->auth->id;
+        //添加好友
+        if($data['msgType'] == 2){
+            $friendid = $post['friendid'];
+            $groupid = $post['mygroup_id'];
+            $from = Db::name('mymsg')->field('from,mygroupid')->find($msgId);
+            if ($from['from'] != $friendid){
+                $this->error(__('An unexpected error occurred'));
+            }
+            $res = Db::name('mymsg')->where(['to'=>$user_id,'id'=>$msgId])->update($data);
+            if($res){
+                $isfriend = Db::name('myfriend')->where(['mygroup_id'=>$groupid,'user_id'=>$friendid])->find();
+                if(!$isfriend){
+                    Db::name('myfriend')->insert(['mygroup_id'=>$groupid,'user_id'=>$friendid]);
+                }
+            }
+
+            $site = Config::get("site");
+            $RY_api  = new Rongcloud($site['ry_key'],$site['ry_secret']);
+            $Message = $RY_api->message();
+            $Message->PublishSystem($user_id,$from['from'],'LAYIM:FRIENDADD','SUCCESS','','',1,1);
+            $this->success();
+        }else{
+            $this->error(__('An unexpected error occurred'));
+        }
+    }
+    //好友请求已通过
+    public function subscribed(){
+        $to = $this->request->post('from');
+        $from = $this->auth->id;
+        $data = Db::name('user')
+            ->alias('u')
+            ->field('u.id,u.nickname as username,u.bio as sign,u.avatar,m.mygroupid as groupid')
+            ->join('mymsg m','m.to=u.id')
+            ->where(['m.to'=>$to,'m.from'=>$from])
+            ->find();
+        if($data) {
+            Db::name('myfriend')->insert(['mygroup_id' => $data['groupid'], 'user_id' => $data['id']]);
+        }
+        $this->success('','',$data);
+    }
+
 }

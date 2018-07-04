@@ -47,7 +47,7 @@
                 //监听layim建立就绪
                 layim.on('ready', function (res) {
                     //console.log(res.mine);
-                    layim.msgbox(5); //模拟消息盒子有新消息，实际使用时，一般是动态获得
+                    /*layim.msgbox(5);*/ //模拟消息盒子有新消息，实际使用时，一般是动态获得
                     //添加好友（如果检测到该socket）
                      layui.ext.init(); //更新右键点击事件
                     layim.addList({
@@ -68,7 +68,7 @@
                 //监听聊天窗口的切换
                 layim.on('chatChange', function (res) {
                     var type = res.data.type;
-                    console.log(res.data.id)
+                    /*console.log(res.data.id)*/
                     if (type === 'friend') {
                         //模拟标注好友状态
                         //layim.setChatStatus('<span style="color:#FF5722;">在线</span>');
@@ -82,17 +82,14 @@
 //                        });
                     }
                 });
-                layim.on('sendMessage', function (data) { //监听发送消息
+                //监听发送消息
+                layim.on('sendMessage', function (data) {
 
-                    console.log(data);
+                    /*console.log(data);*/
                     im.sendMsg(data);
                 });
             }
         },
-        senSystem:function (data) {
-            /*console.log(data);*/
-            im.sendMsg(data);
-        }
     };
 
     var im = {
@@ -127,14 +124,30 @@
 
             RongIMClient.setOnReceiveMessageListener({// 消息监听器
                 onReceived: function (message) { // 接收到的消息
-                    console.log(message);
+                    /*console.log(message);*/
                     switch (message.objectName) { // 判断消息类型
                         case 'LAYIM:CHAT':
                             conf.layim.getMessage(message.content);
                             break;
                         case 'LAYIM:SYS':
-                            var num = $('.layim-tool-msgbox').find('span').text();
+                            var num = $('.layim-tool-msgbox').find('span').text() | 0;
                             conf.layim.msgbox(parseInt(num)+1);
+                            break;
+                        case 'LAYIM:FRIENDADD':
+                            if(message.content.message.content == 'SUCCESS'){
+                                $.post(cachedata.base.subscribed, {from: message.targetId,}, function (res) {
+                                    var default_avatar = '/assets/img/avatar.png';
+                                    layui.layim.addList({
+                                        type:'friend',
+                                        avatar:res.data.avatar?res.data.avatar:default_avatar,
+                                        username:res.data.username,
+                                        sign:res.data.sign,
+                                        groupid:res.data.groupid,
+                                        id:res.data.id
+                                    });
+                                    ext.init();
+                                })
+                            }
                             break;
                     }
                 }
