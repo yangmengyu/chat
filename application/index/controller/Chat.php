@@ -20,7 +20,7 @@ use think\Request;
 class Chat extends Frontend
 {
     protected $noNeedLogin = '';
-    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend','getmsgboxnum','setAllRead','changeSign','changeOnline'];
+    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend','getmsgboxnum','setAllRead','changeSign','changeOnline','removeFriends'];
     protected $layout = '';
 
     public function _initialize()
@@ -413,5 +413,38 @@ class Chat extends Frontend
             Cache::rm('online'.$user_id);
         }
         $this->success();
+    }
+    //删除好友，并删除消息和聊天记录
+    public function removeFriends(){
+        $friend_id = $this->request->post('friend_id');
+        $user_id = $this->auth->id;
+        $res1 = Db::name('myfriend')->alias('f')
+            ->field('f.id')
+            ->join('mygroup g','f.mygroup_id=g.id')
+            ->where(['f.user_id'=>$friend_id,'g.user_id'=>$user_id])
+            ->find();
+        $res2 = Db::name('myfriend')->alias('f')
+            ->field('f.id')
+            ->join('mygroup g','f.mygroup_id=g.id')
+            ->where(['f.user_id'=>$user_id,'g.user_id'=>$friend_id])
+            ->find();
+        if($res1&&$res2){
+            Db::name('myfriend')->delete([$res1['id'],$res2['id']]);
+            Db::name('mymsg')
+                ->where(['from'=>$friend_id,'to'=>$user_id])
+                ->whereOr(['from'=>$user_id,'to'=>$friend_id])
+                ->delete();
+            Db::name('chatlog')
+                ->where(['from'=>$friend_id,'to'=>$user_id])
+                ->whereOr(['from'=>$user_id,'to'=>$friend_id])
+                ->delete();
+            $site = Config::get("site");
+            $RY_api  = new Rongcloud($site['ry_key'],$site['ry_secret']);
+            $Message = $RY_api->message();
+            $Message->PublishSystem($user_id,$friend_id,'LAYIM:FRIENDDEL','SUCCESS','','',1,1);
+            $this->success(__('Delete friend successfully'));
+        }else{
+            $this->error(__('An unexpected error occurred'));
+        }
     }
 }

@@ -22,5 +22,6 @@ return [
     'This user is already your friend'=>'该用户已是您的好友',
     'Platform to inform'=>'平台通知',
     'No relevant member was found'=>'没有找到相关会员',
+    'Delete friend successfully'=>'删除好友成功',
 
 ];

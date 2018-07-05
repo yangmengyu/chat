@@ -14,7 +14,7 @@
     var socket = {
         config: function (options) {
             conf = $.extend(conf, options); //把layim继承出去，方便在register中使用
-            console.log('当前用户配置 ：' + options);
+            /*console.log('当前用户配置 ：' + options);*/
             this.register();
             im.init(options.key);
             im.connectWithToken(options.token);
@@ -30,7 +30,7 @@
                 });
                 //监听签名修改
                 layim.on('sign', function (value) {
-                    console.log(value);
+                    /*console.log(value);*/
                     $.post(cachedata.base.changeSign, {sign: value}, function (data) {
 
                     });
@@ -69,7 +69,7 @@
 
                 //监听查看群员
                 layim.on('members', function (data) {
-                    console.log('群成员'+data);
+                    /*console.log('群成员'+data);*/
                 });
 
                 //监听聊天窗口的切换
@@ -102,26 +102,26 @@
     var im = {
         init: function (key) { //初始化融云key
             lib.RongIMClient.init(key);
-            console.log('key');
+            /*console.log('key');*/
             this.initListener();    //初始化事件监听
             this.defineMessage();   //初始化自定义消息类型
         },
         initListener: function () { //初始化监听
-            console.log('注册服务连接监听事件');
+            /*console.log('注册服务连接监听事件');*/
             RongIMClient.setConnectionStatusListener({//连接监听事件
                 onChanged: function (status) {
                     switch (status) {
                         case lib.ConnectionStatus.CONNECTED: //链接成功
-                            console.log('链接成功');
+                          /*  console.log('链接成功');*/
                             break;
                         case lib.ConnectionStatus.CONNECTING: //正在链接
-                            console.log('正在链接');
+                          /*  console.log('正在链接');*/
                             break;
                         case lib.ConnectionStatus.DISCONNECTED: //重新链接
-                            console.log('断开连接');
+                           /* console.log('断开连接');*/
                             break;
                         case lib.ConnectionStatus.KICKED_OFFLINE_BY_OTHER_CLIENT://其他设备登录
-                            console.log('其他设备登录');
+                           /* console.log('其他设备登录');*/
                             layer.open({
                                 content: '该账号已在别处登录，请重新登录'
                                 ,btn: ['确定']
@@ -137,7 +137,7 @@
                             });
                             break;
                         case lib.ConnectionStatus.ConnectionStatus.NETWORK_UNAVAILABLE: //网络不可用
-                            console.log('网络不可用');
+                            /*console.log('网络不可用');*/
                             break;
                     }
                 }});
@@ -155,7 +155,7 @@
                             break;
                         case 'LAYIM:FRIENDADD':
                             if(message.content.message.content == 'SUCCESS'){
-                                $.post(cachedata.base.subscribed, {from: message.targetId,}, function (res) {
+                                $.post(cachedata.base.subscribed, {from: message.targetId}, function (res) {
                                     var default_avatar = '/assets/img/avatar.png';
                                     layui.layim.addList({
                                         type:'friend',
@@ -169,6 +169,19 @@
                                 })
                             }
                             break;
+                        case 'LAYIM:FRIENDDEL':
+                            if(message.content.message.content == 'SUCCESS'){
+                                var friendid = message.targetId;
+                                layui.layim.removeList({//从我的列表删除
+                                    type: 'friend' //或者group
+                                    ,id: friendid //好友或者群组ID
+                                });
+                                im.removeHistory({//从我的历史列表删除
+                                    type: 'friend' //或者group
+                                    ,id: friendid //好友或者群组ID
+                                });
+                            }
+                            break;
                     }
                 }
             });
@@ -176,7 +189,7 @@
         connectWithToken: function (token) {    //连接事件
             RongIMClient.connect(token, {
                 onSuccess: function (userId) {
-                    console.log("Login successfully." + userId);
+                    /*console.log("Login successfully." + userId);*/
                 },
                 onTokenIncorrect: function () {
                     console.log('token无效');
@@ -199,7 +212,7 @@
                 msgProperties: ["username", "avatar", "id", "type", "content"]
             };
             //注册
-            console.log('注册用户自定义消息类型：LAYIM_TEXT_MESSAGE');
+            /*console.log('注册用户自定义消息类型：LAYIM_TEXT_MESSAGE');*/
             defineMsg(textMsg);
 
         },
@@ -231,16 +244,16 @@
             /*var conversationType = group ? lib.ConversationType.GROUP : lib.ConversationType.PRIVATE; //私聊,其他会话选择相应的消息类型即可。*/
             var targetId = to.id.toString();        //这里的targetId必须是string类型，否则会报错
             //构造消息体，这里就是我们刚才已经注册过的自定义消息
-            console.log(msg);
+            /*console.log(msg);*/
             var detail = new RongIMClient.RegisterMessage.LAYIM_TEXT_MESSAGE(msg);
             //发送消息
             RongIMClient.getInstance().sendMessage(conversationType, targetId, detail, {
                 onSuccess: function (message) {
-                    console.log(message)
+                    /*console.log(message)*/
                     var sendData = {from:message.senderUserId,to:targetId,content:message.content.content,sendtime:message.sentTime,type:message.content.type}
                     $.post(cachedata.base.addchatlog, sendData, function (res) {
                         if (data.code !== 0) {
-                            console.log('发送消息成功');
+                            /*console.log('发送消息成功');*/
                         }else{
                             console.log('message record fail');
                         }
@@ -296,6 +309,39 @@
                 ,id: 'layui-layim-chatlog'
                 ,content: cachedata.base.chatLog + '?id=' + data.id + '&type=' + data.type
             });
+        },
+        removeFriends:function (friendid) {
+            $.post(cachedata.base.removeFriends, {friend_id: friendid}, function (res) {
+                if (res.code !== 0) {
+                    var index = layer.open();
+                    layer.close(index);
+                    layui.layim.removeList({//从我的列表删除
+                        type: 'friend' //或者group
+                        ,id: friendid //好友或者群组ID
+                    });
+                    im.removeHistory({//从我的历史列表删除
+                        type: 'friend' //或者group
+                        ,id: friendid //好友或者群组ID
+                    });
+                }else{
+                    layer.msg(res.msg);
+                }
+            });
+        },
+        removeHistory: function(data){//删除好友或退出群后清除历史记录
+            var history = cachedata.local.history;
+            delete history[data.type+data.id];
+            cachedata.local.history = history;
+            layui.data('layim', {
+                key: cachedata.mine.id
+                ,value: cachedata.local
+            });
+            $('#layim-history'+data.id).remove();
+            var hisElem = $('.layui-layim').find('.layim-list-history');
+            var none = '<li class="layim-null">暂无历史会话</li>'
+            if(hisElem.find('li').length === 0){
+                hisElem.html(none);
+            }
         },
         addMyGroup:function (data) {
             $.get(cachedata.base.addMyGroup, {}, function (res) {
@@ -443,7 +489,7 @@
                             var avatar = ele.parent().data('img');
                             var default_avatar = './uploads/person/empty2.jpg';
                             var signature = $('.layim-list-friend').find('#layim-friend'+friend_id).find('p').html();//获取签名
-                            var status = $('.layim-list-friend').find('#layim-friend'+friend_id).has('layim-list-gray')?'offline':'online';//获取状态
+                            var status = $('.layim-list-friend').find('#layim-friend'+friend_id).hasClass('layim-list-gray')?'offline':'online';//获取状态
                             var item = ele.find("ul li");
                             item.hover(function() {
                                 var _this = item.index(this);
@@ -489,6 +535,35 @@
                             });
                         }
                     },
+                    {
+                        text: "删除好友",
+                        icon: "&#xe640;",
+                        events: "removeFriends",
+                        callback: function(ele) {
+                            var othis = ele.parent(),friend_id = othis[0].dataset.id.replace(/^layim-friend/g, ''),username,sign,avatar;
+                            layui.each(cachedata.friend, function(index1, item1){
+                                layui.each(item1.list, function(index, item){
+                                    /*console.log(item)*/
+                                    if (parseInt(item.id) === parseInt(friend_id)) {
+                                        username = item.username;
+                                        sign = item.sign;
+                                        avatar = item.avatar;
+                                    }
+                                });
+                            });
+                            layer.confirm('删除后对方将从你的好友列表消失。<div class="layui-layim-list"><li layim-event="chat" data-type="friend" data-index="0"><img src="'+avatar+'"><span>'+username+'</span><p>'+sign+'</p></li></div>', {
+                                btn: ['确定','取消'], //按钮
+                                title:['删除好友','background:#b4bdb8'],
+                                shade: 0
+                            }, function(){
+                                im.removeFriends(friend_id);
+                            }, function(){
+                                var index = layer.open();
+                                layer.close(index);
+                            });
+
+                        }
+                    }
 
                 ]
             });
