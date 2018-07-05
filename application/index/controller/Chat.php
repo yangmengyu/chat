@@ -11,6 +11,7 @@ namespace app\index\controller;
 
 use app\api\controller\Rongcloud;
 use app\common\controller\Frontend;
+use think\Cache;
 use think\Config;
 use think\Cookie;
 use think\Db;
@@ -19,7 +20,7 @@ use think\Request;
 class Chat extends Frontend
 {
     protected $noNeedLogin = '';
-    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend','getmsgboxnum','setAllRead'];
+    protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend','getmsgboxnum','setAllRead','changeSign','changeOnline'];
     protected $layout = '';
 
     public function _initialize()
@@ -41,15 +42,12 @@ class Chat extends Frontend
                 ->join('user u','f.user_id=u.id')
                 ->where('f.mygroup_id',$value['id'])
                 ->select();
-            /*foreach ($myfriend as $k=>$v){
-                $res = $RY_api->User()->checkOnline(1);
-                $isOnline = json_decode($res);
-                $myfriend['status'] = $isOnline;
-            }*/
+            foreach ($myfriend as $k=>$v){
+                $myfriend[$k]['status'] = Cache::get('online'.$v['id'],'offline');
+            }
             $mygroup[$key]['list']=$myfriend;
         }
-
-        $data['mine'] = Db::name('user')->field('nickname as username,id,bio as sign,avatar')->find($user_id);
+        $data['mine'] = Db::name('user')->field('nickname as username,id,bio as sign,avatar,online as status')->find($user_id);
         $data['friend'] = $mygroup;
         return $this->result($data,0);
     }
@@ -398,5 +396,22 @@ class Chat extends Frontend
             $status['status'] = $value['status']+2;
             Db::name('mymsg')->where('id',$value['id'])->update($status);
         }
+    }
+    public function changeSign(){
+        $user_id = $this->auth->id;
+        $sign['bio'] = $this->request->post('sign');
+        Db::name('user')->where('id',$user_id)->update($sign);
+        $this->success();
+    }
+    public function changeOnline(){
+        $user_id = $this->auth->id;
+        $online['online'] = $this->request->post('online');
+        Db::name('user')->where('id',$user_id)->update($online);
+        if($online['online'] == 'online'){
+            Cache::set('online'.$user_id,'online',600);
+        }else{
+            Cache::rm('online'.$user_id);
+        }
+        $this->success();
     }
 }

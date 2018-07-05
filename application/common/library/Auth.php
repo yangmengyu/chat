@@ -6,6 +6,7 @@ use app\api\controller\Rongcloud;
 use app\common\model\User;
 use app\common\model\UserRule;
 use fast\Random;
+use think\Cache;
 use think\Config;
 use think\Cookie;
 use think\Db;
@@ -270,7 +271,7 @@ class Auth
             $expire = input('post.keeplogin') ? 30 * 86400 : 0;
             Cookie::set('userinfo', $arr, $expire);
         }
-
+        Db::name('user')->where('id',$user->id)->update(['online'=>'online']);
         //直接登录会员
         $this->direct($user->id);
         return TRUE;
@@ -290,6 +291,7 @@ class Auth
         }
         //设置登录标识
         $this->_logined = FALSE;
+        Cache::rm('online'.$this->_user->id);
         //删除Token
         Token::delete($this->_token);
         //注销成功的事件

@@ -1,9 +1,12 @@
-﻿layui.define(['jquery', 'layer', 'rmlib', 'protobuf','contextMenu','form'], function (exports) {
+layui.define(['jquery', 'layer', 'rmlib', 'protobuf','contextMenu','form','mobile'], function (exports) {
+    var mobile = layui.mobile
+        ,layim = mobile.layim;
     var lib = layui.rmlib;
     var $ = layui.jquery;
     var layer = layui.layer;
+
     var contextMenu = layui.contextMenu;
-    var cachedata =  layui.layim.cache();
+    var cachedata =  layim.cache();
     var conf = {
         uid: 0, //连接的用户id，必须传
         key: '', //融云key
@@ -56,7 +59,7 @@
                         }
                     });
                     //添加好友（如果检测到该socket）
-                     layui.ext.init(); //更新右键点击事件
+                    layui.ext.init(); //更新右键点击事件
                     layim.addList({
                         type: 'group'
                         , avatar: "static/img/tel.jpg"

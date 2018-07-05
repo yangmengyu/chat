@@ -3,6 +3,7 @@
 namespace app\common\controller;
 
 use app\common\library\Auth;
+use think\Cache;
 use think\Config;
 use think\Controller;
 use think\Cookie;
@@ -116,6 +117,9 @@ class Frontend extends Controller
         $this->loadlang($controllername);
         $this->assign('site', $site);
         $this->assign('config', $config);
+        if($this->auth->online == 'online'){
+            Cache::set('online'.$this->auth->id,'online',600);
+        }
     }
 
     /**
