@@ -162,6 +162,8 @@ class User extends Api
         $nickname = $this->request->request('nickname');
         $bio = $this->request->request('bio');
         $avatar = $this->request->request('avatar');
+        $birthday = $this->request->request('birthday');
+        $gender = $this->request->request('gender');
         $exists = \app\common\model\User::where('username', $username)->where('id', '<>', $this->auth->id)->find();
         if ($exists)
         {
@@ -171,8 +173,10 @@ class User extends Api
         $user->nickname = $nickname;
         $user->bio = $bio;
         $user->avatar = $avatar;
+        $user->birthday = $birthday;
+        $user->gender = $gender;
         $user->save();
-        $this->success();
+        $this->success(__('Save successful'));
     }
 
     /**

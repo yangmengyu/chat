@@ -77,6 +77,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 $(".profile-user-img").prop("src", url);
                 Toastr.success(__('Upload successful'));
             });
+
             Form.api.bindevent($("#profile-form"));
             $(document).on("click", ".btn-change", function () {
                 var that = this;

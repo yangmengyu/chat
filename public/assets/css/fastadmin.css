@@ -173,7 +173,7 @@ h6,
   font-family: 'Source Sans Pro', sans-serif;
 }
 /* General Links */
-a {
+/*a {
   color: #3c8dbc;
 }
 a:hover,
@@ -182,7 +182,7 @@ a:focus {
   outline: none;
   text-decoration: none;
   color: #72afd2;
-}
+}*/
 /* Page Header */
 .page-header {
   margin: 10px 0 20px 0;
@@ -255,6 +255,9 @@ a:focus {
   .main-header .navbar-right > li {
     color: inherit;
     border: 0;
+  }
+  .n-right{
+    display: block;
   }
 }
 .main-header .sidebar-toggle {

@@ -4,8 +4,10 @@
 @import url("../libs/font-awesome/css/font-awesome.min.css");
 @import url("../libs/toastr/toastr.min.css");
 @import url("../libs/layer/dist/theme/default/layer.css");
-@import url("../libs/bootstrap-daterangepicker/daterangepicker.css");
+@import url("../libs/bootstrap-daterangepicker/daterangepicker.scss");
 @import url("../libs/nice-validator/dist/jquery.validator.css");
+@import url("../libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css");
+
 html,
 body {
   height: 100%;
@@ -75,7 +77,7 @@ body {
 }
 .panel-default {
   padding: 0 15px;
-  border-color: #e4ecf3;
+  border-color: #f7e3e3;
 }
 .panel-default > .panel-heading {
   position: relative;
@@ -189,7 +191,7 @@ body {
 .nav-pills > li.active > a {
   border: none;
   color: #fff;
-  background: #46c37b;
+  background: #e60020;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -242,7 +244,7 @@ footer.footer {
 footer.footer .copyright {
   line-height: 50px;
   text-align: center;
-  background: #393939;
+  background: #f7e3e3;
   margin: 0;
 }
 footer.footer .copyright a {
@@ -281,7 +283,7 @@ footer.footer .copyright a:hover {
   -moz-background-clip: padding;
   border-radius: 4px;
   background-clip: padding-box;
-  border: 1px solid #e4ecf3;
+  border: 1px solid #f7e3e3;
 }
 .login-section {
   margin: 50px auto;
@@ -307,7 +309,7 @@ footer.footer .copyright a:hover {
   font-size: 16px;
   text-align: center;
   color: #616161;
-  background-color: #f5f5f5;
+  background-color: #f7e3e3;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -370,7 +372,7 @@ main.content {
   -moz-background-clip: padding;
   border-radius: 4px;
   background-clip: padding-box;
-  border: 1px solid #e4ecf3;
+  border: 1px solid #f7e3e3;
 }
 .sidenav .list-group:last-child {
   margin-bottom: 0;
@@ -411,11 +413,11 @@ main.content {
   padding: 10px 15px 10px 35px;
 }
 .sidenav .list-group .list-group-item.active {
-  border-left: 2px solid #46c37b;
+  border-left: 2px solid #e60020;
   background: none;
 }
 .sidenav .list-group .list-group-item.active > a {
-  color: #46c37b;
+  color: #e60020;
 }
 .nav li .avatar-text,
 .nav li .avatar-img {

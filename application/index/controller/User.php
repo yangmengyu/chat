@@ -68,6 +68,7 @@ class User extends Frontend
      */
     public function register()
     {
+        $this->view->engine->layout(false);
         $url = $this->request->request('url');
         if ($this->auth->id)
             $this->success(__('You\'ve logged in, do not login again'), $url);
@@ -142,6 +143,7 @@ class User extends Frontend
      */
     public function login()
     {
+        $this->view->engine->layout(false);
         $url = $this->request->request('url');
         if ($this->auth->id)
             $this->success(__('You\'ve logged in, do not login again'), $url);
@@ -276,6 +278,11 @@ class User extends Frontend
             }
         }
         $this->view->assign('title', __('Change password'));
+        return $this->view->fetch();
+    }
+    //修改邮箱页面
+    public function remail(){
+        $this->view->engine->layout(false);
         return $this->view->fetch();
     }
 

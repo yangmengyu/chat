@@ -1,56 +1,126 @@
-<div id="content-container" class="container">
-    <div class="user-section login-section">
-        <div class="logon-tab clearfix"> <a href="{:url('user/login')}">{:__('Sign in')}</a> <a class="active">{:__('Sign up')}</a> </div>
-        <div class="login-main"> 
-            <form name="form1" id="register-form" class="form-vertical" method="POST" action="">
-                <input type="hidden" name="invite_user_id" value="0" />
-                <input type="hidden" name="url" value="{$url}" />
-                {:token()}
-                <div class="form-group">
-                    <label class="control-label required">{:__('Email')}<span class="text-success"></span></label>
-                    <div class="controls">
-                        <input type="text" name="email" id="email" data-rule="required;email" class="form-control input-lg" placeholder="{:__('Email')}">
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label">{:__('Username')}</label>
-                    <div class="controls">
-                        <input type="text" id="username" name="username" data-rule="required;username" class="form-control input-lg" placeholder="{:__('Username must be 3 to 30 characters')}">
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label">{:__('Password')}</label>
-                    <div class="controls">
-                        <input type="password" id="password" name="password" data-rule="required;password" class="form-control input-lg" placeholder="{:__('Password must be 6 to 30 characters')}">
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label">{:__('Mobile')}</label>
-                    <div class="controls">
-                        <input type="text" id="mobile" name="mobile" data-rule="required;mobile" class="form-control input-lg" placeholder="{:__('Mobile')}">
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label">{:__('Captcha')}</label>
-                    <div class="controls">
-                        <div class="input-group input-group-lg">
-                            <input type="text" name="captcha" class="form-control" placeholder="{:__('Captcha')}" data-rule="required;length(4)" style="border-radius: 0;" />
-                            <span class="input-group-addon" style="padding:0;border:none;">
-                                <img src="{:captcha_src()}" width="140" height="42" onclick="this.src = '{:captcha_src()}?r=' + Math.random();"/>
-                            </span>
-                        </div>
-                        <p class="help-block"></p>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="common/meta" /}
+    <link href="__CDN__/assets/css/user.css?v={$Think.config.site.version}" rel="stylesheet">
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">{:__('Sign up')}</button>
-                </div>
-            </form>
+</head>
+
+<body >
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{:url('/')}"><img src="/assets/img/logo.png"  alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse" id="header-navbar">
+            <ul class="nav navbar-nav navbar-right" >
+                <li class="dropdown">
+                    {if $user}
+                    <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="avatar-img"><img src="{$user.avatar}" alt=""></span>
+                    </a>
+                    {else /}
+                    <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown">{:__('User center')} <b class="caret"></b></a>
+                    {/if}
+                    <ul class="dropdown-menu">
+                        {if $user}
+                        <li><a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i>{:__('User center')}</a></li>
+                        <li><a href="{:url('user/profile')}"><i class="fa fa-user-o fa-fw"></i>{:__('Profile')}</a></li>
+                        <li><a href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i>{:__('Change password')}</a></li>
+                        <li><a href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i>{:__('Sign out')}</a></li>
+                        {else /}
+                        <li><a href="{:url('user/login')}"><i class="fa fa-sign-in fa-fw"></i> {:__('Sign in')}</a></li>
+                        <li><a href="{:url('user/register')}"><i class="fa fa-user-o fa-fw"></i> {:__('Sign up')}</a></li>
+                        {/if}
+                    </ul>
+                </li>
+                {if $Think.config.lang_switch_on}
+                <li class="dropdown">
+                    <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-fw"></i><span>语言</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="?lang=zh-cn"> 简体中文</a></li>
+                        <li><a href="?lang=en"> English</a></li>
+                    </ul>
+                </li>
+                {/if}
+            </ul>
         </div>
     </div>
-</div>
+</nav>
+
+<main class="content">
+    <div id="content-container" class="container">
+        <div class="user-section login-section">
+            <div class="logon-tab clearfix"> <a href="{:url('user/login')}">{:__('Sign in')}</a> <a class="active">{:__('Sign up')}</a> </div>
+            <div class="login-main">
+                <form name="form1" id="register-form" class="form-vertical" method="POST" action="">
+                    <input type="hidden" name="invite_user_id" value="0" />
+                    <input type="hidden" name="url" value="{$url}" />
+                    {:token()}
+                    <div class="form-group">
+                        <label class="control-label required">{:__('Email')}<span class="text-success"></span></label>
+                        <div class="controls">
+                            <input type="text" name="email" id="email" data-rule="required;email" class="form-control input-lg" placeholder="{:__('Email')}">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">{:__('Username')}</label>
+                        <div class="controls">
+                            <input type="text" id="username" name="username" data-rule="required;username" class="form-control input-lg" placeholder="{:__('Username must be 3 to 30 characters')}">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">{:__('Password')}</label>
+                        <div class="controls">
+                            <input type="password" id="password" name="password" data-rule="required;password" class="form-control input-lg" placeholder="{:__('Password must be 6 to 30 characters')}">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">{:__('Mobile')}</label>
+                        <div class="controls">
+                            <input type="text" id="mobile" name="mobile" data-rule="required;mobile" class="form-control input-lg" placeholder="{:__('Mobile')}">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">{:__('Captcha')}</label>
+                        <div class="controls">
+                            <div class="input-group input-group-lg">
+                                <input type="text" name="captcha" class="form-control" placeholder="{:__('Captcha')}" data-rule="required;length(4)" style="border-radius: 0;" />
+                                <span class="input-group-addon" style="padding:0;border:none;">
+                                <img src="{:captcha_src()}" width="140" height="42" onclick="this.src = '{:captcha_src()}?r=' + Math.random();"/>
+                            </span>
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">{:__('Sign up')}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer" style="clear:both">
+    <!-- FastAdmin是开源程序，建议在您的网站底部保留一个FastAdmin的链接 -->
+    <p class="copyright">Copyright&nbsp;©&nbsp;2017-2018 Powered by <a href="https://www.fastadmin.net" target="_blank">FastAdmin</a> All Rights Reserved {$site.name} {:__('Copyrights')} <!--<a href="https://www.miibeian.gov.cn" target="_blank">{$site.beian}</a>--></p>
+</footer>
+
+{include file="common/script" /}
+
+</body>
+
+</html>

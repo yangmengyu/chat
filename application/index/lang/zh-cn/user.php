@@ -11,7 +11,7 @@ return [
     'Lv'                                    => 'Lv',
     'Score'                                 => '积分',
     'Day'                                   => '天',
-    'Intro'                                 => '个人介绍',
+    'Intro'                                 => '个性签名',
     'Successions'                           => '连续登录',
     'Maxsuccessions'                        => '最长连续登录',
     'Logintime'                             => '登录时间',
@@ -65,4 +65,8 @@ return [
     'Change password failure'               => '修改密码失败',
     'Change password successful'            => '修改密码成功',
     'Chat system initialization failed, please login again'            => '聊天系统初始化失败，请重新登录',
+    'Birthday'            => '生日',
+    'Gender'            => '性别',
+    'Edit email'             => '修改邮箱',
+
 ];

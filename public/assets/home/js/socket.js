@@ -75,10 +75,15 @@
                 //监听聊天窗口的切换
                 layim.on('chatChange', function (res) {
                     var type = res.data.type;
-                    /*console.log(res.data.id)*/
+                    /*console.log(res)*/
                     if (type === 'friend') {
                         //模拟标注好友状态
-                        //layim.setChatStatus('<span style="color:#FF5722;">在线</span>');
+                        if(res.data.status == 'online'){
+                            layim.setChatStatus('<span style="color:#FF5722;">在线</span>');
+                        }else{
+                            layim.setChatStatus('<span style="color:#CCC;">离线</span>');
+                        }
+
                     } else if (type === 'group') {
                         //模拟系统消息
 //                        layim.getMessage({
