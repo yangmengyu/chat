@@ -53,7 +53,7 @@
                         <div class="form-group">
                             <label class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input type="text" class="form-control" readonly  id="username" name="username" value="{$user.username}" data-rule="required;username;remote({:url('api/validate/check_username_available')}, id={$user.id})" placeholder="">
+                                <input type="text" class="form-control" readonly  id="username" name="username" value="{$user.username}" data-rule="{:__('Username')}:required;username;remote({:url('api/validate/check_username_available')}, id={$user.id})" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <label class="control-label col-xs-12 col-sm-2">{:__('Nickname')}:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input type="text" class="form-control" id="nickname" name="nickname" value="{$user.nickname}" data-rule="required" placeholder="">
+                                <input type="text" class="form-control" id="nickname" name="nickname" value="{$user.nickname}" data-rule="{:__('Nickname')}:required" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -97,7 +97,7 @@
                         <div class="form-group layui-form">
                             <label for="c-country" class="control-label col-xs-12 col-sm-2">{:__('Country')}:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <select id="c-country" name="country"  style="display: none" data-rule="required" lay-search>
+                                <select id="c-country" name="country"  style="display: none" data-rule="{:__('Country')}:required" lay-search>
                                     {volist name="countrys" id="vo"}
                                     <option value="{$vo.nicename}" {if $vo.nicename==$user.country}selected{/if}>{$vo.iso}--{:__($vo.nicename,'country')}</option>
                                     {/volist}
@@ -107,13 +107,13 @@
                         <div class="form-group">
                             <label for="c-bio" class="control-label col-xs-12 col-sm-2">{:__('Height')}(cm):</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input id="c-height" data-rule="required:true,digits:true,range[150~220]"  class="form-control" name="height" type="text" value="{$user.height}">
+                                <input id="c-height" data-rule="{:__('Height')}:required:true,digits:true,range[150~220]"  class="form-control" name="height" type="text" value="{$user.height}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="c-bio" class="control-label col-xs-12 col-sm-2">{:__('Weight')}(kg):</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input id="c-weight" data-rule="required:true,digits:true,range[40~200]"  class="form-control" name="weight" type="text" value="{$user.weight}">
+                                <input id="c-weight" data-rule="{:__('Weight')}:required:true,digits:true,range[40~200]"  class="form-control" name="weight" type="text" value="{$user.weight}">
                             </div>
                         </div>
                         <div class="form-group layui-form">
@@ -199,6 +199,7 @@
         margin-right:0;
     }
 </style>
+
 <script>
     layui.use(['laydate','upload','jquery','form'], function(){
         var laydate = layui.laydate,

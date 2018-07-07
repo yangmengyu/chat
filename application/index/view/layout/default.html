@@ -20,7 +20,7 @@
                     <a class="navbar-brand" href="{:url('/')}"><img src="/assets/img/logo.png"  alt=""></a>
                 </div>
                 <div class="collapse navbar-collapse" id="header-navbar">
-                    <ul class="nav navbar-nav navbar-right" >
+                    <ul class="nav navbar-nav pull-right" >
                         <li class="dropdown">
                             {if $user}
                             <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown">
@@ -43,7 +43,7 @@
                         </li>
                         {if $Think.config.lang_switch_on}
                         <li class="dropdown">
-                            <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-fw"></i><span>语言</span> <b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-fw"></i><span>{:__('Languages')}</span> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="?lang=zh-cn"> 简体中文</a></li>
                                 <li><a href="?lang=en"> English</a></li>
