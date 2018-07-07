@@ -164,6 +164,10 @@ class User extends Api
         $avatar = $this->request->request('avatar');
         $birthday = $this->request->request('birthday');
         $gender = $this->request->request('gender');
+        $country = $this->request->request('country');
+        $height = $this->request->request('height');
+        $weight = $this->request->request('weight');
+        $interest = $this->request->request('interest/a');
         $exists = \app\common\model\User::where('username', $username)->where('id', '<>', $this->auth->id)->find();
         if ($exists)
         {
@@ -175,6 +179,10 @@ class User extends Api
         $user->avatar = $avatar;
         $user->birthday = $birthday;
         $user->gender = $gender;
+        $user->country = $country;
+        $user->height = $height;
+        $user->weight = $weight;
+        $user->interest = \GuzzleHttp\json_encode($interest);
         $user->save();
         $this->success(__('Save successful'));
     }

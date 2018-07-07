@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-06 18:26:52
+Date: 2018-07-07 17:36:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,12 +35,12 @@ CREATE TABLE `fa_admin` (
   `status` varchar(30) NOT NULL DEFAULT 'normal' COMMENT '状态',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员表';
 
 -- ----------------------------
 -- Records of fa_admin
 -- ----------------------------
-INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1530865281', '1492186163', '1530865281', '95405371-2e35-42b3-8488-1f5b55781cde', 'normal');
+INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1530937092', '1492186163', '1530937092', '9497ac40-dd48-4342-8fab-196fadf9b8c5', 'normal');
 INSERT INTO `fa_admin` VALUES ('2', 'admin2', 'admin2', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '/assets/img/avatar.png', 'admin2@fastadmin.net', '0', '1505450906', '1492186163', '1505450906', 'df45fdd5-26f4-45ca-83b3-47e4491a315a', 'normal');
 INSERT INTO `fa_admin` VALUES ('3', 'admin3', 'admin3', '1c11f945dfcd808a130a8c2a8753fe62', 'WOKJEn', '/assets/img/avatar.png', 'admin3@fastadmin.net', '0', '1530863546', '1492186201', '1530863607', '', 'normal');
 
@@ -60,7 +60,7 @@ CREATE TABLE `fa_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of fa_admin_log
@@ -270,6 +270,59 @@ INSERT INTO `fa_admin_log` VALUES ('202', '1', 'admin', '/admin/index/index', ''
 INSERT INTO `fa_admin_log` VALUES ('203', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Fcategory%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/category?ref=addtabs\",\"__token__\":\"3b453c722342f8a8ae2ede0e977de310\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530865281');
 INSERT INTO `fa_admin_log` VALUES ('204', '1', 'admin', '/admin/user/rule/add?dialog=1', '会员管理 会员规则 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"0\",\"pid\":\"3\",\"name\":\"index\\/user\\/changeemail\",\"title\":\"\\u4fee\\u6539\\u90ae\\u7bb1\",\"remark\":\"\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530870911');
 INSERT INTO `fa_admin_log` VALUES ('205', '1', 'admin', '/admin/user/group/edit/ids/1?dialog=1', '会员管理 会员分组 编辑', '{\"dialog\":\"1\",\"row\":{\"rules\":\"1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25,26,27\",\"name\":\"\\u9ed8\\u8ba4\\u7ec4\",\"status\":\"normal\"},\"ids\":\"1\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530870917');
+INSERT INTO `fa_admin_log` VALUES ('206', '1', 'admin', '/admin/index/login?url=%2Fadmin', '登录', '{\"url\":\"\\/admin\",\"__token__\":\"0f5714cb3c028f2b6743aa68f8ee8189\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530925913');
+INSERT INTO `fa_admin_log` VALUES ('207', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Fgeneral%2Fconfig%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/general\\/config?ref=addtabs\",\"__token__\":\"4e1b161677509abef9c5253ecddb277c\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530926621');
+INSERT INTO `fa_admin_log` VALUES ('208', '1', 'admin', '/admin/general/config/emailtest?receiver=363126523@qq.com', '', '{\"receiver\":\"363126523@qq.com\",\"row\":{\"mail_type\":\"1\",\"mail_smtp_host\":\"smtp.mxhichina.com\",\"mail_smtp_port\":\"25\",\"mail_smtp_user\":\"xiaoyudian@xydbaby.com\",\"mail_smtp_pass\":\"hcy521...\",\"mail_verify_type\":\"0\",\"mail_from\":\"xiaoyudian@xydbaby.com\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530926718');
+INSERT INTO `fa_admin_log` VALUES ('209', '1', 'admin', '/admin/general.config/edit', '常规管理 系统配置 编辑', '{\"row\":{\"mail_type\":\"1\",\"mail_smtp_host\":\"smtp.mxhichina.com\",\"mail_smtp_port\":\"25\",\"mail_smtp_user\":\"xiaoyudian@xydbaby.com\",\"mail_smtp_pass\":\"hcy521...\",\"mail_verify_type\":\"0\",\"mail_from\":\"xiaoyudian@xydbaby.com\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530926723');
+INSERT INTO `fa_admin_log` VALUES ('210', '1', 'admin', '/admin/general.config/edit', '常规管理 系统配置 编辑', '{\"row\":{\"mail_type\":\"1\",\"mail_smtp_host\":\"smtp.mxhichina.com\",\"mail_smtp_port\":\"25\",\"mail_smtp_user\":\"xiaoyudian@xydbaby.com\",\"mail_smtp_pass\":\"hcy521...\",\"mail_verify_type\":\"0\",\"mail_from\":\"xiaoyudian@xydbaby.com\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530926729');
+INSERT INTO `fa_admin_log` VALUES ('211', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Fgeneral%2Fconfig%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/general\\/config?ref=addtabs\",\"__token__\":\"9c60747101e543489f3737f788dae6a9\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530937092');
+INSERT INTO `fa_admin_log` VALUES ('212', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946427');
+INSERT INTO `fa_admin_log` VALUES ('213', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946483');
+INSERT INTO `fa_admin_log` VALUES ('214', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_country\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946488');
+INSERT INTO `fa_admin_log` VALUES ('215', '1', 'admin', '/admin/command/command/action/command', '', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"table\":\"fa_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946517');
+INSERT INTO `fa_admin_log` VALUES ('216', '1', 'admin', '/admin/command/command/action/execute', '', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"table\":\"fa_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946521');
+INSERT INTO `fa_admin_log` VALUES ('217', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"1\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946526');
+INSERT INTO `fa_admin_log` VALUES ('218', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"2\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946531');
+INSERT INTO `fa_admin_log` VALUES ('219', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"1\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946534');
+INSERT INTO `fa_admin_log` VALUES ('220', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"1\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946539');
+INSERT INTO `fa_admin_log` VALUES ('221', '1', 'admin', '/admin/command/command/action/command', '', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"0\",\"controllerfile_text\":\"\",\"controllerfile\":\"Country.php\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946540');
+INSERT INTO `fa_admin_log` VALUES ('222', '1', 'admin', '/admin/command/command/action/execute', '', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"0\",\"controllerfile_text\":\"\",\"controllerfile\":\"Country.php\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530946541');
+INSERT INTO `fa_admin_log` VALUES ('223', '1', 'admin', '/admin/command/execute/ids/45', '在线命令管理 运行', '{\"ids\":\"45\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948212');
+INSERT INTO `fa_admin_log` VALUES ('224', '1', 'admin', '/admin/command/execute/ids/44', '在线命令管理 运行', '{\"ids\":\"44\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948217');
+INSERT INTO `fa_admin_log` VALUES ('225', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948225');
+INSERT INTO `fa_admin_log` VALUES ('226', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_country\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948231');
+INSERT INTO `fa_admin_log` VALUES ('227', '1', 'admin', '/admin/command/command/action/command', '', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"table\":\"fa_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948235');
+INSERT INTO `fa_admin_log` VALUES ('228', '1', 'admin', '/admin/command/command/action/execute', '', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"table\":\"fa_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948236');
+INSERT INTO `fa_admin_log` VALUES ('229', '1', 'admin', '/admin/country/edit/ids/239?dialog=1', '国家列管理 编辑', '{\"dialog\":\"1\",\"row\":{\"iso\":\"ZW\",\"iso3\":\"ZWE\",\"name\":\"ZIMBABWE\",\"name_zh\":\"\\u6d25\\u5df4\\u5e03\\u97e6\",\"nicename\":\"Zimbabwe\",\"numcode\":\"716\",\"phonecode\":\"263\",\"status\":\"hidden\"},\"ids\":\"239\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948253');
+INSERT INTO `fa_admin_log` VALUES ('230', '1', 'admin', '/admin/country/edit/ids/239?dialog=1', '国家列管理 编辑', '{\"dialog\":\"1\",\"row\":{\"iso\":\"ZW\",\"iso3\":\"ZWE\",\"name\":\"ZIMBABWE\",\"name_zh\":\"\\u6d25\\u5df4\\u5e03\\u97e6\",\"nicename\":\"Zimbabwe\",\"numcode\":\"716\",\"phonecode\":\"263\",\"status\":\"normal\"},\"ids\":\"239\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530948281');
+INSERT INTO `fa_admin_log` VALUES ('231', '1', 'admin', '/admin/general/config/check', '', '{\"row\":{\"name\":\"xingqu\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530950628');
+INSERT INTO `fa_admin_log` VALUES ('232', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951387');
+INSERT INTO `fa_admin_log` VALUES ('233', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_chat_interest\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951396');
+INSERT INTO `fa_admin_log` VALUES ('234', '1', 'admin', '/admin/command/command/action/command', '', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"table\":\"fa_chat_interest\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951408');
+INSERT INTO `fa_admin_log` VALUES ('235', '1', 'admin', '/admin/command/command/action/execute', '', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"table\":\"fa_chat_interest\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951412');
+INSERT INTO `fa_admin_log` VALUES ('236', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951430');
+INSERT INTO `fa_admin_log` VALUES ('237', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"1\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951434');
+INSERT INTO `fa_admin_log` VALUES ('238', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"1\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951438');
+INSERT INTO `fa_admin_log` VALUES ('239', '1', 'admin', '/admin/command/command/action/command', '', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"0\",\"controllerfile_text\":\"\",\"controllerfile\":\"chat\\\\Interest.php\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951440');
+INSERT INTO `fa_admin_log` VALUES ('240', '1', 'admin', '/admin/auth/rule/add?dialog=1', '权限管理 菜单规则 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"0\",\"name\":\"chat\",\"title\":\"\\u804a\\u5929\\u7ba1\\u7406\",\"icon\":\"fa fa-comment\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951494');
+INSERT INTO `fa_admin_log` VALUES ('241', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951495');
+INSERT INTO `fa_admin_log` VALUES ('242', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951511');
+INSERT INTO `fa_admin_log` VALUES ('243', '1', 'admin', '/admin/command/command/action/command', '', '{\"commandtype\":\"menu\",\"allcontroller\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"controllerfile_text\":\"\",\"controllerfile\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951522');
+INSERT INTO `fa_admin_log` VALUES ('244', '1', 'admin', '/admin/command/command/action/execute', '', '{\"commandtype\":\"menu\",\"allcontroller\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"controllerfile_text\":\"\",\"controllerfile\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951525');
+INSERT INTO `fa_admin_log` VALUES ('245', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951589');
+INSERT INTO `fa_admin_log` VALUES ('246', '1', 'admin', '/admin/auth/rule/del/ids/133', '权限管理 规则管理 删除', '{\"action\":\"del\",\"ids\":\"133\",\"params\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951653');
+INSERT INTO `fa_admin_log` VALUES ('247', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951654');
+INSERT INTO `fa_admin_log` VALUES ('248', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951660');
+INSERT INTO `fa_admin_log` VALUES ('249', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_chat_country\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951664');
+INSERT INTO `fa_admin_log` VALUES ('250', '1', 'admin', '/admin/command/command/action/command', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"table\":\"fa_chat_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951670');
+INSERT INTO `fa_admin_log` VALUES ('251', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"table\":\"fa_chat_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951671');
+INSERT INTO `fa_admin_log` VALUES ('252', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951675');
+INSERT INTO `fa_admin_log` VALUES ('253', '1', 'admin', '/admin/command/command/action/command', '在线命令管理 执行命令', '{\"commandtype\":\"menu\",\"allcontroller\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"controllerfile_text\":\"\",\"controllerfile\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951678');
+INSERT INTO `fa_admin_log` VALUES ('254', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"menu\",\"allcontroller\":\"1\",\"delete\":\"0\",\"force\":\"0\",\"controllerfile_text\":\"\",\"controllerfile\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951681');
+INSERT INTO `fa_admin_log` VALUES ('255', '1', 'admin', '/admin/chat/interest/add?dialog=1', 'chat 兴趣列管理 添加', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u7f8e\\u5bb9\",\"name_en\":\"hairdressing\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951897');
+INSERT INTO `fa_admin_log` VALUES ('256', '1', 'admin', '/admin/chat/interest/edit/ids/1?dialog=1', 'chat 兴趣列管理 编辑', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u7f8e\\u5bb9\",\"name_en\":\"hairdressing\",\"status\":\"normal\"},\"ids\":\"1\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530951986');
+INSERT INTO `fa_admin_log` VALUES ('257', '1', 'admin', '/admin/chat/interest/add?dialog=1', 'chat 兴趣列管理 添加', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u7267\\u4e1a\",\"name_en\":\"animal husbandry \",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530952029');
+INSERT INTO `fa_admin_log` VALUES ('258', '1', 'admin', '/admin/chat/interest/edit/ids/2?dialog=1', 'chat 兴趣列管理 编辑', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u7267\\u4e1a\",\"name_en\":\"animal husbandry\",\"status\":\"normal\"},\"ids\":\"2\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1530952270');
 
 -- ----------------------------
 -- Table structure for fa_area
@@ -4100,7 +4153,7 @@ CREATE TABLE `fa_auth_group` (
   `updatetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` varchar(30) NOT NULL DEFAULT '' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='分组表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='分组表';
 
 -- ----------------------------
 -- Records of fa_auth_group
@@ -4150,108 +4203,126 @@ CREATE TABLE `fa_auth_rule` (
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `pid` (`pid`),
   KEY `weigh` (`weigh`)
-) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
+) ENGINE=InnoDB AUTO_INCREMENT=335 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
 
 -- ----------------------------
 -- Records of fa_auth_rule
 -- ----------------------------
-INSERT INTO `fa_auth_rule` VALUES ('1', 'file', '0', 'dashboard', '控制台', 'fa fa-dashboard', '', 'Dashboard tips', '1', '1497429920', '1530863981', '143', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('2', 'file', '0', 'general', 'General', 'fa fa-cogs', '', '', '1', '1497429920', '1497430169', '137', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('3', 'file', '0', 'category', 'Category', 'fa fa-list', '', 'Category tips', '1', '1497429920', '1497429920', '119', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('4', 'file', '0', 'addon', 'Addon', 'fa fa-rocket', '', 'Addon tips', '1', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('5', 'file', '0', 'auth', 'Auth', 'fa fa-group', '', '', '1', '1497429920', '1497430092', '99', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('6', 'file', '2', 'general/config', 'Config', 'fa fa-cog', '', 'Config tips', '1', '1497429920', '1497430683', '60', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('7', 'file', '2', 'general/attachment', 'Attachment', 'fa fa-file-image-o', '', 'Attachment tips', '1', '1497429920', '1497430699', '53', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('8', 'file', '2', 'general/profile', 'Profile', 'fa fa-user', '', '', '1', '1497429920', '1497429920', '34', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('9', 'file', '5', 'auth/admin', 'Admin', 'fa fa-user', '', 'Admin tips', '1', '1497429920', '1497430320', '118', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('10', 'file', '5', 'auth/adminlog', 'Admin log', 'fa fa-list-alt', '', 'Admin log tips', '1', '1497429920', '1497430307', '113', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('11', 'file', '5', 'auth/group', 'Group', 'fa fa-group', '', 'Group tips', '1', '1497429920', '1497429920', '109', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('12', 'file', '5', 'auth/rule', 'Rule', 'fa fa-bars', '', 'Rule tips', '1', '1497429920', '1497430581', '104', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('13', 'file', '1', 'dashboard/index', 'View', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '136', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('14', 'file', '1', 'dashboard/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '135', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('15', 'file', '1', 'dashboard/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '133', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('16', 'file', '1', 'dashboard/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '134', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('17', 'file', '1', 'dashboard/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '132', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('18', 'file', '6', 'general/config/index', 'View', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '52', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('19', 'file', '6', 'general/config/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '51', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('20', 'file', '6', 'general/config/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '50', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('21', 'file', '6', 'general/config/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '49', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('22', 'file', '6', 'general/config/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '48', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('23', 'file', '7', 'general/attachment/index', 'View', 'fa fa-circle-o', '', 'Attachment tips', '0', '1497429920', '1497429920', '59', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('24', 'file', '7', 'general/attachment/select', 'Select attachment', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '58', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('25', 'file', '7', 'general/attachment/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '57', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('26', 'file', '7', 'general/attachment/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '56', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('27', 'file', '7', 'general/attachment/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '55', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('28', 'file', '7', 'general/attachment/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '54', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('29', 'file', '8', 'general/profile/index', 'View', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '33', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('30', 'file', '8', 'general/profile/update', 'Update profile', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '32', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('31', 'file', '8', 'general/profile/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '31', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('32', 'file', '8', 'general/profile/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '30', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('33', 'file', '8', 'general/profile/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '29', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('34', 'file', '8', 'general/profile/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '28', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('35', 'file', '3', 'category/index', 'View', 'fa fa-circle-o', '', 'Category tips', '0', '1497429920', '1497429920', '142', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('36', 'file', '3', 'category/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '141', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('37', 'file', '3', 'category/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '140', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('38', 'file', '3', 'category/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '139', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('39', 'file', '3', 'category/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '138', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('40', 'file', '9', 'auth/admin/index', 'View', 'fa fa-circle-o', '', 'Admin tips', '0', '1497429920', '1497429920', '117', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('41', 'file', '9', 'auth/admin/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '116', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('42', 'file', '9', 'auth/admin/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '115', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('43', 'file', '9', 'auth/admin/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '114', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('44', 'file', '10', 'auth/adminlog/index', 'View', 'fa fa-circle-o', '', 'Admin log tips', '0', '1497429920', '1497429920', '112', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('45', 'file', '10', 'auth/adminlog/detail', 'Detail', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '111', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('46', 'file', '10', 'auth/adminlog/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '110', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('47', 'file', '11', 'auth/group/index', 'View', 'fa fa-circle-o', '', 'Group tips', '0', '1497429920', '1497429920', '108', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('48', 'file', '11', 'auth/group/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '107', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('49', 'file', '11', 'auth/group/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '106', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('50', 'file', '11', 'auth/group/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '105', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('51', 'file', '12', 'auth/rule/index', 'View', 'fa fa-circle-o', '', 'Rule tips', '0', '1497429920', '1497429920', '103', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('52', 'file', '12', 'auth/rule/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '102', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('53', 'file', '12', 'auth/rule/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '101', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('54', 'file', '12', 'auth/rule/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '100', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('55', 'file', '4', 'addon/index', 'View', 'fa fa-circle-o', '', 'Addon tips', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('56', 'file', '4', 'addon/add', 'Add', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('57', 'file', '4', 'addon/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('58', 'file', '4', 'addon/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('59', 'file', '4', 'addon/local', 'Local install', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('60', 'file', '4', 'addon/state', 'Update state', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('61', 'file', '4', 'addon/install', 'Install', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('62', 'file', '4', 'addon/uninstall', 'Uninstall', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('63', 'file', '4', 'addon/config', 'Setting', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('64', 'file', '4', 'addon/refresh', 'Refresh', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('65', 'file', '4', 'addon/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1502035509', '1502035509', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('66', 'file', '0', 'user', 'User', 'fa fa-list', '', '', '1', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('67', 'file', '66', 'user/user', 'User', 'fa fa-user', '', '', '1', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('68', 'file', '67', 'user/user/index', 'View', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('69', 'file', '67', 'user/user/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('70', 'file', '67', 'user/user/add', 'Add', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('71', 'file', '67', 'user/user/del', 'Del', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('72', 'file', '67', 'user/user/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('73', 'file', '66', 'user/group', 'User group', 'fa fa-users', '', '', '1', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('74', 'file', '73', 'user/group/add', 'Add', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('75', 'file', '73', 'user/group/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('76', 'file', '73', 'user/group/index', 'View', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('77', 'file', '73', 'user/group/del', 'Del', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('78', 'file', '73', 'user/group/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('79', 'file', '66', 'user/rule', 'User rule', 'fa fa-circle-o', '', '', '1', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('80', 'file', '79', 'user/rule/index', 'View', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('81', 'file', '79', 'user/rule/del', 'Del', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('82', 'file', '79', 'user/rule/add', 'Add', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('83', 'file', '79', 'user/rule/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('84', 'file', '79', 'user/rule/multi', 'Multi', 'fa fa-circle-o', '', '', '0', '1516374729', '1516374729', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('85', 'file', '0', 'command', '在线命令管理', 'fa fa-terminal', '', '', '1', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('86', 'file', '85', 'command/index', '查看', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('87', 'file', '85', 'command/add', '添加', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('88', 'file', '85', 'command/detail', '详情', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('89', 'file', '85', 'command/execute', '运行', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('90', 'file', '85', 'command/del', '删除', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('91', 'file', '85', 'command/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530339676', '1530339676', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('92', 'file', '2', 'general/crontab', '定时任务', 'fa fa-tasks', '', '类似于Linux的Crontab定时任务,可以按照设定的时间进行任务的执行,目前仅支持三种任务:请求URL、执行SQL、执行Shell', '1', '1530780437', '1530780437', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('93', 'file', '92', 'general/crontab/index', '查看', 'fa fa-circle-o', '', '', '0', '1530780437', '1530780437', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('94', 'file', '92', 'general/crontab/add', '添加', 'fa fa-circle-o', '', '', '0', '1530780437', '1530780437', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('95', 'file', '92', 'general/crontab/edit', '编辑 ', 'fa fa-circle-o', '', '', '0', '1530780437', '1530780437', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('96', 'file', '92', 'general/crontab/del', '删除', 'fa fa-circle-o', '', '', '0', '1530780437', '1530780437', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('97', 'file', '92', 'general/crontab/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530780437', '1530780437', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('220', 'file', '0', 'addon', '插件管理', 'fa fa-circle-o\r', '', '可在线安装、卸载、禁用、启用插件，同时支持添加本地插件。FastAdmin已上线插件商店 ，你可以发布你的免费或付费插件：<a href=\"https://www.fastadmin.net/store.html\" target=\"_blank\">https://www.fastadmin.net/store.html</a>\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('221', 'file', '220', 'addon/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('222', 'file', '220', 'addon/config', '配置', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('223', 'file', '220', 'addon/install', '安装', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('224', 'file', '220', 'addon/uninstall', '卸载', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('225', 'file', '220', 'addon/state', '禁用启用', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('226', 'file', '220', 'addon/local', '本地上传', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('227', 'file', '220', 'addon/upgrade', '更新插件', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('228', 'file', '220', 'addon/downloaded', '已装插件', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('229', 'file', '220', 'addon/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('230', 'file', '220', 'addon/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('231', 'file', '220', 'addon/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('232', 'file', '220', 'addon/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('233', 'file', '0', 'category', '分类管理', 'fa fa-list\r', '', '用于统一管理网站的所有分类,分类可进行无限级分类\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('234', 'file', '233', 'category/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('235', 'file', '233', 'category/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('236', 'file', '233', 'category/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('237', 'file', '233', 'category/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('238', 'file', '233', 'category/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('239', 'file', '0', 'command', '在线命令管理', 'fa fa-circle-o', '', '', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('240', 'file', '239', 'command/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('241', 'file', '239', 'command/detail', '详情', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('242', 'file', '239', 'command/execute', '执行', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('243', 'file', '239', 'command/command', '执行命令', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('244', 'file', '239', 'command/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('245', 'file', '239', 'command/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('246', 'file', '239', 'command/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('247', 'file', '239', 'command/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('248', 'file', '0', 'dashboard', '控制台', 'fa fa-dashboard\r', '', '用于展示当前系统中的统计数据、统计报表及重要实时数据\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('249', 'file', '248', 'dashboard/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('250', 'file', '248', 'dashboard/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('251', 'file', '248', 'dashboard/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('252', 'file', '248', 'dashboard/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('253', 'file', '248', 'dashboard/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('254', 'file', '0', 'auth', 'auth', 'fa fa-list', '', '', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('255', 'file', '254', 'auth/admin', '管理员管理', 'fa fa-users\r', '', '一个管理员可以有多个角色组,左侧的菜单根据管理员所拥有的权限进行生成\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('256', 'file', '255', 'auth/admin/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('257', 'file', '255', 'auth/admin/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('258', 'file', '255', 'auth/admin/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('259', 'file', '255', 'auth/admin/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('260', 'file', '254', 'auth/adminlog', '管理员日志', 'fa fa-users\r', '', '管理员可以查看自己所拥有的权限的管理员日志\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('261', 'file', '260', 'auth/adminlog/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('262', 'file', '260', 'auth/adminlog/detail', '详情', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('263', 'file', '260', 'auth/adminlog/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('264', 'file', '260', 'auth/adminlog/selectpage', 'Selectpage', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('265', 'file', '254', 'auth/group', '角色组', 'fa fa-group\r', '', '角色组可以有多个,角色有上下级层级关系,如果子角色有角色组和管理员的权限则可以派生属于自己组别下级的角色组或管理员\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('266', 'file', '265', 'auth/group/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('267', 'file', '265', 'auth/group/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('268', 'file', '265', 'auth/group/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('269', 'file', '265', 'auth/group/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('270', 'file', '254', 'auth/rule', '规则管理', 'fa fa-list\r', '', '规则通常对应一个控制器的方法,同时左侧的菜单栏数据也从规则中体现,通常建议通过控制台进行生成规则节点\r', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('271', 'file', '270', 'auth/rule/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('272', 'file', '270', 'auth/rule/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('273', 'file', '270', 'auth/rule/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('274', 'file', '270', 'auth/rule/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('275', 'file', '270', 'auth/rule/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('276', 'file', '0', 'chat', 'chat', 'fa fa-list', '', '', '1', '1530951679', '1530951679', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('277', 'file', '276', 'chat/country', '国家列管理', 'fa fa-circle-o\r', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('278', 'file', '277', 'chat/country/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('279', 'file', '277', 'chat/country/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('280', 'file', '277', 'chat/country/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('281', 'file', '277', 'chat/country/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('282', 'file', '277', 'chat/country/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('283', 'file', '276', 'chat/interest', '兴趣列管理', 'fa fa-circle-o\r', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('284', 'file', '283', 'chat/interest/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('285', 'file', '283', 'chat/interest/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('286', 'file', '283', 'chat/interest/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('287', 'file', '283', 'chat/interest/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('288', 'file', '283', 'chat/interest/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('289', 'file', '0', 'general', 'general', 'fa fa-list', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('290', 'file', '289', 'general/attachment', '附件管理', 'fa fa-circle-o\r', '', '主要用于管理上传到又拍云的数据或上传至本服务的上传数据\r', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('291', 'file', '290', 'general/attachment/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('292', 'file', '290', 'general/attachment/select', '选择附件', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('293', 'file', '290', 'general/attachment/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('294', 'file', '290', 'general/attachment/del', '删除附件', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('295', 'file', '290', 'general/attachment/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('296', 'file', '290', 'general/attachment/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('297', 'file', '289', 'general/config', '系统配置', 'fa fa-cogs\r', '', '可以在此增改系统的变量和分组,也可以自定义分组和变量,如果需要删除请从数据库中删除\r', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('298', 'file', '297', 'general/config/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('299', 'file', '297', 'general/config/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('300', 'file', '297', 'general/config/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('301', 'file', '297', 'general/config/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('302', 'file', '297', 'general/config/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('303', 'file', '289', 'general/crontab', '定时任务', 'fa fa-tasks', '', '类似于Linux的Crontab定时任务,可以按照设定的时间进行任务的执行,目前仅支持三种任务:请求URL、执行SQL、执行Shell', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('304', 'file', '303', 'general/crontab/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('305', 'file', '303', 'general/crontab/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('306', 'file', '303', 'general/crontab/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('307', 'file', '303', 'general/crontab/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('308', 'file', '303', 'general/crontab/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('309', 'file', '289', 'general/profile', '个人配置', 'fa fa-user\r', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('310', 'file', '309', 'general/profile/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('311', 'file', '309', 'general/profile/update', '更新个人信息', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('312', 'file', '309', 'general/profile/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('313', 'file', '309', 'general/profile/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('314', 'file', '309', 'general/profile/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('315', 'file', '309', 'general/profile/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('316', 'file', '0', 'user', 'user', 'fa fa-list', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('317', 'file', '316', 'user/group', '会员组管理', 'fa fa-users\r', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('318', 'file', '317', 'user/group/add', 'Add', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('319', 'file', '317', 'user/group/edit', 'Edit', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('320', 'file', '317', 'user/group/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('321', 'file', '317', 'user/group/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('322', 'file', '317', 'user/group/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('323', 'file', '316', 'user/rule', '会员规则管理', 'fa fa-circle-o\r', '', '', '1', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('324', 'file', '323', 'user/rule/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('325', 'file', '323', 'user/rule/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('326', 'file', '323', 'user/rule/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('327', 'file', '323', 'user/rule/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('328', 'file', '323', 'user/rule/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951680', '1530951680', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('329', 'file', '316', 'user/user', '会员管理', 'fa fa-user\r', '', '', '1', '1530951681', '1530951681', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('330', 'file', '329', 'user/user/index', '查看', 'fa fa-circle-o', '', '', '0', '1530951681', '1530951681', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('331', 'file', '329', 'user/user/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1530951681', '1530951681', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('332', 'file', '329', 'user/user/add', '添加', 'fa fa-circle-o', '', '', '0', '1530951681', '1530951681', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('333', 'file', '329', 'user/user/del', '删除', 'fa fa-circle-o', '', '', '0', '1530951681', '1530951681', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('334', 'file', '329', 'user/user/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1530951681', '1530951681', '0', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_category
@@ -4312,6 +4383,284 @@ CREATE TABLE `fa_chatlog` (
 -- ----------------------------
 -- Records of fa_chatlog
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for fa_chat_country
+-- ----------------------------
+DROP TABLE IF EXISTS `fa_chat_country`;
+CREATE TABLE `fa_chat_country` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `iso` char(2) NOT NULL COMMENT '国际代码',
+  `iso3` char(3) DEFAULT NULL COMMENT '国际代码3',
+  `name` varchar(80) NOT NULL COMMENT '国家名称(大写)',
+  `name_zh` varchar(80) DEFAULT NULL COMMENT '国家名称(中文)',
+  `nicename` varchar(80) NOT NULL COMMENT '国家名称(小写)',
+  `numcode` smallint(6) DEFAULT NULL COMMENT '数字代码',
+  `phonecode` int(5) NOT NULL COMMENT '国际区号',
+  `status` enum('normal','hidden') DEFAULT 'normal' COMMENT '状态',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8 COMMENT='国家列表';
+
+-- ----------------------------
+-- Records of fa_chat_country
+-- ----------------------------
+INSERT INTO `fa_chat_country` VALUES ('1', 'AF', 'AFG', 'AFGHANISTAN', '阿富汗', 'Afghanistan', '4', '93', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('2', 'AL', 'ALB', 'ALBANIA', '阿尔巴尼亚', 'Albania', '8', '355', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('3', 'DZ', 'DZA', 'ALGERIA', '阿尔及利亚', 'Algeria', '12', '213', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('4', 'AS', 'ASM', 'AMERICAN SAMOA', '美属萨摩亚', 'American Samoa', '16', '1684', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('5', 'AD', 'AND', 'ANDORRA', '安道尔', 'Andorra', '20', '376', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('6', 'AO', 'AGO', 'ANGOLA', '安哥拉', 'Angola', '24', '244', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('7', 'AI', 'AIA', 'ANGUILLA', '安圭拉岛', 'Anguilla', '660', '1264', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('8', 'AQ', null, 'ANTARCTICA', '南极洲', 'Antarctica', null, '0', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('9', 'AG', 'ATG', 'ANTIGUA AND BARBUDA', '安提瓜岛和巴布达', 'Antigua and Barbuda', '28', '1268', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('10', 'AR', 'ARG', 'ARGENTINA', '阿根廷', 'Argentina', '32', '54', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('11', 'AM', 'ARM', 'ARMENIA', '亚美尼亚', 'Armenia', '51', '374', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('12', 'AW', 'ABW', 'ARUBA', '阿鲁巴岛', 'Aruba', '533', '297', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('13', 'AU', 'AUS', 'AUSTRALIA', '澳大利亚', 'Australia', '36', '61', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('14', 'AT', 'AUT', 'AUSTRIA', '奥地利', 'Austria', '40', '43', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('15', 'AZ', 'AZE', 'AZERBAIJAN', '阿塞拜疆', 'Azerbaijan', '31', '994', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('16', 'BS', 'BHS', 'BAHAMAS', '巴哈马群岛', 'Bahamas', '44', '1242', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('17', 'BH', 'BHR', 'BAHRAIN', '巴林', 'Bahrain', '48', '973', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('18', 'BD', 'BGD', 'BANGLADESH', '孟加拉国', 'Bangladesh', '50', '880', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('19', 'BB', 'BRB', 'BARBADOS', '巴巴多斯', 'Barbados', '52', '1246', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('20', 'BY', 'BLR', 'BELARUS', '白俄罗斯', 'Belarus', '112', '375', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('21', 'BE', 'BEL', 'BELGIUM', '比利时', 'Belgium', '56', '32', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('22', 'BZ', 'BLZ', 'BELIZE', '伯利兹', 'Belize', '84', '501', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('23', 'BJ', 'BEN', 'BENIN', '贝宁', 'Benin', '204', '229', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('24', 'BM', 'BMU', 'BERMUDA', '百慕大', 'Bermuda', '60', '1441', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('25', 'BT', 'BTN', 'BHUTAN', '不丹', 'Bhutan', '64', '975', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('26', 'BO', 'BOL', 'BOLIVIA', '玻利维亚', 'Bolivia', '68', '591', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('27', 'BA', 'BIH', 'BOSNIA AND HERZEGOVINA', '波斯尼亚和黑塞哥维那', 'Bosnia and Herzegovina', '70', '387', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('28', 'BW', 'BWA', 'BOTSWANA', '博茨瓦纳', 'Botswana', '72', '267', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('29', 'BV', null, 'BOUVET ISLAND', '布维岛', 'Bouvet Island', null, '0', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('30', 'BR', 'BRA', 'BRAZIL', '巴西', 'Brazil', '76', '55', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('31', 'IO', null, 'BRITISH INDIAN OCEAN TERRITORY', '英属印度洋领地', 'British Indian Ocean Territory', null, '246', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('32', 'BN', 'BRN', 'BRUNEI DARUSSALAM', '文莱达鲁萨兰国', 'Brunei Darussalam', '96', '673', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('33', 'BG', 'BGR', 'BULGARIA', '保加利亚', 'Bulgaria', '100', '359', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('34', 'BF', 'BFA', 'BURKINA FASO', '布吉纳法索', 'Burkina Faso', '854', '226', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('35', 'BI', 'BDI', 'BURUNDI', '布隆迪', 'Burundi', '108', '257', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('36', 'KH', 'KHM', 'CAMBODIA', '柬埔寨', 'Cambodia', '116', '855', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('37', 'CM', 'CMR', 'CAMEROON', '喀麦隆', 'Cameroon', '120', '237', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('38', 'CA', 'CAN', 'CANADA', '加拿大', 'Canada', '124', '1', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('39', 'CV', 'CPV', 'CAPE VERDE', '佛得角', 'Cape Verde', '132', '238', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('40', 'KY', 'CYM', 'CAYMAN ISLANDS', '开曼群岛', 'Cayman Islands', '136', '1345', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('41', 'CF', 'CAF', 'CENTRAL AFRICAN REPUBLIC', '中非共和国', 'Central African Republic', '140', '236', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('42', 'TD', 'TCD', 'CHAD', '乍得', 'Chad', '148', '235', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('43', 'CL', 'CHL', 'CHILE', '智利', 'Chile', '152', '56', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('44', 'CN', 'CHN', 'CHINA', '中国', 'China', '156', '86', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('45', 'CX', null, 'CHRISTMAS ISLAND', '圣诞岛', 'Christmas Island', null, '61', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('46', 'CC', null, 'COCOS (KEELING) ISLANDS', 'COCOS(KEELING)岛', 'Cocos (Keeling) Islands', null, '672', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('47', 'CO', 'COL', 'COLOMBIA', '哥伦比亚', 'Colombia', '170', '57', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('48', 'KM', 'COM', 'COMOROS', '科摩罗', 'Comoros', '174', '269', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('49', 'CG', 'COG', 'CONGO', '刚果', 'Congo', '178', '242', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('50', 'CD', 'COD', 'CONGO, THE DEMOCRATIC REPUBLIC OF THE', '刚果民主共和国的', 'Congo, the Democratic Republic of the', '180', '242', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('51', 'CK', 'COK', 'COOK ISLANDS', '库克群岛', 'Cook Islands', '184', '682', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('52', 'CR', 'CRI', 'COSTA RICA', '哥斯达黎加', 'Costa Rica', '188', '506', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('53', 'CI', 'CIV', 'COTE D\'IVOIRE', '科特迪瓦', 'Cote D\'Ivoire', '384', '225', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('54', 'HR', 'HRV', 'CROATIA', '克罗地亚', 'Croatia', '191', '385', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('55', 'CU', 'CUB', 'CUBA', '古巴', 'Cuba', '192', '53', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('56', 'CY', 'CYP', 'CYPRUS', '塞浦路斯', 'Cyprus', '196', '357', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('57', 'CZ', 'CZE', 'CZECH REPUBLIC', '捷克共和国', 'Czech Republic', '203', '420', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('58', 'DK', 'DNK', 'DENMARK', '丹麦', 'Denmark', '208', '45', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('59', 'DJ', 'DJI', 'DJIBOUTI', '吉布提', 'Djibouti', '262', '253', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('60', 'DM', 'DMA', 'DOMINICA', '多米尼加', 'Dominica', '212', '1767', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('61', 'DO', 'DOM', 'DOMINICAN REPUBLIC', '多米尼加共和国', 'Dominican Republic', '214', '1809', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('62', 'EC', 'ECU', 'ECUADOR', '厄瓜多尔', 'Ecuador', '218', '593', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('63', 'EG', 'EGY', 'EGYPT', '埃及', 'Egypt', '818', '20', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('64', 'SV', 'SLV', 'EL SALVADOR', '萨尔瓦多', 'El Salvador', '222', '503', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('65', 'GQ', 'GNQ', 'EQUATORIAL GUINEA', '赤道几内亚', 'Equatorial Guinea', '226', '240', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('66', 'ER', 'ERI', 'ERITREA', '厄立特里亚', 'Eritrea', '232', '291', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('67', 'EE', 'EST', 'ESTONIA', '爱沙尼亚', 'Estonia', '233', '372', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('68', 'ET', 'ETH', 'ETHIOPIA', '埃塞俄比亚', 'Ethiopia', '231', '251', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('69', 'FK', 'FLK', 'FALKLAND ISLANDS (MALVINAS)', '福克兰群岛(马尔维纳斯)', 'Falkland Islands (Malvinas)', '238', '500', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('70', 'FO', 'FRO', 'FAROE ISLANDS', '法罗群岛', 'Faroe Islands', '234', '298', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('71', 'FJ', 'FJI', 'FIJI', '斐济', 'Fiji', '242', '679', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('72', 'FI', 'FIN', 'FINLAND', '芬兰', 'Finland', '246', '358', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('73', 'FR', 'FRA', 'FRANCE', '法国', 'France', '250', '33', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('74', 'GF', 'GUF', 'FRENCH GUIANA', '法属圭亚那', 'French Guiana', '254', '594', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('75', 'PF', 'PYF', 'FRENCH POLYNESIA', '法属波利尼西亚', 'French Polynesia', '258', '689', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('76', 'TF', null, 'FRENCH SOUTHERN TERRITORIES', '法国南部地区', 'French Southern Territories', null, '0', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('77', 'GA', 'GAB', 'GABON', '加蓬', 'Gabon', '266', '241', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('78', 'GM', 'GMB', 'GAMBIA', '冈比亚', 'Gambia', '270', '220', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('79', 'GE', 'GEO', 'GEORGIA', '乔治亚州', 'Georgia', '268', '995', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('80', 'DE', 'DEU', 'GERMANY', '德国', 'Germany', '276', '49', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('81', 'GH', 'GHA', 'GHANA', '加纳', 'Ghana', '288', '233', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('82', 'GI', 'GIB', 'GIBRALTAR', '直布罗陀', 'Gibraltar', '292', '350', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('83', 'GR', 'GRC', 'GREECE', '希腊', 'Greece', '300', '30', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('84', 'GL', 'GRL', 'GREENLAND', '格陵兰岛', 'Greenland', '304', '299', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('85', 'GD', 'GRD', 'GRENADA', '格林纳达', 'Grenada', '308', '1473', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('86', 'GP', 'GLP', 'GUADELOUPE', '瓜德罗普岛', 'Guadeloupe', '312', '590', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('87', 'GU', 'GUM', 'GUAM', '关岛', 'Guam', '316', '1671', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('88', 'GT', 'GTM', 'GUATEMALA', '危地马拉', 'Guatemala', '320', '502', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('89', 'GN', 'GIN', 'GUINEA', '几内亚', 'Guinea', '324', '224', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('90', 'GW', 'GNB', 'GUINEA-BISSAU', '几内亚比绍', 'Guinea-Bissau', '624', '245', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('91', 'GY', 'GUY', 'GUYANA', '圭亚那', 'Guyana', '328', '592', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('92', 'HT', 'HTI', 'HAITI', '海地', 'Haiti', '332', '509', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('93', 'HM', null, 'HEARD ISLAND AND MCDONALD ISLANDS', '听到岛和麦当劳的岛屿', 'Heard Island and Mcdonald Islands', null, '0', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('94', 'VA', 'VAT', 'HOLY SEE (VATICAN CITY STATE)', '教廷(梵蒂冈)', 'Holy See (Vatican City State)', '336', '39', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('95', 'HN', 'HND', 'HONDURAS', '洪都拉斯', 'Honduras', '340', '504', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('96', 'HK', 'HKG', 'HONG KONG', '香港', 'Hong Kong', '344', '852', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('97', 'HU', 'HUN', 'HUNGARY', '匈牙利', 'Hungary', '348', '36', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('98', 'IS', 'ISL', 'ICELAND', '冰岛', 'Iceland', '352', '354', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('99', 'IN', 'IND', 'INDIA', '印度', 'India', '356', '91', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('100', 'ID', 'IDN', 'INDONESIA', '印尼', 'Indonesia', '360', '62', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('101', 'IR', 'IRN', 'IRAN, ISLAMIC REPUBLIC OF', '伊朗伊斯兰共和国', 'Iran, Islamic Republic of', '364', '98', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('102', 'IQ', 'IRQ', 'IRAQ', '伊拉克', 'Iraq', '368', '964', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('103', 'IE', 'IRL', 'IRELAND', '爱尔兰', 'Ireland', '372', '353', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('104', 'IL', 'ISR', 'ISRAEL', '以色列', 'Israel', '376', '972', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('105', 'IT', 'ITA', 'ITALY', '意大利', 'Italy', '380', '39', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('106', 'JM', 'JAM', 'JAMAICA', '牙买加', 'Jamaica', '388', '1876', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('107', 'JP', 'JPN', 'JAPAN', '日本', 'Japan', '392', '81', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('108', 'JO', 'JOR', 'JORDAN', '约旦', 'Jordan', '400', '962', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('109', 'KZ', 'KAZ', 'KAZAKHSTAN', '哈萨克斯坦', 'Kazakhstan', '398', '7', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('110', 'KE', 'KEN', 'KENYA', '肯尼亚', 'Kenya', '404', '254', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('111', 'KI', 'KIR', 'KIRIBATI', '基里巴斯', 'Kiribati', '296', '686', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('112', 'KP', 'PRK', 'KOREA, DEMOCRATIC PEOPLE\'S REPUBLIC OF', '朝鲜民主主义人民共和国', 'Korea, Democratic People\'s Republic of', '408', '850', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('113', 'KR', 'KOR', 'KOREA, REPUBLIC OF', '朝鲜共和国', 'Korea, Republic of', '410', '82', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('114', 'KW', 'KWT', 'KUWAIT', '科威特', 'Kuwait', '414', '965', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('115', 'KG', 'KGZ', 'KYRGYZSTAN', '吉尔吉斯斯坦', 'Kyrgyzstan', '417', '996', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('116', 'LA', 'LAO', 'LAO PEOPLE\'S DEMOCRATIC REPUBLIC', '老挝人民民主共和国', 'Lao People\'s Democratic Republic', '418', '856', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('117', 'LV', 'LVA', 'LATVIA', '拉脱维亚', 'Latvia', '428', '371', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('118', 'LB', 'LBN', 'LEBANON', '黎巴嫩', 'Lebanon', '422', '961', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('119', 'LS', 'LSO', 'LESOTHO', '莱索托', 'Lesotho', '426', '266', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('120', 'LR', 'LBR', 'LIBERIA', '利比里亚', 'Liberia', '430', '231', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('121', 'LY', 'LBY', 'LIBYAN ARAB JAMAHIRIYA', '阿拉伯利比亚民众国', 'Libyan Arab Jamahiriya', '434', '218', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('122', 'LI', 'LIE', 'LIECHTENSTEIN', '列支敦斯登', 'Liechtenstein', '438', '423', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('123', 'LT', 'LTU', 'LITHUANIA', '立陶宛', 'Lithuania', '440', '370', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('124', 'LU', 'LUX', 'LUXEMBOURG', '卢森堡', 'Luxembourg', '442', '352', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('125', 'MO', 'MAC', 'MACAO', '澳门', 'Macao', '446', '853', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('126', 'MK', 'MKD', 'MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF', '前南斯拉夫马其顿共和国', 'Macedonia, the Former Yugoslav Republic of', '807', '389', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('127', 'MG', 'MDG', 'MADAGASCAR', '马达加斯加', 'Madagascar', '450', '261', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('128', 'MW', 'MWI', 'MALAWI', '马拉维', 'Malawi', '454', '265', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('129', 'MY', 'MYS', 'MALAYSIA', '马来西亚', 'Malaysia', '458', '60', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('130', 'MV', 'MDV', 'MALDIVES', '马尔代夫', 'Maldives', '462', '960', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('131', 'ML', 'MLI', 'MALI', '马里', 'Mali', '466', '223', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('132', 'MT', 'MLT', 'MALTA', '马耳他', 'Malta', '470', '356', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('133', 'MH', 'MHL', 'MARSHALL ISLANDS', '马绍尔群岛', 'Marshall Islands', '584', '692', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('134', 'MQ', 'MTQ', 'MARTINIQUE', '马提尼克岛', 'Martinique', '474', '596', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('135', 'MR', 'MRT', 'MAURITANIA', '毛利塔尼亚', 'Mauritania', '478', '222', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('136', 'MU', 'MUS', 'MAURITIUS', '毛里求斯', 'Mauritius', '480', '230', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('137', 'YT', null, 'MAYOTTE', '马约特岛', 'Mayotte', null, '269', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('138', 'MX', 'MEX', 'MEXICO', '墨西哥', 'Mexico', '484', '52', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('139', 'FM', 'FSM', 'MICRONESIA, FEDERATED STATES OF', '密克罗尼西亚联邦', 'Micronesia, Federated States of', '583', '691', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('140', 'MD', 'MDA', 'MOLDOVA, REPUBLIC OF', '摩尔多瓦共和国', 'Moldova, Republic of', '498', '373', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('141', 'MC', 'MCO', 'MONACO', '摩纳哥', 'Monaco', '492', '377', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('142', 'MN', 'MNG', 'MONGOLIA', '蒙古', 'Mongolia', '496', '976', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('143', 'MS', 'MSR', 'MONTSERRAT', '蒙特塞拉特', 'Montserrat', '500', '1664', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('144', 'MA', 'MAR', 'MOROCCO', '摩洛哥', 'Morocco', '504', '212', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('145', 'MZ', 'MOZ', 'MOZAMBIQUE', 'MOZAMBIQUE', 'Mozambique', '508', '258', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('146', 'MM', 'MMR', 'MYANMAR', '缅甸', 'Myanmar', '104', '95', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('147', 'NA', 'NAM', 'NAMIBIA', '纳米比亚', 'Namibia', '516', '264', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('148', 'NR', 'NRU', 'NAURU', '瑙鲁', 'Nauru', '520', '674', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('149', 'NP', 'NPL', 'NEPAL', '尼泊尔', 'Nepal', '524', '977', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('150', 'NL', 'NLD', 'NETHERLANDS', '荷兰', 'Netherlands', '528', '31', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('151', 'AN', 'ANT', 'NETHERLANDS ANTILLES', '荷属安的列斯群岛', 'Netherlands Antilles', '530', '599', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('152', 'NC', 'NCL', 'NEW CALEDONIA', '新喀里多尼亚', 'New Caledonia', '540', '687', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('153', 'NZ', 'NZL', 'NEW ZEALAND', '新西兰', 'New Zealand', '554', '64', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('154', 'NI', 'NIC', 'NICARAGUA', '尼加拉瓜', 'Nicaragua', '558', '505', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('155', 'NE', 'NER', 'NIGER', '尼日尔', 'Niger', '562', '227', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('156', 'NG', 'NGA', 'NIGERIA', '尼日利亚', 'Nigeria', '566', '234', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('157', 'NU', 'NIU', 'NIUE', '纽埃岛', 'Niue', '570', '683', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('158', 'NF', 'NFK', 'NORFOLK ISLAND', '诺福克岛', 'Norfolk Island', '574', '672', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('159', 'MP', 'MNP', 'NORTHERN MARIANA ISLANDS', '北马里亚纳群岛', 'Northern Mariana Islands', '580', '1670', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('160', 'NO', 'NOR', 'NORWAY', '挪威', 'Norway', '578', '47', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('161', 'OM', 'OMN', 'OMAN', '阿曼', 'Oman', '512', '968', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('162', 'PK', 'PAK', 'PAKISTAN', '巴基斯坦', 'Pakistan', '586', '92', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('163', 'PW', 'PLW', 'PALAU', '帕劳', 'Palau', '585', '680', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('164', 'PS', null, 'PALESTINIAN TERRITORY, OCCUPIED', '巴勒斯坦的领土,占领', 'Palestinian Territory, Occupied', null, '970', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('165', 'PA', 'PAN', 'PANAMA', '巴拿马', 'Panama', '591', '507', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('166', 'PG', 'PNG', 'PAPUA NEW GUINEA', '巴布新几内亚', 'Papua New Guinea', '598', '675', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('167', 'PY', 'PRY', 'PARAGUAY', '巴拉圭', 'Paraguay', '600', '595', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('168', 'PE', 'PER', 'PERU', '秘鲁', 'Peru', '604', '51', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('169', 'PH', 'PHL', 'PHILIPPINES', '菲律宾', 'Philippines', '608', '63', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('170', 'PN', 'PCN', 'PITCAIRN', '皮特克恩', 'Pitcairn', '612', '0', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('171', 'PL', 'POL', 'POLAND', '波兰', 'Poland', '616', '48', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('172', 'PT', 'PRT', 'PORTUGAL', '葡萄牙', 'Portugal', '620', '351', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('173', 'PR', 'PRI', 'PUERTO RICO', '波多黎各', 'Puerto Rico', '630', '1787', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('174', 'QA', 'QAT', 'QATAR', '卡塔尔', 'Qatar', '634', '974', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('175', 'RE', 'REU', 'REUNION', '团聚', 'Reunion', '638', '262', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('176', 'RO', 'ROM', 'ROMANIA', '罗马尼亚', 'Romania', '642', '40', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('177', 'RU', 'RUS', 'RUSSIAN FEDERATION', '俄罗斯联邦', 'Russian Federation', '643', '70', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('178', 'RW', 'RWA', 'RWANDA', '卢旺达', 'Rwanda', '646', '250', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('179', 'SH', 'SHN', 'SAINT HELENA', '圣赫勒拿', 'Saint Helena', '654', '290', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('180', 'KN', 'KNA', 'SAINT KITTS AND NEVIS', '圣基茨和尼维斯', 'Saint Kitts and Nevis', '659', '1869', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('181', 'LC', 'LCA', 'SAINT LUCIA', '圣卢西亚岛', 'Saint Lucia', '662', '1758', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('182', 'PM', 'SPM', 'SAINT PIERRE AND MIQUELON', '圣皮埃尔和MIQUELON', 'Saint Pierre and Miquelon', '666', '508', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('183', 'VC', 'VCT', 'SAINT VINCENT AND THE GRENADINES', '圣文森特和格林纳丁斯', 'Saint Vincent and the Grenadines', '670', '1784', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('184', 'WS', 'WSM', 'SAMOA', '萨摩亚', 'Samoa', '882', '684', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('185', 'SM', 'SMR', 'SAN MARINO', '圣马力诺', 'San Marino', '674', '378', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('186', 'ST', 'STP', 'SAO TOME AND PRINCIPE', '圣多美和王子', 'Sao Tome and Principe', '678', '239', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('187', 'SA', 'SAU', 'SAUDI ARABIA', '沙特阿拉伯', 'Saudi Arabia', '682', '966', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('188', 'SN', 'SEN', 'SENEGAL', '塞内加尔', 'Senegal', '686', '221', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('189', 'CS', null, 'SERBIA AND MONTENEGRO', '塞尔维亚和黑山', 'Serbia and Montenegro', null, '381', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('190', 'SC', 'SYC', 'SEYCHELLES', '塞舌尔', 'Seychelles', '690', '248', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('191', 'SL', 'SLE', 'SIERRA LEONE', '塞拉利昂', 'Sierra Leone', '694', '232', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('192', 'SG', 'SGP', 'SINGAPORE', '新加坡', 'Singapore', '702', '65', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('193', 'SK', 'SVK', 'SLOVAKIA', '斯洛伐克', 'Slovakia', '703', '421', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('194', 'SI', 'SVN', 'SLOVENIA', '斯洛文尼亚', 'Slovenia', '705', '386', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('195', 'SB', 'SLB', 'SOLOMON ISLANDS', '所罗门群岛', 'Solomon Islands', '90', '677', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('196', 'SO', 'SOM', 'SOMALIA', '索马里', 'Somalia', '706', '252', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('197', 'ZA', 'ZAF', 'SOUTH AFRICA', '南非', 'South Africa', '710', '27', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('198', 'GS', null, 'SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS', '南乔治亚岛和南桑威奇群岛', 'South Georgia and the South Sandwich Islands', null, '0', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('199', 'ES', 'ESP', 'SPAIN', '西班牙', 'Spain', '724', '34', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('200', 'LK', 'LKA', 'SRI LANKA', '斯里兰卡', 'Sri Lanka', '144', '94', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('201', 'SD', 'SDN', 'SUDAN', '苏丹', 'Sudan', '736', '249', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('202', 'SR', 'SUR', 'SURINAME', '苏里南', 'Suriname', '740', '597', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('203', 'SJ', 'SJM', 'SVALBARD AND JAN MAYEN', '斯瓦尔巴群岛和扬马延岛', 'Svalbard and Jan Mayen', '744', '47', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('204', 'SZ', 'SWZ', 'SWAZILAND', '斯威士兰', 'Swaziland', '748', '268', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('205', 'SE', 'SWE', 'SWEDEN', '瑞典', 'Sweden', '752', '46', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('206', 'CH', 'CHE', 'SWITZERLAND', '瑞士', 'Switzerland', '756', '41', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('207', 'SY', 'SYR', 'SYRIAN ARAB REPUBLIC', '阿拉伯叙利亚共和国', 'Syrian Arab Republic', '760', '963', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('208', 'TW', 'TWN', 'TAIWAN, PROVINCE OF CHINA', '台湾,中国的省份', 'Taiwan, Province of China', '158', '886', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('209', 'TJ', 'TJK', 'TAJIKISTAN', '塔吉克斯坦', 'Tajikistan', '762', '992', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('210', 'TZ', 'TZA', 'TANZANIA, UNITED REPUBLIC OF', '坦桑尼亚联合共和国', 'Tanzania, United Republic of', '834', '255', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('211', 'TH', 'THA', 'THAILAND', '泰国', 'Thailand', '764', '66', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('212', 'TL', null, 'TIMOR-LESTE', '东帝汶', 'Timor-Leste', null, '670', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('213', 'TG', 'TGO', 'TOGO', '多哥', 'Togo', '768', '228', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('214', 'TK', 'TKL', 'TOKELAU', '托克劳', 'Tokelau', '772', '690', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('215', 'TO', 'TON', 'TONGA', '汤加', 'Tonga', '776', '676', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('216', 'TT', 'TTO', 'TRINIDAD AND TOBAGO', '特立尼达和多巴哥', 'Trinidad and Tobago', '780', '1868', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('217', 'TN', 'TUN', 'TUNISIA', '突尼斯', 'Tunisia', '788', '216', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('218', 'TR', 'TUR', 'TURKEY', '土耳其', 'Turkey', '792', '90', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('219', 'TM', 'TKM', 'TURKMENISTAN', '土库曼斯坦', 'Turkmenistan', '795', '7370', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('220', 'TC', 'TCA', 'TURKS AND CAICOS ISLANDS', '特克斯和凯科斯群岛', 'Turks and Caicos Islands', '796', '1649', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('221', 'TV', 'TUV', 'TUVALU', '图瓦卢', 'Tuvalu', '798', '688', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('222', 'UG', 'UGA', 'UGANDA', '乌干达', 'Uganda', '800', '256', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('223', 'UA', 'UKR', 'UKRAINE', '乌克兰', 'Ukraine', '804', '380', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('224', 'AE', 'ARE', 'UNITED ARAB EMIRATES', '阿拉伯联合酋长国', 'United Arab Emirates', '784', '971', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('225', 'GB', 'GBR', 'UNITED KINGDOM', '联合王国', 'United Kingdom', '826', '44', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('226', 'US', 'USA', 'UNITED STATES', '美国', 'United States', '840', '1', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('227', 'UM', null, 'UNITED STATES MINOR OUTLYING ISLANDS', '美国小离岛', 'United States Minor Outlying Islands', null, '1', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('228', 'UY', 'URY', 'URUGUAY', '乌拉圭', 'Uruguay', '858', '598', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('229', 'UZ', 'UZB', 'UZBEKISTAN', '乌兹别克斯坦', 'Uzbekistan', '860', '998', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('230', 'VU', 'VUT', 'VANUATU', '瓦努阿图', 'Vanuatu', '548', '678', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('231', 'VE', 'VEN', 'VENEZUELA', '委内瑞拉', 'Venezuela', '862', '58', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('232', 'VN', 'VNM', 'VIET NAM', '越南', 'Viet Nam', '704', '84', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('233', 'VG', 'VGB', 'VIRGIN ISLANDS, BRITISH', '维尔京群岛,英国', 'Virgin Islands, British', '92', '1284', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('234', 'VI', 'VIR', 'VIRGIN ISLANDS, U.S.', '维尔京群岛,美国', 'Virgin Islands, U.s.', '850', '1340', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('235', 'WF', 'WLF', 'WALLIS AND FUTUNA', '瓦利斯群岛和富图纳群岛', 'Wallis and Futuna', '876', '681', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('236', 'EH', 'ESH', 'WESTERN SAHARA', '西撒哈拉', 'Western Sahara', '732', '212', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('237', 'YE', 'YEM', 'YEMEN', '也门', 'Yemen', '887', '967', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('238', 'ZM', 'ZMB', 'ZAMBIA', '赞比亚', 'Zambia', '894', '260', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('239', 'ZW', 'ZWE', 'ZIMBABWE', '津巴布韦', 'Zimbabwe', '716', '263', 'normal');
+
+-- ----------------------------
+-- Table structure for fa_chat_interest
+-- ----------------------------
+DROP TABLE IF EXISTS `fa_chat_interest`;
+CREATE TABLE `fa_chat_interest` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `name` varchar(255) DEFAULT NULL COMMENT '兴趣名称',
+  `name_en` varchar(255) DEFAULT NULL COMMENT '兴趣名称(英文)',
+  `status` enum('normal','hidden') DEFAULT 'normal',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='兴趣列表';
+
+-- ----------------------------
+-- Records of fa_chat_interest
+-- ----------------------------
+INSERT INTO `fa_chat_interest` VALUES ('0000000001', '美容', 'hairdressing', 'normal');
+INSERT INTO `fa_chat_interest` VALUES ('0000000002', '牧业', 'animal husbandry', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_cms_addonnews
@@ -4710,7 +5059,7 @@ CREATE TABLE `fa_command` (
   `updatetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` enum('successed','failured') NOT NULL DEFAULT 'failured' COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='在线命令表';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='在线命令表';
 
 -- ----------------------------
 -- Records of fa_command
@@ -4751,6 +5100,17 @@ INSERT INTO `fa_command` VALUES ('40', 'crud', '[\"--force=1\",\"--table=fa_webs
 INSERT INTO `fa_command` VALUES ('41', 'crud', '[\"--force=1\",\"--table=fa_website\",\"--controller=website\\/website\"]', 'php think crud --force=1 --table=fa_website --controller=website/website', 'Build Successed', '1529573059', '1529573059', '1529573059', 'successed');
 INSERT INTO `fa_command` VALUES ('42', 'min', '[\"--module=frontend\",\"--resource=all\"]', 'php think min --module=frontend --resource=all', 'Compress require-frontend.js\nCompress frontend.css\nBuild Successed!', '1530845371', '1530845371', '1530845371', 'successed');
 INSERT INTO `fa_command` VALUES ('43', 'min', '[\"--module=frontend\",\"--resource=css\",\"--optimize=uglify\"]', 'php think min --module=frontend --resource=css --optimize=uglify', 'Compress frontend.css\nBuild Successed!', '1530845404', '1530845404', '1530845404', 'successed');
+INSERT INTO `fa_command` VALUES ('44', 'crud', '[\"--table=fa_country\"]', 'php think crud --table=fa_country', 'Build Successed', '1530946521', '1530946521', '1530946521', 'successed');
+INSERT INTO `fa_command` VALUES ('45', 'menu', '[\"--controller=Country\"]', 'php think menu --controller=Country', 'Build Successed!', '1530946541', '1530946541', '1530946541', 'successed');
+INSERT INTO `fa_command` VALUES ('46', 'menu', '[\"--controller=Country\"]', 'php think menu --controller=Country', 'Build Successed!', '1530948212', '1530948212', '1530948212', 'successed');
+INSERT INTO `fa_command` VALUES ('47', 'crud', '[\"--table=fa_country\"]', 'php think crud --table=fa_country', '\ncontroller already exists!\nIf you need to rebuild again, use the parameter --force=true ', '1530948217', '1530948217', '1530948217', 'failured');
+INSERT INTO `fa_command` VALUES ('48', 'crud', '[\"--force=1\",\"--table=fa_country\"]', 'php think crud --force=1 --table=fa_country', 'Build Successed', '1530948236', '1530948236', '1530948236', 'successed');
+INSERT INTO `fa_command` VALUES ('49', 'crud', '[\"--table=fa_chat_interest\"]', 'php think crud --table=fa_chat_interest', 'Build Successed', '1530951412', '1530951412', '1530951412', 'successed');
+INSERT INTO `fa_command` VALUES ('50', 'menu', '[\"--controller=chat\\\\Interest\"]', 'php think menu --controller=chat\\Interest', '', '1530951441', '1530951441', '1530951441', 'failured');
+INSERT INTO `fa_command` VALUES ('51', 'menu', '[\"--controller=chat\\\\Interest\"]', 'php think menu --controller=chat\\Interest', '', '1530951505', '1530951505', '1530951505', 'failured');
+INSERT INTO `fa_command` VALUES ('52', 'menu', '[\"--controller=all-controller\"]', 'php think menu --controller=all-controller', 'Build Successed!', '1530951523', '1530951523', '1530951525', 'successed');
+INSERT INTO `fa_command` VALUES ('53', 'crud', '[\"--table=fa_chat_country\"]', 'php think crud --table=fa_chat_country', 'Build Successed', '1530951671', '1530951671', '1530951671', 'successed');
+INSERT INTO `fa_command` VALUES ('54', 'menu', '[\"--controller=all-controller\"]', 'php think menu --controller=all-controller', 'Build Successed!', '1530951679', '1530951679', '1530951681', 'successed');
 
 -- ----------------------------
 -- Table structure for fa_config
@@ -4785,12 +5145,12 @@ INSERT INTO `fa_config` VALUES ('8', 'fixedpage', 'basic', 'Fixed page', '请尽
 INSERT INTO `fa_config` VALUES ('9', 'categorytype', 'dictionary', 'Category type', '', 'array', '{\"default\":\"Default\",\"page\":\"Page\",\"article\":\"Article\",\"test\":\"Test\"}', '', '', '');
 INSERT INTO `fa_config` VALUES ('10', 'configgroup', 'dictionary', 'Config group', '', 'array', '{\"basic\":\"Basic\",\"email\":\"Email\",\"dictionary\":\"Dictionary\",\"user\":\"User\",\"example\":\"Example\"}', '', '', '');
 INSERT INTO `fa_config` VALUES ('11', 'mail_type', 'email', 'Mail type', '选择邮件发送方式', 'select', '1', '[\"Please select\",\"SMTP\",\"Mail\"]', '', '');
-INSERT INTO `fa_config` VALUES ('12', 'mail_smtp_host', 'email', 'Mail smtp host', '错误的配置发送邮件会导致服务器超时', 'string', 'smtp.qq.com', '', '', '');
-INSERT INTO `fa_config` VALUES ('13', 'mail_smtp_port', 'email', 'Mail smtp port', '(不加密默认25,SSL默认465,TLS默认587)', 'string', '465', '', '', '');
-INSERT INTO `fa_config` VALUES ('14', 'mail_smtp_user', 'email', 'Mail smtp user', '（填写完整用户名）', 'string', '10000', '', '', '');
-INSERT INTO `fa_config` VALUES ('15', 'mail_smtp_pass', 'email', 'Mail smtp password', '（填写您的密码）', 'string', 'password', '', '', '');
-INSERT INTO `fa_config` VALUES ('16', 'mail_verify_type', 'email', 'Mail vertify type', '（SMTP验证方式[推荐SSL]）', 'select', '2', '[\"None\",\"TLS\",\"SSL\"]', '', '');
-INSERT INTO `fa_config` VALUES ('17', 'mail_from', 'email', 'Mail from', '', 'string', '10000@qq.com', '', '', '');
+INSERT INTO `fa_config` VALUES ('12', 'mail_smtp_host', 'email', 'Mail smtp host', '错误的配置发送邮件会导致服务器超时', 'string', 'smtp.mxhichina.com', '', '', '');
+INSERT INTO `fa_config` VALUES ('13', 'mail_smtp_port', 'email', 'Mail smtp port', '(不加密默认25,SSL默认465,TLS默认587)', 'string', '25', '', '', '');
+INSERT INTO `fa_config` VALUES ('14', 'mail_smtp_user', 'email', 'Mail smtp user', '（填写完整用户名）', 'string', 'xiaoyudian@xydbaby.com', '', '', '');
+INSERT INTO `fa_config` VALUES ('15', 'mail_smtp_pass', 'email', 'Mail smtp password', '（填写您的密码）', 'string', 'hcy521...', '', '', '');
+INSERT INTO `fa_config` VALUES ('16', 'mail_verify_type', 'email', 'Mail vertify type', '（SMTP验证方式[推荐SSL]）', 'select', '0', '[\"None\",\"TLS\",\"SSL\"]', '', '');
+INSERT INTO `fa_config` VALUES ('17', 'mail_from', 'email', 'Mail from', '', 'string', 'xiaoyudian@xydbaby.com', '', '', '');
 INSERT INTO `fa_config` VALUES ('18', 'ry_key', 'example', '融云App Key', '', 'string', '6tnym1br642o7', '', '', '');
 INSERT INTO `fa_config` VALUES ('19', 'ry_secret', 'example', '融云App Secret', '', 'string', 'aT0f2lpquPm0p', '', '', '');
 
@@ -4820,7 +5180,7 @@ CREATE TABLE `fa_crontab` (
 -- ----------------------------
 -- Records of fa_crontab
 -- ----------------------------
-INSERT INTO `fa_crontab` VALUES ('3', 'url', '删除缓存', 'http://www.yangmengyu.com/admin/ajax/wipecache?type=all', '* * * * *', '0', '0', '651', '1530782219', '1530872764', '1530782209', '1549012611', '1530872764', '0', 'normal');
+INSERT INTO `fa_crontab` VALUES ('3', 'url', '删除缓存', 'http://www.yangmengyu.com/admin/ajax/wipecache?type=all', '* * * * *', '0', '0', '1175', '1530782219', '1530956164', '1530782209', '1549012611', '1530956164', '0', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_ems
@@ -4835,7 +5195,7 @@ CREATE TABLE `fa_ems` (
   `ip` varchar(30) NOT NULL DEFAULT '' COMMENT 'IP',
   `createtime` int(10) unsigned DEFAULT '0' COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='邮箱验证码表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='邮箱验证码表';
 
 -- ----------------------------
 -- Records of fa_ems
@@ -4887,7 +5247,7 @@ CREATE TABLE `fa_mygroup` (
   `groupname` varchar(255) DEFAULT NULL COMMENT '分组名称',
   `weight` tinyint(2) DEFAULT '1' COMMENT '权重',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_mygroup
@@ -4895,6 +5255,7 @@ CREATE TABLE `fa_mygroup` (
 INSERT INTO `fa_mygroup` VALUES ('0000000007', '1', '我的好友', '1');
 INSERT INTO `fa_mygroup` VALUES ('0000000008', '3', '我的好友', '1');
 INSERT INTO `fa_mygroup` VALUES ('0000000009', '1000', '我的好友', '1');
+INSERT INTO `fa_mygroup` VALUES ('0000000011', '1000', '未命名', '2');
 
 -- ----------------------------
 -- Table structure for fa_mymsg
@@ -4997,6 +5358,10 @@ CREATE TABLE `fa_user` (
   `gender` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '性别',
   `birthday` date DEFAULT NULL COMMENT '生日',
   `bio` varchar(100) NOT NULL DEFAULT '' COMMENT '格言',
+  `height` char(3) DEFAULT NULL,
+  `weight` char(3) DEFAULT NULL,
+  `country` varchar(20) DEFAULT NULL COMMENT '国家',
+  `interest` text COMMENT '兴趣',
   `score` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '积分',
   `successions` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '连续登录天数',
   `maxsuccessions` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '最大连续登录天数',
@@ -5021,9 +5386,9 @@ CREATE TABLE `fa_user` (
 -- ----------------------------
 -- Records of fa_user
 -- ----------------------------
-INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', '0', '2', '2', '1530629196', '1530665264', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1530665264', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/20180705/6f5c26b5e8a09ca4b76e10cdabc37446.jpg', '1', '0', '2018-06-30', '', '0', '3', '3', '1530761532', '1530778417', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1530778417', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('1000', '1', 'yangmengyu', 'yangmengyu', 'ccc8c548c0d1c14e3e626d3d41586160', 'kC9MhU', '363126523@qq.com', '17603852737', '/uploads/20180706/38721c0aa9794fc267a0d64e7b036e9d.jpg', '1', '1', '2018-07-06', '123123', '0', '4', '4', '1530872161', '1530872243', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1530872243', '', 'normal', '', 'online');
+INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', null, null, null, null, '0', '2', '2', '1530629196', '1530665264', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1530665264', '', 'normal', '', 'online');
+INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/20180705/6f5c26b5e8a09ca4b76e10cdabc37446.jpg', '1', '0', '2018-06-30', '', null, null, null, null, '0', '3', '3', '1530761532', '1530778417', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1530778417', '', 'normal', '', 'online');
+INSERT INTO `fa_user` VALUES ('1000', '1', 'yangmengyu', '笑看往事如花', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180706/38721c0aa9794fc267a0d64e7b036e9d.jpg', '1', '1', '2018-07-06', '123123', '180', '65', 'China', '[\"hairdressing\",\"animal husbandry\"]', '0', '5', '5', '1530937154', '1530954607', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1530954607', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
 
 -- ----------------------------
 -- Table structure for fa_user_group
@@ -5126,6 +5491,7 @@ CREATE TABLE `fa_user_token` (
 -- Records of fa_user_token
 -- ----------------------------
 INSERT INTO `fa_user_token` VALUES ('05b57f45bb7df0297c9a7b36c0494b9ec1ad67ce', '2', '1530358855', '1532950855');
+INSERT INTO `fa_user_token` VALUES ('070b3b69a80895ac20461d663bb5d74244078f3f', '1000', '1530954607', '1533546607');
 INSERT INTO `fa_user_token` VALUES ('0a6a192800a63a6249e1f97564228cecee40a1b8', '3', '1530359563', '1532951563');
 INSERT INTO `fa_user_token` VALUES ('13f401b6bb7c4a247f3db333c4edc23b63a2e92c', '1000', '1530759929', '1533351929');
 INSERT INTO `fa_user_token` VALUES ('170fbed0e7be6b114beb78676ee3b04a0ebd5178', '1000', '1530611543', '1533203543');
@@ -5156,8 +5522,10 @@ INSERT INTO `fa_user_token` VALUES ('6db5135f13b10b95b8792cdc9de423f900a0922e', 
 INSERT INTO `fa_user_token` VALUES ('72fc6b2aed5a65a54416d77ff1d6c79fef9a247f', '1000', '1530599095', '1533191095');
 INSERT INTO `fa_user_token` VALUES ('764f8a14121fa09645cb7782800ec62649a266a5', '1000', '1530421637', '1533013637');
 INSERT INTO `fa_user_token` VALUES ('7933b66b9a81b961cd4fec4cf97f48099b0a0f19', '3', '1530265465', '1532857465');
+INSERT INTO `fa_user_token` VALUES ('79e3ed07d81157448915f1e000b233e4d4828b2c', '1000', '1530925991', '1533517991');
 INSERT INTO `fa_user_token` VALUES ('81becf7bca65ec41ab66b6788d5f347a4dd8cebb', '1000', '1530761826', '1533353826');
 INSERT INTO `fa_user_token` VALUES ('822bb04bbd0138bbcefe4930e3f4b72d9c0f42ac', '1000', '1530370691', '1532962691');
+INSERT INTO `fa_user_token` VALUES ('826ec001734b311af168bdea401f09543dd94bab', '1000', '1530925411', '1533517411');
 INSERT INTO `fa_user_token` VALUES ('82a6d09e0630de28e180c6241a815fe95afe22bb', '2', '1530325965', '1532917965');
 INSERT INTO `fa_user_token` VALUES ('82abfe2f0cb03b8edb7d9c2365bd6262ec36795d', '2', '1530342719', '1532934719');
 INSERT INTO `fa_user_token` VALUES ('8f175656a4d0afa45f3cd599a78edb5641e16732', '1000', '1530613922', '1533205922');
@@ -5176,7 +5544,6 @@ INSERT INTO `fa_user_token` VALUES ('c3b849e5882b3e385b338f2be5772b946e69daa2', 
 INSERT INTO `fa_user_token` VALUES ('c8b6aedaf074ed7d05b08778da69d38681e76a7a', '3', '1530628178', '1533220178');
 INSERT INTO `fa_user_token` VALUES ('c945ea5e9bb1d750e16173132f5531e890737c82', '2', '1530347155', '1532939155');
 INSERT INTO `fa_user_token` VALUES ('cbaacde9e52f28d0a23ec93580ba7708d5864ea8', '1000', '1530628400', '1533220400');
-INSERT INTO `fa_user_token` VALUES ('cbd41cd4db2f07c0cf74170a8662567f2e4c94cc', '1000', '1530872243', '1533464243');
 INSERT INTO `fa_user_token` VALUES ('d2bb9ed091d1e5e45ee4101f397d692f115f6c34', '1000', '1530687808', '1533279808');
 INSERT INTO `fa_user_token` VALUES ('e24c69a4546e8f9e5e5eb6777407b08fd319b0fa', '1000', '1530691371', '1533283371');
 INSERT INTO `fa_user_token` VALUES ('e25fed85d9023fe4a264d49468e3509f9758e5e6', '1000', '1530769247', '1533361247');

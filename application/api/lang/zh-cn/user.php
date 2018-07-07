@@ -38,4 +38,5 @@ return [
     'Change password successful'            => '修改密码成功',
     'Reset password successful'             => '重置密码成功',
     'Save successful'             => '保存成功',
+    'Username already exists'             => '用户名已经存在',
 ];

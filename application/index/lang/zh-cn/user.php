@@ -68,5 +68,13 @@ return [
     'Birthday'            => '生日',
     'Gender'            => '性别',
     'Edit email'             => '修改邮箱',
+    'Country'             => '国家',
+    'Choose a country'             => '请选择一个国家',
+    'Man'             => '男',
+    'Woman'             => '女',
+    'Secrecy'             => '保密',
+    'Height'             => '身高',
+    'Weight'             => '体重',
+    'Interest'  => '兴趣',
 
 ];

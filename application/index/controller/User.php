@@ -6,6 +6,7 @@ use app\common\controller\Frontend;
 use app\index\controller\rongyunapi\RongCloud;
 use think\Config;
 use think\Cookie;
+use think\Db;
 use think\Hook;
 use think\Session;
 use think\Validate;
@@ -223,7 +224,13 @@ class User extends Frontend
      */
     public function profile()
     {
+        $this->loadlang('country');
+        $this->loadlang('interest');
+        $countrys = Db::name('chat_country')->where('status','normal')->select();
+        $interests = Db::name('chat_interest')->where('status','normal')->select();
         $this->view->assign('title', __('Profile'));
+        $this->view->assign('countrys',$countrys);
+        $this->view->assign('interests',$interests);
         return $this->view->fetch();
     }
 

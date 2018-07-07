@@ -53,7 +53,19 @@
                         <div class="form-group">
                             <label class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input type="text" class="form-control" readonly id="username" name="username" value="{$user.username}" data-rule="required;username;remote({:url('api/validate/check_username_available')}, id={$user.id})" placeholder="">
+                                <input type="text" class="form-control" readonly  id="username" name="username" value="{$user.username}" data-rule="required;username;remote({:url('api/validate/check_username_available')}, id={$user.id})" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-email" class="control-label col-xs-12 col-sm-2">{:__('Email')}:</label>
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="c-email" name="email" value="{$user.email}" disabled placeholder="">
+                                    <span class="input-group-btn" style="padding:0;border:none;">
+                                        <a href="javascript:;" class="btn btn-info btn-change" data-type="email">{:__('Change')}</a>
+                                    </span>
+                                </div>
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -69,31 +81,50 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="c-bio" class="control-label col-xs-12 col-sm-2">{:__('Birthday')}:</label>
+                            <label for="c-birthday" class="control-label col-xs-12 col-sm-2">{:__('Birthday')}:</label>
                             <div class="col-xs-12 col-sm-4">
                                 <input id="c-birthday" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="birthday" type="text" value="{if $user.birthday!=='0000-00-00'}{$user.birthday}{/if}">
                             </div>
                         </div>
                         <div class="form-group layui-form">
-                            <label for="c-bio" class="control-label col-xs-12 col-sm-2">{:__('Gender')}:</label>
+                            <label  class="control-label col-xs-12 col-sm-2">{:__('Gender')}:</label>
+                            <div class="col-xs-12 col-sm-6">
+                                <input type="radio" name="gender" value="1" title="{:__('Man')}" {if $user.gender==1}checked{/if}>
+                                <input type="radio" name="gender" value="0" title="{:__('Woman')}" {if $user.gender==0}checked{/if}>
+                                <input type="radio" name="gender" value="2" title="{:__('Secrecy')}" {if $user.gender==2}checked{/if}>
+                            </div>
+                        </div>
+                        <div class="form-group layui-form">
+                            <label for="c-country" class="control-label col-xs-12 col-sm-2">{:__('Country')}:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input type="radio" name="gender" value="1" title="男" {if $user.gender==1}checked{/if}>
-                                <input type="radio" name="gender" value="0" title="女" {if $user.gender==0}checked{/if}>
-                                <input type="radio" name="gender" value="2" title="保密" {if $user.gender==2}checked{/if}>
+                                <select id="c-country" name="country"  style="display: none" data-rule="required" lay-search>
+                                    {volist name="countrys" id="vo"}
+                                    <option value="{$vo.nicename}" {if $vo.nicename==$user.country}selected{/if}>{$vo.iso}--{:__($vo.nicename,'country')}</option>
+                                    {/volist}
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="c-email" class="control-label col-xs-12 col-sm-2">{:__('Email')}:</label>
+                            <label for="c-bio" class="control-label col-xs-12 col-sm-2">{:__('Height')}(cm):</label>
                             <div class="col-xs-12 col-sm-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="c-email" name="email" value="{$user.email}" disabled placeholder="">
-                                    <span class="input-group-btn" style="padding:0;border:none;">
-                                        <a href="javascript:;" class="btn btn-info btn-change" data-type="email">{:__('Change')}</a>
-                                    </span>
-                                </div>
-
+                                <input id="c-height" data-rule="required:true,digits:true,range[150~220]"  class="form-control" name="height" type="text" value="{$user.height}">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="c-bio" class="control-label col-xs-12 col-sm-2">{:__('Weight')}(kg):</label>
+                            <div class="col-xs-12 col-sm-4">
+                                <input id="c-weight" data-rule="required:true,digits:true,range[40~200]"  class="form-control" name="weight" type="text" value="{$user.weight}">
+                            </div>
+                        </div>
+                        <div class="form-group layui-form">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Interest')}:</label>
+                            <div class="col-xs-12 col-sm-10">
+                                {volist name="interests" id="vo"}
+                                <input type="checkbox" name="interest[]" title="{:__($vo.name_en)}" value="{$vo.name_en}" {if isset($user.interest)&&$user.interest!=='null'}{if in_array($vo.name_en,json_decode($user.interest))}checked{/if}{/if}>
+                                {/volist}
+                            </div>
+                        </div>
+
                         <div class="form-group normal-footer">
                             <label class="control-label col-xs-12 col-sm-2"></label>
                             <div class="col-xs-12 col-sm-8">
@@ -142,40 +173,6 @@
         </div>
     </form>
 </script>
-<!--<script type="text/html" id="mobiletpl">
-    <form id="mobile-form" class="form-horizontal form-layer" method="POST" action="{:url('api/user/changemobile')}">
-        <div class="form-body">
-            <input type="hidden" name="action" value="changemobile" />
-            <div class="form-group">
-                <label for="c-mobile" class="control-label col-xs-12 col-sm-3">{:__('New mobile')}:</label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control" id="mobile" name="mobile" value="" data-rule="required;mobile;remote({:url('api/validate/check_mobile_available')}, event=changemobile, id={$user.id})" placeholder="{:__('New mobile')}">
-                    <span class="msg-box"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="mobile-captcha" class="control-label col-xs-12 col-sm-3">{:__('Captcha')}:</label>
-                <div class="col-xs-12 col-sm-8">
-                    <div class="input-group">
-                        <input type="text" name="captcha" id="mobile-captcha" class="form-control" data-rule="required;length(4);integer[+];remote({:url('api/validate/check_sms_correct')}, event=changemobile, mobile:#mobile)" />
-                        <span class="input-group-btn" style="padding:0;border:none;">
-                            <a href="javascript:;" class="btn btn-info btn-captcha" data-url="{:url('api/sms/send')}" data-type="mobile" data-event="changemobile">获取验证码</a>
-                        </span>
-                    </div>
-                    <span class="msg-box"></span>
-                </div>
-            </div>
-        </div>
-        <div class="form-footer">
-            <div class="form-group" style="margin-bottom:0;">
-                <label class="control-label col-xs-12 col-sm-3"></label>
-                <div class="col-xs-12 col-sm-8">
-                    <button type="submit" class="btn btn-md btn-primary">{:__('Submit')}</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</script>-->
 <style>
     .form-layer {height:100%;min-height:150px;min-width:300px;}
     .form-body {
@@ -226,20 +223,6 @@
                 }
             }
         });
-        //表单提交
-        $("#profile-form").submit(function() {
-            var self = $(this);
-
-            $.post(self.attr("action"), self.serialize(), success, "json");
-            return false;
-            function success(res) {
-                if (res.code) {
-                    layer.msg(res.msg,{icon:1})
-                } else {
-                    layer.msg(data.msg, {icon: 5});
-                }
-            }
-        });
 
         /*layer.open({
             type: 2,
@@ -252,11 +235,43 @@
             layer.open({
                 type: 2,
                 title: "{:__('Edit email')}",
-                area: ["450px", "300px"],
-                content: '{:url("user/remail")}',
-
+                area: ['300px','300px'],
+                content: ['{:url("user/remail")}','no'],
+                success: function(layero, index){
+                    var body = layer.getChildFrame('body', index);
+                    body.find('form').submit(function() {
+                        setTimeout(function () {
+                            var success = body.find('#success').val()
+                            if(success == 'success'){
+                                $('#c-email').val(body.find('#email').val());
+                                layer.close(index);
+                            }
+                        },500)
+                    })
+                }
             });
         });
 
     });
+    $.validator.setTheme('bootstrap', {
+        validClass: 'has-success',
+        invalidClass: 'has-error',
+        bindClassTo: '.form-group',
+        formClass: 'n-default n-bootstrap',
+        msgClass: 'n-right'
+    });
+    $('#profile-form').on('valid.form', function(){
+        var self = $(this);
+        $.post(self.attr("action"), self.serialize(), success, "json");
+        return false;
+        function success(res) {
+            if (res.code) {
+                layer.msg(res.msg,{icon:1})
+            } else {
+                layer.msg(res.msg, {icon: 5});
+            }
+        }
+
+    });
+
 </script>

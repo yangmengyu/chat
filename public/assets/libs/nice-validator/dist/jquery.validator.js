@@ -1961,7 +1961,6 @@
          */
         remote: function(element, params) {
             if (!params) return;
-
             var me = this,
                 arr = rAjaxType.exec(params[0]),
                 rule = me._rules[me._i],
@@ -1974,7 +1973,6 @@
 
             rule.must = true;
             data[element.name] = me.value;
-
             // There are extra fields
             if (params[1]) {
                 $.map(params.slice(1), function(name) {
@@ -2005,7 +2003,12 @@
                 url: url,
                 type: type,
                 data: data,
-                dataType: dataType
+                dataType: dataType,
+                success:function (res) {
+                    if(res.code == 0){
+                        layer.msg(res.msg,{icon: 5})
+                    }
+                }
             });
         },
 

@@ -97,6 +97,13 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                     }
                 });
             });
+        },
+        remail:function () {
+            Form.api.bindevent($('#email-form'),function (data,res) {
+                if(res.code == 1){
+                    $('#success').val('success');
+                }
+            });
         }
     };
     return Controller;

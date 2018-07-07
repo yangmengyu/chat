@@ -257,6 +257,7 @@ class Auth
         $site = Config::get("site");
         $appKey = $site['ry_key'];
         $appSecret = $site['ry_secret'];
+
         $RongCloud = new Rongcloud($appKey, $appSecret);
         if ($RongCloud) {
             //获取token，成功则保存session
