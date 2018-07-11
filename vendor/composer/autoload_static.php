@@ -84,6 +84,7 @@ class ComposerStaticInit0e9d323fd7ac3c900e89981d3becc721
         array (
             0 => __DIR__ . '/..' . '/karsonzhang/fastadmin-addons/src',
             1 => __DIR__ . '/../..' . '/thinkphp/library/think',
+            2 => __DIR__ . '/..' . '/topthink/think-image/src',
         ),
         'Symfony\\Polyfill\\Php70\\' => 
         array (

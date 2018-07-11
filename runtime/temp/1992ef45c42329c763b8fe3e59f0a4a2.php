@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"E:\phpstudy\WWW\chat\public/../application/index\view\user\login.html";i:1530865988;s:60:"E:\phpstudy\WWW\chat\application\index\view\common\meta.html";i:1530926305;s:62:"E:\phpstudy\WWW\chat\application\index\view\common\script.html";i:1530860064;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"E:\phpstudy\WWW\chat\public/../application/index\view\user\login.html";i:1531300678;s:60:"E:\phpstudy\WWW\chat\application\index\view\common\meta.html";i:1530926305;s:62:"E:\phpstudy\WWW\chat\application\index\view\common\script.html";i:1530860064;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,7 +124,9 @@
                     <div class="col-xs-12 col-sm-8">
                         <div class="radio">
                             <label for="type-email"><input id="type-email" checked="checked" name="type" data-send-url="<?php echo url('api/ems/send'); ?>" data-check-url="<?php echo url('api/validate/check_ems_correct'); ?>" type="radio" value="email"> <?php echo __('Reset password by email'); ?></label>
+<!--
                             <label for="type-mobile"><input id="type-mobile" name="type" type="radio" data-send-url="<?php echo url('api/sms/send'); ?>" data-check-url="<?php echo url('api/validate/check_sms_correct'); ?>" value="mobile"> <?php echo __('Reset password by mobile'); ?></label>
+-->
                         </div>
                     </div>
                 </div>

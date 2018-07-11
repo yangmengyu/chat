@@ -8,6 +8,10 @@ return array (
     array (
       0 => 'leesign',
     ),
+    'upload_after' => 
+    array (
+      0 => 'thumb',
+    ),
   ),
   'route' => 
   array (
