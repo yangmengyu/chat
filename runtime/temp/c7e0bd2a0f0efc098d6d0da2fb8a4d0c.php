@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\profile.html";i:1530954544;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1530925848;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1530937395;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1530232546;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1530932684;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\profile.html";i:1530958195;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531296815;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1530958441;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1530932684;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/assets/home/css/jquery.validator.css" />
 <script src="/assets/home/layui/layui.js"></script>
 <script src="/assets/home/js/jquery-3.1.1.min.js"></script>
+<script src="/assets/libs/bootstrap/js/collapse.js"></script>
 <script src="/assets/libs/nice-validator/dist/jquery.validator.js?local=<?php echo $config['language']; ?>"></script>
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -54,7 +55,11 @@
                     <a class="navbar-brand" href="<?php echo url('/'); ?>"><img src="/assets/img/logo.png"  alt=""></a>
                 </div>
                 <div class="collapse navbar-collapse" id="header-navbar">
-                    <ul class="nav navbar-nav navbar-right" >
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="active"><a href="#" >Active</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right" >
                         <li class="dropdown">
                             <?php if($user): ?>
                             <a href="<?php echo url('user/index'); ?>" class="dropdown-toggle" data-toggle="dropdown">
@@ -77,7 +82,7 @@
                         </li>
                         <?php if(\think\Config::get('lang_switch_on')): ?>
                         <li class="dropdown">
-                            <a href="<?php echo url('user/index'); ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-fw"></i><span>语言</span> <b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-fw"></i><span><?php echo __('Languages'); ?></span> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="?lang=zh-cn"> 简体中文</a></li>
                                 <li><a href="?lang=en"> English</a></li>
@@ -129,6 +134,7 @@
         <li class="list-group-item <?php echo $config['actionname']=='index'?'active':''; ?>"> <a href="<?php echo url('user/index'); ?>"><i class="fa fa-user-circle fa-fw"></i> <?php echo __('User center'); ?></a> </li>
         <li class="list-group-item <?php echo $config['actionname']=='profile'?'active':''; ?>"> <a href="<?php echo url('user/profile'); ?>"><i class="fa fa-user-o fa-fw"></i> <?php echo __('Profile'); ?></a> </li>
         <li class="list-group-item <?php echo $config['actionname']=='changepwd'?'active':''; ?>"> <a href="<?php echo url('user/changepwd'); ?>"><i class="fa fa-key fa-fw"></i> <?php echo __('Change password'); ?></a> </li>
+        <li class="list-group-item <?php echo $config['actionname']=='sign'?'active':''; ?>"> <a href="<?php echo url('user/sign'); ?>"><i class="fa fa-map-signs fa-fw"></i> <?php echo __('My sign'); ?></a> </li>
         <li class="list-group-item <?php echo $config['actionname']=='logout'?'active':''; ?>"> <a href="<?php echo url('user/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> <?php echo __('Sign out'); ?></a> </li>
     </ul>
 </div>
@@ -153,7 +159,7 @@
                         <div class="form-group">
                             <label class="control-label col-xs-12 col-sm-2"><?php echo __('Username'); ?>:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input type="text" class="form-control" readonly  id="username" name="username" value="<?php echo $user['username']; ?>" data-rule="required;username;remote(<?php echo url('api/validate/check_username_available'); ?>, id=<?php echo $user['id']; ?>)" placeholder="">
+                                <input type="text" class="form-control" readonly  id="username" name="username" value="<?php echo $user['username']; ?>" data-rule="<?php echo __('Username'); ?>:required;username;remote(<?php echo url('api/validate/check_username_available'); ?>, id=<?php echo $user['id']; ?>)" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -171,7 +177,7 @@
                         <div class="form-group">
                             <label class="control-label col-xs-12 col-sm-2"><?php echo __('Nickname'); ?>:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input type="text" class="form-control" id="nickname" name="nickname" value="<?php echo $user['nickname']; ?>" data-rule="required" placeholder="">
+                                <input type="text" class="form-control" id="nickname" name="nickname" value="<?php echo $user['nickname']; ?>" data-rule="<?php echo __('Nickname'); ?>:required" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -197,7 +203,7 @@
                         <div class="form-group layui-form">
                             <label for="c-country" class="control-label col-xs-12 col-sm-2"><?php echo __('Country'); ?>:</label>
                             <div class="col-xs-12 col-sm-4">
-                                <select id="c-country" name="country"  style="display: none" data-rule="required" lay-search>
+                                <select id="c-country" name="country"  style="display: none" data-rule="<?php echo __('Country'); ?>:required" lay-search>
                                     <?php if(is_array($countrys) || $countrys instanceof \think\Collection || $countrys instanceof \think\Paginator): $i = 0; $__LIST__ = $countrys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                     <option value="<?php echo $vo['nicename']; ?>" <?php if($vo['nicename']==$user['country']): ?>selected<?php endif; ?>><?php echo $vo['iso']; ?>--<?php echo __($vo['nicename'],'country'); ?></option>
                                     <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -207,13 +213,13 @@
                         <div class="form-group">
                             <label for="c-bio" class="control-label col-xs-12 col-sm-2"><?php echo __('Height'); ?>(cm):</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input id="c-height" data-rule="required:true,digits:true,range[150~220]"  class="form-control" name="height" type="text" value="<?php echo $user['height']; ?>">
+                                <input id="c-height" data-rule="<?php echo __('Height'); ?>:required:true,digits:true,range[150~220]"  class="form-control" name="height" type="text" value="<?php echo $user['height']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="c-bio" class="control-label col-xs-12 col-sm-2"><?php echo __('Weight'); ?>(kg):</label>
                             <div class="col-xs-12 col-sm-4">
-                                <input id="c-weight" data-rule="required:true,digits:true,range[40~200]"  class="form-control" name="weight" type="text" value="<?php echo $user['weight']; ?>">
+                                <input id="c-weight" data-rule="<?php echo __('Weight'); ?>:required:true,digits:true,range[40~200]"  class="form-control" name="weight" type="text" value="<?php echo $user['weight']; ?>">
                             </div>
                         </div>
                         <div class="form-group layui-form">
@@ -299,6 +305,7 @@
         margin-right:0;
     }
 </style>
+
 <script>
     layui.use(['laydate','upload','jquery','form'], function(){
         var laydate = layui.laydate,
@@ -375,6 +382,7 @@
     });
 
 </script>
+
         </main>
 
         <footer class="footer" style="clear:both">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"E:\phpstudy\WWW\chat\public/../application/admin\view\chat\interest\edit.html";i:1530951412;s:63:"E:\phpstudy\WWW\chat\application\admin\view\layout\default.html";i:1530232546;s:60:"E:\phpstudy\WWW\chat\application\admin\view\common\meta.html";i:1530232546;s:62:"E:\phpstudy\WWW\chat\application\admin\view\common\script.html";i:1530232546;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:71:"E:\phpstudy\WWW\chat\public/../application/admin\view\leesign\edit.html";i:1531203456;s:63:"E:\phpstudy\WWW\chat\application\admin\view\layout\default.html";i:1530232546;s:60:"E:\phpstudy\WWW\chat\application\admin\view\common\meta.html";i:1530232546;s:62:"E:\phpstudy\WWW\chat\application\admin\view\common\script.html";i:1530232546;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -53,27 +53,39 @@
                                 <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Name'); ?>:</label>
+        <label for="c-uid" class="control-label col-xs-12 col-sm-2"><?php echo __('Uid'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-name" class="form-control" name="row[name]" type="text" value="<?php echo $row['name']; ?>">
+            <input id="c-uid" data-rule="required" class="form-control" name="row[uid]" type="number" value="<?php echo $row['uid']; ?>">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Name_en'); ?>:</label>
+        <label for="c-sign_ip" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_ip'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-name_en" class="form-control" name="row[name_en]" type="text" value="<?php echo $row['name_en']; ?>">
+            <input id="c-sign_ip" class="form-control" name="row[sign_ip]" type="text" value="<?php echo $row['sign_ip']; ?>">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Status'); ?>:</label>
+        <label for="c-sign_time" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_time'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            
-            <div class="radio">
-            <?php if(is_array($statusList) || $statusList instanceof \think\Collection || $statusList instanceof \think\Paginator): if( count($statusList)==0 ) : echo "" ;else: foreach($statusList as $key=>$vo): ?>
-            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), is_array($row['status'])?$row['status']:explode(',',$row['status']))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
-            <?php endforeach; endif; else: echo "" ;endif; ?>
-            </div>
-
+            <input id="c-sign_time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[sign_time]" type="text" value="<?php echo $row['sign_time']; ?>">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sign_reward" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_reward'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sign_reward" class="form-control" name="row[sign_reward]" type="number" value="<?php echo $row['sign_reward']; ?>">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sign_extra_reward" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_extra_reward'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sign_extra_reward" class="form-control" name="row[sign_extra_reward]" type="number" value="<?php echo $row['sign_extra_reward']; ?>">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-max_sign" class="control-label col-xs-12 col-sm-2"><?php echo __('Max_sign'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-max_sign" class="form-control" name="row[max_sign]" type="number" value="<?php echo $row['max_sign']; ?>">
         </div>
     </div>
     <div class="form-group layer-footer">

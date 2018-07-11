@@ -1,0 +1,1608 @@
+---------------------------------------------------------------
+[ 2018-07-10T18:17:08+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.147008s][吞吐率：6.80req/s] [内存消耗：3,510.57kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:09+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.134008s][吞吐率：7.46req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:10+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.132008s][吞吐率：7.58req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:11+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.116007s][吞吐率：8.62req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.000000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:11+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.132008s][吞吐率：7.58req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:12+08:00 ] 127.0.0.1 GET /admin/ajax/lang?callback=define&controllername=index&v=1531217827
+[ info ] www.yangmengyu.com/admin/ajax/lang?callback=define&controllername=index&v=1531217827 [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：2,829.10kb] [文件加载：79]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://www.yangmengyu.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'index',
+  'v' => '1531217827',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ E:\phpstudy\WWW\chat\application\admin\controller\Ajax.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:17:12+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:12+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.133008s][吞吐率：7.52req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:13+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.155009s][吞吐率：6.45req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:13+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.132008s][吞吐率：7.58req/s] [内存消耗：3,510.46kb] [文件加载：84]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:17+08:00 ] 127.0.0.1 GET /admin/dashboard?addtabs=1
+[ info ] www.yangmengyu.com/admin/dashboard?addtabs=1 [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：3,796.38kb] [文件加载：88]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'dashboard',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/admin/dashboard?ref=addtabs',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001001s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ RUN ] app\admin\controller\Dashboard->index[ E:\phpstudy\WWW\chat\application\admin\controller\Dashboard.php ]
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/admin\view\dashboard\index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'totaluser',
+  6 => 'totalviews',
+  7 => 'totalorder',
+  8 => 'totalorderamount',
+  9 => 'todayuserlogin',
+  10 => 'todayusersignup',
+  11 => 'todayorder',
+  12 => 'unsettleorder',
+  13 => 'sevendnu',
+  14 => 'sevendau',
+  15 => 'paylist',
+  16 => 'createlist',
+  17 => 'addonversion',
+  18 => 'uploadmode',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `fa_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:17+08:00 ] 127.0.0.1 GET /assets/libs/bootstrap-daterangepicker/daterangepicker.css
+[ info ] www.yangmengyu.com/assets/libs/bootstrap-daterangepicker/daterangepicker.css [运行时间：0.030002s][吞吐率：33.33req/s] [内存消耗：1,750.95kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'libs',
+    2 => 'bootstrap-daterangepicker',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.yangmengyu.com/admin/dashboard?addtabs=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:17:17+08:00 ] 127.0.0.1 GET /admin/addon?addtabs=1
+[ info ] www.yangmengyu.com/admin/addon?addtabs=1 [运行时间：0.167010s][吞吐率：5.99req/s] [内存消耗：3,857.36kb] [文件加载：92]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'addon',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/admin/addon?ref=addtabs',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/addon.php
+[ info ] [ RUN ] app\admin\controller\Addon->index[ E:\phpstudy\WWW\chat\application\admin\controller\Addon.php ]
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/admin\view\addon\index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `fa_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:17+08:00 ] 127.0.0.1 GET /assets/libs/bootstrap-daterangepicker/daterangepicker.css
+[ info ] www.yangmengyu.com/assets/libs/bootstrap-daterangepicker/daterangepicker.css [运行时间：0.026002s][吞吐率：38.46req/s] [内存消耗：1,750.93kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'libs',
+    2 => 'bootstrap-daterangepicker',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.yangmengyu.com/admin/addon?addtabs=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:17:21+08:00 ] 127.0.0.1 GET /admin/ajax/lang?callback=define&controllername=dashboard&v=1531217837
+[ info ] www.yangmengyu.com/admin/ajax/lang?callback=define&controllername=dashboard&v=1531217837 [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,827.05kb] [文件加载：79]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://www.yangmengyu.com/admin/dashboard?addtabs=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'dashboard',
+  'v' => '1531217837',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ E:\phpstudy\WWW\chat\application\admin\controller\Ajax.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:17:21+08:00 ] 127.0.0.1 GET /admin/ajax/lang?callback=define&controllername=addon&v=1531217837
+[ info ] www.yangmengyu.com/admin/ajax/lang?callback=define&controllername=addon&v=1531217837 [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,832.30kb] [文件加载：79]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://www.yangmengyu.com/admin/addon?addtabs=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'addon',
+  'v' => '1531217837',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ E:\phpstudy\WWW\chat\application\admin\controller\Ajax.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:17:49+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.134008s][吞吐率：7.46req/s] [内存消耗：3,727.70kb] [文件加载：89]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\addons\leesign\view\index\index1.html [ array (
+  0 => 'config',
+  1 => 'user',
+  2 => 'site',
+  3 => 'sign',
+  4 => 'rule',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:49+08:00 ] 127.0.0.1 POST /addons/leesign/index/getdayList.html
+[ info ] www.yangmengyu.com/addons/leesign/index/getdayList.html [运行时间：0.117006s][吞吐率：8.55req/s] [内存消耗：3,584.09kb] [文件加载：88]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'getdayList',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:57+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.139008s][吞吐率：7.19req/s] [内存消耗：3,573.70kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001001s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\addons\leesign\view\index\index1.html [ array (
+  0 => 'config',
+  1 => 'user',
+  2 => 'site',
+  3 => 'sign',
+  4 => 'rule',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:17:57+08:00 ] 127.0.0.1 POST /addons/leesign/index/getdayList.html
+[ info ] www.yangmengyu.com/addons/leesign/index/getdayList.html [运行时间：0.106007s][吞吐率：9.43req/s] [内存消耗：3,583.43kb] [文件加载：88]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'getdayList',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:19+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.133008s][吞吐率：7.52req/s] [内存消耗：3,721.81kb] [文件加载：89]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\addons\leesign\view\index\index1.html [ array (
+  0 => 'config',
+  1 => 'user',
+  2 => 'site',
+  3 => 'sign',
+  4 => 'rule',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:19+08:00 ] 127.0.0.1 POST /addons/leesign/index/getdayList.html
+[ info ] www.yangmengyu.com/addons/leesign/index/getdayList.html [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：3,583.43kb] [文件加载：88]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'getdayList',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:21+08:00 ] 127.0.0.1 POST /addons/leesign/index/sign.html
+[ info ] www.yangmengyu.com/addons/leesign/index/sign.html [运行时间：0.340019s][吞吐率：2.94req/s] [内存消耗：3,639.20kb] [文件加载：90]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'sign',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  (  DATE_FORMAT(sign_time,'%Y-%m-%d') = '2018-07-10' )  AND `uid` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_leesign` (`sign_ip` , `uid` , `sign_time` , `sign_reward` , `sign_extra_reward` , `max_sign`) VALUES ('127.0.0.1' , 1000 , '2018-07-10 18:18:21' , 0 , 10 , 1) [ RunTime:0.051003s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_score_log` [ RunTime:0.046002s ]
+[ sql ] [ SQL ] INSERT INTO `fa_user_score_log` (`user_id` , `score` , `before` , `after` , `memo` , `createtime`) VALUES (1000 , 0 , 4 , 4 , '连续签到奖励' , 1531217901) [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `fa_user`  SET `score`=14,`updatetime`=1531217901  WHERE  `id` = 1000 [ RunTime:0.027001s ]
+[ sql ] [ SQL ] INSERT INTO `fa_user_score_log` (`user_id` , `score` , `before` , `after` , `memo` , `createtime`) VALUES (1000 , 10 , 4 , 14 , '额外签到奖励' , 1531217901) [ RunTime:0.028002s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 GET /assets/css/frontend.css.map
+[ info ] www.yangmengyu.com/assets/css/frontend.css.map [运行时间：0.041002s][吞吐率：24.39req/s] [内存消耗：1,750.09kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'frontend.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 GET /assets/css/fastadmin.css.map
+[ info ] www.yangmengyu.com/assets/css/fastadmin.css.map [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：1,750.06kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'fastadmin.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 GET /assets/css/bootstrap.css.map
+[ info ] www.yangmengyu.com/assets/css/bootstrap.css.map [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：1,750.06kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001001s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'bootstrap.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：3,579.35kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\addons\leesign\view\index\index1.html [ array (
+  0 => 'config',
+  1 => 'user',
+  2 => 'site',
+  3 => 'sign',
+  4 => 'rule',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 GET /assets/css/bootstrap.css.map
+[ info ] www.yangmengyu.com/assets/css/bootstrap.css.map [运行时间：0.045002s][吞吐率：22.22req/s] [内存消耗：1,750.06kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'bootstrap.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 GET /assets/css/frontend.css.map
+[ info ] www.yangmengyu.com/assets/css/frontend.css.map [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：1,750.09kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'frontend.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:30+08:00 ] 127.0.0.1 POST /addons/leesign/index/getdayList.html
+[ info ] www.yangmengyu.com/addons/leesign/index/getdayList.html [运行时间：0.128008s][吞吐率：7.81req/s] [内存消耗：3,584.09kb] [文件加载：88]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'getdayList',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:37+08:00 ] 127.0.0.1 GET /addons/leesign/index/index1
+[ info ] www.yangmengyu.com/addons/leesign/index/index1 [运行时间：0.119007s][吞吐率：8.40req/s] [内存消耗：3,573.64kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.yangmengyu.com/index/user/login.html?url=http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'index1',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\addons\leesign\view\index\index1.html [ array (
+  0 => 'config',
+  1 => 'user',
+  2 => 'site',
+  3 => 'sign',
+  4 => 'rule',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-10 00:00:00' AND '2018-07-10 23:59:59'  AND `uid` = 1000 ORDER BY `sign_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:38+08:00 ] 127.0.0.1 GET /assets/css/fastadmin.css.map
+[ info ] www.yangmengyu.com/assets/css/fastadmin.css.map [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：1,750.06kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'fastadmin.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:38+08:00 ] 127.0.0.1 GET /assets/css/bootstrap.css.map
+[ info ] www.yangmengyu.com/assets/css/bootstrap.css.map [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：1,750.05kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'assets',
+    1 => 'css',
+    2 => 'bootstrap.css.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-10T18:18:38+08:00 ] 127.0.0.1 POST /addons/leesign/index/getdayList.html
+[ info ] www.yangmengyu.com/addons/leesign/index/getdayList.html [运行时间：0.150009s][吞吐率：6.67req/s] [内存消耗：3,583.43kb] [文件加载：88]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'getdayList',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-10T18:18:43+08:00 ] 127.0.0.1 POST /addons/leesign/index/sign.html
+[ info ] www.yangmengyu.com/addons/leesign/index/sign.html [运行时间：0.298017s][吞吐率：3.36req/s] [内存消耗：3,639.27kb] [文件加载：90]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.yangmengyu.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36',
+  'referer' => 'http://www.yangmengyu.com/addons/leesign/index/index1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=i1p706njj2b7ommk4vk40amt47; userinfo=think%3A%7B%22id%22%3A%221000%22%2C%22username%22%3A%22%25E7%25AC%2591%25E7%259C%258B%25E5%25BE%2580%25E4%25BA%258B%25E5%25A6%2582%25E8%258A%25B1%22%2C%22sign%22%3A%22123123%22%2C%22avatar%22%3A%22%252Fuploads%252F20180707%252F8e8e51c4ce20fa4a20df09988e925e90.jpg%22%2C%22token%22%3A%22gozCgYyqormWAi8XIT9q70zyaADvwjyM%252B17gpf9NcpOBSXPyWnB4HKxn8CbB6tcxgAcZzXX6cBaKPROp77roUw%253D%253D%22%7D; uid=1000; token=ee1b43c5-db2c-4d0d-bd1d-a87485c47f97',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'leesign',
+  'controller' => 'index',
+  'action' => 'sign',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\addons\leesign\lang\zh-cn.php
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = 'fec7fe55dc494e960389ac09dff2c5bc8c8ff1f0' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_leesign` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  (  DATE_FORMAT(sign_time,'%Y-%m-%d') = '2018-07-10' )  AND `uid` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_leesign` WHERE  `sign_time` BETWEEN '2018-07-01' AND '2018-07-31'  AND `uid` = 1000 ORDER BY `sign_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_leesign` (`sign_ip` , `uid` , `sign_time` , `sign_reward` , `sign_extra_reward` , `max_sign`) VALUES ('127.0.0.1' , 1000 , '2018-07-10 18:18:43' , 0 , 10 , 1) [ RunTime:0.048003s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_score_log` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] INSERT INTO `fa_user_score_log` (`user_id` , `score` , `before` , `after` , `memo` , `createtime`) VALUES (1000 , 0 , 14 , 14 , '连续签到奖励' , 1531217923) [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 1000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `fa_user`  SET `score`=24,`updatetime`=1531217923  WHERE  `id` = 1000 [ RunTime:0.028001s ]
+[ sql ] [ SQL ] INSERT INTO `fa_user_score_log` (`user_id` , `score` , `before` , `after` , `memo` , `createtime`) VALUES (1000 , 10 , 14 , 24 , '额外签到奖励' , 1531217923) [ RunTime:0.029002s ]

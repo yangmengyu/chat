@@ -76,5 +76,6 @@ return [
     'Height'             => '身高',
     'Weight'             => '体重',
     'Interest'  => '兴趣',
+    'My sign'  => '我的签到',
 
 ];

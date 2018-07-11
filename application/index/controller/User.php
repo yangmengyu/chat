@@ -292,5 +292,10 @@ class User extends Frontend
         $this->view->engine->layout(false);
         return $this->view->fetch();
     }
+    //签到
+    public function sign(){
+        $this->view->assign('title', __('My sign'));
+        return $this->view->fetch();
+    }
 
 }

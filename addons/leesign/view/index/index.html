@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{:__('day sign')}</title>
+    <link rel="stylesheet" href="__ADDON__/css/schedule.css">
+    <link href="__CDN__/assets/css/frontend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet">
+
+</head>
+<body style="padding-top: 0">
+<div class="panel-heading">
+    <h2>{:__('my sign')}
+        <a class="btn btn-success pull-right btn-signin {if $sign}disabled{/if}" href="javascript:;">
+            <i class="fa fa-location-arrow"></i> <span id="js-just-qiandao">{if $sign}{:__('Signed in')}{else}{:__('Sign in')}{/if}</span>
+        </a>
+        <a href="javascript:;" class="btn btn-default pull-right btn-rule">
+            <i class="fa fa-question-circle"></i>
+            {:__('sign rule')}
+        </a>
+    </h2>
+</div>
+{if $sign}
+<div class="alert alert-warning-light">
+    {:__('sign success tip','<b>'.$sign.max_sign.'</b>')}，{:__('Sign in tomorrow and get %s points','<b>'.$sign.next_sign.'</b>')}
+</div>
+{else}
+<div class="alert alert-warning-light">
+    {:__('Please click sign in to receive your reward today')}
+</div>
+{/if}
+<div id='schedule-box' class="boxshaw">
+
+</div>
+<div>
+    <h3 id='h3Ele'></h3>
+</div>
+<div id="rule_html" class="layui-layer-content hidden" >
+    <table class="table table-striped" style="width: 80%;margin: 0 auto">
+        <thead>
+        <tr>
+            <th>{:__('continuous check-in')}</th>
+            <th>{:__('Get point')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name='rule'  id='vo'}
+        <tr>
+            <th scope="row">{:__('The %s day',$key)}</th>
+            <td>{$vo}</td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+</body>
+<script>
+    var LOGIN_URL = "{:url('index/user/login')}?url={:request()->url(true)}";
+    var SIGN_URL = "{:addon_url('leesign/index/sign')}";
+    var SIGNINFO_URL = "{:addon_url('leesign/index/getSignInfo')}";
+    var getdayList_URL = "{:addon_url('leesign/index/getdayList')}";
+</script>
+<script src="__CDN__/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="__CDN__/assets/libs/layer/src/layer.js"></script>
+<script src="__ADDON__/js/schedule.js"></script>
+<script>
+    var mySchedule = new Schedule({
+        el: '#schedule-box',
+        //date: '2018-9-20',
+        /*clickCb: function (y,m,d) {
+            getdayList(y+'-'+m+'-'+d);
+        },*/
+        nextMonthCb: function (y,m,d) {
+            getdayList(y+'-'+m+'-'+d);
+        },
+        nextYeayCb: function (y,m,d) {
+            getdayList(y+'-'+m+'-'+d);
+        },
+        prevMonthCb: function (y,m,d) {
+            getdayList(y+'-'+m+'-'+d);
+        },
+        prevYearCb: function (y,m,d) {
+            getdayList(y+'-'+m+'-'+d);
+        }
+    });
+    function getdayList(date) {
+        $.post(getdayList_URL,{date:date},function (res) {
+            if(res.code == 1){
+                $('.current-month').each(function () {
+                    var dayspan = $(this).find('span');
+                    var daytitle = dayspan.attr('title');
+                    if(res.data.indexOf(daytitle) > '-1'){
+                        dayspan.addClass('sign-flag')
+                    }
+                });
+            }else{
+                parent.layer.alert(res.msg, {
+                    btn: ["{:__('To log in')}"],
+                    yes: function () {
+                        location.href = LOGIN_URL;
+                    }
+                });
+            }
+        })
+    }
+    getdayList();
+
+    //点击签到按钮
+    $('.btn-signin').on("click", function () {
+        $.ajax({
+            url: SIGN_URL,
+            type: 'post',
+            dataType: 'json',
+            success: function (ret) {
+                if (ret.code == 1) {
+                    window.location.reload();
+                    $('.btn-signin').addClass('disabled');
+                    $('#js-just-qiandao').html('{:__("Signed in")}');
+                } else if (ret.code == -1) {
+                    parent.layer.alert(res.msg, {
+                        btn: ["{:__('To log in')}"],
+                        yes: function () {
+                            location.href = LOGIN_URL;
+                        }
+                    });
+                } else {
+                    layer.alert(ret.msg);
+                }
+            }, error: function () {
+                parent.layer.alert("操作失败请重试");
+            }
+        });
+    }); //签到
+    //签到规则
+    $('.btn-rule').on("click",function () {
+
+        parent.layer.open({
+            type: 1,
+            title:'{:__("sign rule")}',
+            area:['300px','400px'],
+            content: $('#rule_html').html(),
+        });
+    });
+</script>
+</html>

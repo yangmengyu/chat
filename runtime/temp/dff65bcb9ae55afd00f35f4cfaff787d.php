@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:72:"E:\phpstudy\WWW\chat\public/../application/admin\view\command\index.html";i:1530339676;s:63:"E:\phpstudy\WWW\chat\application\admin\view\layout\default.html";i:1530232546;s:60:"E:\phpstudy\WWW\chat\application\admin\view\common\meta.html";i:1530232546;s:62:"E:\phpstudy\WWW\chat\application\admin\view\common\script.html";i:1530232546;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:70:"E:\phpstudy\WWW\chat\public/../application/admin\view\leesign\add.html";i:1531203456;s:63:"E:\phpstudy\WWW\chat\application\admin\view\layout\default.html";i:1530232546;s:60:"E:\phpstudy\WWW\chat\application\admin\view\common\meta.html";i:1530232546;s:62:"E:\phpstudy\WWW\chat\application\admin\view\common\script.html";i:1530232546;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -50,31 +50,52 @@
                             <!-- END RIBBON -->
                             <?php endif; ?>
                             <div class="content">
-                                <div class="panel panel-default panel-intro">
-    <?php echo build_heading(); ?>
+                                <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
-    <div class="panel-body">
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="one">
-                <div class="widget-body no-padding">
-                    <div id="toolbar" class="toolbar">
-                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="<?php echo __('Refresh'); ?>" ><i class="fa fa-refresh"></i> </a>
-                        <a href="javascript:;" class="btn btn-success btn-add <?php echo $auth->check('command/add')?'':'hide'; ?>" title="<?php echo __('Add'); ?>" ><i class="fa fa-plus"></i> <?php echo __('Add'); ?></a>
-                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled <?php echo $auth->check('command/del')?'':'hide'; ?>" title="<?php echo __('Delete'); ?>" ><i class="fa fa-trash"></i> <?php echo __('Delete'); ?></a>
-
-                    </div>
-                    <table id="table" class="table table-striped table-bordered table-hover" 
-                           data-operate-detail="<?php echo $auth->check('command/detail'); ?>"
-                           data-operate-execute="<?php echo $auth->check('command/execute'); ?>"
-                           data-operate-del="<?php echo $auth->check('command/del'); ?>"
-                           width="100%">
-                    </table>
-                </div>
-            </div>
-
+    <div class="form-group">
+        <label for="c-uid" class="control-label col-xs-12 col-sm-2"><?php echo __('Uid'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uid" data-rule="required" class="form-control" name="row[uid]" type="number">
         </div>
     </div>
-</div>
+    <div class="form-group">
+        <label for="c-sign_ip" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_ip'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sign_ip" class="form-control" name="row[sign_ip]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sign_time" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_time'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sign_time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[sign_time]" type="text" value="<?php echo date('Y-m-d H:i:s'); ?>">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sign_reward" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_reward'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sign_reward" class="form-control" name="row[sign_reward]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sign_extra_reward" class="control-label col-xs-12 col-sm-2"><?php echo __('Sign_extra_reward'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sign_extra_reward" class="form-control" name="row[sign_extra_reward]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-max_sign" class="control-label col-xs-12 col-sm-2"><?php echo __('Max_sign'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-max_sign" class="form-control" name="row[max_sign]" type="number">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled"><?php echo __('OK'); ?></button>
+            <button type="reset" class="btn btn-default btn-embossed"><?php echo __('Reset'); ?></button>
+        </div>
+    </div>
+</form>
 
                             </div>
                         </div>

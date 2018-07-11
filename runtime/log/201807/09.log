@@ -1,0 +1,1380 @@
+---------------------------------------------------------------
+[ 2018-07-09T08:40:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.385022s][吞吐率：2.60req/s] [内存消耗：3,575.46kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.127007s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:41:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:42:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.010000s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:43:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011000s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:44:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.017001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:45:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:46:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:47:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.010001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:48:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.016001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:49:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:50:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:51:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:52:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001001s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011000s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:53:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:54:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.013001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:55:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.011001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:56:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.125007s][吞吐率：8.00req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.027001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:57:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.081005s][吞吐率：12.34req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.016001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:58:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.017001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T08:59:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:00:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.071005s][吞吐率：14.08req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.017001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:01:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.164009s][吞吐率：6.10req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.026001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:02:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.016001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:03:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.018001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:04:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:05:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:06:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.095006s][吞吐率：10.53req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003001s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.016000s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:07:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.014001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:08:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.128008s][吞吐率：7.81req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.023001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
+---------------------------------------------------------------
+[ 2018-07-09T09:09:03+08:00 ] 127.0.0.1 POST /admin/ajax/wipecache?type=all
+[ info ] www.yangmengyu.com/admin/ajax/wipecache?type=all [运行时间：0.116006s][吞吐率：8.62req/s] [内存消耗：3,575.52kb] [文件加载：87]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.007000s ]
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'wipecache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.yangmengyu.com',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '0',
+  'connection' => 'Close',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+)
+[ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/admin\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\phpstudy\WWW\chat\public/../application/common\view\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.027001s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'useragent' cannot be null[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:463]
