@@ -173,7 +173,8 @@ class Auth
             'logintime' => $time,
             'loginip'   => $ip,
             'prevtime'  => $time,
-            'status'    => 'normal'
+            'status'    => 'normal',
+            'avatar'    => '/assets/img/avatar.png'
         ]);
         $params['password'] = $this->getEncryptPassword($password, $params['salt']);
         $params = array_merge($params, $extend);
