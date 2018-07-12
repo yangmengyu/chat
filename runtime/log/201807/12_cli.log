@@ -1,0 +1,526 @@
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.015600s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.109200s ]
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.031200s ]
+[ 2018-07-12T08:33:34+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:33:37+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004001s ]
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-12T08:34:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:34:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ 2018-07-12T08:35:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:35:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006001s ]
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-12T08:36:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:36:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-12T08:37:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:37:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008000s ]
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.016001s ]
+[ 2018-07-12T08:38:04+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:38:05+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005001s ]
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:39:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:39:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.007000s ]
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:40:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:40:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006001s ]
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:41:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:41:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.007001s ]
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-12T08:42:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:42:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006000s ]
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-12T08:43:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:43:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:44:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:44:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:45:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:45:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-12T08:46:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:46:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ 2018-07-12T08:47:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:47:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008000s ]
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:48:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:48:04+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:49:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:49:03+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.009001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-12T08:49:03+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.065003s ]
+[ 2018-07-12T08:49:03+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-12T08:49:03+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2063,`executetime`=1531356543,`updatetime`=1531356543  WHERE  `id` = 3 [ RunTime:0.042003s ]
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008000s ]
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-12T08:50:03+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-12T08:50:03+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-12T08:50:03+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.022001s ]
+[ 2018-07-12T08:50:03+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-12T08:50:03+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2064,`executetime`=1531356603,`updatetime`=1531356603  WHERE  `id` = 3 [ RunTime:0.048003s ]
