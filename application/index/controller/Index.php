@@ -38,7 +38,12 @@ class Index extends Frontend
             }
             $limit = 12;
             $count = Db::name('user')->where('status','normal')->count();
-            $data['data'] = Db::name('user')->where('status','normal')->limit($limit)->page($page)->select();
+            $data['data'] = Db::name('user')
+                ->field('nickname,id,group_id,avatar,birthday,country,gender')
+                ->where('status','normal')
+                ->limit($limit)
+                ->page($page)
+                ->select();
             $user_model = new \app\common\model\User();
             foreach ($data['data'] as $key=>$value){
                 if($value['group_id']>1){

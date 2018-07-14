@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531560907;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531552704;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531468830;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531552547;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531562307;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531552704;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531468830;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531552547;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -189,7 +189,15 @@
                     if(res.code == 1){
                         var lis = [];
                         for(var i = 0; i < res.data.data.length; i++){
-                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="/uploads/images/park.jpg"> <img src="'+res.data.data[i].avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3> <span>'+res.data.data[i].nickname+'</span>';
+                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="/uploads/images/park.jpg"> <img src="'+res.data.data[i].avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3>';
+                            if(res.data.data[i].gender == '0'){
+                                str += '<span><i class="fa fa-venus text-danger fa-fw"></i>'+res.data.data[i].nickname+'</span>';
+                            }else if(res.data.data[i].gender == '1'){
+                                str += '<i class="fa fa-mars text-info fa-fw"></i><span>'+res.data.data[i].nickname+'</span>';
+                            }else{
+                                str += '<i class="fa fa-genderless text-success fa-fw"></i><span>'+res.data.data[i].nickname+'</span>';
+                            }
+
                             //是否为 VIP
                             if(res.data.data[i].isvip == 1){
                                 str += '<i class="iconfont">&#xe601;</i>';
