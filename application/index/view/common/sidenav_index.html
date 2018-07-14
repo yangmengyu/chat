@@ -1,0 +1,27 @@
+<div class="sidenav">
+    <ul class="list-group">
+        <li class="list-group-heading">
+            <div class="media">
+                <div class="media-left">
+                    <a href="{:url('user/profile')}">
+                        <img class="media-object" data-src="{$user.avatar}" alt="{$user.nickname}" style="width: 64px; height: 64px;border-radius: 35px;" src="{$user.avatar}" data-holder-rendered="true">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">{$user.nickname}</h3>
+                    <br>
+                    ID:{$user.id}
+                </div>
+            </div>
+        </li>
+        <li class="list-group-heading">
+            <i class="layui-icon layui-icon-diamond" style="font-size: 20px; color: #e60020;"></i>
+            {$user.score}
+        </li>
+        <li class="list-group-item {:$config['actionname']=='index'?'active':''}"> <a href="{:url('user/index')}"><i class="fa fa-heart fa-fw"></i> {:__('The person I like')}</a> </li>
+        <li class="list-group-item {:$config['actionname']=='profile'?'active':''}"> <a href="{:url('user/profile')}"><i class="fa fa-heart-o fa-fw"></i> {:__('People who like me')}</a> </li>
+        <li class="list-group-item {:$config['actionname']=='changepwd'?'active':''}"> <a href="{:url('user/changepwd')}"><i class="fa fa-heartbeat fa-fw"></i> {:__('Like each other')}</a> </li>
+        <li class="list-group-item {:$config['actionname']=='changepwd'?'active':''}"> <a href="{:url('user/changepwd')}"><i class="fa fa-users fa-fw"></i> {:__('Visitor')}</a> </li>
+
+    </ul>
+</div>

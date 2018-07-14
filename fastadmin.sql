@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-11 17:20:19
+Date: 2018-07-14 17:43:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `fa_admin` (
 -- ----------------------------
 -- Records of fa_admin
 -- ----------------------------
-INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1531298898', '1492186163', '1531298898', 'ad54cfed-066a-4956-81a3-b35cab7ecee7', 'normal');
+INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1531558884', '1492186163', '1531558884', '47889908-e089-42b3-95b4-3ff02056f755', 'normal');
 INSERT INTO `fa_admin` VALUES ('2', 'admin2', 'admin2', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '/assets/img/avatar.png', 'admin2@fastadmin.net', '0', '1505450906', '1492186163', '1505450906', 'df45fdd5-26f4-45ca-83b3-47e4491a315a', 'normal');
 INSERT INTO `fa_admin` VALUES ('3', 'admin3', 'admin3', '1c11f945dfcd808a130a8c2a8753fe62', 'WOKJEn', '/assets/img/avatar.png', 'admin3@fastadmin.net', '0', '1530863546', '1492186201', '1530863607', '', 'normal');
 
@@ -60,7 +60,7 @@ CREATE TABLE `fa_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=312 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of fa_admin_log
@@ -376,6 +376,18 @@ INSERT INTO `fa_admin_log` VALUES ('308', '1', 'admin', '/admin/command/command/
 INSERT INTO `fa_admin_log` VALUES ('309', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"table\":\"fa_user_score_log\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1531300278');
 INSERT INTO `fa_admin_log` VALUES ('310', '1', 'admin', '/admin/command/command/action/command', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"1\",\"force\":\"1\",\"table\":\"fa_user_score_log\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1531300283');
 INSERT INTO `fa_admin_log` VALUES ('311', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"0\",\"local\":\"1\",\"delete\":\"1\",\"force\":\"1\",\"table\":\"fa_user_score_log\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.18 Safari/537.36', '1531300284');
+INSERT INTO `fa_admin_log` VALUES ('312', '1', 'admin', '/admin/index/login?url=%2Fadmin', '登录', '{\"url\":\"\\/admin\",\"__token__\":\"118c7378daeec30f93f9e613746cac58\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531530196');
+INSERT INTO `fa_admin_log` VALUES ('313', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531530594');
+INSERT INTO `fa_admin_log` VALUES ('314', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531531663');
+INSERT INTO `fa_admin_log` VALUES ('315', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_chat_country\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531531669');
+INSERT INTO `fa_admin_log` VALUES ('316', '1', 'admin', '/admin/command/command/action/command', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"1\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"table\":\"fa_chat_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531531681');
+INSERT INTO `fa_admin_log` VALUES ('317', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"crud\",\"isrelation\":\"1\",\"local\":\"1\",\"delete\":\"0\",\"force\":\"1\",\"table\":\"fa_chat_country\",\"controller\":\"\",\"model\":\"\",\"setcheckboxsuffix\":\"\",\"enumradiosuffix\":\"\",\"imagefield\":\"\",\"filefield\":\"\",\"intdatesuffix\":\"\",\"switchsuffix\":\"\",\"citysuffix\":\"\",\"selectpagesuffix\":\"\",\"selectpagessuffix\":\"\",\"ignorefields\":\"\",\"sortfield\":\"\",\"editorclass\":\"\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531531682');
+INSERT INTO `fa_admin_log` VALUES ('318', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Fdashboard%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/dashboard?ref=addtabs\",\"__token__\":\"cb5c99b07dc946dae64577fb4eac99ec\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531558884');
+INSERT INTO `fa_admin_log` VALUES ('319', '1', 'admin', '/admin/user/group/add?dialog=1', '会员管理 会员组管理 添加', '{\"dialog\":\"1\",\"row\":{\"rules\":\"1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25,26,27\",\"name\":\"VIP\\u7ec4\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531558914');
+INSERT INTO `fa_admin_log` VALUES ('320', '1', 'admin', '/admin/user/user/edit/ids/1000?dialog=1', '会员管理 会员管理 编辑', '{\"dialog\":\"1\",\"row\":{\"group_id\":\"2\",\"username\":\"yangmengyu\",\"nickname\":\"yangmengyu\",\"password\":\"\",\"email\":\"363126523@qq.com\",\"mobile\":\"17603852737\",\"avatar\":\"\\/uploads\\/20180713\\/9f4be87510289a6a312efb28d86d5bb5.jpg\",\"level\":\"2\",\"gender\":\"1\",\"birthday\":\"\",\"bio\":\"\",\"score\":\"87\",\"successions\":\"5\",\"maxsuccessions\":\"5\",\"prevtime\":\"2018-07-13 15:19:47\",\"logintime\":\"2018-07-14 16:33:18\",\"loginip\":\"127.0.0.1\",\"loginfailure\":\"0\",\"joinip\":\"127.0.0.1\",\"jointime\":\"2018-06-29 14:20:21\",\"status\":\"normal\"},\"ids\":\"1000\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531558948');
+INSERT INTO `fa_admin_log` VALUES ('321', '1', 'admin', '/admin/user/group/edit/ids/2?dialog=1', '会员管理 会员组管理 编辑', '{\"dialog\":\"1\",\"row\":{\"rules\":\"5,6,7,8,27,15,16,17,19,20,21,22,23,24,25,26,9,10,11,12,3,4,2,13,1\",\"name\":\"VIP\\u5ba2\\u6237\",\"status\":\"normal\"},\"ids\":\"2\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531558960');
+INSERT INTO `fa_admin_log` VALUES ('322', '1', 'admin', '/admin/user/rule/add?dialog=1', '会员管理 会员规则管理 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"1\",\"name\":\"index\",\"title\":\"\\u524d\\u53f0\\u9875\\u9762\",\"remark\":\"\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531560969');
+INSERT INTO `fa_admin_log` VALUES ('323', '1', 'admin', '/admin/user/rule/add?dialog=1', '会员管理 会员规则管理 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"0\",\"pid\":\"28\",\"name\":\"index\\/index\\/index\",\"title\":\"\\u66f4\\u591a\\u4f1a\\u5458\",\"remark\":\"\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531560999');
 
 -- ----------------------------
 -- Table structure for fa_area
@@ -4172,7 +4184,7 @@ CREATE TABLE `fa_attachment` (
   `storage` varchar(100) NOT NULL DEFAULT 'local' COMMENT '存储位置',
   `sha1` varchar(40) NOT NULL DEFAULT '' COMMENT '文件 sha1编码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='附件表';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='附件表';
 
 -- ----------------------------
 -- Records of fa_attachment
@@ -4200,6 +4212,7 @@ INSERT INTO `fa_attachment` VALUES ('20', '1', '0', '/uploads/20180711/d7595aa71
 INSERT INTO `fa_attachment` VALUES ('21', '1', '0', '/uploads/20180711/891a331b361c2a2bc8d3ccac1f27e856.jpg', '3264', '3264', 'jpg', '0', '724386', 'image/jpeg', '', '1531299127', '1531299127', '1531299127', 'local', 'a1db628e09ac877daf32f1a860741ed40eb52ec2');
 INSERT INTO `fa_attachment` VALUES ('22', '1', '0', '/uploads/20180711/891a331b361c2a2bc8d3ccac1f27e856.jpg', '3264', '3264', 'jpg', '0', '724386', 'image/jpeg', '', '1531299350', '1531299350', '1531299350', 'local', 'a1db628e09ac877daf32f1a860741ed40eb52ec2');
 INSERT INTO `fa_attachment` VALUES ('23', '1', '0', '/uploads/20180711/bbcb680cc72b44f73c6fa17a8e0858dd.jpg', '4020', '4020', 'jpg', '0', '532829', 'image/jpeg', '', '1531299403', '1531299403', '1531299403', 'local', 'b063d412448e8178a32ca4e3001141b896409f9f');
+INSERT INTO `fa_attachment` VALUES ('24', '0', '1000', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '200', '200', 'jpg', '0', '20102', 'image/jpeg', '', '1531466352', '1531466352', '1531466352', 'local', '2a857d2f73d233832b69f284add8fa89c982cb71');
 
 -- ----------------------------
 -- Table structure for fa_auth_group
@@ -4462,259 +4475,236 @@ CREATE TABLE `fa_chatlog` (
 DROP TABLE IF EXISTS `fa_chat_country`;
 CREATE TABLE `fa_chat_country` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `iso` char(2) NOT NULL COMMENT '国际代码',
-  `iso3` char(3) DEFAULT NULL COMMENT '国际代码3',
-  `name` varchar(80) NOT NULL COMMENT '国家名称(大写)',
-  `name_zh` varchar(80) DEFAULT NULL COMMENT '国家名称(中文)',
-  `nicename` varchar(80) NOT NULL COMMENT '国家名称(小写)',
-  `numcode` smallint(6) DEFAULT NULL COMMENT '数字代码',
-  `phonecode` int(5) NOT NULL COMMENT '国际区号',
+  `country_cn` varchar(100) NOT NULL COMMENT '国家名称',
+  `continent` varchar(100) DEFAULT NULL COMMENT '板块',
+  `country_en` varchar(100) NOT NULL COMMENT '国家英文',
+  `shortname1` varchar(100) DEFAULT NULL COMMENT '国家简写1',
+  `shortname2` varchar(100) NOT NULL COMMENT '国家简写2',
+  `num_code` smallint(6) DEFAULT NULL COMMENT '数字代码',
+  `full_name` varchar(255) NOT NULL COMMENT '全称',
   `status` enum('normal','hidden') DEFAULT 'normal' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8 COMMENT='国家列表';
+) ENGINE=InnoDB AUTO_INCREMENT=456 DEFAULT CHARSET=utf8 COMMENT='国家列表';
 
 -- ----------------------------
 -- Records of fa_chat_country
 -- ----------------------------
-INSERT INTO `fa_chat_country` VALUES ('1', 'AF', 'AFG', 'AFGHANISTAN', '阿富汗', 'Afghanistan', '4', '93', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('2', 'AL', 'ALB', 'ALBANIA', '阿尔巴尼亚', 'Albania', '8', '355', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('3', 'DZ', 'DZA', 'ALGERIA', '阿尔及利亚', 'Algeria', '12', '213', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('4', 'AS', 'ASM', 'AMERICAN SAMOA', '美属萨摩亚', 'American Samoa', '16', '1684', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('5', 'AD', 'AND', 'ANDORRA', '安道尔', 'Andorra', '20', '376', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('6', 'AO', 'AGO', 'ANGOLA', '安哥拉', 'Angola', '24', '244', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('7', 'AI', 'AIA', 'ANGUILLA', '安圭拉岛', 'Anguilla', '660', '1264', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('8', 'AQ', null, 'ANTARCTICA', '南极洲', 'Antarctica', null, '0', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('9', 'AG', 'ATG', 'ANTIGUA AND BARBUDA', '安提瓜岛和巴布达', 'Antigua and Barbuda', '28', '1268', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('10', 'AR', 'ARG', 'ARGENTINA', '阿根廷', 'Argentina', '32', '54', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('11', 'AM', 'ARM', 'ARMENIA', '亚美尼亚', 'Armenia', '51', '374', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('12', 'AW', 'ABW', 'ARUBA', '阿鲁巴岛', 'Aruba', '533', '297', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('13', 'AU', 'AUS', 'AUSTRALIA', '澳大利亚', 'Australia', '36', '61', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('14', 'AT', 'AUT', 'AUSTRIA', '奥地利', 'Austria', '40', '43', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('15', 'AZ', 'AZE', 'AZERBAIJAN', '阿塞拜疆', 'Azerbaijan', '31', '994', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('16', 'BS', 'BHS', 'BAHAMAS', '巴哈马群岛', 'Bahamas', '44', '1242', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('17', 'BH', 'BHR', 'BAHRAIN', '巴林', 'Bahrain', '48', '973', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('18', 'BD', 'BGD', 'BANGLADESH', '孟加拉国', 'Bangladesh', '50', '880', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('19', 'BB', 'BRB', 'BARBADOS', '巴巴多斯', 'Barbados', '52', '1246', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('20', 'BY', 'BLR', 'BELARUS', '白俄罗斯', 'Belarus', '112', '375', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('21', 'BE', 'BEL', 'BELGIUM', '比利时', 'Belgium', '56', '32', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('22', 'BZ', 'BLZ', 'BELIZE', '伯利兹', 'Belize', '84', '501', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('23', 'BJ', 'BEN', 'BENIN', '贝宁', 'Benin', '204', '229', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('24', 'BM', 'BMU', 'BERMUDA', '百慕大', 'Bermuda', '60', '1441', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('25', 'BT', 'BTN', 'BHUTAN', '不丹', 'Bhutan', '64', '975', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('26', 'BO', 'BOL', 'BOLIVIA', '玻利维亚', 'Bolivia', '68', '591', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('27', 'BA', 'BIH', 'BOSNIA AND HERZEGOVINA', '波斯尼亚和黑塞哥维那', 'Bosnia and Herzegovina', '70', '387', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('28', 'BW', 'BWA', 'BOTSWANA', '博茨瓦纳', 'Botswana', '72', '267', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('29', 'BV', null, 'BOUVET ISLAND', '布维岛', 'Bouvet Island', null, '0', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('30', 'BR', 'BRA', 'BRAZIL', '巴西', 'Brazil', '76', '55', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('31', 'IO', null, 'BRITISH INDIAN OCEAN TERRITORY', '英属印度洋领地', 'British Indian Ocean Territory', null, '246', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('32', 'BN', 'BRN', 'BRUNEI DARUSSALAM', '文莱达鲁萨兰国', 'Brunei Darussalam', '96', '673', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('33', 'BG', 'BGR', 'BULGARIA', '保加利亚', 'Bulgaria', '100', '359', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('34', 'BF', 'BFA', 'BURKINA FASO', '布吉纳法索', 'Burkina Faso', '854', '226', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('35', 'BI', 'BDI', 'BURUNDI', '布隆迪', 'Burundi', '108', '257', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('36', 'KH', 'KHM', 'CAMBODIA', '柬埔寨', 'Cambodia', '116', '855', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('37', 'CM', 'CMR', 'CAMEROON', '喀麦隆', 'Cameroon', '120', '237', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('38', 'CA', 'CAN', 'CANADA', '加拿大', 'Canada', '124', '1', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('39', 'CV', 'CPV', 'CAPE VERDE', '佛得角', 'Cape Verde', '132', '238', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('40', 'KY', 'CYM', 'CAYMAN ISLANDS', '开曼群岛', 'Cayman Islands', '136', '1345', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('41', 'CF', 'CAF', 'CENTRAL AFRICAN REPUBLIC', '中非共和国', 'Central African Republic', '140', '236', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('42', 'TD', 'TCD', 'CHAD', '乍得', 'Chad', '148', '235', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('43', 'CL', 'CHL', 'CHILE', '智利', 'Chile', '152', '56', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('44', 'CN', 'CHN', 'CHINA', '中国', 'China', '156', '86', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('45', 'CX', null, 'CHRISTMAS ISLAND', '圣诞岛', 'Christmas Island', null, '61', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('46', 'CC', null, 'COCOS (KEELING) ISLANDS', 'COCOS(KEELING)岛', 'Cocos (Keeling) Islands', null, '672', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('47', 'CO', 'COL', 'COLOMBIA', '哥伦比亚', 'Colombia', '170', '57', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('48', 'KM', 'COM', 'COMOROS', '科摩罗', 'Comoros', '174', '269', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('49', 'CG', 'COG', 'CONGO', '刚果', 'Congo', '178', '242', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('50', 'CD', 'COD', 'CONGO, THE DEMOCRATIC REPUBLIC OF THE', '刚果民主共和国的', 'Congo, the Democratic Republic of the', '180', '242', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('51', 'CK', 'COK', 'COOK ISLANDS', '库克群岛', 'Cook Islands', '184', '682', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('52', 'CR', 'CRI', 'COSTA RICA', '哥斯达黎加', 'Costa Rica', '188', '506', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('53', 'CI', 'CIV', 'COTE D\'IVOIRE', '科特迪瓦', 'Cote D\'Ivoire', '384', '225', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('54', 'HR', 'HRV', 'CROATIA', '克罗地亚', 'Croatia', '191', '385', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('55', 'CU', 'CUB', 'CUBA', '古巴', 'Cuba', '192', '53', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('56', 'CY', 'CYP', 'CYPRUS', '塞浦路斯', 'Cyprus', '196', '357', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('57', 'CZ', 'CZE', 'CZECH REPUBLIC', '捷克共和国', 'Czech Republic', '203', '420', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('58', 'DK', 'DNK', 'DENMARK', '丹麦', 'Denmark', '208', '45', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('59', 'DJ', 'DJI', 'DJIBOUTI', '吉布提', 'Djibouti', '262', '253', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('60', 'DM', 'DMA', 'DOMINICA', '多米尼加', 'Dominica', '212', '1767', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('61', 'DO', 'DOM', 'DOMINICAN REPUBLIC', '多米尼加共和国', 'Dominican Republic', '214', '1809', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('62', 'EC', 'ECU', 'ECUADOR', '厄瓜多尔', 'Ecuador', '218', '593', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('63', 'EG', 'EGY', 'EGYPT', '埃及', 'Egypt', '818', '20', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('64', 'SV', 'SLV', 'EL SALVADOR', '萨尔瓦多', 'El Salvador', '222', '503', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('65', 'GQ', 'GNQ', 'EQUATORIAL GUINEA', '赤道几内亚', 'Equatorial Guinea', '226', '240', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('66', 'ER', 'ERI', 'ERITREA', '厄立特里亚', 'Eritrea', '232', '291', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('67', 'EE', 'EST', 'ESTONIA', '爱沙尼亚', 'Estonia', '233', '372', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('68', 'ET', 'ETH', 'ETHIOPIA', '埃塞俄比亚', 'Ethiopia', '231', '251', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('69', 'FK', 'FLK', 'FALKLAND ISLANDS (MALVINAS)', '福克兰群岛(马尔维纳斯)', 'Falkland Islands (Malvinas)', '238', '500', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('70', 'FO', 'FRO', 'FAROE ISLANDS', '法罗群岛', 'Faroe Islands', '234', '298', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('71', 'FJ', 'FJI', 'FIJI', '斐济', 'Fiji', '242', '679', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('72', 'FI', 'FIN', 'FINLAND', '芬兰', 'Finland', '246', '358', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('73', 'FR', 'FRA', 'FRANCE', '法国', 'France', '250', '33', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('74', 'GF', 'GUF', 'FRENCH GUIANA', '法属圭亚那', 'French Guiana', '254', '594', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('75', 'PF', 'PYF', 'FRENCH POLYNESIA', '法属波利尼西亚', 'French Polynesia', '258', '689', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('76', 'TF', null, 'FRENCH SOUTHERN TERRITORIES', '法国南部地区', 'French Southern Territories', null, '0', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('77', 'GA', 'GAB', 'GABON', '加蓬', 'Gabon', '266', '241', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('78', 'GM', 'GMB', 'GAMBIA', '冈比亚', 'Gambia', '270', '220', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('79', 'GE', 'GEO', 'GEORGIA', '乔治亚州', 'Georgia', '268', '995', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('80', 'DE', 'DEU', 'GERMANY', '德国', 'Germany', '276', '49', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('81', 'GH', 'GHA', 'GHANA', '加纳', 'Ghana', '288', '233', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('82', 'GI', 'GIB', 'GIBRALTAR', '直布罗陀', 'Gibraltar', '292', '350', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('83', 'GR', 'GRC', 'GREECE', '希腊', 'Greece', '300', '30', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('84', 'GL', 'GRL', 'GREENLAND', '格陵兰岛', 'Greenland', '304', '299', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('85', 'GD', 'GRD', 'GRENADA', '格林纳达', 'Grenada', '308', '1473', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('86', 'GP', 'GLP', 'GUADELOUPE', '瓜德罗普岛', 'Guadeloupe', '312', '590', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('87', 'GU', 'GUM', 'GUAM', '关岛', 'Guam', '316', '1671', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('88', 'GT', 'GTM', 'GUATEMALA', '危地马拉', 'Guatemala', '320', '502', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('89', 'GN', 'GIN', 'GUINEA', '几内亚', 'Guinea', '324', '224', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('90', 'GW', 'GNB', 'GUINEA-BISSAU', '几内亚比绍', 'Guinea-Bissau', '624', '245', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('91', 'GY', 'GUY', 'GUYANA', '圭亚那', 'Guyana', '328', '592', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('92', 'HT', 'HTI', 'HAITI', '海地', 'Haiti', '332', '509', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('93', 'HM', null, 'HEARD ISLAND AND MCDONALD ISLANDS', '听到岛和麦当劳的岛屿', 'Heard Island and Mcdonald Islands', null, '0', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('94', 'VA', 'VAT', 'HOLY SEE (VATICAN CITY STATE)', '教廷(梵蒂冈)', 'Holy See (Vatican City State)', '336', '39', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('95', 'HN', 'HND', 'HONDURAS', '洪都拉斯', 'Honduras', '340', '504', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('96', 'HK', 'HKG', 'HONG KONG', '香港', 'Hong Kong', '344', '852', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('97', 'HU', 'HUN', 'HUNGARY', '匈牙利', 'Hungary', '348', '36', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('98', 'IS', 'ISL', 'ICELAND', '冰岛', 'Iceland', '352', '354', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('99', 'IN', 'IND', 'INDIA', '印度', 'India', '356', '91', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('100', 'ID', 'IDN', 'INDONESIA', '印尼', 'Indonesia', '360', '62', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('101', 'IR', 'IRN', 'IRAN, ISLAMIC REPUBLIC OF', '伊朗伊斯兰共和国', 'Iran, Islamic Republic of', '364', '98', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('102', 'IQ', 'IRQ', 'IRAQ', '伊拉克', 'Iraq', '368', '964', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('103', 'IE', 'IRL', 'IRELAND', '爱尔兰', 'Ireland', '372', '353', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('104', 'IL', 'ISR', 'ISRAEL', '以色列', 'Israel', '376', '972', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('105', 'IT', 'ITA', 'ITALY', '意大利', 'Italy', '380', '39', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('106', 'JM', 'JAM', 'JAMAICA', '牙买加', 'Jamaica', '388', '1876', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('107', 'JP', 'JPN', 'JAPAN', '日本', 'Japan', '392', '81', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('108', 'JO', 'JOR', 'JORDAN', '约旦', 'Jordan', '400', '962', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('109', 'KZ', 'KAZ', 'KAZAKHSTAN', '哈萨克斯坦', 'Kazakhstan', '398', '7', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('110', 'KE', 'KEN', 'KENYA', '肯尼亚', 'Kenya', '404', '254', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('111', 'KI', 'KIR', 'KIRIBATI', '基里巴斯', 'Kiribati', '296', '686', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('112', 'KP', 'PRK', 'KOREA, DEMOCRATIC PEOPLE\'S REPUBLIC OF', '朝鲜民主主义人民共和国', 'Korea, Democratic People\'s Republic of', '408', '850', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('113', 'KR', 'KOR', 'KOREA, REPUBLIC OF', '朝鲜共和国', 'Korea, Republic of', '410', '82', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('114', 'KW', 'KWT', 'KUWAIT', '科威特', 'Kuwait', '414', '965', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('115', 'KG', 'KGZ', 'KYRGYZSTAN', '吉尔吉斯斯坦', 'Kyrgyzstan', '417', '996', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('116', 'LA', 'LAO', 'LAO PEOPLE\'S DEMOCRATIC REPUBLIC', '老挝人民民主共和国', 'Lao People\'s Democratic Republic', '418', '856', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('117', 'LV', 'LVA', 'LATVIA', '拉脱维亚', 'Latvia', '428', '371', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('118', 'LB', 'LBN', 'LEBANON', '黎巴嫩', 'Lebanon', '422', '961', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('119', 'LS', 'LSO', 'LESOTHO', '莱索托', 'Lesotho', '426', '266', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('120', 'LR', 'LBR', 'LIBERIA', '利比里亚', 'Liberia', '430', '231', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('121', 'LY', 'LBY', 'LIBYAN ARAB JAMAHIRIYA', '阿拉伯利比亚民众国', 'Libyan Arab Jamahiriya', '434', '218', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('122', 'LI', 'LIE', 'LIECHTENSTEIN', '列支敦斯登', 'Liechtenstein', '438', '423', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('123', 'LT', 'LTU', 'LITHUANIA', '立陶宛', 'Lithuania', '440', '370', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('124', 'LU', 'LUX', 'LUXEMBOURG', '卢森堡', 'Luxembourg', '442', '352', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('125', 'MO', 'MAC', 'MACAO', '澳门', 'Macao', '446', '853', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('126', 'MK', 'MKD', 'MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF', '前南斯拉夫马其顿共和国', 'Macedonia, the Former Yugoslav Republic of', '807', '389', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('127', 'MG', 'MDG', 'MADAGASCAR', '马达加斯加', 'Madagascar', '450', '261', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('128', 'MW', 'MWI', 'MALAWI', '马拉维', 'Malawi', '454', '265', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('129', 'MY', 'MYS', 'MALAYSIA', '马来西亚', 'Malaysia', '458', '60', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('130', 'MV', 'MDV', 'MALDIVES', '马尔代夫', 'Maldives', '462', '960', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('131', 'ML', 'MLI', 'MALI', '马里', 'Mali', '466', '223', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('132', 'MT', 'MLT', 'MALTA', '马耳他', 'Malta', '470', '356', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('133', 'MH', 'MHL', 'MARSHALL ISLANDS', '马绍尔群岛', 'Marshall Islands', '584', '692', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('134', 'MQ', 'MTQ', 'MARTINIQUE', '马提尼克岛', 'Martinique', '474', '596', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('135', 'MR', 'MRT', 'MAURITANIA', '毛利塔尼亚', 'Mauritania', '478', '222', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('136', 'MU', 'MUS', 'MAURITIUS', '毛里求斯', 'Mauritius', '480', '230', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('137', 'YT', null, 'MAYOTTE', '马约特岛', 'Mayotte', null, '269', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('138', 'MX', 'MEX', 'MEXICO', '墨西哥', 'Mexico', '484', '52', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('139', 'FM', 'FSM', 'MICRONESIA, FEDERATED STATES OF', '密克罗尼西亚联邦', 'Micronesia, Federated States of', '583', '691', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('140', 'MD', 'MDA', 'MOLDOVA, REPUBLIC OF', '摩尔多瓦共和国', 'Moldova, Republic of', '498', '373', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('141', 'MC', 'MCO', 'MONACO', '摩纳哥', 'Monaco', '492', '377', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('142', 'MN', 'MNG', 'MONGOLIA', '蒙古', 'Mongolia', '496', '976', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('143', 'MS', 'MSR', 'MONTSERRAT', '蒙特塞拉特', 'Montserrat', '500', '1664', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('144', 'MA', 'MAR', 'MOROCCO', '摩洛哥', 'Morocco', '504', '212', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('145', 'MZ', 'MOZ', 'MOZAMBIQUE', 'MOZAMBIQUE', 'Mozambique', '508', '258', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('146', 'MM', 'MMR', 'MYANMAR', '缅甸', 'Myanmar', '104', '95', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('147', 'NA', 'NAM', 'NAMIBIA', '纳米比亚', 'Namibia', '516', '264', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('148', 'NR', 'NRU', 'NAURU', '瑙鲁', 'Nauru', '520', '674', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('149', 'NP', 'NPL', 'NEPAL', '尼泊尔', 'Nepal', '524', '977', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('150', 'NL', 'NLD', 'NETHERLANDS', '荷兰', 'Netherlands', '528', '31', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('151', 'AN', 'ANT', 'NETHERLANDS ANTILLES', '荷属安的列斯群岛', 'Netherlands Antilles', '530', '599', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('152', 'NC', 'NCL', 'NEW CALEDONIA', '新喀里多尼亚', 'New Caledonia', '540', '687', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('153', 'NZ', 'NZL', 'NEW ZEALAND', '新西兰', 'New Zealand', '554', '64', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('154', 'NI', 'NIC', 'NICARAGUA', '尼加拉瓜', 'Nicaragua', '558', '505', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('155', 'NE', 'NER', 'NIGER', '尼日尔', 'Niger', '562', '227', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('156', 'NG', 'NGA', 'NIGERIA', '尼日利亚', 'Nigeria', '566', '234', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('157', 'NU', 'NIU', 'NIUE', '纽埃岛', 'Niue', '570', '683', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('158', 'NF', 'NFK', 'NORFOLK ISLAND', '诺福克岛', 'Norfolk Island', '574', '672', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('159', 'MP', 'MNP', 'NORTHERN MARIANA ISLANDS', '北马里亚纳群岛', 'Northern Mariana Islands', '580', '1670', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('160', 'NO', 'NOR', 'NORWAY', '挪威', 'Norway', '578', '47', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('161', 'OM', 'OMN', 'OMAN', '阿曼', 'Oman', '512', '968', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('162', 'PK', 'PAK', 'PAKISTAN', '巴基斯坦', 'Pakistan', '586', '92', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('163', 'PW', 'PLW', 'PALAU', '帕劳', 'Palau', '585', '680', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('164', 'PS', null, 'PALESTINIAN TERRITORY, OCCUPIED', '巴勒斯坦的领土,占领', 'Palestinian Territory, Occupied', null, '970', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('165', 'PA', 'PAN', 'PANAMA', '巴拿马', 'Panama', '591', '507', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('166', 'PG', 'PNG', 'PAPUA NEW GUINEA', '巴布新几内亚', 'Papua New Guinea', '598', '675', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('167', 'PY', 'PRY', 'PARAGUAY', '巴拉圭', 'Paraguay', '600', '595', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('168', 'PE', 'PER', 'PERU', '秘鲁', 'Peru', '604', '51', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('169', 'PH', 'PHL', 'PHILIPPINES', '菲律宾', 'Philippines', '608', '63', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('170', 'PN', 'PCN', 'PITCAIRN', '皮特克恩', 'Pitcairn', '612', '0', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('171', 'PL', 'POL', 'POLAND', '波兰', 'Poland', '616', '48', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('172', 'PT', 'PRT', 'PORTUGAL', '葡萄牙', 'Portugal', '620', '351', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('173', 'PR', 'PRI', 'PUERTO RICO', '波多黎各', 'Puerto Rico', '630', '1787', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('174', 'QA', 'QAT', 'QATAR', '卡塔尔', 'Qatar', '634', '974', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('175', 'RE', 'REU', 'REUNION', '团聚', 'Reunion', '638', '262', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('176', 'RO', 'ROM', 'ROMANIA', '罗马尼亚', 'Romania', '642', '40', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('177', 'RU', 'RUS', 'RUSSIAN FEDERATION', '俄罗斯联邦', 'Russian Federation', '643', '70', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('178', 'RW', 'RWA', 'RWANDA', '卢旺达', 'Rwanda', '646', '250', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('179', 'SH', 'SHN', 'SAINT HELENA', '圣赫勒拿', 'Saint Helena', '654', '290', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('180', 'KN', 'KNA', 'SAINT KITTS AND NEVIS', '圣基茨和尼维斯', 'Saint Kitts and Nevis', '659', '1869', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('181', 'LC', 'LCA', 'SAINT LUCIA', '圣卢西亚岛', 'Saint Lucia', '662', '1758', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('182', 'PM', 'SPM', 'SAINT PIERRE AND MIQUELON', '圣皮埃尔和MIQUELON', 'Saint Pierre and Miquelon', '666', '508', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('183', 'VC', 'VCT', 'SAINT VINCENT AND THE GRENADINES', '圣文森特和格林纳丁斯', 'Saint Vincent and the Grenadines', '670', '1784', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('184', 'WS', 'WSM', 'SAMOA', '萨摩亚', 'Samoa', '882', '684', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('185', 'SM', 'SMR', 'SAN MARINO', '圣马力诺', 'San Marino', '674', '378', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('186', 'ST', 'STP', 'SAO TOME AND PRINCIPE', '圣多美和王子', 'Sao Tome and Principe', '678', '239', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('187', 'SA', 'SAU', 'SAUDI ARABIA', '沙特阿拉伯', 'Saudi Arabia', '682', '966', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('188', 'SN', 'SEN', 'SENEGAL', '塞内加尔', 'Senegal', '686', '221', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('189', 'CS', null, 'SERBIA AND MONTENEGRO', '塞尔维亚和黑山', 'Serbia and Montenegro', null, '381', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('190', 'SC', 'SYC', 'SEYCHELLES', '塞舌尔', 'Seychelles', '690', '248', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('191', 'SL', 'SLE', 'SIERRA LEONE', '塞拉利昂', 'Sierra Leone', '694', '232', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('192', 'SG', 'SGP', 'SINGAPORE', '新加坡', 'Singapore', '702', '65', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('193', 'SK', 'SVK', 'SLOVAKIA', '斯洛伐克', 'Slovakia', '703', '421', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('194', 'SI', 'SVN', 'SLOVENIA', '斯洛文尼亚', 'Slovenia', '705', '386', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('195', 'SB', 'SLB', 'SOLOMON ISLANDS', '所罗门群岛', 'Solomon Islands', '90', '677', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('196', 'SO', 'SOM', 'SOMALIA', '索马里', 'Somalia', '706', '252', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('197', 'ZA', 'ZAF', 'SOUTH AFRICA', '南非', 'South Africa', '710', '27', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('198', 'GS', null, 'SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS', '南乔治亚岛和南桑威奇群岛', 'South Georgia and the South Sandwich Islands', null, '0', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('199', 'ES', 'ESP', 'SPAIN', '西班牙', 'Spain', '724', '34', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('200', 'LK', 'LKA', 'SRI LANKA', '斯里兰卡', 'Sri Lanka', '144', '94', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('201', 'SD', 'SDN', 'SUDAN', '苏丹', 'Sudan', '736', '249', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('202', 'SR', 'SUR', 'SURINAME', '苏里南', 'Suriname', '740', '597', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('203', 'SJ', 'SJM', 'SVALBARD AND JAN MAYEN', '斯瓦尔巴群岛和扬马延岛', 'Svalbard and Jan Mayen', '744', '47', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('204', 'SZ', 'SWZ', 'SWAZILAND', '斯威士兰', 'Swaziland', '748', '268', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('205', 'SE', 'SWE', 'SWEDEN', '瑞典', 'Sweden', '752', '46', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('206', 'CH', 'CHE', 'SWITZERLAND', '瑞士', 'Switzerland', '756', '41', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('207', 'SY', 'SYR', 'SYRIAN ARAB REPUBLIC', '阿拉伯叙利亚共和国', 'Syrian Arab Republic', '760', '963', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('208', 'TW', 'TWN', 'TAIWAN, PROVINCE OF CHINA', '台湾,中国的省份', 'Taiwan, Province of China', '158', '886', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('209', 'TJ', 'TJK', 'TAJIKISTAN', '塔吉克斯坦', 'Tajikistan', '762', '992', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('210', 'TZ', 'TZA', 'TANZANIA, UNITED REPUBLIC OF', '坦桑尼亚联合共和国', 'Tanzania, United Republic of', '834', '255', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('211', 'TH', 'THA', 'THAILAND', '泰国', 'Thailand', '764', '66', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('212', 'TL', null, 'TIMOR-LESTE', '东帝汶', 'Timor-Leste', null, '670', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('213', 'TG', 'TGO', 'TOGO', '多哥', 'Togo', '768', '228', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('214', 'TK', 'TKL', 'TOKELAU', '托克劳', 'Tokelau', '772', '690', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('215', 'TO', 'TON', 'TONGA', '汤加', 'Tonga', '776', '676', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('216', 'TT', 'TTO', 'TRINIDAD AND TOBAGO', '特立尼达和多巴哥', 'Trinidad and Tobago', '780', '1868', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('217', 'TN', 'TUN', 'TUNISIA', '突尼斯', 'Tunisia', '788', '216', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('218', 'TR', 'TUR', 'TURKEY', '土耳其', 'Turkey', '792', '90', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('219', 'TM', 'TKM', 'TURKMENISTAN', '土库曼斯坦', 'Turkmenistan', '795', '7370', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('220', 'TC', 'TCA', 'TURKS AND CAICOS ISLANDS', '特克斯和凯科斯群岛', 'Turks and Caicos Islands', '796', '1649', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('221', 'TV', 'TUV', 'TUVALU', '图瓦卢', 'Tuvalu', '798', '688', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('222', 'UG', 'UGA', 'UGANDA', '乌干达', 'Uganda', '800', '256', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('223', 'UA', 'UKR', 'UKRAINE', '乌克兰', 'Ukraine', '804', '380', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('224', 'AE', 'ARE', 'UNITED ARAB EMIRATES', '阿拉伯联合酋长国', 'United Arab Emirates', '784', '971', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('225', 'GB', 'GBR', 'UNITED KINGDOM', '联合王国', 'United Kingdom', '826', '44', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('226', 'US', 'USA', 'UNITED STATES', '美国', 'United States', '840', '1', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('227', 'UM', null, 'UNITED STATES MINOR OUTLYING ISLANDS', '美国小离岛', 'United States Minor Outlying Islands', null, '1', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('228', 'UY', 'URY', 'URUGUAY', '乌拉圭', 'Uruguay', '858', '598', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('229', 'UZ', 'UZB', 'UZBEKISTAN', '乌兹别克斯坦', 'Uzbekistan', '860', '998', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('230', 'VU', 'VUT', 'VANUATU', '瓦努阿图', 'Vanuatu', '548', '678', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('231', 'VE', 'VEN', 'VENEZUELA', '委内瑞拉', 'Venezuela', '862', '58', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('232', 'VN', 'VNM', 'VIET NAM', '越南', 'Viet Nam', '704', '84', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('233', 'VG', 'VGB', 'VIRGIN ISLANDS, BRITISH', '维尔京群岛,英国', 'Virgin Islands, British', '92', '1284', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('234', 'VI', 'VIR', 'VIRGIN ISLANDS, U.S.', '维尔京群岛,美国', 'Virgin Islands, U.s.', '850', '1340', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('235', 'WF', 'WLF', 'WALLIS AND FUTUNA', '瓦利斯群岛和富图纳群岛', 'Wallis and Futuna', '876', '681', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('236', 'EH', 'ESH', 'WESTERN SAHARA', '西撒哈拉', 'Western Sahara', '732', '212', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('237', 'YE', 'YEM', 'YEMEN', '也门', 'Yemen', '887', '967', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('238', 'ZM', 'ZMB', 'ZAMBIA', '赞比亚', 'Zambia', '894', '260', 'normal');
-INSERT INTO `fa_chat_country` VALUES ('239', 'ZW', 'ZWE', 'ZIMBABWE', '津巴布韦', 'Zimbabwe', '716', '263', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('240', '阿尔巴尼亚', '欧洲', 'Albania', 'AL', 'ALB', '8', '阿尔马尼亚共和国RepublicofAlbania', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('241', '阿尔及利亚', '非洲', 'Algeria', 'DZ', 'DZA', '12', '阿尔及利亚民主人民共和国DemocraticPeople\'sRepublicofAlgeria', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('242', '阿富汗', '亚洲', 'Afghanistan', 'AF', 'AFG', '4', '阿富汗伊斯兰国IslamicStateofAfghanistan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('243', '阿根廷', '南美洲', 'Argentina', 'AR', 'ARG', '32', '阿根廷共和国RepublicofArgentina', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('244', '阿鲁巴', '北美洲', 'Aruba', 'AW', 'ABW', '533', '阿鲁巴Aruba', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('245', '阿曼', '亚洲', 'Oman', 'OM', 'OMN', '512', '阿曼苏丹国SultanateofOman', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('246', '阿塞拜疆', '亚洲', 'Azerbaijan', 'AZ', 'AZE', '31', '阿塞拜疆共和国RepublicofAzerbaijan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('247', '阿联酋', '亚洲', 'UnitedArabEmirates', 'AE', 'ARE', '784', '拉伯联合酋长国UnitedArabEmirates', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('248', '埃及', '非洲', 'Egypt', 'EG', 'EGY', '818', '阿拉伯埃及共和国ArabRepublicofEgypt', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('249', '埃塞俄比亚', '非洲', 'Ethiopia', 'ET', 'ETH', '231', '埃塞俄比亚Ethiopia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('250', '爱尔兰', '欧洲', 'Ireland', 'IE', 'IRL', '372', '爱尔兰Ireland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('251', '爱沙尼亚', '欧洲', 'Estonia', 'EE', 'EST', '233', '爱沙尼亚共和国RepublicofEstonia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('252', '安道尔', '欧洲', 'Andorra', 'AD', 'AND', '20', '安道尔公国PrincipalityofAndorra', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('253', '安哥拉', '非洲', 'Angola', 'AO', 'AGO', '24', '安哥拉共和国RepublicofAngola', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('254', '安圭拉', '北美洲', 'Anguilla', 'AI', 'AIA', '660', '安圭拉Anguilla', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('255', '安提瓜和巴布达', '北美洲', 'AntiguaandBarbuda', 'AG', 'ATG', '28', '安提瓜和巴布达AntiguaandBarbuda', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('256', '奥地利', '欧洲', 'Austria', 'AT', 'AUT', '40', '奥地利共和国RepublicofAustria', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('257', '澳大利亚', '大洋洲', 'Australia', 'AU', 'AUS', '36', '澳大利亚联邦CommonwealthofAustralia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('258', '巴巴多斯', '北美洲', 'Barbados', 'BB', 'BRB', '52', '巴巴多斯Barbados', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('259', '巴布亚新几内亚', '大洋洲', 'PapuaNewGuinea', 'PG', 'PNG', '598', '巴布亚新几内亚独立国IndependentStateofPapuaNewGuinea', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('260', '巴哈马', '北美洲', 'Bahamas', 'BS', 'BHS', '44', '巴哈马联邦CommonwealthoftheBahamas', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('261', '巴基斯坦', '亚洲', 'Pakistan', 'PK', 'PAK', '586', '巴基斯坦伊斯兰共和国IslamicRepublicofPakistan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('262', '巴拉圭', '南美洲', 'Paraguay', 'PY', 'PRY', '600', '巴拉圭共和国RepublicofParaguay', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('263', '巴勒斯坦', '亚洲', 'Palestine', 'PS', 'PST', '374', '巴勒斯坦国StateofPalestine', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('264', '巴林', '亚洲', 'Bahrain', 'BH', 'BHR', '48', '巴林国StateofBahrain', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('265', '巴拿马', '北美洲', 'Panama', 'PA', 'PAN', '591', '巴拿马共和国RepublicofPanama', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('266', '巴西', '南非洲', 'Brazil', 'BR', 'BRA', '76', '巴西联邦共和国FederativeRepublicofBrazil', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('267', '白俄罗斯', '欧洲', 'Belarus', 'BY', 'BLR', '112', '白俄罗斯共和国RepublicofBelarus', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('268', '百慕大', '北美洲', 'Bermuda', 'BM', 'BMU', '60', '百慕大群岛BermudaIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('269', '保加利亚', '欧洲', 'Bulgaria', 'BG', 'BGR', '100', '保加利亚共和国RepublicovBulgaria', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('270', '北马里亚纳', '大洋洲', 'NorthernMarianas', 'MP', 'MNP', '580', '北马里亚纳自由联邦CommonwealthoftheNorthernMarianas', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('271', '贝宁', '非洲', 'Benin', 'BJ', 'BEN', '204', '贝宁共和国RepublicofBenin', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('272', '比利时', '欧洲', 'Belgium', 'BE', 'BEL', '56', '比利时王国Kingdomofbelgium', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('273', '冰岛', '欧洲', 'Iceland', 'IS', 'ISL', '352', '冰岛共和国RepublicofIceland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('274', '波多黎各', '北美洲', 'PuertoRico', 'PR', 'PRI', '630', '波多黎各自由联邦CommonwealthofPuertoRico', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('275', '波兰', '欧洲', 'Poland', 'PL', 'POL', '616', '波兰共和国RepublicofPoland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('276', '波斯尼亚和墨塞哥维那', '欧洲', 'BosniaandHerzegovina', 'BA', 'BIH', '70', '波斯尼亚和黑塞哥维那共和国RepublicofBosniaandHerzegovina', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('277', '玻利维亚', '南美洲', 'Bolivia', 'BO', 'BOL', '68', '玻利维亚共和国RepublicofBolivia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('278', '伯利兹', '北美洲', 'Belize', 'BZ', 'BLZ', '84', '伯利兹Belize', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('279', '博茨瓦纳', '非洲', 'Botswana', 'BW', 'BWA', '72', '博茨瓦纳共和国RepublicofBotswana', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('280', '不丹', '亚洲', 'Bhutan', 'BT', 'BTN', '64', '不丹王国KingdomofBhutan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('281', '布基纳法索', '非洲', 'BurkinaFaso', 'BF', 'BFA', '854', '布基纳法索BurkinaFaso', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('282', '布隆迪', '非洲', 'Burundi', 'BI', 'BDI', '108', '布隆迪共和国RepublicofBurundi', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('283', '朝鲜', '亚洲', 'Korea,DemocraticPeople\'sRepublicof', 'KP', 'PRK', '408', '朝鲜民主主义人民共和国DemocraticPeople\'sRepublicofKo-rea', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('284', '赤道几内亚', '非洲', 'EquatorialGuinea', 'GQ', 'GNQ', '226', '赤道几内亚共和国RepublicofEquatorialGuinea', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('285', '丹麦', '欧洲', 'Denmark', 'DK', 'DNK', '208', '丹麦王国KingdomofDenmark', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('286', '德国', '欧洲', 'Germany', 'DE', 'DEU', '276', '德意志联邦共和国FederalRepublicofGermany', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('287', '东帝汶', '亚洲', 'EastTimor', 'TP', 'TMP', '626', '东帝汶EastTimor', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('288', '多哥', '非洲', 'Togo', 'TG', 'TGO', '768', '多哥共和国RepublicofTago', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('289', '多米尼加共和国', '北美洲', 'DominicanRepublic', 'DO', 'DOM', '214', '多米尼加共和国DominicanRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('290', '多米尼克', '北美洲', 'Dominica', 'DM', 'DMA', '212', '多米尼克联邦CommonwealthofDominica', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('291', '俄罗斯', '欧洲', 'Russia', 'RU', 'RUS', '643', '俄罗斯联邦RussianFederation', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('292', '厄瓜多尔', '南美洲', 'Ecuador', 'EC', 'ECU', '218', '厄瓜多尔共和国RepublicofEcuador', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('293', '厄立特里亚', '非洲', 'Eritrea', 'ER', 'ERI', '232', '厄立特里亚国StateofEritrea', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('294', '法国', '欧洲', 'France', 'FR', 'FRA', '250', '法兰西共和国FrenchRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('295', '法罗群岛', '欧洲', 'FaroeIslands', 'FO', 'FRO', '234', '法罗群岛FaroeIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('296', '法属波利尼西亚', '大洋洲', 'FrenchPolynesia', 'PF', 'PYF', '258', '法属波利尼西亚FrenchPolynesia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('297', '法属圭亚那', '南美洲', 'FrenchGuiana', 'GF', 'GUF', '254', '法属圭亚那FrenchGuiana', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('298', '梵蒂冈', '欧洲', 'Vatican', 'VA', 'VAT', '336', '梵蒂冈城国VaticanCityState', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('299', '菲律宾', '亚洲', 'Philippines', 'PH', 'PHL', '608', '菲律宾共和国RepublicofthePhilippines', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('300', '斐济', '大洋洲', 'Fiji', 'FJ', 'FJI', '242', '斐济共和国RepublicofFiji', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('301', '芬兰', '欧洲', 'Finland', 'FI', 'FIN', '246', '芬兰共和国RepublicofFinland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('302', '佛得角', '非洲', 'CapeVerde', 'CV', 'CPV', '132', '佛得角共和国RepublicofCapeVerde', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('303', '冈比亚', '非洲', 'Gambia', 'GM', 'GMB', '270', '冈比亚共和国RepublicofGambia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('304', '刚果', '非洲', 'Congo', 'CG', 'COG', '178', '刚果共和国RepublicofCongo', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('305', '哥伦比亚', '南美洲', 'Colombia', 'Co', 'COL', '170', '哥伦比亚共和国RepublicofColombia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('306', '哥斯达黎加', '北美洲', 'CostaRica', 'CR', 'CR', '188', '哥斯达黎加共和国RepublicofCostaRica', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('307', '格林纳达', '北美洲', 'Grenada', 'GD', 'GRD', '308', '格林纳达Grenada', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('308', '格陵兰', '北美洲', 'Greenland', 'GL', 'GRL', '304', '格陵兰Greenland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('309', '格鲁吉亚', '亚洲', 'Georgia', 'GE', 'GEO', '268', '格鲁吉亚共和国RepublicofGeorgia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('310', '古巴', '北美洲', 'Cuba', 'CU', 'CUB', '192', '古巴共和国RepublicofCuba', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('311', '瓜德罗普', '北美洲', 'Guadeloupe', 'GP', 'GLP', '312', '瓜德罗普Guadeloupe', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('312', '关岛', '大洋洲', 'Guam', 'GU', 'GUM', '316', '关岛TheTerritoryofGuam', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('313', '圭亚那', '南美洲', 'Guyana', 'GY', 'GUY', '328', '圭亚那合作共和国CooperativeRepublicofGuyana', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('314', '哈萨克斯坦', '亚洲', 'Kazakhstan', 'KZ', 'KAZ', '398', '哈萨克斯坦共和国RepublicofKazakhstan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('315', '海地', '北美洲', 'Haiti', 'HT', 'HTI', '332', '海地共和国RepublicofHaiti', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('316', '韩国', '亚洲', 'Korea,Republicof', 'KR', 'KOR', '410', '大韩民国RepublicofKorea', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('317', '荷兰', '欧洲', 'Netherlands', 'NL', 'NLD', '528', '荷兰王国KingdomoftheNetherlands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('318', '荷属安的列斯', '北美洲', 'NetherlandsAntilles', 'AN', 'ANT', '530', '荷属安的列斯NetherlandsAntilles', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('319', '洪都拉斯', '北美洲', 'Honduras', 'HN', 'HND', '340', '洪都拉斯共和国Republicofhonduras', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('320', '基里巴斯', '大洋洲', 'Kiribati', 'KI', 'KIR', '296', '基里巴斯共和国RepublicofKiribati', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('321', '吉布提', '非洲', 'Djibouti', 'DJ', 'DJI', '262', '吉布提共和国RepublicofDjibouti', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('322', '吉尔吉斯斯坦', '亚洲', 'Kyrgyzstan', 'KG', 'KGZ', '417', '吉尔吉斯共和国KyrgyzRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('323', '几内亚', '非洲', 'Guinea', 'GN', 'GIN', '324', '几内亚共和国RepublicofGuinea', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('324', '几内亚比绍', '非洲', 'Guine-bissau', 'GW', 'GNB', '624', '几内亚比绍共和国RepublicofGuine-bissau', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('325', '加拿大', '北美洲', 'Canada', 'CA', 'CAN', '124', '加拿大Canada', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('326', '加纳', '非洲', 'Ghana', 'GH', 'GHA', '288', '加纳共和国RepublicofGhana', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('327', '加蓬', '非洲', 'Gabon', 'GA', 'GAB', '266', '加蓬共和国GaboneseRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('328', '柬埔寨', '亚洲', 'Cambodia', 'KH', 'KHM', '116', '柬埔寨王国KingdomofCambodia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('329', '捷克', '欧洲', 'CzechRepoublic', 'CZ', 'CZE', '203', '捷克共和国CzechRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('330', '津巴布韦', '非洲', 'Zimbabwe', 'ZW', 'ZWE', '716', '津巴布韦共和国RepublicofZimbabwe', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('331', '喀麦隆', '非洲', 'Cameroon', 'CM', 'CMR', '120', '喀麦隆共和国RepublicofCameroon', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('332', '卡塔尔', '亚洲', 'Qatar', 'QA', 'QAT', '634', '卡塔尔国StateofQatar', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('333', '开曼群岛', '北美洲', 'CaymanIslands', 'KY', 'CYM', '136', '开曼群岛CaymanIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('334', '科摩罗', '非洲', 'Comoros', 'KM', 'COM', '174', '科摩罗伊斯兰联邦共和国FederalIslamicRepublicoftheCo-moros', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('335', '科特迪瓦', '非洲', 'Coted\'Ivoire', 'CI', 'CIV', '384', '科特迪瓦共和国RepublicofCoted\'Ivire', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('336', '科威特', '亚洲', 'Kuwait', 'KW', 'KWT', '414', '科威特国StateofKuwait', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('337', '克罗地亚', '欧洲', 'Croatia', 'HR', 'HRV', '191', '克罗地亚共和国RepublicofCroatia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('338', '肯尼亚', '非洲', 'Kenya', 'KE', 'KEN', '404', '肯尼亚共和国RepublicofKenya', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('339', '库克群岛', '大洋洲', 'CookIslands', 'CK', 'COK', '184', '库克群岛CookIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('340', '拉脱维亚', '欧洲', 'Latvia', 'LV', 'LVA', '428', '拉脱维亚共和国RepublicofLatvia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('341', '莱索托', '非洲', 'Lesotho', 'LS', 'LSO', '426', '莱索托王国KingdomofLesoto', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('342', '老挝', '亚洲', 'Lao', 'LA', 'LAO', '418', '老挝人民民主共和国LaoPeople\'sDemocraticRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('343', '黎巴嫩', '亚洲', 'Lebanon', 'LB', 'LBN', '422', '黎巴嫩共和国RepublicofLebanon', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('344', '立陶宛', '欧洲', 'Lithuania', 'LT', 'LTU', '440', '立陶宛共和国RepublicofLithuania', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('345', '利比里亚', '非洲', 'Liberia', 'LR', 'LBR', '430', '利比里亚共和国RepublicofLiberia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('346', '利比亚', '非洲', 'Libya', 'LY', 'LBY', '434', '大阿拉伯利比亚人民社会主义民众国GreatSocialistPeople\'sLibyanArabjamahiriya', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('347', '列支敦士登', '欧洲', 'Liechtenstein', 'LI', 'LIE', '438', '列支敦士登公国PrincipalityofLiechtenstein', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('348', '留尼旺', '非洲', 'Reunion', 'RE', 'REU', '638', '留尼汪Reunion', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('349', '卢森堡', '欧洲', 'Luxembourg', 'LU', 'LUX', '442', '卢森堡大公国GrandDuchyofLuxembourg', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('350', '卢旺达', '非洲', 'Rwanda', 'RW', 'RWA', '646', '卢旺达共和国RepublicofRwanda', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('351', '罗马尼亚', '欧洲', 'Romania', 'RO', 'ROM', '642', '罗马尼亚Romania', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('352', '马达加斯加', '非洲', 'Madagascar', 'MG', 'MDG', '450', '马达加斯加共和国RepublicofMadagascar', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('353', '马尔代夫', '亚洲', 'Maldives', 'MV', 'MDV', '462', '马尔代夫共和国Republicofmaldives', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('354', '马耳他', '欧洲', 'Malta', 'MT', 'MLT', '470', '马耳他共和国RepublicofMalta', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('355', '马拉维', '非洲', 'Malawi', 'MW', 'MWI', '454', '马拉维共和国RepublicofMalawi', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('356', '马来西亚', '亚洲', 'Malaysia', 'MY', 'MYS', '458', '马来西亚Malaysia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('357', '马里', '非洲', 'Mali', 'ML', 'MLI', '466', '马里共和国RepublicofMali', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('358', '马绍尔群岛', '大洋洲', 'MarshallIslands', 'MH', 'MHL', '584', '马绍尔群岛共和国RepublicofthemarshallIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('359', '马其顿', '欧洲', 'Macedonia', 'MK', 'MKD', '807', '马其顿共和国RepublicofMacedonia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('360', '马提尼克', '北美洲', 'Martinique', 'MQ', 'MTQ', '474', '马提尼克Martinique', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('361', '毛里求斯', '非洲', 'Mauritius', 'MU', 'MUS', '480', '毛里求斯共和国RepublicofMauritius', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('362', '毛里塔尼亚', '非洲', 'Mauritania', 'MR', 'MRT', '478', '毛里求斯共和国RepublicofMauritius', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('363', '美国', '北美洲', 'UnitedStates', 'US', 'USA', '840', '美利坚合众国UnitedStatesofAmerica', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('364', '美属萨摩亚', '大洋洲', 'AmericanSamoa', 'AS', 'ASM', '16', '美属萨摩亚AmericanSamoa', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('365', '美属维尔京群岛', '北美洲', 'UnitedStatesmiscella-neousPac', 'UM', 'UMI', '581', '-', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('366', '蒙古', '亚洲', 'Mongolia', 'MN', 'MNG', '496', '蒙古国Mongolia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('367', '蒙特塞拉特', '北美洲', 'Montserrat', 'MS', 'MSR', '500', '蒙特塞拉特Montserrat', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('368', '孟加拉国', '亚洲', 'Bangladesh', 'BD', 'BGD', '50', '孟加拉人民共和国People\'sRepublicofBangladesh', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('369', '秘鲁', '南美洲', 'Peru', 'PE', 'PER', '604', '秘鲁共和国RepublicofPeru', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('370', '密克罗尼西亚', '大洋洲', 'Micronesia', 'FM', 'FSM', '583', '密克罗尼西亚联邦FederatedStatesofMicronesia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('371', '缅甸', '亚洲', 'Myanmar', 'MM', 'MMR', '104', '缅甸联邦UnionofMyanmar', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('372', '摩尔多瓦', '欧洲', 'Moldova', 'MD', 'MDA', '498', '摩尔多瓦共和国RepublicofMoldova', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('373', '摩洛哥', '非洲', 'Morocco', 'MA', 'MAR', '504', '摩洛哥王国KingdomofMorocco', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('374', '摩纳哥', '欧洲', 'Monaco', 'MC', 'MCO', '492', '摩纳哥公国PrincipalityofMonaco', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('375', '莫桑比克', '非洲', 'Mozambique', 'MZ', 'MOZ', '508', '莫桑比克共和国RepublicofMozambique', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('376', '墨西哥', '北美洲', 'Mexico', 'MX', 'MEX', '484', '墨西哥合众国UnitedStatesofMexico', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('377', '纳米比亚', '非洲', 'Namibia', 'NA', 'NAM', '516', '纳米比亚共和国RepublicofNamibia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('378', '南非', '非洲', 'SouthAfrica', 'ZA', 'ZAF', '710', '南非共和国RepublicofSouthAfrica', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('379', '尼泊尔', '亚洲', 'Nepal', 'NP', 'NPL', '524', '尼泊尔王国KingdomofNepal', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('380', '尼加拉瓜', '北美洲', 'Nicaragua', 'NI', 'NIC', '558', '尼加拉瓜共和国RepublicofNicaragua', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('381', '尼日尔', '非洲', 'Niger', 'NE', 'NER', '562', '尼日尔共和国RepublicofNiger', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('382', '尼日利亚', '非洲', 'Nigeria', 'NG', 'NGA', '566', '尼日利亚联邦共和国FederalRepublicofNigeria', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('383', '纽埃', '大洋洲', 'Niue', 'NU', 'NIU', '570', '纽埃Niue', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('384', '挪威', '欧洲', 'Norway', 'NO', 'NOR', '578', '挪威王国KingdomofNorway', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('385', '皮特凯恩岛', '大洋洲', 'PitcairnIslandsGroup', 'PN', 'PCN', '612', '皮竺凯恩群岛PitcairnIslandsGroup', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('386', '葡萄牙', '欧洲', 'Portugal', 'PT', 'PRT', '620', '葡萄牙共和国PirtugueseRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('387', '日本', '亚洲', 'Japan', 'JP', 'JPN', '392', '日本国Japan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('388', '瑞典', '欧洲', 'Sweden', 'SE', 'SWE', '752', '瑞典王国KingdomofSweden', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('389', '瑞士', '欧洲', 'Switzerland', 'CH', 'CHE', '756', '瑞士联邦SwissConfederation', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('390', '萨尔瓦多', '北美洲', 'ElSalvador', 'SV', 'SLV', '222', '萨尔瓦多共和国RepublicofElSalvador', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('391', '塞尔维亚', '欧洲', 'Sierraleone', 'SL', 'SLE', '694', '塞拉利昂共和国RepublicofSierraLeone', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('392', '塞拉利昂', '非洲', 'Senegal', 'SN', 'SEN', '686', '塞内加尔共和国RepublicofSenegal', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('393', '塞内加尔', '非洲', 'Cyprus', 'CY', 'CYP', '196', '塞浦路斯共和国RepublicofCyprus', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('394', '塞舌尔', '非洲', 'Seychells', 'SC', 'SYC', '690', '塞舌尔共和国RepublicofSeychelles', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('395', '沙特阿拉伯', '亚洲', 'SaudiArabia', 'SA', 'SAU', '682', '沙特阿拉伯王国KingdomofSaudiArabia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('396', '圣多美及普林西比', '非洲', 'SaoTomeandPrincipe', 'St', 'STp', '678', '圣多美和普林西比民主共和国DemocraticRepublicofSaoTomeandPrincipe', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('397', '圣赫勒拿', '非洲', 'Sainthelena', 'Sh', 'SHN', '654', '对赫勒拿SaintHelena', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('398', '圣基茨和尼维斯', '北美洲', 'SaintKittsandnevis', 'KN', 'KNA', '659', '圣革茨和尼维斯联邦FederationofSaintKittsandnevis', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('399', '圣卢西亚', '北美洲', 'Saintlucia', 'LC', 'LCA', '662', '圣卢西亚SaintLucia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('400', '圣马力诺', '欧洲', 'SanMarion', 'SM', 'SMR', '674', '圣马力诺共和国RepublicofSanMarino', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('401', '圣文森特和格林纳丁斯', '北美洲', 'SaintVincentandtheGrenadines', 'VC', 'VCT', '670', '圣文森特和格林纳丁斯SaintVincentandtheGrenadines', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('402', '斯里兰卡', '亚洲', 'SriLanka', 'LK', 'LKA', '144', '斯里兰卡民主社会主义共和国DemocraticSocialistRepublicofSrilanka', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('403', '斯洛伐克', '欧洲', 'Slovakia', 'SK', 'SVK', '703', '斯洛伐克共和国SlovakRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('404', '斯洛文尼亚', '欧洲', 'Slovenia', 'SI', 'SVN', '705', '斯洛文尼亚共和国RepublicofSlovenia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('405', '斯威士兰', '非洲', 'Swaziland', 'SZ', 'SWZ', '748', '斯威士兰王国KingdomofSwaziland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('406', '苏丹', '非洲', 'Sudan', 'SD', 'SDN', '736', '苏丹共和国RepublicoftheSudan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('407', '苏里南', '南美洲', 'Suriname', 'SR', 'SUR', '740', '苏里南共和国RepublicofSuriname', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('408', '所罗门群岛', '大洋洲', 'SolomonIslands', 'SB', 'SLB', '90', '年罗门群岛SolomonIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('409', '索马里', '非洲', 'Somalia', 'SO', 'SOM', '706', '索马里共和国SomaliRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('410', '塔吉克斯坦', '亚洲', 'Tajikistan', 'TJ', 'TJK', '762', '塔吉克斯坦共和国RepublicofTajikistan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('411', '泰国', '亚洲', 'Thailand', 'TH', 'THA', '764', '泰王国KingdomofThailand', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('412', '坦桑尼亚', '非洲', 'Tanzania', 'TZ', 'TZA', '834', '坦桑尼亚联合共和国UnitedRepublicofTanzania', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('413', '汤加', '大洋洲', 'Tonga', 'TO', 'TON', '776', '汤加王国KingdomofTonga', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('414', '特克斯和凯科斯群岛', '北美洲', 'TurksandCaicosIslands', 'TC', 'TCA', '796', '特克斯和凯科斯群岛TurksandCaicosIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('415', '特立尼达和多巴哥', '北美洲', 'TrinidadandTobago', 'TT', 'TTO', '780', '特立尼达和多巴哥共和国RepublicofTrinidadandTobago', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('416', '突尼斯', '非洲', 'Tunisia', 'TN', 'TUN', '788', '突尼斯共和国RepublicofTunisia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('417', '图瓦卢', '大洋洲', 'Tuvalu', 'TV', 'TUV', '798', '图瓦卢Tuvalu', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('418', '土耳其', '亚洲', 'Turkey', 'TR', 'TUR', '792', '土耳其共和国RepublicofTurkey', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('419', '土库曼斯坦', '亚洲', 'Turkmenistan', 'TM', 'TKM', '795', '土库曼斯坦Turkmenistan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('420', '托克劳', '大洋洲', 'Tokelau', 'TK', 'TKL', '772', '托克劳Tokelau', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('421', '瓦努阿图', '大洋洲', 'Vanuatu', 'VU', 'VUT', '548', '瓦努阿图共和国RepublicofVanuatu', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('422', '危地马拉', '北美洲', 'Guatemala', 'GT', 'GTM', '320', '危地马拉共和国RepublicofGuatemala', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('423', '委内瑞拉', '南美洲', 'Venezuela', 'VE', 'VEN', '862', '委内瑞拉共和国RepublicofVenezuela', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('424', '文莱', '亚洲', 'BruneiDarussalam', 'BN', 'BRN', '96', '文莱达鲁萨兰国BruneiDarussalam', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('425', '乌干达', '非洲', 'Uganda', 'UG', 'UGA', '800', '乌干达共和国RepublicofUganda', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('426', '乌克兰', '欧洲', 'Ukraine', 'UA', 'UKR', '804', '乌克兰Ukraine', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('427', '乌拉圭', '南美洲', 'Uruguay', 'UY', 'URY', '858', '乌拉圭东岸共和国OrientalRepublicofUruguay', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('428', '乌兹别克斯坦', '亚洲', 'Uzbekistan', 'UZ', 'UZB', '860', '乌兹别克斯坦共和国RepublicofUzbekistan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('429', '西班牙', '欧洲', 'Spain', 'ES', 'ESP', '724', '西班牙Spain', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('430', '西撒哈拉', '非洲', 'WesternSahara', 'EH', 'ESH', '732', '西撒哈拉WesternSahara', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('431', '希腊', '欧洲', 'Greece', 'GR', 'GRC', '300', '希腊共和国HellenicRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('432', '新加坡', '亚洲', 'Singapore', 'SG', 'SGP', '702', '新加坡共和国RepublicofSingapore', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('433', '新喀里多尼亚', '大洋洲', 'NewCaledonia', 'NC', 'NCL', '540', '新喀里多尼亚NewCaledonia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('434', '新西兰', '大洋洲', 'NewZealand', 'NZ', 'NZL', '554', '新西兰NewZealand', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('435', '匈牙利', '欧洲', 'Hungary', 'HU', 'HUN', '348', '匈牙利共和国RepublicofHungary', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('436', '叙利亚', '亚洲', 'Syria', 'SY', 'SYR', '760', '阿拉伯叙利亚共和国SyrianArabRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('437', '牙买加', '北美洲', 'Jamaica', 'JM', 'JAM', '388', '牙买加Jamaica', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('438', '亚美尼亚', '亚洲', 'Armenia', 'AM', 'ARM', '51', '亚美尼亚共和国RepublicofArmenia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('439', '也门', '亚洲', 'Yemen', 'YE', 'YEM', '887', '也门共和国RepublicofYemen', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('440', '伊拉克', '亚洲', 'Iraq', 'IQ', 'IRQ', '368', '伊拉克共和国RepublicofIraq', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('441', '伊朗', '亚洲', 'Iran', 'IR', 'IRN', '364', '伊朗伊斯兰共和国IslamicRupublicofIran', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('442', '以色列', '亚洲', 'Israel', 'IL', 'ISR', '376', '以色列国StateofIsrael', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('443', '意大利', '欧洲', 'Italy', 'IT', 'ITA', '380', '意大利共和国RepublicofItaly', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('444', '印度', '亚洲', 'India', 'IN', 'IND', '356', '印度共和国RepublicofIndia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('445', '印度尼西亚', '亚洲', 'Indonesia', 'ID', 'IDN', '360', '印度尼西亚共和国RepublicofIndonesia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('446', '英国', '欧洲', 'UnitedKingdom', 'GB', 'GBR', '826', '大不列颠及北爱尔兰联合王国UnitedKingdomofGreatBritainandNorthernireland', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('447', '英属维尔京群岛', '北美洲', 'BritishVirginIslands', 'VG', 'VGB', '92', '英属维尔京群岛BritishVirginIslands', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('448', '约旦', '亚洲', 'Jordan', 'JO', 'JOR', '400', '约旦哈希姆王国HashemiteKingdomofJordan', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('449', '越南', '亚洲', 'VietNam', 'VN', 'VNM', '704', '越南社会主席共和国SocialistRepublicofVietNam', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('450', '赞比亚', '非洲', 'Zambia', 'ZM', 'ZMB', '894', '赞比亚共和国RepublicofZambia', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('451', '乍得', '非洲', 'Chad', 'TD', 'TCD', '148', '乍得共和国RepublicofChad', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('452', '中国', '亚洲', 'China', 'CN ', 'CHN ', '156', '中华人民共和国People\'s Republic of China', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('453', '智利', '南美洲', 'Chile', 'CL', 'CHL', '152', '智利共和国RepublicofChile', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('454', '中非', '非洲', 'CentralAfrica', 'CF', 'CAF', '140', '中非共和国CentralAfricanRepublic', 'normal');
+INSERT INTO `fa_chat_country` VALUES ('455', '刚果（金）', '非洲', 'Democratic Republic of the Congo', 'CD', 'COD', '180', '刚果民主共和国Democratic Republic of the Congo', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_chat_interest
@@ -4749,7 +4739,7 @@ CREATE TABLE `fa_command` (
   `updatetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` enum('successed','failured') NOT NULL DEFAULT 'failured' COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='在线命令表';
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='在线命令表';
 
 -- ----------------------------
 -- Records of fa_command
@@ -4806,6 +4796,7 @@ INSERT INTO `fa_command` VALUES ('56', 'crud', '[\"--delete=1\",\"--table=fa_use
 INSERT INTO `fa_command` VALUES ('57', 'crud', '[\"--delete=1\",\"--force=1\",\"--table=fa_user_score_log\"]', 'php think crud --delete=1 --force=1 --table=fa_user_score_log', '', '1531300263', '1531300263', '1531300263', 'failured');
 INSERT INTO `fa_command` VALUES ('58', 'crud', '[\"--force=1\",\"--table=fa_user_score_log\"]', 'php think crud --force=1 --table=fa_user_score_log', 'Build Successed', '1531300278', '1531300278', '1531300278', 'successed');
 INSERT INTO `fa_command` VALUES ('59', 'crud', '[\"--delete=1\",\"--force=1\",\"--table=fa_user_score_log\"]', 'php think crud --delete=1 --force=1 --table=fa_user_score_log', 'E:\\phpstudy\\WWW\\chat\\public/../application/admin\\controller\\user\\score\\Log.php\nE:\\phpstudy\\WWW\\chat\\public/../application/admin\\model\\user\\score\\Log.php\nE:\\phpstudy\\WWW\\chat\\public/../application/admin\\validate\\user\\score\\Log.php\nE:\\phpstudy\\WWW\\chat\\application\\admin\\view\\user\\score\\log\\add.html\nE:\\phpstudy\\WWW\\chat\\application\\admin\\view\\user\\score\\log\\edit.html\nE:\\phpstudy\\WWW\\chat\\application\\admin\\view\\user\\score\\log\\index.html\nE:\\phpstudy\\WWW\\chat\\application\\admin\\lang\\zh-cn\\user\\score\\log.php\nE:\\phpstudy\\WWW\\chat\\public\\assets\\js\\backend\\user\\score\\log.js\nDelete Successed', '1531300284', '1531300284', '1531300284', 'successed');
+INSERT INTO `fa_command` VALUES ('60', 'crud', '[\"--force=1\",\"--table=fa_chat_country\"]', 'php think crud --force=1 --table=fa_chat_country', 'Build Successed', '1531531682', '1531531682', '1531531682', 'successed');
 
 -- ----------------------------
 -- Table structure for fa_config
@@ -4875,7 +4866,7 @@ CREATE TABLE `fa_crontab` (
 -- ----------------------------
 -- Records of fa_crontab
 -- ----------------------------
-INSERT INTO `fa_crontab` VALUES ('3', 'url', '删除缓存', 'http://www.yangmengyu.com/admin/ajax/wipecache?type=all', '* * * * *', '0', '0', '2062', '1530782219', '1531290783', '1530782209', '1549012611', '1531290783', '0', 'normal');
+INSERT INTO `fa_crontab` VALUES ('3', 'url', '删除缓存', 'http://www.yangmengyu.com/admin/ajax/wipecache?type=all', '* * * * *', '0', '0', '2076', '1530782219', '1531529702', '1530782209', '1549012611', '1531529702', '0', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_ems
@@ -4909,13 +4900,14 @@ CREATE TABLE `fa_leesign` (
   `sign_extra_reward` int(11) DEFAULT NULL COMMENT '连签额外奖励',
   `max_sign` int(11) DEFAULT NULL COMMENT '连签数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='用户签到表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='用户签到表';
 
 -- ----------------------------
 -- Records of fa_leesign
 -- ----------------------------
 INSERT INTO `fa_leesign` VALUES ('7', '1000', '127.0.0.1', '2018-07-10 18:18:43', '0', '10', '1');
 INSERT INTO `fa_leesign` VALUES ('10', '1000', '127.0.0.1', '2018-07-11 09:23:08', '0', '20', '2');
+INSERT INTO `fa_leesign` VALUES ('11', '1000', '127.0.0.1', '2018-07-12 10:56:56', '0', '3', '3');
 
 -- ----------------------------
 -- Table structure for fa_mobile_code
@@ -5062,7 +5054,7 @@ CREATE TABLE `fa_user` (
 -- ----------------------------
 INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', null, null, null, null, '0', '2', '2', '1530629196', '1530665264', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1530665264', '', 'normal', '', 'online');
 INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/20180711/d7595aa71a892d023e646be35d37cdd3.jpg', '1', '0', '2018-06-30', '', null, null, null, null, '0', '3', '3', '1530761532', '1530778417', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1531299110', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('1000', '1', 'yangmengyu', '笑看往事如花', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180711/ca3cd569fe6c52e2fd08e6870ad93a37.jpg', '2', '1', '2018-07-06', '123123', '180', '65', 'China', '[\"hairdressing\",\"animal husbandry\"]', '84', '2', '5', '1531270471', '1531295084', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1531298704', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
+INSERT INTO `fa_user` VALUES ('1000', '2', 'yangmengyu', 'yangmengyu', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '2', '1', '0000-00-00', '', '180', '65', 'Afghanistan', '[\"hairdressing\",\"animal husbandry\"]', '87', '5', '5', '1531466387', '1531557198', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1531558948', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
 
 -- ----------------------------
 -- Table structure for fa_user_group
@@ -5076,12 +5068,13 @@ CREATE TABLE `fa_user_group` (
   `updatetime` int(10) DEFAULT NULL COMMENT '更新时间',
   `status` enum('normal','hidden') DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员组表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员组表';
 
 -- ----------------------------
 -- Records of fa_user_group
 -- ----------------------------
 INSERT INTO `fa_user_group` VALUES ('1', '默认组', '1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25,26,27', '1515386468', '1530870917', 'normal');
+INSERT INTO `fa_user_group` VALUES ('2', 'VIP客户', '5,6,7,8,27,15,16,17,19,20,21,22,23,24,25,26,9,10,11,12,3,4,2,13,1', '1531558914', '1531558959', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_user_rule
@@ -5099,7 +5092,7 @@ CREATE TABLE `fa_user_rule` (
   `weigh` int(10) DEFAULT '0' COMMENT '权重',
   `status` enum('normal','hidden') DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员规则表';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员规则表';
 
 -- ----------------------------
 -- Records of fa_user_rule
@@ -5129,6 +5122,8 @@ INSERT INTO `fa_user_rule` VALUES ('24', '13', 'index/chat/movefriend', '移动�
 INSERT INTO `fa_user_rule` VALUES ('25', '13', 'index/chat/addmsg', '添加好友', '', '0', '1530606008', '1530606008', '25', 'normal');
 INSERT INTO `fa_user_rule` VALUES ('26', '13', 'index/chat/friendtotal', '查找好友', '', '0', '1530698158', '1530698158', '26', 'normal');
 INSERT INTO `fa_user_rule` VALUES ('27', '3', 'index/user/changeemail', '修改邮箱', '', '0', '1530870910', '1530870910', '27', 'normal');
+INSERT INTO `fa_user_rule` VALUES ('28', '1', 'index', '前台页面', '', '1', '1531560969', '1531560969', '28', 'normal');
+INSERT INTO `fa_user_rule` VALUES ('29', '28', 'index/index/index', '更多会员', '', '0', '1531560998', '1531560998', '29', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_user_score_log
@@ -5143,7 +5138,7 @@ CREATE TABLE `fa_user_score_log` (
   `memo` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员积分变动表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员积分变动表';
 
 -- ----------------------------
 -- Records of fa_user_score_log
@@ -5162,6 +5157,8 @@ INSERT INTO `fa_user_score_log` VALUES ('11', '1000', '0', '44', '44', '连续�
 INSERT INTO `fa_user_score_log` VALUES ('12', '1000', '20', '44', '64', '额外签到奖励', '1531271724');
 INSERT INTO `fa_user_score_log` VALUES ('13', '1000', '0', '64', '64', '连续签到奖励', '1531272188');
 INSERT INTO `fa_user_score_log` VALUES ('14', '1000', '20', '64', '84', '额外签到奖励', '1531272188');
+INSERT INTO `fa_user_score_log` VALUES ('15', '1000', '0', '84', '84', '连续签到奖励', '1531364216');
+INSERT INTO `fa_user_score_log` VALUES ('16', '1000', '3', '84', '87', '额外签到奖励', '1531364216');
 
 -- ----------------------------
 -- Table structure for fa_user_token
@@ -5191,6 +5188,7 @@ INSERT INTO `fa_user_token` VALUES ('2254a865657ebe719a5f3375108207b75b531950', 
 INSERT INTO `fa_user_token` VALUES ('23792f0f1d5535fbd74ce27499469370d3f795d3', '2', '1530359354', '1532951354');
 INSERT INTO `fa_user_token` VALUES ('276ca2967ee96d5c60eeacbe25dad189c585f29d', '1', '1530627857', '1533219857');
 INSERT INTO `fa_user_token` VALUES ('2ca849dbb1f931a30ed95cfdd31c77ae71adb443', '3', '1530760895', '1533352895');
+INSERT INTO `fa_user_token` VALUES ('2f01a74875d062972e98b7d1d3a59e21efca9c12', '1000', '1531301259', '1533893259');
 INSERT INTO `fa_user_token` VALUES ('3d08b52817280b7af6db35595e314b9c671e5ce1', '1000', '1530754523', '1533346523');
 INSERT INTO `fa_user_token` VALUES ('3df085c3e4f12afcc45f5b3ba3682197d2fde9c7', '1000', '1530847058', '1533439058');
 INSERT INTO `fa_user_token` VALUES ('3e9b5f8f08109982c068b44d848b5e515d5355df', '1000', '1530781265', '1533373265');
@@ -5204,6 +5202,7 @@ INSERT INTO `fa_user_token` VALUES ('4fa1d2e9965e9d677c9fd8063561a28ef5d36caa', 
 INSERT INTO `fa_user_token` VALUES ('524c5723c66efbd86d263a6dae8d565cddfba938', '2', '1530339993', '1532931993');
 INSERT INTO `fa_user_token` VALUES ('5567dde5806a76d0f655133545464de06daf1012', '1000', '1530420735', '1533012735');
 INSERT INTO `fa_user_token` VALUES ('5b935fce356662680abf2a237cb445d5feeb061a', '1000', '1530370284', '1532962284');
+INSERT INTO `fa_user_token` VALUES ('5bbda1eda1c38c864c8fb06cc14c15af688835cf', '1000', '1531466387', '1534058387');
 INSERT INTO `fa_user_token` VALUES ('5bda7277a3be02b49efcc42791743de9e5ccf8bd', '2', '1530345237', '1532937237');
 INSERT INTO `fa_user_token` VALUES ('60f0a98f6883f604872c79fc775c50cba03b707d', '1000', '1530956502', '1533548502');
 INSERT INTO `fa_user_token` VALUES ('644a830fb7d50c07aec70ff011e6cce2e955bf70', '1000', '1530958529', '1533550529');
@@ -5224,6 +5223,7 @@ INSERT INTO `fa_user_token` VALUES ('8f175656a4d0afa45f3cd599a78edb5641e16732', 
 INSERT INTO `fa_user_token` VALUES ('907fb008641e611d238e69b17c05a6433fbb9152', '1000', '1530610023', '1533202023');
 INSERT INTO `fa_user_token` VALUES ('91a0559e1b7d5796bfbcf0559d54cdf668f13079', '3', '1530760069', '1533352069');
 INSERT INTO `fa_user_token` VALUES ('94684c36bd1fd6a3cfe2512510455ae3b33b2189', '3', '1530778417', '1533370417');
+INSERT INTO `fa_user_token` VALUES ('9ca16aacea54bd0176e760c88130d32121681efa', '1000', '1531557198', '1534149198');
 INSERT INTO `fa_user_token` VALUES ('9e1a67871bc5a5a653efa8b3e47146959f780a03', '1000', '1530422881', '1533014881');
 INSERT INTO `fa_user_token` VALUES ('afcc035f4d91d1e15eaa114d487caadea5302178', '1', '1530629196', '1533221196');
 INSERT INTO `fa_user_token` VALUES ('b4c5c51600978725a7324d8c6461b2a4860dcad0', '2', '1530358954', '1532950954');

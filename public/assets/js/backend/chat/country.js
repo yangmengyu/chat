@@ -25,13 +25,13 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'iso', title: __('Iso')},
-                        {field: 'iso3', title: __('Iso3')},
-                        {field: 'name', title: __('Name')},
-                        {field: 'name_zh', title: __('Name_zh')},
-                        {field: 'nicename', title: __('Nicename')},
-                        {field: 'numcode', title: __('Numcode')},
-                        {field: 'phonecode', title: __('Phonecode')},
+                        {field: 'country_cn', title: __('Country_cn')},
+                        {field: 'continent', title: __('Continent')},
+                        {field: 'country_en', title: __('Country_en')},
+                        {field: 'shortname1', title: __('Shortname1')},
+                        {field: 'shortname2', title: __('Shortname2')},
+                        {field: 'num_code', title: __('Num_code')},
+                        {field: 'full_name', title: __('Full_name')},
                         {field: 'status', title: __('Status'), searchList: {"normal":__('Normal'),"hidden":__('Hidden')}, formatter: Table.api.formatter.status},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]

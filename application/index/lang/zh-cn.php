@@ -126,4 +126,12 @@ return [
     'You have no permission'                                 => '您还没有权限哦,请升级会员',
     'An unexpected error occurred'                           => '发生了一个意外错误,程序猿正在紧急处理中',
     'This page will be re-directed in %s seconds'            => '页面将在 %s 秒后自动跳转',
+    'Member'            => '会员',
+    'Reset password'                        => '修改密码',
+    'The person I like'                        => '我喜欢的人',
+    'People who like me'                        => '喜欢我的人',
+    'Like each other'                        => '互相喜欢',
+    'My good friend'                        => '我的好友',
+    'Visitor'                        => '访客',
+    'Open a member to see more information'                        => '开通会员可查看更多信息',
 ];

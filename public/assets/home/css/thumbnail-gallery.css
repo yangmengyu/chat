@@ -1,0 +1,94 @@
+body {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    min-height: 100vh;
+    font: normal 16px sans-serif;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #58595a;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 18px;
+    color: #85878c;
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+.tz-gallery .thumbnail {
+    padding: 0;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px #f1f1f1 solid;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tz-gallery .thumbnail:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.tz-gallery .lightbox img {
+    border-radius: 4px 4px 0 0;
+}
+
+.tz-gallery .caption{
+    padding: 15px 30px;
+    text-align: center;
+    height:85px;
+}
+
+.tz-gallery .caption h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.tz-gallery .caption p {
+    font-size: 12px;
+    color: #7b7d7d;
+    margin: 0;
+    margin-top: 10px
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+.icon-email{cursor: pointer}
+.icon-heart{cursor: pointer}
+.icon-heart .fa-stack-2x{
+    color:#f7e3e3
+}
+.icon-heart .fa-stack-1x{
+    color:#e60020
+}
+.icon-email .fa-stack-2x{
+    color:#f7e3e3
+}
+.icon-email .fa-stack-1x{
+    color:#e60020
+}
+.caption_1 span{
+    padding-right: 10px;
+}
+.caption_1 .iconfont{
+    color:#e60020;
+}
+.caption_1 .layui-icon{
+    color: #18bc9c;
+    float: right
+}
+.caption_2{
+    display: none;
+}
+
+

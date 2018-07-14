@@ -113,5 +113,21 @@ class User Extends Model
         }
         return $level;
     }
+    function birthday($birthday){
+        if($birthday == '0000-00-00'){
+            return '保密';
+        }
+        $age = strtotime($birthday);
+        if($age === false){
+            return false;
+        }
+        list($y1,$m1,$d1) = explode("-",date("Y-m-d",$age));
+        $now = strtotime("now");
+        list($y2,$m2,$d2) = explode("-",date("Y-m-d",$now));
+        $age = $y2 - $y1;
+        if((int)($m2.$d2) < (int)($m1.$d1))
+            $age -= 1;
+        return $age+1;
+    }
 
 }

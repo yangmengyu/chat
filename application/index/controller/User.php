@@ -226,7 +226,7 @@ class User extends Frontend
     {
         $this->loadlang('country');
         $this->loadlang('interest');
-        $countrys = Db::name('chat_country')->where('status','normal')->select();
+        $countrys = Db::name('chat_country')->where('status','normal')->order('shortname1 asc')->select();
         $interests = Db::name('chat_interest')->where('status','normal')->select();
         $this->view->assign('title', __('Profile'));
         $this->view->assign('countrys',$countrys);

@@ -99,7 +99,7 @@
                             <div class="col-xs-12 col-sm-4">
                                 <select id="c-country" name="country"  style="display: none" data-rule="{:__('Country')}:required" lay-search>
                                     {volist name="countrys" id="vo"}
-                                    <option value="{$vo.nicename}" {if $vo.nicename==$user.country}selected{/if}>{$vo.iso}--{:__($vo.nicename,'country')}</option>
+                                    <option value="{$vo.country_en}" {if $vo.country_en==$user.country}selected{/if}>{$vo.shortname1}--{:__($vo.country_en,'country')}</option>
                                     {/volist}
                                 </select>
                             </div>

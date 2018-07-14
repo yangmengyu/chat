@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"E:\phpstudy\WWW\chat\public/../application/index\view\user\index.html";i:1530846583;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531357081;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531359374;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1530932684;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531560907;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531552704;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531468830;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531552547;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,10 +21,16 @@
 <link rel="stylesheet" href="/assets/home/css/menu.css">
 <link rel="stylesheet" href="/assets/home/css/contextMenu.css" />
 <link rel="stylesheet" href="/assets/home/css/jquery.validator.css" />
+<link rel="stylesheet" href="/assets/home/css/baguetteBox.min.css">
+<link rel="stylesheet" href="/assets/home/css/thumbnail-gallery.css">
+<link rel="stylesheet" href="/assets/home/iconfont/iconfont.css">
+
 <script src="/assets/home/layui/layui.js"></script>
 <script src="/assets/home/js/jquery-3.1.1.min.js"></script>
 <script src="/assets/libs/bootstrap/js/collapse.js"></script>
 <script src="/assets/libs/nice-validator/dist/jquery.validator.js?local=<?php echo $config['language']; ?>"></script>
+<script src="/assets/home/js/baguetteBox.min.js"></script>
+
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
 <script src="/assets/js/html5shiv.js"></script>
@@ -56,7 +62,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="header-navbar">
                     <ul class="nav navbar-nav pull-left">
-                        <li class="active"><a href="#" >Active</a></li>
+                        <li class="active"><a href="<?php echo url('index/index'); ?>" ><?php echo __('Member'); ?></a></li>
                         <li><a href="#">Link</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right" >
@@ -70,9 +76,9 @@
                             <?php endif; ?>
                             <ul class="dropdown-menu">
                                 <?php if($user): ?>
-                                <li><a href="<?php echo url('user/index'); ?>"><i class="fa fa-user-circle fa-fw"></i><?php echo __('User center'); ?></a></li>
+                                <li><a href="<?php echo url('user/index'); ?>"><i class="fa fa-user-circle fa-fw"></i><?php echo __('Go to Member center'); ?></a></li>
                                 <li><a href="<?php echo url('user/profile'); ?>"><i class="fa fa-user-o fa-fw"></i><?php echo __('Profile'); ?></a></li>
-                                <li><a href="<?php echo url('user/changepwd'); ?>"><i class="fa fa-key fa-fw"></i><?php echo __('Change password'); ?></a></li>
+                                <li><a href="<?php echo url('user/changepwd'); ?>"><i class="fa fa-key fa-fw"></i><?php echo __('Reset password'); ?></a></li>
                                 <li><a href="<?php echo url('user/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i><?php echo __('Sign out'); ?></a></li>
                                 <?php else: ?>
                                 <li><a href="<?php echo url('user/login'); ?>"><i class="fa fa-sign-in fa-fw"></i> <?php echo __('Sign in'); ?></a></li>
@@ -95,89 +101,133 @@
         </nav>
 
         <main class="content">
-            <style>
-    .basicinfo {
-        margin: 15px 0;
-    }
-
-    .basicinfo .row > .col-xs-4 {
-        padding-right: 0;
-    }
-
-    .basicinfo .row > div {
-        margin: 5px 0;
-    }
-</style>
-<div id="content-container" class="container">
+            <div id="content-container" class="container">
     <div class="row">
         <div class="col-md-3">
             <div class="sidenav">
     <ul class="list-group">
-        <li class="list-group-heading"><?php echo __('User center'); ?></li>
-        <li class="list-group-item <?php echo $config['actionname']=='index'?'active':''; ?>"> <a href="<?php echo url('user/index'); ?>"><i class="fa fa-user-circle fa-fw"></i> <?php echo __('User center'); ?></a> </li>
-        <li class="list-group-item <?php echo $config['actionname']=='profile'?'active':''; ?>"> <a href="<?php echo url('user/profile'); ?>"><i class="fa fa-user-o fa-fw"></i> <?php echo __('Profile'); ?></a> </li>
-        <li class="list-group-item <?php echo $config['actionname']=='changepwd'?'active':''; ?>"> <a href="<?php echo url('user/changepwd'); ?>"><i class="fa fa-key fa-fw"></i> <?php echo __('Change password'); ?></a> </li>
-        <li class="list-group-item <?php echo $config['actionname']=='sign'?'active':''; ?>"> <a href="<?php echo url('user/sign'); ?>"><i class="fa fa-map-signs fa-fw"></i> <?php echo __('My sign'); ?></a> </li>
-        <li class="list-group-item <?php echo $config['actionname']=='logout'?'active':''; ?>"> <a href="<?php echo url('user/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> <?php echo __('Sign out'); ?></a> </li>
+        <li class="list-group-heading">
+            <div class="media">
+                <div class="media-left">
+                    <a href="<?php echo url('user/profile'); ?>">
+                        <img class="media-object" data-src="<?php echo $user['avatar']; ?>" alt="<?php echo $user['nickname']; ?>" style="width: 64px; height: 64px;border-radius: 35px;" src="<?php echo $user['avatar']; ?>" data-holder-rendered="true">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading"><?php echo $user['nickname']; ?></h3>
+                    <br>
+                    ID:<?php echo $user['id']; ?>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-heading">
+            <i class="layui-icon layui-icon-diamond" style="font-size: 20px; color: #e60020;"></i>
+            <?php echo $user['score']; ?>
+        </li>
+        <li class="list-group-item <?php echo $config['actionname']=='index'?'active':''; ?>"> <a href="<?php echo url('user/index'); ?>"><i class="fa fa-heart fa-fw"></i> <?php echo __('The person I like'); ?></a> </li>
+        <li class="list-group-item <?php echo $config['actionname']=='profile'?'active':''; ?>"> <a href="<?php echo url('user/profile'); ?>"><i class="fa fa-heart-o fa-fw"></i> <?php echo __('People who like me'); ?></a> </li>
+        <li class="list-group-item <?php echo $config['actionname']=='changepwd'?'active':''; ?>"> <a href="<?php echo url('user/changepwd'); ?>"><i class="fa fa-heartbeat fa-fw"></i> <?php echo __('Like each other'); ?></a> </li>
+        <li class="list-group-item <?php echo $config['actionname']=='changepwd'?'active':''; ?>"> <a href="<?php echo url('user/changepwd'); ?>"><i class="fa fa-users fa-fw"></i> <?php echo __('Visitor'); ?></a> </li>
+
     </ul>
 </div>
         </div>
         <div class="col-md-9">
-            <div class="panel panel-default ">
+            <div class="panel panel-default">
                 <div class="panel-body">
-                    <h2 class="page-header">
-                        <?php echo __('User center'); ?>
-                        <a href="<?php echo url('user/profile'); ?>" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i>
-                            <?php echo __('Profile'); ?></a>
-                    </h2>
-                    <div class="row user-baseinfo">
-                        <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
-                            <a href="<?php echo url('user/profile'); ?>" title="<?php echo __('Click to edit'); ?>">
-                                <span class="avatar-img"><img src="<?php echo $user['avatar']; ?>" alt=""></span>
-                            </a>
-                        </div>
-                        <div class="col-md-9 col-sm-9 col-xs-10">
-                            <!-- Content -->
-                            <div class="ui-content">
-                                <!-- Heading -->
-                                <h4><a href="<?php echo url('user/profile'); ?>"><?php echo $user['nickname']; ?></a></h4>
-                                <!-- Paragraph -->
-                                <p>
-                                    <a href="<?php echo url('user/profile'); ?>">
-                                        <?php echo (isset($user['bio']) && ($user['bio'] !== '')?$user['bio']:__("This guy hasn't written anything yet")); ?>
+                    <h2 class="page-header"><?php echo __('Profile'); ?></h2>
+                    <div class="tz-gallery">
+
+                        <div class="row">
+                            <ul class="flow-default" id="LAY_demo1"></ul>
+                            <!--<li class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <a class="lightbox" href="/uploads/images/park.jpg">
+                                        <img src="/uploads/images/park.jpg" alt="Park">
                                     </a>
-                                </p>
-                                <!-- Success -->
-                                <div class="basicinfo">
-                                    <div class="row">
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Lv'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewlv"><?php echo $user['level']; ?></a>
-                                        </div>
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Score'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewscore"><?php echo $user['score']; ?></a>
-                                        </div>
+                                    <div class="caption caption_1">
+                                        <h3>
+                                            <span>yangmengyu</span>
+                                            <i class="iconfont">&#xe601;</i>
+                                            <i class="layui-icon layui-icon-radio"></i>
+                                        </h3>
+                                        <p>
+                                            27,安道尔
+                                        </p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Successions'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo $user['successions']; ?> <?php echo __('Day'); ?></div>
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Maxsuccessions'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo $user['maxsuccessions']; ?> <?php echo __('Day'); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Logintime'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo date("Y-m-d H:i:s",$user['logintime']); ?></div>
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Prevtime'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo date("Y-m-d H:i:s",$user['prevtime']); ?></div>
+                                    <div class="caption caption_2">
+                                        <span class="fa-stack fa-2x icon-heart" >
+                                              <i class="fa fa-circle fa-stack-2x"></i>
+                                              <i class="fa fa-heart-o fa-stack-1x"></i>
+                                        </span>
+                                        <span class="fa-stack fa-2x icon-email">
+                                              <i class="fa fa-circle fa-stack-2x"></i>
+                                              <i class="fa fa-envelope-o fa-stack-1x"></i>
+                                        </span>
+
                                     </div>
                                 </div>
-                            </div>
+                            </li>-->
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    layui.use('flow', function(){
+        var flow = layui.flow
+            ,param =  location.search;
+
+        flow.load({
+            elem: '#LAY_demo1' //流加载容器
+            ,done: function(page, next){ //执行下一页的回调
+                var url = '<?php echo url("index/index"); ?>';
+                $.post(url+param, {page:page}, function(res){
+                    if(res.code == 1){
+                        var lis = [];
+                        for(var i = 0; i < res.data.data.length; i++){
+                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="/uploads/images/park.jpg"> <img src="'+res.data.data[i].avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3> <span>'+res.data.data[i].nickname+'</span>';
+                            //是否为 VIP
+                            if(res.data.data[i].isvip == 1){
+                                str += '<i class="iconfont">&#xe601;</i>';
+                            }
+                            //是否在线
+                            if(res.data.data[i].online == 'online') {
+                                str += '<i class="layui-icon layui-icon-radio"></i>';
+                            }
+                            str += '</h3> <p>'+res.data.data[i].age+','+res.data.data[i].country+' </p> </div> <div class="caption caption_2"> <span class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i>';
+                            //是否喜欢
+                            str += '<i class="fa fa-heart-o fa-stack-1x"></i>';
+                            str += '</span><span class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';
+                            str += '<i class="fa fa-envelope-o fa-stack-1x"></i>';
+                            str += '</span></div> </div> </li>';
+                            lis.push(str);
+                        }
+                        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                        next(lis.join(''), page < res.data.total);
+                    }else{
+                        layer.msg(res.msg);
+                    }
+
+                });
+
+
+            }
+        });
+
+
+        //按屏加载图片
+        flow.lazyimg({
+            elem: '#LAY_demo3 img'
+            ,scrollElem: '#LAY_demo3' //一般不用设置，此处只是演示需要。
+        });
+
+    });
+</script>
         </main>
 
         <footer class="footer" style="clear:both">

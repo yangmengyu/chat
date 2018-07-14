@@ -21,7 +21,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="header-navbar">
                     <ul class="nav navbar-nav pull-left">
-                        <li class="active"><a href="#" >Active</a></li>
+                        <li class="active"><a href="{:url('index/index')}" >{:__('Member')}</a></li>
                         <li><a href="#">Link</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right" >
@@ -35,9 +35,9 @@
                             {/if}
                             <ul class="dropdown-menu">
                                 {if $user}
-                                <li><a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i>{:__('User center')}</a></li>
+                                <li><a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i>{:__('Go to Member center')}</a></li>
                                 <li><a href="{:url('user/profile')}"><i class="fa fa-user-o fa-fw"></i>{:__('Profile')}</a></li>
-                                <li><a href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i>{:__('Change password')}</a></li>
+                                <li><a href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i>{:__('Reset password')}</a></li>
                                 <li><a href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i>{:__('Sign out')}</a></li>
                                 {else /}
                                 <li><a href="{:url('user/login')}"><i class="fa fa-sign-in fa-fw"></i> {:__('Sign in')}</a></li>
