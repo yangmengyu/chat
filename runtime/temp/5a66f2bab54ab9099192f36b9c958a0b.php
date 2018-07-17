@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531727186;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531799605;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531724250;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531808869;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531808861;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531724250;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="/assets/home/css/contextMenu.css" />
 <link rel="stylesheet" href="/assets/home/css/jquery.validator.css" />
 <link rel="stylesheet" href="/assets/home/css/baguetteBox.min.css">
-<link rel="stylesheet" href="/assets/home/css/thumbnail-gallery.css">
 <link rel="stylesheet" href="/assets/home/iconfont/iconfont.css">
 
 
@@ -102,7 +101,9 @@
         </nav>
 
         <main class="content">
-            <div id="content-container" class="container">
+            <link rel="stylesheet" href="/assets/home/css/thumbnail-gallery.css">
+
+<div id="content-container" class="container">
     <div class="row">
         <div class="col-md-3">
             <div class="sidenav">

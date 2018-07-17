@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\dynamic.html";i:1531821294;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531808861;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\dynamic.html";i:1531822262;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531808861;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -290,6 +290,7 @@
 
     layui.use(['layer','upload','element','flow'], function(){
         var element = layui.element,flow = layui.flow;
+
         //一些事件监听
         element.on('tab(demo)', function(data){
             var url = $(this).data('url');
@@ -337,7 +338,7 @@
                                 for(var j = 0;j < res.data.dynamic[i].images.length;j++){
                                     str += '<div class="tz-img">\n' +
                                         '<a class="lightbox" href="'+res.data.dynamic[i].images[j].url+'">\n' +
-                                        '<img src="'+res.data.dynamic[i].images[j].url+'" alt="Park">\n' +
+                                        '<img src="'+res.data.dynamic[i].images[j].url+'">\n' +
                                         '</a>\n' +
                                         '</div>';
                                 }
@@ -355,8 +356,6 @@
                     }
                     baguetteBox.run('.tz-gallery');
                 });
-
-
             }
         });
     });

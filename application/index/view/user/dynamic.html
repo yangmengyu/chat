@@ -178,6 +178,7 @@
 
     layui.use(['layer','upload','element','flow'], function(){
         var element = layui.element,flow = layui.flow;
+
         //一些事件监听
         element.on('tab(demo)', function(data){
             var url = $(this).data('url');
@@ -225,7 +226,7 @@
                                 for(var j = 0;j < res.data.dynamic[i].images.length;j++){
                                     str += '<div class="tz-img">\n' +
                                         '<a class="lightbox" href="'+res.data.dynamic[i].images[j].url+'">\n' +
-                                        '<img src="'+res.data.dynamic[i].images[j].url+'" alt="Park">\n' +
+                                        '<img src="'+res.data.dynamic[i].images[j].url+'">\n' +
                                         '</a>\n' +
                                         '</div>';
                                 }
@@ -243,8 +244,6 @@
                     }
                     baguetteBox.run('.tz-gallery');
                 });
-
-
             }
         });
     });
