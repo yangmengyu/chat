@@ -77,5 +77,10 @@ return [
     'Weight'             => '体重',
     'Interest'  => '兴趣',
     'My sign'  => '我的签到',
+    'Home page'  => '主页',
+    'Dynamic state'  => '动态',
+    'Photo album'  => '相册',
+    'Video'  => '视频',
+    'Publish'  => '发表',
 
 ];

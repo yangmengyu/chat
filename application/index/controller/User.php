@@ -19,7 +19,7 @@ class User extends Frontend
 
     protected $layout = 'default';
     protected $noNeedLogin = ['login', 'register', 'third'];
-    protected $noNeedRight = ['*'];
+    protected $noNeedRight = ['dynamic'];
 
     public function _initialize()
     {
@@ -60,7 +60,9 @@ class User extends Frontend
      */
     public function index()
     {
+        $step = input('step');
         $this->view->assign('title', __('User center'));
+        $this->view->assign('step', $step);
         return $this->view->fetch();
     }
 
@@ -228,9 +230,12 @@ class User extends Frontend
         $this->loadlang('interest');
         $countrys = Db::name('chat_country')->where('status','normal')->order('shortname1 asc')->select();
         $interests = Db::name('chat_interest')->where('status','normal')->select();
+        $user = $this->auth->getUser($this->auth->id);
+        $user->interest = \GuzzleHttp\json_decode($user->interest);
         $this->view->assign('title', __('Profile'));
         $this->view->assign('countrys',$countrys);
         $this->view->assign('interests',$interests);
+        $this->view->assign('user',$user);
         return $this->view->fetch();
     }
 
@@ -295,6 +300,39 @@ class User extends Frontend
     //签到
     public function sign(){
         $this->view->assign('title', __('My sign'));
+        return $this->view->fetch();
+    }
+
+    //动态页面
+    public function dynamic(){
+        if($this->request->isAjax()){
+            $page = $this->request->request('page');
+            $limit = 10;
+            $user_id = $this->auth->id;
+            $count = Db::name('dynamic')
+                ->where(['user_id'=>$user_id,'status'=>'normal'])
+                ->count();
+            $data['total'] = ceil($count/$limit);
+            $dynamic = Db::name('dynamic')
+                ->where(['user_id'=>$user_id,'status'=>'normal'])
+                ->order('createtime desc')
+                ->limit($limit)
+                ->page($page)
+                ->select();
+            if($dynamic){
+                foreach ($dynamic as $key=>$value){
+                    $images = Db::name('dynamic_image')->where('dynamic_id',$value['id'])->select();
+                    if(!empty($images)){
+                        $dynamic[$key]['images'] = $images;
+                    }
+                    $dynamic[$key]['createtime'] = time_tran($value['createtime']);
+                }
+                $data['dynamic'] = $dynamic;
+                $this->success('','',$data);
+            }else{
+                $this->error();
+            }
+        }
         return $this->view->fetch();
     }
 

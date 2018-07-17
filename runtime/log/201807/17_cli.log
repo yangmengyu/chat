@@ -1,0 +1,397 @@
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.078000s ]
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.046801s ]
+[ 2018-07-17T08:32:56+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:32:58+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ 2018-07-17T08:33:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:33:06+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004000s ]
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-17T08:34:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:34:06+08:00 ][ error ] [2002]SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+[E:\phpstudy\WWW\chat\thinkphp\library\think\db\Connection.php:295]
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005001s ]
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-17T08:35:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:35:05+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:35:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.103006s ]
+[ 2018-07-17T08:35:05+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:35:05+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2111,`executetime`=1531787705,`updatetime`=1531787705  WHERE  `id` = 3 [ RunTime:0.188011s ]
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003000s ]
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001000s ]
+[ 2018-07-17T08:36:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:36:05+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:36:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.082005s ]
+[ 2018-07-17T08:36:05+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.002000s ]
+[ 2018-07-17T08:36:05+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2112,`executetime`=1531787765,`updatetime`=1531787765  WHERE  `id` = 3 [ RunTime:0.289016s ]
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005000s ]
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.004000s ]
+[ 2018-07-17T08:37:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:37:05+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:37:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.027001s ]
+[ 2018-07-17T08:37:05+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:37:05+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2113,`executetime`=1531787825,`updatetime`=1531787825  WHERE  `id` = 3 [ RunTime:0.166009s ]
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.008001s ]
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.004001s ]
+[ 2018-07-17T08:38:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:38:05+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:38:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.018001s ]
+[ 2018-07-17T08:38:05+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:38:05+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2114,`executetime`=1531787885,`updatetime`=1531787885  WHERE  `id` = 3 [ RunTime:0.241014s ]
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005001s ]
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-17T08:39:05+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:39:05+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:39:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.015001s ]
+[ 2018-07-17T08:39:05+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:39:05+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2115,`executetime`=1531787945,`updatetime`=1531787945  WHERE  `id` = 3 [ RunTime:0.069004s ]
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.007001s ]
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-17T08:40:00+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:40:00+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:40:00+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.007000s ]
+[ 2018-07-17T08:40:00+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:40:00+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2116,`executetime`=1531788000,`updatetime`=1531788000  WHERE  `id` = 3 [ RunTime:0.124007s ]
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004001s ]
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.002000s ]
+[ 2018-07-17T08:41:00+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:41:00+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:41:00+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.018001s ]
+[ 2018-07-17T08:41:00+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:41:00+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2117,`executetime`=1531788060,`updatetime`=1531788060  WHERE  `id` = 3 [ RunTime:0.033002s ]
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.016001s ]
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-17T08:42:00+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:42:00+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.009001s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:42:00+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.017001s ]
+[ 2018-07-17T08:42:00+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:42:00+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2118,`executetime`=1531788120,`updatetime`=1531788120  WHERE  `id` = 3 [ RunTime:0.041002s ]
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.007001s ]
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-17T08:43:00+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:43:00+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:43:00+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.017001s ]
+[ 2018-07-17T08:43:00+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001000s ]
+[ 2018-07-17T08:43:00+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2119,`executetime`=1531788180,`updatetime`=1531788180  WHERE  `id` = 3 [ RunTime:0.042002s ]
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006000s ]
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\thinkphp\lang\zh-cn.php
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ PARAM ] array (
+  'addon' => 'crontab',
+  'controller' => 'autotask',
+  'action' => 'index',
+)
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ RUN ] think\addons\Route->execute[ E:\phpstudy\WWW\chat\vendor\karsonzhang\fastadmin-addons\src\addons\Route.php ]
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ LANG ] E:\phpstudy\WWW\chat\public/../application/common\lang\zh-cn\addon.php
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003000s ]
+[ 2018-07-17T08:44:00+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-07-17T08:44:00+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.009000s ] mysql:host=127.0.0.1;port=3306;dbname=fastadmin;charset=utf8
+[ 2018-07-17T08:44:00+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `fa_crontab` [ RunTime:0.020001s ]
+[ 2018-07-17T08:44:00+08:00 ][ sql ] [ SQL ] SELECT * FROM `fa_crontab` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001001s ]
+[ 2018-07-17T08:44:00+08:00 ][ sql ] [ SQL ] UPDATE `fa_crontab`  SET `executes`=2120,`executetime`=1531788240,`updatetime`=1531788240  WHERE  `id` = 3 [ RunTime:0.041003s ]

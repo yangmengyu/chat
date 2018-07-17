@@ -138,6 +138,35 @@ class Common extends Api
         }
     }
 
+    /**
+     * base64上传文件
+     */
+    public function uploadbase64($value='')
+    {
+
+        $base64_img = $this->request->request('image');
+        $up_dir = ROOT_PATH . 'public' . DS . 'uploads/avatar/';//存放在当前目录的upload文件夹下
+        if(preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_img, $result)){
+            $type = $result[2];
+            if(in_array($type,array('pjpeg','jpeg','jpg','gif','bmp','png'))){
+                $time = time().'-'.$this->auth->id;
+                $new_file = $up_dir.$time.'.'.$type;
+                if(file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_img)))){
+                    $img_path = '/uploads/avatar/'.$time.'.'.$type;
+                    $this->success(__('Upload successful'), [
+                        'url' => $img_path
+                    ]);
+                }else{
+                    $this->error(__('Upload failed'));
+                }
+            }else{
+                //文件类型错误
+                $this->error(__('Uploaded file format is limited'));
+            }
+        }
+        
+    }
+
 
 
 }

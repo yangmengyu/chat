@@ -1,0 +1,378 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpstudy\WWW\chat\public/../application/index\view\chat\getmsgbox.html";i:1530751598;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>消息盒子</title>
+    <link rel="stylesheet" href="/assets/home/layui/css/layui.css">
+    <style>
+        .layim-msgbox{margin: 15px;}
+        .layim-msgbox li{position: relative; margin-bottom: 10px; padding: 0 130px 10px 60px; padding-bottom: 10px; line-height: 22px; border-bottom: 1px dotted #e2e2e2;}
+        .layim-msgbox .layim-msgbox-tips{margin: 0; padding: 10px 0; border: none; text-align: center; color: #999;}
+        .layim-msgbox .layim-msgbox-system{padding: 0 10px 10px 10px;}
+        .layim-msgbox li p span{padding-left: 5px; color: #999;}
+        .layim-msgbox li p em{font-style: normal; color: #FF5722;}
+        .layim-msgbox-avatar{position: absolute; left: 0; top: 0; width: 50px; height: 50px;}
+        .layim-msgbox-user{padding-top: 5px;}
+        .layim-msgbox-content{margin-top: 3px;}
+        .layim-msgbox .layui-btn-small{padding: 0 15px; margin-left: 5px;}
+        .layim-msgbox-btn{position: absolute; right: 0; top: 12px; color: #999;}
+    </style>
+</head>
+<body>
+
+<ul class="layim-msgbox" id="LAY_view"></ul>
+<textarea title="消息模版" id="LAY_tpl" style="display:none;">
+            {{# layui.each(d.data, function(index, item){
+                if(item.msgType == 1 || item.msgType == 3){ }}
+                    {{# if(item.from == d.userid){ }}
+                        <li data-uid="{{ item.to }}">
+                          <a href="javascript:void(0);" target="_blank">
+                            <img src="{{item.avatar}}" class="layui-circle layim-msgbox-avatar" onerror="javascript:this.src='/asset/home/img/{{# if(item.msgType == 1){ }}default_avatar.jpg{{# }else{ }}default_group.jpg{{# } }} '">
+                          </a>
+                          <p class="layim-msgbox-user">
+                            <a href="javascript:void(0);" target="_blank"><b>{{ item.groupName||'' }}</b></a>
+                            <span>{{ item.sendtime }}</span>
+                          </p>
+                          <p class="layim-msgbox-content">
+                            {{# if(item.msgType == 1){ }}
+                            申请添加对方为好友
+                            {{# }else{ }}
+                            申请加入该群
+                            {{# } }}
+                            <span>{{ item.remark ? '附言: '+item.remark : '' }}</span>
+                          </p>
+                          <p class="layim-msgbox-btn">
+                            等待验证
+                          </p>
+                        </li>
+                    {{# }else{ }}
+                        <li data-uid="{{ item.from }}" data-id="{{ item.id }}" data-avatar="{{item.avatar}}" data-type="{{item.msgType}}" data-name="{{ item.username }}" {{# if(item.groupid){ }} data-groupid="{{ item.groupid||'' }}"  data-group="{{ item.groupname||'' }}" {{#} }} data-signature="{{ item.sign }}">
+                          <a href="javascript:void(0);" target="_blank">
+                            <img src="{{item.avatar}}" class="layui-circle layim-msgbox-avatar" onerror="javascript:this.src='/asset/home/img/{{# if(item.msgType == 1){ }}default_avatar.jpg{{# }else{ }}default_group.jpg{{# } }} '">
+                          </a>
+                          <p class="layim-msgbox-user">
+                            <a href="javascript:void(0);" target="_blank"><b>{{ item.username||'' }}</b></a>
+                            <span>{{ item.sendtime }}</span>
+                          </p>
+                          <p class="layim-msgbox-content">
+                            {{# if(item.msgType == 1){ }}
+                            申请添加你为好友
+                            {{# }else{ }}
+                            申请加入 {{ item.groupName||'' }} 群
+                            {{# } }}
+                            <span>{{ item.remark ? '附言: '+item.remark : '' }}</span>
+                          </p>
+                          <p class="layim-msgbox-btn">
+                            <button class="layui-btn layui-btn-small" data-type="agree">同意</button>
+                            <button class="layui-btn layui-btn-small layui-btn-primary" data-type="refuse">拒绝</button>
+                          </p>
+                        </li>
+                    {{# } }}
+
+                {{# } else if(item.msgType == 2) { }}
+                    {{# if(item.from == d.userid){ }}
+                        <li class="layim-msgbox-system">
+                            <p><em>系统：</em><b>{{ item.username }}</b>
+                            {{# if(item.status == 2 || item.status == 4){ }}
+                            已同意你的好友申请 <button class="layui-btn layui-btn-xs btncolor chat" data-name="{{ item.username }}" data-avatar="{{item.avatar}}" data-chattype="friend" data-type="chat" data-uid="{{item.to}}">发起会话</button>
+                            {{# }else{ }}
+                            已拒绝你的好友申请
+                            {{# } }}
+                            <span>{{ item.readtime }}</span></p>
+                        </li>
+                    {{# }else{ }}
+                        <li>
+                          <a href="javascript:void(0);" target="_blank">
+                            <img src="{{item.avatar}}" class="layui-circle layim-msgbox-avatar" onerror="javascript:this.src='/asset/home/img/default_group'">
+                          </a>
+                          <p class="layim-msgbox-user">
+                            <a href="javascript:void(0);" target="_blank"><b>{{ item.username||'' }}</b></a>
+                            <span>{{ item.sendtime }}</span>
+                          </p>
+                          <p class="layim-msgbox-content">
+                            申请添加你为好友
+                            <span>{{ item.remark ? '附言: '+item.remark : '' }}</span>
+                            {{# if(item.status == 2 || item.status == 4){ }}
+                            <button class="layui-btn layui-btn-xs btncolor chat" data-name="{{ item.username }}" data-chattype="friend" data-type="chat" data-avatar="{{item.avatar}}" data-uid="{{item.from}}">发起会话</button>
+                            {{# } }}
+
+                          </p>
+                          <p class="layim-msgbox-btn">
+                            {{# if(item.status == 2 || item.status == 4){ }}
+                            已同意
+                            {{# }else{ }}
+                            已拒绝
+                            {{# } }}
+
+                          </p>
+                        </li>
+
+                    {{# } }}
+
+                {{# }else if(item.msgType == 4){ }}
+                    {{# if(item.from == d.userid){ }}
+                        <li class="layim-msgbox-system">
+                            <p><em>系统：</em> 管理员 {{ item.handle }}
+                            {{# if(item.status == 2 || item.status == 4){ }}
+                            已同意你加入群 <b>{{ item.groupName }}</b> <button class="layui-btn layui-btn-xs btncolor chat" data-name="{{ item.groupName }}" data-chattype="group" data-type="chat" data-uid="{{item.to}}">发起会话</button>
+                            {{# }else{ }}
+                            已拒绝你加入群 <b>{{ item.groupName }}</b>
+                            {{# } }}
+                            <span>{{ item.readtime }}</span></p>
+                        </li>
+                    {{# }else{ }}
+                        <li class="layim-msgbox-system">
+                            <p><em>系统：</em>
+                            管理员{{ item.handle }}
+                            {{# if(item.status == 2 || item.status == 4){ }}
+                            已同意 <b>{{ item.username }}</b> 加入群 <b>{{ item.groupName }}</b>
+                            {{# }else{ }}
+                            你已拒绝 <b>{{ item.username }}</b> 加入群 <b>{{ item.groupName }}</b>
+                            {{# } }}
+                            <span>{{ item.readtime }}</span></p>
+                        </li>
+                    {{# } }}
+
+                {{# }
+            }); }}
+        </textarea>
+
+<!--
+上述模版采用了 laytpl 语法，不了解的同学可以去看下文档：http://www.layui.com/doc/modules/laytpl.html
+-->
+
+<script src="/assets/home/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '/assets/home/js/'
+    }).extend({
+        rmlib: 'rmlib',
+        protobuf: 'protobuf',
+        socket: 'socket',
+    });
+    layui.use(['layim', 'flow','socket'], function (socket) {
+        var layim = layui.layim,
+            layer = layui.layer,
+            laytpl = layui.laytpl,
+            $ = layui.jquery,
+            socket = layui.socket,
+            cachedata = parent.layui.layim.cache(),
+            flow = layui.flow;
+
+        var formatDate = function (now) {
+            var myDate = new Date(now);
+            var month=myDate.getMonth()+1;
+            var date=myDate.getDate();
+            return month+"月"+date+"日";
+        }
+        //请求消息
+        var renderMsg = function (page, callback){
+            //实际部署时，请将下述 getmsg.json 改为你的接口地址
+            var url = '<?php echo url("chat/getmsgbox"); ?>';
+            $.post(url, {page: page || 1,limit:20}, function(res){
+                if(res.code !== 0){
+                    layui.each(res.data.msgbox, function(index, item){
+                        res.data.msgbox[index]['sendtime'] =  formatDate(item.sendtime * 1000);
+                        res.data.msgbox[index]['readtime'] =  formatDate(item.readtime * 1000);
+                    });
+                    callback && callback(res.data.msgbox, res.data.pages,res.data.userid);
+                }else{
+                    return layer.msg(res.msg);
+                }
+
+            });
+
+        };
+
+
+        //消息信息流
+        flow.load({
+            //流加载容器
+            elem: '#LAY_view'
+            , isAuto: false
+            , end: '<li class="layim-msgbox-tips">暂无更多新消息</li>'
+            /* 加载下一页*/
+            , done: function (page, next) {
+                renderMsg(page, function (data, pages,userid) {
+                    var html = laytpl(LAY_tpl.value).render({
+                        data: data
+                        , page: page
+                        , userid: userid
+                    });
+                    next(html, page < pages);
+                });
+            }
+        });
+        //操作
+        var active = {
+            //判断头像是否存在
+            IsExist: function (avatar){
+                var ImgObj=new Image();
+                ImgObj.src= avatar;
+                if(ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0))
+                {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            agree: function (othis) {
+                //type 1添加好友 3添加群
+                active.receiveAddFriendGroup(othis,2);
+            }
+            //拒绝
+            , refuse: function (othis) {
+                layer.confirm('确定拒绝吗？', function (index) {
+                    //type 1添加好友 3添加群
+                    parent.layui.im.receiveAddFriendGroup(othis, 3);
+                });
+            }
+            //发起好友聊天
+            ,chat: function(othis){
+                var  uid = othis.data('uid'), avatar = othis.data('avatar');
+                parent.layui.layim.chat({
+                    name: othis.data('name')
+                    ,type: othis.data('chattype')
+                    ,avatar: avatar
+                    ,id: uid
+                });
+            }
+            //确认添加好友或群
+            ,receiveAddFriendGroup:function(othis,agree) {
+                var li = othis.parents('li')
+                    , type = li.data('type')
+                    , uid = li.data('uid')
+                    , username = li.data('name')
+                    , signature = li.data('signature')
+                    , avatar = li.data('avatar')
+                    , msgId = li.data('id');
+                if (type == 1) {
+                    type = 'friend';
+                    msgType = 2;
+                } else {
+                    type = 'group';
+                    var groupIdx = li.data('groupidx');
+                    msgType = 4;
+                }
+                var status = agree == 2 ? 2 : 3;
+                if (agree == 2) {
+                    if (msgType == 2) {
+                        var default_avatar = '/assets/img/avatar.png';
+                        parent.layui.layim.setFriendGroup({
+                            type: type
+                            , username: username//用户名称或群组名称
+                            , avatar: avatar ? avatar : default_avatar
+                            , group: cachedata.friend || [] //获取好友分组数据
+                            , submit: function (group, index) {
+                                $.post('<?php echo url("chat/modifyMsg"); ?>', {
+                                    msgId: msgId,
+                                    msgType: msgType,
+                                    status: status,
+                                    mygroup_id: group,
+                                    friendid: uid
+                                }, function (res) {
+                                    if (res.code !== 0) {
+                                        //将好友 追加到主面板
+                                        parent.layui.layim.addList({
+                                            type: 'friend'
+                                            , avatar:  avatar ? avatar : default_avatar //好友头像
+                                            , username: username //好友昵称
+                                            , groupid: group //所在的分组id
+                                            , id: uid //好友ID
+                                            , sign: signature //好友签名
+                                        });
+                                        othis.parent().html('已同意');
+                                    } else {
+                                        console.log('添加失败');
+                                    }
+                                });
+                                parent.layer.close(index);
+                            }
+                        });
+                    } else if (msgType = 4) {
+                        var default_avatar = './uploads/person/empty1.jpg';
+                        $.get('class/doAction.php?action=modify_msg', {
+                            msgIdx: msgIdx,
+                            msgType: msgType,
+                            status: status
+                        }, function (res) {
+                            var data = eval('(' + res + ')');
+                            if (data.code == 0) {
+                                var options = {
+                                    applicant: uid,
+                                    groupId: groupIdx,
+                                    success: function (resp) {
+                                        //同意添加后通知对方
+                                        conn.subscribed({
+                                            to: uid,
+                                            message: 'addGroupSuccess'
+                                        });
+                                        //系统消息
+                                        im.sendMsg({
+                                            mine: {
+                                                content: username + ' 已加入该群',
+                                                timestamp: new Date().getTime()
+                                            },
+                                            to: {
+                                                id: groupIdx,
+                                                type: 'group',
+                                                cmd: {
+                                                    cmdName: 'joinGroup',
+                                                    cmdValue: username
+                                                }
+                                            }
+                                        });
+                                    },
+                                    error: function (e) {
+                                    }
+                                };
+                                conn.agreeJoinGroup(options);
+                                othis.parent().html('已同意');
+                                // parent.location.reload();
+                                //更新右键点击事件
+                                im.contextMenu();
+                            } else if (data.code == 1) {
+                                console.log(data.msg);
+                            } else {
+                                console.log('添加失败');
+                            }
+                        });
+                    }
+
+                } else {
+                    $.get('class/doAction.php?action=modify_msg', {
+                        msgIdx: msgIdx,
+                        msgType: msgType,
+                        status: status
+                    }, function (res) {
+                        var data = eval('(' + res + ')');
+                        if (data.code == 0) {
+                            conn.unsubscribed({
+                                to: uid,
+                                message: 'rejectAddFriend'
+                            });
+                            othis.parent().html('<em>已拒绝</em>');
+                        }
+                        layer.close(layer.index);
+                    });
+
+                }
+            }
+        };
+        //打开页面即把系统消息标记为已读
+       $(function(){
+            $.get('<?php echo url("chat/setAllRead"); ?>', {}, function (res) {
+            });
+        });
+        $('body').on('click', '.layui-btn', function () {
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+        // layer.close(index);
+
+    });
+</script>
+</body>
+</html>

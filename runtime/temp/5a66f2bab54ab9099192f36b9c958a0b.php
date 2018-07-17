@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531562307;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531552704;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531468830;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531552547;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531727186;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531799605;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531724250;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>
+<title><?php echo (isset($title) && ($title !== '')?$title:''); ?><?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="renderer" content="webkit">
 
@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="/assets/home/css/baguetteBox.min.css">
 <link rel="stylesheet" href="/assets/home/css/thumbnail-gallery.css">
 <link rel="stylesheet" href="/assets/home/iconfont/iconfont.css">
+
 
 <script src="/assets/home/layui/layui.js"></script>
 <script src="/assets/home/js/jquery-3.1.1.min.js"></script>
@@ -110,7 +111,7 @@
             <div class="media">
                 <div class="media-left">
                     <a href="<?php echo url('user/profile'); ?>">
-                        <img class="media-object" data-src="<?php echo $user['avatar']; ?>" alt="<?php echo $user['nickname']; ?>" style="width: 64px; height: 64px;border-radius: 35px;" src="<?php echo $user['avatar']; ?>" data-holder-rendered="true">
+                        <img class="media-object" data-src="<?php echo $user['avatar']; ?>" alt="<?php echo $user['nickname']; ?>" style="width: 64px; height: 64px;border-radius: 5px;" src="<?php echo $user['avatar']; ?>" data-holder-rendered="true">
                     </a>
                 </div>
                 <div class="media-body">
@@ -206,10 +207,15 @@
                             if(res.data.data[i].online == 'online') {
                                 str += '<i class="layui-icon layui-icon-radio"></i>';
                             }
-                            str += '</h3> <p>'+res.data.data[i].age+','+res.data.data[i].country+' </p> </div> <div class="caption caption_2"> <span class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i>';
+                            str += '</h3> <p>'+res.data.data[i].age+','+res.data.data[i].country+' </p> </div> <div class="caption caption_2"> ';
                             //是否喜欢
-                            str += '<i class="fa fa-heart-o fa-stack-1x"></i>';
-                            str += '</span><span class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';
+                            if(res.data.data[i].like==1){
+                                str += '<span data-uid="'+res.data.data[i].id+'" class="fa-stack fa-2x icon-heart active" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart fa-stack-1x"></i></span>';
+                            }else{
+                                str += '<span data-uid="'+res.data.data[i].id+'" class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart-o fa-stack-1x"></i></span>';
+                            }
+                            //发送消息
+                            str += '<span data-uid="'+res.data.data[i].id+'" data-name="'+res.data.data[i].nickname+'" data-avatar="'+res.data.data[i].avatar+'" data-status="'+res.data.data[i].status+'" class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';6
                             str += '<i class="fa fa-envelope-o fa-stack-1x"></i>';
                             str += '</span></div> </div> </li>';
                             lis.push(str);
@@ -232,6 +238,32 @@
         flow.lazyimg({
             elem: '#LAY_demo3 img'
             ,scrollElem: '#LAY_demo3' //一般不用设置，此处只是演示需要。
+        });
+        $("#LAY_demo1").on("click",'.icon-email',function(){
+            var  uid = $(this).data('uid'),
+                name = $(this).data('name'),
+                avatar =  $(this).data('avatar');
+            parent.layui.layim.chat({
+                name:  name
+                ,type: 'friend'
+                ,avatar: avatar
+                ,status: status
+                ,id: uid
+            });
+        });
+        $("#LAY_demo1").on("click",'.icon-heart',function(){
+            var uid = $(this).data('uid');
+            $.post('<?php echo url("index/like"); ?>',{to:uid},function (res) {
+                if(res.code == 1){
+                    layer.msg(res.msg);
+                    $('.icon-heart').addClass('active');
+                    $(this).find('.fa-stack-1x').addClass('fa-heart');
+                    $(this).find('.fa-stack-1x').removeClass('fa-heart-o');
+                }else{
+                    $('.icon-heart').removeClass('active');
+                    layer.msg(res.msg);
+                }
+            })
         });
 
     });
@@ -277,18 +309,18 @@
                 url: 'json/getMembers.json', data: {}
             }*/
             //上传图片接口
-            , uploadImage: {
+            /*, uploadImage: {
                 url: '/upload/image' //（返回的数据格式见下文）
                 , type: '' //默认post
-            }
+            }*/
             //上传文件接口
-            , uploadFile: {
+            /*, uploadFile: {
                 url: '/upload/file' //（返回的数据格式见下文）
                 , type: '' //默认post
-            }
+            }*/
 
-            , isAudio: false //开启聊天工具栏音频
-            , isVideo: false //开启聊天工具栏视频
+            //, isAudio: false //开启聊天工具栏音频
+            //, isVideo: false //开启聊天工具栏视频
             //扩展工具栏
             /*  , tool: [{
                   alias: 'code'

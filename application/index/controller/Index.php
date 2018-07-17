@@ -12,7 +12,7 @@ class Index extends Frontend
 {
 
     protected $noNeedLogin = '';
-    protected $noNeedRight = 'index';
+    protected $noNeedRight = 'index,like';
     protected $layout = 'default';
 
     public function _initialize()
@@ -37,10 +37,12 @@ class Index extends Frontend
                 }
             }
             $limit = 12;
-            $count = Db::name('user')->where('status','normal')->count();
+            $map['status'] = 'normal' ;
+            $map['id'] = ['<>',$this->auth->id];
+            $count = Db::name('user')->where($map)->count();
             $data['data'] = Db::name('user')
                 ->field('nickname,id,group_id,avatar,birthday,country,gender')
-                ->where('status','normal')
+                ->where($map)
                 ->limit($limit)
                 ->page($page)
                 ->select();
@@ -52,11 +54,27 @@ class Index extends Frontend
                 $data['data'][$key]['online'] = Cache::get('online'.$value['id'],'offline');
                 $data['data'][$key]['country'] = __($value['country']);
                 $data['data'][$key]['age'] = $user_model->birthday($value['birthday']);
+                $res = Db::name('chat_like')->where(['from'=>$this->auth->id,'to'=>$value['id']])->find();
+                if($res){
+                    $data['data'][$key]['like'] = 1;
+                }
             }
             $data['total'] = ceil($count/$limit);
             $this->success('','',$data);
         }
         return $this->view->fetch();
+    }
+    public function like(){
+        $to = $this->request->request('to');
+        $from = $this->auth->id;
+        $res = Db::name('chat_like')->where(['from'=>$from,'to'=>$to])->find();
+        if($res){
+            Db::name('chat_like')->where(['from'=>$from,'to'=>$to])->delete();
+            $this->error(__('Cancel some praise'));
+        }else{
+            Db::name('chat_like')->insert(['from'=>$from,'to'=>$to]);
+            $this->success(__('Point of great success'));
+        }
     }
 
 

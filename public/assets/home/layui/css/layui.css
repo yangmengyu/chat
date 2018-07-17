@@ -744,7 +744,7 @@ hr, .layui-timeline-item:before{background-color: #e6e6e6;}
 .layui-laypage button{margin-left: 10px; padding: 0 10px; cursor: pointer;}
 
 /** 流加载 **/
-.layui-flow-more{margin: 10px 0; text-align: center; color: #999; font-size: 14px;}
+.layui-flow-more{margin: 10px 0; text-align: center; color: #999; font-size: 14px;display: inline-block; width:100%}
 .layui-flow-more a{ height: 32px; line-height: 32px;  }
 .layui-flow-more a *{display: inline-block; vertical-align: top;}
 .layui-flow-more a cite{padding: 0 20px; border-radius: 3px; background-color: #eee; color: #333; font-style: normal;}
@@ -1008,9 +1008,9 @@ body .layui-table-tips .layui-layer-content{background: none; padding: 0; box-sh
 /* Tab关闭 */.layui-tab-title li .layui-tab-close{position: relative; display: inline-block; width: 18px; height: 18px; line-height: 20px; margin-left: 8px; top: 1px; text-align: center; font-size: 14px; color: #c2c2c2; transition: all .2s; -webkit-transition: all .2s;}
 .layui-tab-title li .layui-tab-close:hover{border-radius: 2px; background-color: #FF5722; color: #fff;}
 
-/* Tab简洁风格 */.layui-tab-brief > .layui-tab-title .layui-this{color: #009688;}
+/* Tab简洁风格 */.layui-tab-brief > .layui-tab-title .layui-this{color: #e60020;}
 .layui-tab-brief > .layui-tab-title .layui-this:after
-,.layui-tab-brief > .layui-tab-more li.layui-this:after{border: none; border-radius: 0; border-bottom: 2px solid #5FB878;}
+,.layui-tab-brief > .layui-tab-more li.layui-this:after{border: none; border-radius: 0; border-bottom: 2px solid #e60020;}
 .layui-tab-brief[overflow] > .layui-tab-title .layui-this:after{top: -1px;}
 
 /* Tab卡片风格 */.layui-tab-card{border-width: 1px; border-style: solid; border-radius: 2px; box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);}

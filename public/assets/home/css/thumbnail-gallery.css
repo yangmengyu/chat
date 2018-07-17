@@ -1,8 +1,4 @@
-body {
-    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    min-height: 100vh;
-    font: normal 16px sans-serif;
-}
+
 
 .gallery-container h1 {
     text-align: center;
@@ -39,6 +35,7 @@ body {
 
 .tz-gallery .lightbox img {
     border-radius: 4px 4px 0 0;
+    height:100%;
 }
 
 .tz-gallery .caption{
@@ -90,5 +87,6 @@ body {
 .caption_2{
     display: none;
 }
+
 
 

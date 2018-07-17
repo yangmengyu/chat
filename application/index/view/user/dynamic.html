@@ -1,0 +1,297 @@
+<style>
+    .basicinfo {
+        margin: 15px 0;
+    }
+
+    .basicinfo .row > .col-xs-4 {
+        padding-right: 0;
+    }
+
+    .basicinfo .row > div {
+        margin: 5px 0;
+    }
+    .box{
+        margin-top: 10%;
+        margin-bottom: 10px;
+        color: #FF5722;
+        font-size: 18px;
+        margin-left: 45%;
+    }
+    .box1{
+        width: 900px;
+        height: 500px;
+        margin-left: auto;
+        border:solid  1px;
+        margin-right:auto;
+    }
+    .box1 .controls{
+
+    }
+    .upload-icon-img{
+        height: 100%;
+    }
+    .upload-pre-item{
+        position: relative;
+    }
+    .upload-pre-item .img{
+        margin-top: 5px;
+        width:100px;
+        height: 100px;
+    }
+    .upload-pre-item i {
+        position: absolute;
+        cursor: pointer;
+        top: 5px;
+        background: #2F4056;
+        padding: 2px;
+        line-height: 15px;
+        text-align: center;
+        color: #fff;
+        margin-left: 1px;
+        /* float: left; */
+        filter: alpha(opacity=80);
+        -moz-opacity: .8;
+        -khtml-opacity: .8;
+        opacity: .8;
+        transition: 1s;
+    }
+    .upload-pre-item i:hover{transform:rotate(360deg);}
+    .upload-pre-item,.upload-icon-img{
+        width:120px;
+        float: left;
+        margin-left: 8px;
+    }
+    .qqFace { margin-top: 4px; background: #fff; padding: 2px; border: 1px #dfe6f6 solid; }
+    .qqFace table td { padding: 0px; }
+    .qqFace table td img { cursor: pointer; border: 1px #fff solid; }
+    .qqFace table td img:hover { border: 1px #0066cc solid; }
+</style>
+<link rel="stylesheet" href="__CDN__/assets/home/css/gallery-grid.css">
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default ">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('User center')}
+                        <a href="{:url('user/profile')}" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i>
+                            {:__('Profile')}</a>
+                    </h2>
+                    <div class="row user-baseinfo">
+                        <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
+                            <a href="{:url('user/profile')}" title="{:__('Click to edit')}">
+                                <span class="avatar-img"><img src="{$user.avatar}" alt=""></span>
+                            </a>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-10">
+                            <!-- Content -->
+                            <div class="ui-content">
+                                <!-- Heading -->
+                                <h4><a href="{:url('user/profile')}">{$user.nickname}</a></h4>
+                                <!-- Paragraph -->
+                                <p>
+                                    <a href="{:url('user/profile')}">
+                                        {$user.bio|default=__("This guy hasn't written anything yet")}
+                                    </a>
+                                </p>
+                                <!-- Success -->
+                                <div class="basicinfo">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Lv')}</div>
+                                        <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewlv">{$user.level}</a>
+                                        </div>
+                                        <div class="col-xs-4 col-md-2">{:__('Score')}</div>
+                                        <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewscore">{$user.score}</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Successions')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.successions} {:__('Day')}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Maxsuccessions')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.maxsuccessions} {:__('Day')}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Logintime')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.logintime|date="Y-m-d H:i:s",###}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Prevtime')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.prevtime|date="Y-m-d H:i:s",###}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-tab layui-tab-brief" lay-filter="demo">
+                        <ul class="layui-tab-title">
+                            <li data-url="{:url('user/index')}" >{:__('Home page')}</li>
+                            <li data-url="{:url('user/dynamic')}" class="layui-this">{:__('Dynamic state')}</li>
+                            <li data-url="{:url('user/photo')}">{:__('Photo album')}</li>
+                            <li data-url="{:url('user/video')}">{:__('Video')}</li>
+                        </ul>
+                        <div class="layui-tab-content ">
+                            <div class="layui-tab-item ">{:__('Home page')}</div>
+                            <div class="layui-tab-item layui-show">
+                                <div class="com_form " >
+                                    <form id="dynamic-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('dynamic/add')}">
+                                        <div class="layui-form-item layui-form-text">
+                                            <div>
+                                                <textarea  placeholder="和大家分享点什么吧" class="layui-textarea form-control" id="saytext" name="content" data-rule="require"></textarea>
+                                            </div>
+                                            <i  class="layui-icon layui-icon-face-smile emotion" style="font-size: 20px; color: #e60020;"></i>
+                                        </div>
+                                        <div class="upload-img-box layui-form-item">
+                                            <dd class="upload-icon-img " >
+                                                <div class="upload-pre-item">
+                                                    <img src="__CDN__/assets/home/img/upload.png" class="img" id="upload_img_icon" style="cursor: pointer;border: 3px #ccc dashed;" alt="上传图片">
+                                                </div>
+                                            </dd>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div >
+                                                <button class=" btn btn-primary" lay-submit="" lay-filter="formDemo">{:__('Publish')}</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <ul class="layui-timeline" id="LAY-FLOW">
+
+                                </ul>
+                            </div>
+                            <div class="layui-tab-item">{:__('Photo album')}</div>
+                            <div class="layui-tab-item">{:__('Video')}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__CDN__/assets/home/js/jquery.qqFace.js"></script>
+<script type="text/javascript" src="__CDN__/assets/home/js/dynamic.js"></script>
+<script type="text/javascript">
+    baguetteBox.run('.tz-gallery');
+</script>
+<script>
+
+    layui.use(['layer','upload','element','flow'], function(){
+        var element = layui.element,flow = layui.flow;
+        //一些事件监听
+        element.on('tab(demo)', function(data){
+            var url = $(this).data('url');
+            window.location.href = url;
+        });
+        var layer = layui.layer;
+        var upload = layui.upload;
+        upload.render({ //上传图片
+            elem: '#upload_img_icon',
+            url: '/api/common/upload',
+            multiple: true, //是否允许多文件上传。设置 true即可开启。不支持ie8/9
+            auto:true,//自动上传
+            before: function(obj) {
+                layer.msg('图片上传中...', {
+                    icon: 16,
+                    shade: 0.01,
+                    time: 0
+                })
+            },
+            done: function(res) {
+                console.log(res);
+                layer.close(layer.msg('上传成功！'));
+                $('.upload-img-box').append('<dd class="upload-icon-img " ><div class="upload-pre-item"><i onclick="deleteImg($(this))"   class="layui-icon"></i><img src="' + res.data.url + '" class="img" ><input type="hidden" name="case_images[]" value="' + res.data.url + '" /></div></dd>');
+            }
+            ,error: function(){
+                layer.msg('上传错误！');
+            }
+        });
+
+        flow.load({
+            elem: '#LAY-FLOW' //流加载容器
+            ,done: function(page, next){ //执行下一页的回调
+                var url = '{:url("user/dynamic")}';
+                $.post(url, {page:page}, function(res){
+                    if(res.code == 1){
+                        var lis = [];
+                        for(var i = 0; i < res.data.dynamic.length; i++){
+                            var str = '<li class="layui-timeline-item">\n' +
+                                '<i class="layui-icon layui-timeline-axis"></i>\n' +
+                                '<div class="layui-timeline-content layui-text">\n' +
+                                '<h3 class="layui-timeline-title">'+res.data.dynamic[i].createtime+'</h3>\n' +
+                                '<p style="margin-bottom: 10px;"> '+replace_em(res.data.dynamic[i].content)+'</p>\n' +
+                                '<div class="tz-gallery container" style="width: 100%;padding-left: 0;">';
+                            if(res.data.dynamic[i].images){
+                                for(var j = 0;j < res.data.dynamic[i].images.length;j++){
+                                    str += '<div class="tz-img">\n' +
+                                        '<a class="lightbox" href="'+res.data.dynamic[i].images[j].url+'">\n' +
+                                        '<img src="'+res.data.dynamic[i].images[j].url+'" alt="Park">\n' +
+                                        '</a>\n' +
+                                        '</div>';
+                                }
+                            }
+                            str += '</div>\n' +
+                                '</div>\n' +
+                                '</li>';
+                            lis.push(str);
+                        }
+                        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                        next(lis.join(''), page < res.data.total);
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                    baguetteBox.run('.tz-gallery');
+                });
+
+
+            }
+        });
+    });
+    function deleteImg(obj){
+        //删除页面信息
+        obj.parent().parent('.upload-icon-img').remove();
+        //删除本地图片（ajax)
+        //删除数据库图片
+    }
+
+
+    $(function(){
+        $('.emotion').qqFace({
+            id : 'facebox',
+            assign:'saytext',
+            path:'__CDN__/assets/home/arclist/'	//表情存放的路径
+        });
+        $(".sub_btn").click(function(){
+            var str = $("#saytext").val();
+            $("#show").html(replace_em(str));
+        });
+    });
+
+    //查看结果
+
+    function replace_em(str){
+        str = str.replace(/\</g,'&lt;');
+        str = str.replace(/\>/g,'&gt;');
+        str = str.replace(/\n/g,'<br/>');
+        str = str.replace(/\[em_([0-9]*)\]/g,'<img src="__CDN__/assets/home/arclist/$1.gif" border="0" />');
+        return str;
+    }
+    //发布动态
+
+    $('#dynamic-form').on('valid.form', function(){
+        var self = $(this);
+        $.post(self.attr("action"), self.serialize(), success, "json");
+        return false;
+        function success(res) {
+            if (res.code) {
+                layer.msg(res.msg);
+                setTimeout(function(){
+                    window.location.reload();
+                },2000);
+            } else {
+                layer.msg(res.msg);
+            }
+        }
+    });
+</script>

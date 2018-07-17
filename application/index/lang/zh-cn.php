@@ -134,4 +134,6 @@ return [
     'My good friend'                        => '我的好友',
     'Visitor'                        => '访客',
     'Open a member to see more information'                        => '开通会员可查看更多信息',
+    'Point of great success'=> '点赞成功',
+    'Cancel some praise'=> '取消点赞',
 ];

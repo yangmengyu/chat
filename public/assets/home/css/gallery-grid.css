@@ -1,10 +1,4 @@
-body {
-    /*background-image: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%);*/
-    background: #494A5F;
-    min-height: 100vh;
-    font: normal 16px sans-serif;
-    padding: 60px 0;
-}
+
 
 .container.gallery-container {
     background-color: #fff;
@@ -29,13 +23,11 @@ body {
     font-size: 18px;
 }
 
-.tz-gallery {
-    padding: 40px;
-}
+
 
 .tz-gallery .lightbox img {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     transition: 0.2s ease-in-out;
     box-shadow: 0 2px 3px rgba(0,0,0,0.2);
 }
@@ -63,4 +55,13 @@ body {
     .container.gallery-container {
         border-radius: 0;
     }
+}
+.tz-img{
+    float: left;
+    width: 30%;
+    height:auto;
+    margin-left: 5px;
+}
+.tz-gallery{
+    height: auto;
 }

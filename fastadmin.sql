@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-14 17:43:12
+Date: 2018-07-17 17:57:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `fa_admin` (
 -- ----------------------------
 -- Records of fa_admin
 -- ----------------------------
-INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1531558884', '1492186163', '1531558884', '47889908-e089-42b3-95b4-3ff02056f755', 'normal');
+INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1531795686', '1492186163', '1531795686', 'dc7385de-8b3d-4c7d-8c84-9a062d4e5e12', 'normal');
 INSERT INTO `fa_admin` VALUES ('2', 'admin2', 'admin2', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '/assets/img/avatar.png', 'admin2@fastadmin.net', '0', '1505450906', '1492186163', '1505450906', 'df45fdd5-26f4-45ca-83b3-47e4491a315a', 'normal');
 INSERT INTO `fa_admin` VALUES ('3', 'admin3', 'admin3', '1c11f945dfcd808a130a8c2a8753fe62', 'WOKJEn', '/assets/img/avatar.png', 'admin3@fastadmin.net', '0', '1530863546', '1492186201', '1530863607', '', 'normal');
 
@@ -60,7 +60,7 @@ CREATE TABLE `fa_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=334 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of fa_admin_log
@@ -388,6 +388,16 @@ INSERT INTO `fa_admin_log` VALUES ('320', '1', 'admin', '/admin/user/user/edit/i
 INSERT INTO `fa_admin_log` VALUES ('321', '1', 'admin', '/admin/user/group/edit/ids/2?dialog=1', '会员管理 会员组管理 编辑', '{\"dialog\":\"1\",\"row\":{\"rules\":\"5,6,7,8,27,15,16,17,19,20,21,22,23,24,25,26,9,10,11,12,3,4,2,13,1\",\"name\":\"VIP\\u5ba2\\u6237\",\"status\":\"normal\"},\"ids\":\"2\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531558960');
 INSERT INTO `fa_admin_log` VALUES ('322', '1', 'admin', '/admin/user/rule/add?dialog=1', '会员管理 会员规则管理 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"1\",\"name\":\"index\",\"title\":\"\\u524d\\u53f0\\u9875\\u9762\",\"remark\":\"\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531560969');
 INSERT INTO `fa_admin_log` VALUES ('323', '1', 'admin', '/admin/user/rule/add?dialog=1', '会员管理 会员规则管理 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"0\",\"pid\":\"28\",\"name\":\"index\\/index\\/index\",\"title\":\"\\u66f4\\u591a\\u4f1a\\u5458\",\"remark\":\"\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531560999');
+INSERT INTO `fa_admin_log` VALUES ('324', '1', 'admin', '/admin/index/login?url=%2Fadmin', '登录', '{\"url\":\"\\/admin\",\"__token__\":\"b64c3ecd65d7455ceb7a1c09fa974e45\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531711621');
+INSERT INTO `fa_admin_log` VALUES ('325', '1', 'admin', '/admin/addon/install', '插件管理 安装', '{\"name\":\"epay\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.0\",\"faversion\":\"1.0.0.20180618_beta\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531711638');
+INSERT INTO `fa_admin_log` VALUES ('326', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531711639');
+INSERT INTO `fa_admin_log` VALUES ('327', '1', 'admin', '/admin/addon/state', '插件管理 禁用启用', '{\"name\":\"epay\",\"action\":\"disable\",\"force\":\"0\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531719249');
+INSERT INTO `fa_admin_log` VALUES ('328', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531719250');
+INSERT INTO `fa_admin_log` VALUES ('329', '1', 'admin', '/admin/addon/uninstall', '插件管理 卸载', '{\"name\":\"epay\",\"force\":\"0\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531719252');
+INSERT INTO `fa_admin_log` VALUES ('330', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36', '1531719253');
+INSERT INTO `fa_admin_log` VALUES ('331', '1', 'admin', '/admin/index/login?url=%2Fadmin', '登录', '{\"url\":\"\\/admin\",\"__token__\":\"2dfe11324eedf86ffd62ff5dd1cddbae\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '1531795686');
+INSERT INTO `fa_admin_log` VALUES ('332', '1', 'admin', '/admin/user/rule/add?dialog=1', '会员管理 会员规则管理 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"0\",\"pid\":\"28\",\"name\":\"index\\/dynamic\\/add\",\"title\":\"\\u53d1\\u5e03\\u52a8\\u6001\",\"remark\":\"\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '1531795730');
+INSERT INTO `fa_admin_log` VALUES ('333', '1', 'admin', '/admin/user/group/edit/ids/2?dialog=1', '会员管理 会员组管理 编辑', '{\"dialog\":\"1\",\"row\":{\"rules\":\"1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25,26,27,28,29,30\",\"name\":\"VIP\\u5ba2\\u6237\",\"status\":\"normal\"},\"ids\":\"2\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '1531795740');
 
 -- ----------------------------
 -- Table structure for fa_area
@@ -4184,7 +4194,7 @@ CREATE TABLE `fa_attachment` (
   `storage` varchar(100) NOT NULL DEFAULT 'local' COMMENT '存储位置',
   `sha1` varchar(40) NOT NULL DEFAULT '' COMMENT '文件 sha1编码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='附件表';
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='附件表';
 
 -- ----------------------------
 -- Records of fa_attachment
@@ -4213,6 +4223,58 @@ INSERT INTO `fa_attachment` VALUES ('21', '1', '0', '/uploads/20180711/891a331b3
 INSERT INTO `fa_attachment` VALUES ('22', '1', '0', '/uploads/20180711/891a331b361c2a2bc8d3ccac1f27e856.jpg', '3264', '3264', 'jpg', '0', '724386', 'image/jpeg', '', '1531299350', '1531299350', '1531299350', 'local', 'a1db628e09ac877daf32f1a860741ed40eb52ec2');
 INSERT INTO `fa_attachment` VALUES ('23', '1', '0', '/uploads/20180711/bbcb680cc72b44f73c6fa17a8e0858dd.jpg', '4020', '4020', 'jpg', '0', '532829', 'image/jpeg', '', '1531299403', '1531299403', '1531299403', 'local', 'b063d412448e8178a32ca4e3001141b896409f9f');
 INSERT INTO `fa_attachment` VALUES ('24', '0', '1000', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '200', '200', 'jpg', '0', '20102', 'image/jpeg', '', '1531466352', '1531466352', '1531466352', 'local', '2a857d2f73d233832b69f284add8fa89c982cb71');
+INSERT INTO `fa_attachment` VALUES ('25', '0', '1000', '/uploads/20180714/58e98176aa643bfe832b415b05242d80.jpg', '384', '300', 'jpg', '0', '82568', 'image/jpeg', '', '1531562477', '1531562477', '1531562477', 'local', '108741e881b1e240f811112a60a1df9d16e6a452');
+INSERT INTO `fa_attachment` VALUES ('26', '0', '3', '/uploads/20180716/a037e80bb304755a52f9a5e8fe9b5b0f.jpg', '280', '212', 'jpg', '0', '80545', 'image/jpeg', '', '1531722675', '1531722675', '1531722675', 'local', 'd4f343588f6f3279a399acdba5c045ad5504f1dd');
+INSERT INTO `fa_attachment` VALUES ('27', '0', '3', '/uploads/20180716/49ccaf86431eee0d5573cc1aaea404ca.jpg', '161', '113', 'jpg', '0', '24212', 'image/jpeg', '', '1531723732', '1531723732', '1531723732', 'local', '8ab5266fc8502c881b93a99b0326ab791d066d42');
+INSERT INTO `fa_attachment` VALUES ('28', '0', '3', '/uploads/20180716/a598d19d2afe2bc5e73497bf4116a80c.png', '86', '91', 'png', '0', '4316', 'image/png', '', '1531733560', '1531733560', '1531733560', 'local', '5d8a84df859e8695492744d98f01d55f50f4f8f0');
+INSERT INTO `fa_attachment` VALUES ('29', '0', '3', '/uploads/20180716/3d303d7fdd66a855bf24b2f707474514.png', '530', '239', 'png', '0', '184234', 'image/png', '', '1531733564', '1531733564', '1531733564', 'local', '8050444acf5b02b1356dc2d77456f22d4e8f4189');
+INSERT INTO `fa_attachment` VALUES ('30', '0', '3', '/uploads/20180716/49ccaf86431eee0d5573cc1aaea404ca.jpg', '161', '113', 'jpg', '0', '24212', 'image/jpeg', '', '1531733804', '1531733804', '1531733804', 'local', '8ab5266fc8502c881b93a99b0326ab791d066d42');
+INSERT INTO `fa_attachment` VALUES ('31', '0', '3', '/uploads/20180716/022693396405a53b7b9dc67818584c9a.jpg', '250', '80', 'jpg', '0', '8254', 'image/jpeg', '', '1531733872', '1531733872', '1531733872', 'local', '1709fab81f9c20df5147d2e3ceed2525b4888f09');
+INSERT INTO `fa_attachment` VALUES ('32', '0', '3', '/uploads/20180716/a598d19d2afe2bc5e73497bf4116a80c.png', '86', '91', 'png', '0', '4316', 'image/png', '', '1531733988', '1531733988', '1531733988', 'local', '5d8a84df859e8695492744d98f01d55f50f4f8f0');
+INSERT INTO `fa_attachment` VALUES ('33', '0', '3', '/uploads/20180716/022693396405a53b7b9dc67818584c9a.jpg', '250', '80', 'jpg', '0', '8254', 'image/jpeg', '', '1531734025', '1531734025', '1531734025', 'local', '1709fab81f9c20df5147d2e3ceed2525b4888f09');
+INSERT INTO `fa_attachment` VALUES ('34', '0', '3', '/uploads/20180716/3efaeb4f73a0ca4af7e6b0a3454b8c2a.png', '86', '91', 'png', '0', '4355', 'image/png', '', '1531734064', '1531734064', '1531734064', 'local', '25ee70f059029ea5462de94707b31466c3c837c2');
+INSERT INTO `fa_attachment` VALUES ('35', '0', '3', '/uploads/20180716/a598d19d2afe2bc5e73497bf4116a80c.png', '86', '91', 'png', '0', '4316', 'image/png', '', '1531734464', '1531734464', '1531734464', 'local', '5d8a84df859e8695492744d98f01d55f50f4f8f0');
+INSERT INTO `fa_attachment` VALUES ('36', '0', '3', '/uploads/20180716/d61221c3daf4e6be5d2d24d19d13da68.jpg', '161', '113', 'jpg', '0', '24650', 'image/jpeg', '', '1531734515', '1531734515', '1531734515', 'local', '4f029233c237013e2cf08b7fa2d7f08fad39684c');
+INSERT INTO `fa_attachment` VALUES ('37', '0', '3', '/uploads/20180716/e53b71eca3f25c0de9b29092414ed04e.png', '86', '91', 'png', '0', '4067', 'image/png', '', '1531734556', '1531734556', '1531734556', 'local', '36097d1ca18536328a0603fd0057b427f900472b');
+INSERT INTO `fa_attachment` VALUES ('38', '0', '3', '/uploads/20180716/3efaeb4f73a0ca4af7e6b0a3454b8c2a.png', '86', '91', 'png', '0', '4355', 'image/png', '', '1531734638', '1531734638', '1531734638', 'local', '25ee70f059029ea5462de94707b31466c3c837c2');
+INSERT INTO `fa_attachment` VALUES ('39', '0', '3', '/uploads/20180716/15f0d1be649a2cd59d4cdb04cb8308e6.jpg', '161', '113', 'jpg', '0', '25598', 'image/jpeg', '', '1531734657', '1531734657', '1531734657', 'local', '0eb2755a8f2ca8d1a5afa92afe6bfe303ba15a21');
+INSERT INTO `fa_attachment` VALUES ('40', '0', '3', '/uploads/20180716/a598d19d2afe2bc5e73497bf4116a80c.png', '86', '91', 'png', '0', '4316', 'image/png', '', '1531734703', '1531734703', '1531734703', 'local', '5d8a84df859e8695492744d98f01d55f50f4f8f0');
+INSERT INTO `fa_attachment` VALUES ('41', '0', '3', '/uploads/20180716/4c56467d90faa689b448e762306acbd4.jpg', '1005', '635', 'jpg', '0', '284908', 'image/jpeg', '', '1531734786', '1531734786', '1531734786', 'local', '3ed2581c794895d06819ccaf67b49f9b0b88dcf9');
+INSERT INTO `fa_attachment` VALUES ('42', '0', '3', '/uploads/20180716/a598d19d2afe2bc5e73497bf4116a80c.png', '86', '91', 'png', '0', '4316', 'image/png', '', '1531735031', '1531735031', '1531735031', 'local', '5d8a84df859e8695492744d98f01d55f50f4f8f0');
+INSERT INTO `fa_attachment` VALUES ('43', '0', '3', '/uploads/20180716/022693396405a53b7b9dc67818584c9a.jpg', '250', '80', 'jpg', '0', '8254', 'image/jpeg', '', '1531735035', '1531735035', '1531735035', 'local', '1709fab81f9c20df5147d2e3ceed2525b4888f09');
+INSERT INTO `fa_attachment` VALUES ('44', '0', '3', '/uploads/20180716/3efaeb4f73a0ca4af7e6b0a3454b8c2a.png', '86', '91', 'png', '0', '4355', 'image/png', '', '1531735037', '1531735037', '1531735037', 'local', '25ee70f059029ea5462de94707b31466c3c837c2');
+INSERT INTO `fa_attachment` VALUES ('45', '0', '3', '/uploads/20180716/e53b71eca3f25c0de9b29092414ed04e.png', '86', '91', 'png', '0', '4067', 'image/png', '', '1531735039', '1531735039', '1531735039', 'local', '36097d1ca18536328a0603fd0057b427f900472b');
+INSERT INTO `fa_attachment` VALUES ('46', '0', '3', '/uploads/20180716/ead283a86f4af9aaea9449648790dca7.jpg', '161', '113', 'jpg', '0', '24556', 'image/jpeg', '', '1531735128', '1531735128', '1531735128', 'local', 'bbfc32dde28b904b7ce77be54d7dd3e7b682f580');
+INSERT INTO `fa_attachment` VALUES ('47', '0', '3', '/uploads/20180716/2d3b67e8410af7a195bbf95ca8dab09b.png', '499', '266', 'png', '0', '129117', 'image/png', '', '1531735130', '1531735130', '1531735130', 'local', '48fe1a313370a899373f6598b54553dfb53110dc');
+INSERT INTO `fa_attachment` VALUES ('48', '0', '3', '/uploads/20180716/e53b71eca3f25c0de9b29092414ed04e.png', '86', '91', 'png', '0', '4067', 'image/png', '', '1531735133', '1531735133', '1531735133', 'local', '36097d1ca18536328a0603fd0057b427f900472b');
+INSERT INTO `fa_attachment` VALUES ('49', '0', '3', '/uploads/20180716/7589de285429e7687a1630430ce92463.png', '464', '270', 'png', '0', '174464', 'image/png', '', '1531735135', '1531735135', '1531735135', 'local', 'ffb7a542771abc6a83015a8d996b9e6d33bb37a3');
+INSERT INTO `fa_attachment` VALUES ('50', '0', '3', '/uploads/20180716/a598d19d2afe2bc5e73497bf4116a80c.png', '86', '91', 'png', '0', '4316', 'image/png', '', '1531735137', '1531735137', '1531735137', 'local', '5d8a84df859e8695492744d98f01d55f50f4f8f0');
+INSERT INTO `fa_attachment` VALUES ('51', '0', '3', '/uploads/20180716/d61221c3daf4e6be5d2d24d19d13da68.jpg', '161', '113', 'jpg', '0', '24650', 'image/jpeg', '', '1531735142', '1531735142', '1531735142', 'local', '4f029233c237013e2cf08b7fa2d7f08fad39684c');
+INSERT INTO `fa_attachment` VALUES ('52', '0', '3', '/uploads/20180716/022693396405a53b7b9dc67818584c9a.jpg', '250', '80', 'jpg', '0', '8254', 'image/jpeg', '', '1531735145', '1531735145', '1531735145', 'local', '1709fab81f9c20df5147d2e3ceed2525b4888f09');
+INSERT INTO `fa_attachment` VALUES ('53', '0', '3', '/uploads/20180716/f4fb021c6d5c8c89baafe3a3376b803c.jpg', '1930', '700', 'jpg', '0', '230222', 'image/jpeg', '', '1531735426', '1531735426', '1531735426', 'local', '2ddf17f6be223c7e8434801d60674901d66250cf');
+INSERT INTO `fa_attachment` VALUES ('54', '0', '3', '/uploads/20180716/a4ff2b4c4e586f1879050cb9384257ed.png', '1389', '719', 'png', '0', '787387', 'image/png', '', '1531735588', '1531735588', '1531735588', 'local', 'de592e6b94b95a72db474ad4529009f057a3746f');
+INSERT INTO `fa_attachment` VALUES ('55', '0', '3', '/uploads/20180716/fb68ebdd4cae7293a07bc6e0bf9fc8f4.png', '1328', '487', 'png', '0', '53550', 'image/png', '', '1531735590', '1531735590', '1531735590', 'local', 'a7a734e11caf7d5d2d2a322ae6eb76592b67ea6b');
+INSERT INTO `fa_attachment` VALUES ('56', '0', '3', '/uploads/20180716/a71ae4305adaa41c79dbb7a298cd7e50.png', '1434', '695', 'png', '0', '1344265', 'image/png', '', '1531736038', '1531736038', '1531736038', 'local', '864f29eec49331a9f63f32f61e1852c6918addcd');
+INSERT INTO `fa_attachment` VALUES ('57', '0', '3', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531793273', '1531793273', '1531793273', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('58', '0', '3', '/uploads/20180717/c6584182158730e8bddcbea77c2332c5.jpg', '1200', '1200', 'jpg', '0', '389854', 'image/jpeg', '', '1531793293', '1531793293', '1531793293', 'local', '09de8c9ca5f4966f29234f2f36538acea09c0084');
+INSERT INTO `fa_attachment` VALUES ('59', '0', '3', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531793296', '1531793296', '1531793296', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('60', '0', '3', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531793305', '1531793305', '1531793305', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('61', '0', '3', '/uploads/20180717/481c70b7d8f15b88885d1a816981ee37.jpg', '267', '271', 'jpg', '0', '48042', 'image/jpeg', '', '1531793316', '1531793316', '1531793316', 'local', 'a4ad71b3d79a5affe968b87542f763a4a85f6a9b');
+INSERT INTO `fa_attachment` VALUES ('62', '0', '1000', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531795775', '1531795775', '1531795775', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('63', '0', '1000', '/uploads/20180717/481c70b7d8f15b88885d1a816981ee37.jpg', '267', '271', 'jpg', '0', '48042', 'image/jpeg', '', '1531795776', '1531795776', '1531795776', 'local', 'a4ad71b3d79a5affe968b87542f763a4a85f6a9b');
+INSERT INTO `fa_attachment` VALUES ('64', '0', '1000', '/uploads/20180717/d3c68f14b2c66c057df01c0f34cd9e85.jpg', '1200', '1200', 'jpg', '0', '260525', 'image/jpeg', '', '1531796395', '1531796395', '1531796395', 'local', '763c3ad1901666adc5fa91d02bcd104a12199d32');
+INSERT INTO `fa_attachment` VALUES ('65', '0', '1000', '/uploads/20180717/d3c68f14b2c66c057df01c0f34cd9e85.jpg', '1200', '1200', 'jpg', '0', '260525', 'image/jpeg', '', '1531797052', '1531797052', '1531797052', 'local', '763c3ad1901666adc5fa91d02bcd104a12199d32');
+INSERT INTO `fa_attachment` VALUES ('66', '0', '1000', '/uploads/20180717/5003e0011a40d19b2b25b1d1c377c8ca.jpg', '267', '271', 'jpg', '0', '46023', 'image/jpeg', '', '1531797054', '1531797054', '1531797054', 'local', '383bdbe0a073b4da007ea877dc044b274152c807');
+INSERT INTO `fa_attachment` VALUES ('67', '0', '1000', '/uploads/20180717/d3c68f14b2c66c057df01c0f34cd9e85.jpg', '1200', '1200', 'jpg', '0', '260525', 'image/jpeg', '', '1531797341', '1531797341', '1531797341', 'local', '763c3ad1901666adc5fa91d02bcd104a12199d32');
+INSERT INTO `fa_attachment` VALUES ('68', '0', '1000', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531797421', '1531797421', '1531797421', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('69', '0', '1000', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531798155', '1531798155', '1531798155', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('70', '0', '1000', '/uploads/20180717/425b1251394a31f892588e95371c4eab.jpg', '600', '420', 'jpg', '0', '102943', 'image/jpeg', '', '1531808358', '1531808358', '1531808358', 'local', 'cfffc7798ca08ad76daec840b42c1544a5562321');
+INSERT INTO `fa_attachment` VALUES ('71', '0', '1000', '/uploads/20180717/c6584182158730e8bddcbea77c2332c5.jpg', '1200', '1200', 'jpg', '0', '389854', 'image/jpeg', '', '1531821225', '1531821225', '1531821225', 'local', '09de8c9ca5f4966f29234f2f36538acea09c0084');
+INSERT INTO `fa_attachment` VALUES ('72', '0', '1000', '/uploads/20180717/481c70b7d8f15b88885d1a816981ee37.jpg', '267', '271', 'jpg', '0', '48042', 'image/jpeg', '', '1531821306', '1531821306', '1531821306', 'local', 'a4ad71b3d79a5affe968b87542f763a4a85f6a9b');
+INSERT INTO `fa_attachment` VALUES ('73', '0', '1000', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg', '1200', '1200', 'jpg', '0', '211640', 'image/jpeg', '', '1531821327', '1531821327', '1531821327', 'local', 'c938550dab8a3498c9137ab69e417ad8682765f0');
+INSERT INTO `fa_attachment` VALUES ('74', '0', '1000', '/uploads/20180717/d3c68f14b2c66c057df01c0f34cd9e85.jpg', '1200', '1200', 'jpg', '0', '260525', 'image/jpeg', '', '1531821329', '1531821329', '1531821329', 'local', '763c3ad1901666adc5fa91d02bcd104a12199d32');
+INSERT INTO `fa_attachment` VALUES ('75', '0', '1000', '/uploads/20180717/31aad7ea0691453dcc0e329992e4b758.jpg', '1200', '1200', 'jpg', '0', '226796', 'image/jpeg', '', '1531821331', '1531821331', '1531821331', 'local', 'b8ff2b74d3a8959926c54042193a86203ea08ea9');
+INSERT INTO `fa_attachment` VALUES ('76', '0', '1000', '/uploads/20180717/481c70b7d8f15b88885d1a816981ee37.jpg', '267', '271', 'jpg', '0', '48042', 'image/jpeg', '', '1531821332', '1531821332', '1531821332', 'local', 'a4ad71b3d79a5affe968b87542f763a4a85f6a9b');
 
 -- ----------------------------
 -- Table structure for fa_auth_group
@@ -4463,7 +4525,7 @@ CREATE TABLE `fa_chatlog` (
   `type` enum('chatroom','group','friend') DEFAULT 'friend',
   `status` tinyint(1) DEFAULT '1' COMMENT '1 可以正常访问 2禁止访问',
   PRIMARY KEY (`id`,`from`,`to`)
-) ENGINE=MyISAM AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=134 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_chatlog
@@ -4725,6 +4787,22 @@ INSERT INTO `fa_chat_interest` VALUES ('0000000001', '美容', 'hairdressing', '
 INSERT INTO `fa_chat_interest` VALUES ('0000000002', '牧业', 'animal husbandry', 'normal');
 
 -- ----------------------------
+-- Table structure for fa_chat_like
+-- ----------------------------
+DROP TABLE IF EXISTS `fa_chat_like`;
+CREATE TABLE `fa_chat_like` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `from` int(10) DEFAULT NULL COMMENT '发布喜欢的人',
+  `to` int(10) DEFAULT NULL COMMENT '被喜欢的人',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of fa_chat_like
+-- ----------------------------
+INSERT INTO `fa_chat_like` VALUES ('0000000013', '3', '1000');
+
+-- ----------------------------
 -- Table structure for fa_command
 -- ----------------------------
 DROP TABLE IF EXISTS `fa_command`;
@@ -4866,7 +4944,65 @@ CREATE TABLE `fa_crontab` (
 -- ----------------------------
 -- Records of fa_crontab
 -- ----------------------------
-INSERT INTO `fa_crontab` VALUES ('3', 'url', '删除缓存', 'http://www.yangmengyu.com/admin/ajax/wipecache?type=all', '* * * * *', '0', '0', '2076', '1530782219', '1531529702', '1530782209', '1549012611', '1531529702', '0', 'normal');
+INSERT INTO `fa_crontab` VALUES ('3', 'url', '删除缓存', 'http://www.yangmengyu.com/admin/ajax/wipecache?type=all', '* * * * *', '0', '0', '2120', '1530782219', '1531788240', '1530782209', '1549012611', '1531788240', '0', 'normal');
+
+-- ----------------------------
+-- Table structure for fa_dynamic
+-- ----------------------------
+DROP TABLE IF EXISTS `fa_dynamic`;
+CREATE TABLE `fa_dynamic` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `user_id` int(11) DEFAULT NULL COMMENT '用户',
+  `content` text COMMENT '内容',
+  `createtime` int(11) DEFAULT NULL COMMENT '创建时间',
+  `updatetime` int(11) DEFAULT NULL COMMENT '修改时间',
+  `praise` int(11) DEFAULT '0' COMMENT '赞',
+  `status` enum('normal','hidden') DEFAULT 'normal' COMMENT '状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='动态';
+
+-- ----------------------------
+-- Records of fa_dynamic
+-- ----------------------------
+INSERT INTO `fa_dynamic` VALUES ('0000000001', '1000', '测试', '1531797056', '1531797056', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000002', '1000', '测试', '1531797072', '1531797072', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000003', '1000', '测试[em_14]', '1531797345', '1531797345', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000004', '1000', '测', '1531797422', '1531797422', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000005', '1000', '测试', '1531797540', '1531797540', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000006', '1000', '测试', '1531797647', '1531797647', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000007', '1000', '123', '1531798044', '1531798044', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000008', '1000', '123', '1531798157', '1531798157', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000009', '1000', '说点啥', '1531808377', '1531808377', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000010', '1000', 'ces ', '1531821226', '1531821226', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000011', '1000', '[em_11]', '1531821235', '1531821235', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000012', '1000', 'ces', '1531821306', '1531821306', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000013', '1000', '123123', '1531821311', '1531821311', '0', 'normal');
+INSERT INTO `fa_dynamic` VALUES ('0000000014', '1000', '1', '1531821335', '1531821335', '0', 'normal');
+
+-- ----------------------------
+-- Table structure for fa_dynamic_image
+-- ----------------------------
+DROP TABLE IF EXISTS `fa_dynamic_image`;
+CREATE TABLE `fa_dynamic_image` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `dynamic_id` int(11) DEFAULT NULL COMMENT '绑定动态id',
+  `url` varchar(255) DEFAULT NULL COMMENT '图片路径',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of fa_dynamic_image
+-- ----------------------------
+INSERT INTO `fa_dynamic_image` VALUES ('0000000001', '3', '/uploads/20180717/d3c68f14b2c66c057df01c0f34cd9e85.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000002', '4', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000003', '8', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000004', '9', '/uploads/20180717/425b1251394a31f892588e95371c4eab.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000005', '10', '/uploads/20180717/c6584182158730e8bddcbea77c2332c5.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000006', '12', '/uploads/20180717/481c70b7d8f15b88885d1a816981ee37.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000007', '14', '/uploads/20180717/d3e961b2fc07fb5916bcc3c23a0248f3.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000008', '14', '/uploads/20180717/d3c68f14b2c66c057df01c0f34cd9e85.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000009', '14', '/uploads/20180717/31aad7ea0691453dcc0e329992e4b758.jpg');
+INSERT INTO `fa_dynamic_image` VALUES ('0000000010', '14', '/uploads/20180717/481c70b7d8f15b88885d1a816981ee37.jpg');
 
 -- ----------------------------
 -- Table structure for fa_ems
@@ -4937,13 +5073,13 @@ CREATE TABLE `fa_myfriend` (
   `user_id` int(11) DEFAULT NULL,
   `nickname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_myfriend
 -- ----------------------------
-INSERT INTO `fa_myfriend` VALUES ('0000000068', '9', '3', null);
-INSERT INTO `fa_myfriend` VALUES ('0000000067', '8', '1000', null);
+INSERT INTO `fa_myfriend` VALUES ('0000000069', '9', '3', null);
+INSERT INTO `fa_myfriend` VALUES ('0000000070', '8', '1000', null);
 
 -- ----------------------------
 -- Table structure for fa_mygroup
@@ -4980,12 +5116,12 @@ CREATE TABLE `fa_mymsg` (
   `readtime` int(11) DEFAULT NULL COMMENT '读取消息时间',
   `mygroupid` int(20) DEFAULT NULL COMMENT '好友分组',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_mymsg
 -- ----------------------------
-INSERT INTO `fa_mymsg` VALUES ('0000000060', '2', '1000', '3', '4', ' ', '1530779299', null, '9');
+INSERT INTO `fa_mymsg` VALUES ('0000000061', '2', '3', '1000', '4', ' ', '1531724619', null, '8');
 
 -- ----------------------------
 -- Table structure for fa_sms
@@ -5053,8 +5189,8 @@ CREATE TABLE `fa_user` (
 -- Records of fa_user
 -- ----------------------------
 INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', null, null, null, null, '0', '2', '2', '1530629196', '1530665264', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1530665264', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/20180711/d7595aa71a892d023e646be35d37cdd3.jpg', '1', '0', '2018-06-30', '', null, null, null, null, '0', '3', '3', '1530761532', '1530778417', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1531299110', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('1000', '2', 'yangmengyu', 'yangmengyu', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '2', '1', '0000-00-00', '', '180', '65', 'Afghanistan', '[\"hairdressing\",\"animal husbandry\"]', '87', '5', '5', '1531466387', '1531557198', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1531558948', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
+INSERT INTO `fa_user` VALUES ('3', '1', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/avatar/1531791614-3.png', '1', '0', '2018-06-30', '', '150', '165', 'Andorra', '[\"hairdressing\",\"animal husbandry\"]', '0', '3', '3', '1530761532', '1530778417', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1531791617', '', 'normal', '', 'online');
+INSERT INTO `fa_user` VALUES ('1000', '2', 'yangmengyu', 'yangmengyu', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '2', '2', '0000-00-00', '', '180', '65', 'Afghanistan', '[\"hairdressing\",\"animal husbandry\"]', '87', '2', '5', '1531724907', '1531795757', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1531795757', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
 
 -- ----------------------------
 -- Table structure for fa_user_group
@@ -5074,7 +5210,7 @@ CREATE TABLE `fa_user_group` (
 -- Records of fa_user_group
 -- ----------------------------
 INSERT INTO `fa_user_group` VALUES ('1', '默认组', '1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25,26,27', '1515386468', '1530870917', 'normal');
-INSERT INTO `fa_user_group` VALUES ('2', 'VIP客户', '5,6,7,8,27,15,16,17,19,20,21,22,23,24,25,26,9,10,11,12,3,4,2,13,1', '1531558914', '1531558959', 'normal');
+INSERT INTO `fa_user_group` VALUES ('2', 'VIP客户', '1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,19,20,21,22,23,24,25,26,27,28,29,30', '1531558914', '1531795740', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_user_rule
@@ -5092,7 +5228,7 @@ CREATE TABLE `fa_user_rule` (
   `weigh` int(10) DEFAULT '0' COMMENT '权重',
   `status` enum('normal','hidden') DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员规则表';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员规则表';
 
 -- ----------------------------
 -- Records of fa_user_rule
@@ -5124,6 +5260,7 @@ INSERT INTO `fa_user_rule` VALUES ('26', '13', 'index/chat/friendtotal', '查找
 INSERT INTO `fa_user_rule` VALUES ('27', '3', 'index/user/changeemail', '修改邮箱', '', '0', '1530870910', '1530870910', '27', 'normal');
 INSERT INTO `fa_user_rule` VALUES ('28', '1', 'index', '前台页面', '', '1', '1531560969', '1531560969', '28', 'normal');
 INSERT INTO `fa_user_rule` VALUES ('29', '28', 'index/index/index', '更多会员', '', '0', '1531560998', '1531560998', '29', 'normal');
+INSERT INTO `fa_user_rule` VALUES ('30', '28', 'index/dynamic/add', '发布动态', '', '0', '1531795729', '1531795729', '30', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_user_score_log
@@ -5195,6 +5332,7 @@ INSERT INTO `fa_user_token` VALUES ('3e9b5f8f08109982c068b44d848b5e515d5355df', 
 INSERT INTO `fa_user_token` VALUES ('416466573a4b9ad5adfcfe2dd0f00dfc64b3a4e9', '2', '1530345326', '1532937326');
 INSERT INTO `fa_user_token` VALUES ('4488fa03016b28a0d4e29da62c0e23db36a906cb', '1000', '1530369460', '1532961460');
 INSERT INTO `fa_user_token` VALUES ('483ebdf647ecafd6a99e6595a8d4e1e44cb0574a', '2', '1530345191', '1532937191');
+INSERT INTO `fa_user_token` VALUES ('4c511d87cdd6314357f215e2c8d4ca2715bb814a', '1000', '1531795757', '1534387757');
 INSERT INTO `fa_user_token` VALUES ('4c87b5858f95f267d0937701d5bfa08d6fc16d58', '2', '1530261987', '1532853987');
 INSERT INTO `fa_user_token` VALUES ('4d71ea139283a3f180963a266e4a29b30e91d5d1', '1000', '1530760692', '1533352692');
 INSERT INTO `fa_user_token` VALUES ('4e3064f646af478b35c9d5c81c4e272d3c393dc8', '2', '1530365347', '1532957347');
@@ -5219,10 +5357,10 @@ INSERT INTO `fa_user_token` VALUES ('822bb04bbd0138bbcefe4930e3f4b72d9c0f42ac', 
 INSERT INTO `fa_user_token` VALUES ('826ec001734b311af168bdea401f09543dd94bab', '1000', '1530925411', '1533517411');
 INSERT INTO `fa_user_token` VALUES ('82a6d09e0630de28e180c6241a815fe95afe22bb', '2', '1530325965', '1532917965');
 INSERT INTO `fa_user_token` VALUES ('82abfe2f0cb03b8edb7d9c2365bd6262ec36795d', '2', '1530342719', '1532934719');
+INSERT INTO `fa_user_token` VALUES ('83f766169ede7ad1daf14cda3f3b22a521f8a71c', '1000', '1531724907', '1534316907');
 INSERT INTO `fa_user_token` VALUES ('8f175656a4d0afa45f3cd599a78edb5641e16732', '1000', '1530613922', '1533205922');
 INSERT INTO `fa_user_token` VALUES ('907fb008641e611d238e69b17c05a6433fbb9152', '1000', '1530610023', '1533202023');
 INSERT INTO `fa_user_token` VALUES ('91a0559e1b7d5796bfbcf0559d54cdf668f13079', '3', '1530760069', '1533352069');
-INSERT INTO `fa_user_token` VALUES ('94684c36bd1fd6a3cfe2512510455ae3b33b2189', '3', '1530778417', '1533370417');
 INSERT INTO `fa_user_token` VALUES ('9ca16aacea54bd0176e760c88130d32121681efa', '1000', '1531557198', '1534149198');
 INSERT INTO `fa_user_token` VALUES ('9e1a67871bc5a5a653efa8b3e47146959f780a03', '1000', '1530422881', '1533014881');
 INSERT INTO `fa_user_token` VALUES ('afcc035f4d91d1e15eaa114d487caadea5302178', '1', '1530629196', '1533221196');

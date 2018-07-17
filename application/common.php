@@ -300,3 +300,44 @@ if (!function_exists('var_export_short')) {
     }
 
 }
+
+
+if (!function_exists('time_tran')) {
+
+    /**
+     * 返回距离现在时间格式
+     * @param string $the_time 时间戳，或时间
+     * @return string 几分钟前，几小时钱
+     */
+    function time_tran($the_time)
+    {
+        $the_time = datetime($the_time);
+        $now_time = date("Y-m-d H:i:s", time());
+        $now_time = strtotime($now_time);
+        $show_time = strtotime($the_time);
+        $dur = $now_time - $show_time;
+        if ($dur < 0) {
+            return $the_time;
+        } else {
+            if ($dur < 60) {
+                return $dur . '秒前';
+            } else {
+                if ($dur < 3600) {
+                    return floor($dur / 60) . '分钟前';
+                } else {
+                    if ($dur < 86400) {
+                        return floor($dur / 3600) . '小时前';
+                    } else {
+                        if ($dur < 259200) {//3天内
+                            return floor($dur / 86400) . '天前';
+                        } else {
+                            return $the_time;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}

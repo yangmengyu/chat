@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="__CDN__/assets/home/css/thumbnail-gallery.css">
+
 <div id="content-container" class="container">
     <div class="row">
         <div class="col-md-3">
@@ -77,10 +79,15 @@
                             if(res.data.data[i].online == 'online') {
                                 str += '<i class="layui-icon layui-icon-radio"></i>';
                             }
-                            str += '</h3> <p>'+res.data.data[i].age+','+res.data.data[i].country+' </p> </div> <div class="caption caption_2"> <span class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i>';
+                            str += '</h3> <p>'+res.data.data[i].age+','+res.data.data[i].country+' </p> </div> <div class="caption caption_2"> ';
                             //是否喜欢
-                            str += '<i class="fa fa-heart-o fa-stack-1x"></i>';
-                            str += '</span><span class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';
+                            if(res.data.data[i].like==1){
+                                str += '<span data-uid="'+res.data.data[i].id+'" class="fa-stack fa-2x icon-heart active" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart fa-stack-1x"></i></span>';
+                            }else{
+                                str += '<span data-uid="'+res.data.data[i].id+'" class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart-o fa-stack-1x"></i></span>';
+                            }
+                            //发送消息
+                            str += '<span data-uid="'+res.data.data[i].id+'" data-name="'+res.data.data[i].nickname+'" data-avatar="'+res.data.data[i].avatar+'" data-status="'+res.data.data[i].status+'" class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';6
                             str += '<i class="fa fa-envelope-o fa-stack-1x"></i>';
                             str += '</span></div> </div> </li>';
                             lis.push(str);
@@ -103,6 +110,32 @@
         flow.lazyimg({
             elem: '#LAY_demo3 img'
             ,scrollElem: '#LAY_demo3' //一般不用设置，此处只是演示需要。
+        });
+        $("#LAY_demo1").on("click",'.icon-email',function(){
+            var  uid = $(this).data('uid'),
+                name = $(this).data('name'),
+                avatar =  $(this).data('avatar');
+            parent.layui.layim.chat({
+                name:  name
+                ,type: 'friend'
+                ,avatar: avatar
+                ,status: status
+                ,id: uid
+            });
+        });
+        $("#LAY_demo1").on("click",'.icon-heart',function(){
+            var uid = $(this).data('uid');
+            $.post('{:url("index/like")}',{to:uid},function (res) {
+                if(res.code == 1){
+                    layer.msg(res.msg);
+                    $('.icon-heart').addClass('active');
+                    $(this).find('.fa-stack-1x').addClass('fa-heart');
+                    $(this).find('.fa-stack-1x').removeClass('fa-heart-o');
+                }else{
+                    $('.icon-heart').removeClass('active');
+                    layer.msg(res.msg);
+                }
+            })
         });
 
     });
