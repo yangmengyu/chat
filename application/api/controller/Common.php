@@ -15,7 +15,7 @@ class Common extends Api
 {
 
     protected $noNeedLogin = ['init'];
-    protected $noNeedRight = '*';
+    protected $noNeedRight = ['uploadbase64'];
 
     public function _initialize()
     {
@@ -143,7 +143,6 @@ class Common extends Api
      */
     public function uploadbase64($value='')
     {
-
         $base64_img = $this->request->request('image');
         $up_dir = ROOT_PATH . 'public' . DS . 'uploads/avatar/';//存放在当前目录的upload文件夹下
         if(preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_img, $result)){

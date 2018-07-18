@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531808869;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531808861;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531724250;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"E:\phpstudy\WWW\chat\public/../application/index\view\index\index.html";i:1531910908;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531808861;s:69:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav_index.html";i:1531724250;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -190,37 +190,37 @@
                 $.post(url+param, {page:page}, function(res){
                     if(res.code == 1){
                         var lis = [];
-                        for(var i = 0; i < res.data.data.length; i++){
-                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="/uploads/images/park.jpg"> <img src="'+res.data.data[i].avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3>';
-                            if(res.data.data[i].gender == '0'){
-                                str += '<span><i class="fa fa-venus text-danger fa-fw"></i>'+res.data.data[i].nickname+'</span>';
-                            }else if(res.data.data[i].gender == '1'){
-                                str += '<i class="fa fa-mars text-info fa-fw"></i><span>'+res.data.data[i].nickname+'</span>';
+                        layui.each(res.data.data, function(index, item){
+                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="/uploads/images/park.jpg"> <img src="'+item.avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3>';
+                            if(item.gender == '0'){
+                                str += '<span><i class="fa fa-venus text-danger fa-fw"></i>'+item.nickname+'</span>';
+                            }else if(item.gender == '1'){
+                                str += '<i class="fa fa-mars text-info fa-fw"></i><span>'+item.nickname+'</span>';
                             }else{
-                                str += '<i class="fa fa-genderless text-success fa-fw"></i><span>'+res.data.data[i].nickname+'</span>';
+                                str += '<i class="fa fa-genderless text-success fa-fw"></i><span>'+item.nickname+'</span>';
                             }
 
                             //是否为 VIP
-                            if(res.data.data[i].isvip == 1){
+                            if(item.isvip == 1){
                                 str += '<i class="iconfont">&#xe601;</i>';
                             }
                             //是否在线
-                            if(res.data.data[i].online == 'online') {
+                            if(item.online == 'online') {
                                 str += '<i class="layui-icon layui-icon-radio"></i>';
                             }
-                            str += '</h3> <p>'+res.data.data[i].age+','+res.data.data[i].country+' </p> </div> <div class="caption caption_2"> ';
+                            str += '</h3> <p>'+item.age+','+item.country+' </p> </div> <div class="caption caption_2"> ';
                             //是否喜欢
-                            if(res.data.data[i].like==1){
-                                str += '<span data-uid="'+res.data.data[i].id+'" class="fa-stack fa-2x icon-heart active" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart fa-stack-1x"></i></span>';
+                            if(item.like==1){
+                                str += '<span data-uid="'+item.id+'" class="fa-stack fa-2x icon-heart active" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart fa-stack-1x"></i></span>';
                             }else{
-                                str += '<span data-uid="'+res.data.data[i].id+'" class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart-o fa-stack-1x"></i></span>';
+                                str += '<span data-uid="'+item.id+'" class="fa-stack fa-2x icon-heart" > <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-heart-o fa-stack-1x"></i></span>';
                             }
                             //发送消息
-                            str += '<span data-uid="'+res.data.data[i].id+'" data-name="'+res.data.data[i].nickname+'" data-avatar="'+res.data.data[i].avatar+'" data-status="'+res.data.data[i].status+'" class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';6
+                            str += '<span data-uid="'+item.id+'" data-name="'+item.nickname+'" data-avatar="'+item.avatar+'" data-status="'+item.status+'" class="fa-stack fa-2x icon-email"><i class="fa fa-circle fa-stack-2x"></i>';6
                             str += '<i class="fa fa-envelope-o fa-stack-1x"></i>';
                             str += '</span></div> </div> </li>';
                             lis.push(str);
-                        }
+                        });
                         //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
                         //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
                         next(lis.join(''), page < res.data.total);

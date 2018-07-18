@@ -199,12 +199,11 @@
                 })
             },
             done: function(res) {
-                console.log(res);
-                layer.close(layer.msg('上传成功！'));
+                layer.close(layer.msg('{:__("Upload successful")}'));
                 $('.upload-img-box').append('<dd class="upload-icon-img " ><div class="upload-pre-item"><i onclick="deleteImg($(this))"   class="layui-icon"></i><img src="' + res.data.url + '" class="img" ><input type="hidden" name="case_images[]" value="' + res.data.url + '" /></div></dd>');
             }
             ,error: function(){
-                layer.msg('上传错误！');
+                layer.msg('{:__("You have no permission")}');
             }
         });
 
@@ -215,32 +214,32 @@
                 $.post(url, {page:page}, function(res){
                     if(res.code == 1){
                         var lis = [];
-                        for(var i = 0; i < res.data.dynamic.length; i++){
+                        layui.each(res.data.dynamic, function(index, item){
                             var str = '<li class="layui-timeline-item">\n' +
                                 '<i class="layui-icon layui-timeline-axis"></i>\n' +
                                 '<div class="layui-timeline-content layui-text">\n' +
-                                '<h3 class="layui-timeline-title">'+res.data.dynamic[i].createtime+'</h3>\n' +
-                                '<p style="margin-bottom: 10px;"> '+replace_em(res.data.dynamic[i].content)+'</p>\n' +
+                                '<h3 class="layui-timeline-title">'+item.createtime+'</h3>\n' +
+                                '<p style="margin-bottom: 10px;"> '+replace_em(item.content)+'</p>\n' +
                                 '<div class="tz-gallery container" style="width: 100%;padding-left: 0;">';
-                            if(res.data.dynamic[i].images){
-                                for(var j = 0;j < res.data.dynamic[i].images.length;j++){
+                            if(item.images){
+                                layui.each(item.images, function(index1, item1){
                                     str += '<div class="tz-img">\n' +
-                                        '<a class="lightbox" href="'+res.data.dynamic[i].images[j].url+'">\n' +
-                                        '<img src="'+res.data.dynamic[i].images[j].url+'">\n' +
+                                        '<a class="lightbox" href="'+item1.url+'">\n' +
+                                        '<img src="'+item1.url+'">\n' +
                                         '</a>\n' +
                                         '</div>';
-                                }
+                                })
                             }
                             str += '</div>\n' +
                                 '</div>\n' +
                                 '</li>';
                             lis.push(str);
-                        }
+                        });
                         //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
                         //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
                         next(lis.join(''), page < res.data.total);
                     }else{
-                        layer.msg(res.msg);
+
                     }
                     baguetteBox.run('.tz-gallery');
                 });
@@ -279,6 +278,7 @@
     //发布动态
 
     $('#dynamic-form').on('valid.form', function(){
+
         var self = $(this);
         $.post(self.attr("action"), self.serialize(), success, "json");
         return false;

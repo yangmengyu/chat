@@ -305,6 +305,7 @@ class User extends Frontend
 
     //动态页面
     public function dynamic(){
+
         if($this->request->isAjax()){
             $page = $this->request->request('page');
             $limit = 10;
@@ -333,7 +334,17 @@ class User extends Frontend
                 $this->error();
             }
         }
+        $controllername = strtolower($this->request->controller());
+        $actionname = strtolower($this->request->action());
+        $path = str_replace('.', '/', $controllername) . '/' . $actionname;
+        if($this->auth->check($path)){
+            $isvip = true;
+        }else{
+            $isvip = false;
+        }
+        $this->view->assign('isvip',$isvip);
         return $this->view->fetch();
     }
+
 
 }
