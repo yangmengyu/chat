@@ -239,7 +239,7 @@
                         //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
                         next(lis.join(''), page < res.data.total);
                     }else{
-
+                        layer.msg(res.msg);
                     }
                     baguetteBox.run('.tz-gallery');
                 });

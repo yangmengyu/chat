@@ -331,7 +331,7 @@ class User extends Frontend
                 $data['dynamic'] = $dynamic;
                 $this->success('','',$data);
             }else{
-                $this->error();
+                $this->success();
             }
         }
         $controllername = strtolower($this->request->controller());
