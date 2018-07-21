@@ -46,7 +46,18 @@
     background-color: transparent !important;
 }
 
-
+.tz-img45{
+    float: left;
+    width: 19%;
+    height:auto;
+    margin-left: 5px;
+}
+.tz-img{
+    float: left;
+    width: 19%;
+    height:auto;
+    margin-left: 5px;
+}
 @media(max-width: 768px) {
     body {
         padding: 0;
@@ -55,13 +66,21 @@
     .container.gallery-container {
         border-radius: 0;
     }
+    .tz-img45{
+        float: left;
+        width: 45%;
+        height:auto;
+        margin-left: 5px;
+    }
+    .tz-img{
+        float: left;
+        width: 30%;
+        height:auto;
+        margin-left: 5px;
+    }
 }
-.tz-img{
-    float: left;
-    width: 30%;
-    height:auto;
-    margin-left: 5px;
-}
+
+
 .tz-gallery{
     height: auto;
 }

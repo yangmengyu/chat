@@ -136,4 +136,5 @@ return [
     'Open a member to see more information'                        => '请先开通会员',
     'Point of great success'=> '点赞成功',
     'Cancel some praise'=> '取消点赞',
+
 ];

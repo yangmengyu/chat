@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\profile.html";i:1531791566;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531732739;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\profile.html";i:1531796178;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1532161329;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,14 +22,14 @@
 <link rel="stylesheet" href="/assets/home/css/contextMenu.css" />
 <link rel="stylesheet" href="/assets/home/css/jquery.validator.css" />
 <link rel="stylesheet" href="/assets/home/css/baguetteBox.min.css">
-<link rel="stylesheet" href="/assets/home/css/thumbnail-gallery.css">
 <link rel="stylesheet" href="/assets/home/iconfont/iconfont.css">
+
 
 <script src="/assets/home/layui/layui.js"></script>
 <script src="/assets/home/js/jquery-3.1.1.min.js"></script>
 <script src="/assets/libs/bootstrap/js/collapse.js"></script>
 <script src="/assets/libs/nice-validator/dist/jquery.validator.js?local=<?php echo $config['language']; ?>"></script>
-<script src="/assets/home/js/baguetteBox.min.js"></script>
+
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -413,9 +413,9 @@
         return false;
         function success(res) {
             if (res.code) {
-                layer.msg(res.msg,{icon:1})
+                layer.msg(res.msg)
             } else {
-                layer.msg(res.msg, {icon: 5});
+                layer.msg(res.msg);
             }
         }
 

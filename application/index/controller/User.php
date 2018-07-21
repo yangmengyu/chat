@@ -4,6 +4,8 @@ namespace app\index\controller;
 
 use app\common\controller\Frontend;
 use app\index\controller\rongyunapi\RongCloud;
+use app\index\model\Photo;
+use app\index\model\PhotoAlbum;
 use think\Config;
 use think\Cookie;
 use think\Db;
@@ -19,7 +21,7 @@ class User extends Frontend
 
     protected $layout = 'default';
     protected $noNeedLogin = ['login', 'register', 'third'];
-    protected $noNeedRight = ['dynamic'];
+    protected $noNeedRight = ['dynamic','photo','photolist'];
 
     public function _initialize()
     {
@@ -345,6 +347,70 @@ class User extends Frontend
         $this->view->assign('isvip',$isvip);
         return $this->view->fetch();
     }
+    //相册页面
+    public function photo(){
+        if($this->request->isAjax()){
+            $page = $this->request->request('page');
+            $limit = 12;
+            $user_id = $this->auth->id;
+            $count = PhotoAlbum::where('user_id',$user_id)->count();
+            $photoAlbum = PhotoAlbum::where('user_id',$user_id)->limit($limit)->page($page)->select();
+            foreach ($photoAlbum as $key=>$album){
+                $photo = Photo::where(['album_id'=>$album->id,'is_cover'=>1])->find();
+                if($photo){
+                    $photoAlbum[$key]['image'] = $photo['image'];
+                }else{
+                    $photoAlbum[$key]['image'] = '/assets/home/img/no-album.jpg';
+                }
+            }
+            $data['total'] = ceil($count/$limit);
+            $data['photoAlbum'] = $photoAlbum;
+            $this->success('','',$data);
+        }
+        return $this->view->fetch();
+    }
+    //相册图片
+    public function photolist(){
 
-
+        if($this->request->isAjax()){
+            $page = $this->request->request('page');
+            $album_id = $this->request->request('album_id');
+            $limit = 12;
+            $count = Photo::where('album_id',$album_id)->count();
+            $photos = Photo::where('album_id',$album_id)->limit($limit)->page($page)->select();
+            $data['total'] = ceil($count/$limit);
+            $data['photos'] = $photos;
+            $this->success('','',$data);
+        }
+        $id = $this->request->request('id');
+        $this->view->assign('album_id',$id);
+        return $this->view->fetch();
+    }
+    //创建相册
+    public function createAlbum(){
+        $name = $this->request->request('name');
+        $res = PhotoAlbum::create([
+            'user_id'=>$this->auth->id,
+            'name'=>$name
+        ]);
+        if($res->id){
+            $this->success(__('Create successful'));
+        }else{
+            $this->error(__('Create failed'));
+        }
+    }
+    //添加照片
+    public function addPhoto(){
+        $album_id = $this->request->request('album_id');
+        $image = $this->request->request('image');
+        $res = Photo::create([
+           'album_id'=>$album_id,
+           'image'=>$image
+        ]);
+        if($res->id){
+            $this->success(__('Upload successful'));
+        }else{
+            $this->error(__('Upload failed'));
+        }
+    }
 }

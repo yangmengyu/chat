@@ -16,7 +16,7 @@
 }
 
 .tz-gallery {
-    padding: 40px;
+    padding: 0;
 }
 
 .tz-gallery .thumbnail {
@@ -35,7 +35,7 @@
 
 .tz-gallery .lightbox img {
     border-radius: 4px 4px 0 0;
-    height:100%;
+    height:auto;
 }
 
 .tz-gallery .caption{
@@ -86,6 +86,21 @@
 }
 .caption_2{
     display: none;
+}
+.tz-img45{
+    float: left;
+    width: 19%;
+    height:auto;
+    margin-left: 5px;
+}
+@media(max-width: 768px) {
+
+    .tz-img45{
+        float: left;
+        width: 100%;
+        height:auto;
+        margin-left: 5px;
+    }
 }
 
 

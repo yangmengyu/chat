@@ -56,6 +56,7 @@ return [
     'Change password successful'            => '修改密码成功',
     'Captcha is incorrect'                  => '验证码不正确',
     'Upload successful'                     => '上传成功',
+    'Upload failed'                     => '上传失败',
     'Sign up successful'                    => '注册成功',
     'Logged in successful'                  => '登录成功',
     'Logout successful'                     => '注销成功',
@@ -82,5 +83,11 @@ return [
     'Photo album'  => '相册',
     'Video'  => '视频',
     'Publish'  => '发表',
+    'Create photo albums'  => '创建相册',
+    'Create successful'  => '创建成功',
+    'Create failed'  => '创建失败',
+    'Please enter the name of the album'  => '请输入相册名称',
+    'Returns'  => '返回',
+    'Add photos'  => '添加照片',
 
 ];

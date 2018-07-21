@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\dynamic.html";i:1531972318;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1531808861;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:71:"E:\phpstudy\WWW\chat\public/../application/index\view\user\dynamic.html";i:1532167775;s:63:"E:\phpstudy\WWW\chat\application\index\view\layout\default.html";i:1531466924;s:65:"E:\phpstudy\WWW\chat\application\index\view\common\meta_chat.html";i:1532161329;s:63:"E:\phpstudy\WWW\chat\application\index\view\common\sidenav.html";i:1531270222;s:62:"E:\phpstudy\WWW\chat\application\index\view\user\userinfo.html";i:1532167620;s:67:"E:\phpstudy\WWW\chat\application\index\view\common\script_chat.html";i:1531730320;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +29,7 @@
 <script src="/assets/home/js/jquery-3.1.1.min.js"></script>
 <script src="/assets/libs/bootstrap/js/collapse.js"></script>
 <script src="/assets/libs/nice-validator/dist/jquery.validator.js?local=<?php echo $config['language']; ?>"></script>
-<script src="/assets/home/js/baguetteBox.min.js"></script>
+
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -187,54 +187,55 @@
         <div class="col-md-9">
             <div class="panel panel-default ">
                 <div class="panel-body">
+
                     <h2 class="page-header">
-                        <?php echo __('User center'); ?>
-                        <a href="<?php echo url('user/profile'); ?>" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i>
-                            <?php echo __('Profile'); ?></a>
-                    </h2>
-                    <div class="row user-baseinfo">
-                        <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
-                            <a href="<?php echo url('user/profile'); ?>" title="<?php echo __('Click to edit'); ?>">
-                                <span class="avatar-img"><img src="<?php echo $user['avatar']; ?>" alt=""></span>
-                            </a>
-                        </div>
-                        <div class="col-md-9 col-sm-9 col-xs-10">
-                            <!-- Content -->
-                            <div class="ui-content">
-                                <!-- Heading -->
-                                <h4><a href="<?php echo url('user/profile'); ?>"><?php echo $user['nickname']; ?></a></h4>
-                                <!-- Paragraph -->
-                                <p>
-                                    <a href="<?php echo url('user/profile'); ?>">
-                                        <?php echo (isset($user['bio']) && ($user['bio'] !== '')?$user['bio']:__("This guy hasn't written anything yet")); ?>
-                                    </a>
-                                </p>
-                                <!-- Success -->
-                                <div class="basicinfo">
-                                    <div class="row">
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Lv'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewlv"><?php echo $user['level']; ?></a>
-                                        </div>
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Score'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewscore"><?php echo $user['score']; ?></a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Successions'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo $user['successions']; ?> <?php echo __('Day'); ?></div>
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Maxsuccessions'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo $user['maxsuccessions']; ?> <?php echo __('Day'); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Logintime'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo date("Y-m-d H:i:s",$user['logintime']); ?></div>
-                                        <div class="col-xs-4 col-md-2"><?php echo __('Prevtime'); ?></div>
-                                        <div class="col-xs-8 col-md-4"><?php echo date("Y-m-d H:i:s",$user['prevtime']); ?></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <?php echo __('User center'); ?>
+    <a href="<?php echo url('user/profile'); ?>" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i>
+        <?php echo __('Profile'); ?></a>
+</h2>
+<div class="row user-baseinfo">
+    <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
+        <a href="<?php echo url('user/profile'); ?>" title="<?php echo __('Click to edit'); ?>">
+            <span class="avatar-img"><img src="<?php echo $user['avatar']; ?>" alt=""></span>
+        </a>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-10">
+        <!-- Content -->
+        <div class="ui-content">
+            <!-- Heading -->
+            <h4><a href="<?php echo url('user/profile'); ?>"><?php echo $user['nickname']; ?></a></h4>
+            <!-- Paragraph -->
+            <p>
+                <a href="<?php echo url('user/profile'); ?>">
+                    <?php echo (isset($user['bio']) && ($user['bio'] !== '')?$user['bio']:__("This guy hasn't written anything yet")); ?>
+                </a>
+            </p>
+            <!-- Success -->
+            <div class="basicinfo">
+                <div class="row">
+                    <div class="col-xs-4 col-md-2"><?php echo __('Lv'); ?></div>
+                    <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewlv"><?php echo $user['level']; ?></a>
                     </div>
+                    <div class="col-xs-4 col-md-2"><?php echo __('Score'); ?></div>
+                    <div class="col-xs-8 col-md-4"><a href="javascript:;" class="viewscore"><?php echo $user['score']; ?></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-md-2"><?php echo __('Successions'); ?></div>
+                    <div class="col-xs-8 col-md-4"><?php echo $user['successions']; ?> <?php echo __('Day'); ?></div>
+                    <div class="col-xs-4 col-md-2"><?php echo __('Maxsuccessions'); ?></div>
+                    <div class="col-xs-8 col-md-4"><?php echo $user['maxsuccessions']; ?> <?php echo __('Day'); ?></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-md-2"><?php echo __('Logintime'); ?></div>
+                    <div class="col-xs-8 col-md-4"><?php echo date("Y-m-d H:i:s",$user['logintime']); ?></div>
+                    <div class="col-xs-4 col-md-2"><?php echo __('Prevtime'); ?></div>
+                    <div class="col-xs-8 col-md-4"><?php echo date("Y-m-d H:i:s",$user['prevtime']); ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                     <div class="layui-tab layui-tab-brief" lay-filter="demo">
                         <ul class="layui-tab-title">
@@ -244,15 +245,16 @@
                             <li data-url="<?php echo url('user/video'); ?>"><?php echo __('Video'); ?></li>
                         </ul>
                         <div class="layui-tab-content ">
-                            <div class="layui-tab-item "><?php echo __('Home page'); ?></div>
+                            <div class="layui-tab-item "></div>
                             <div class="layui-tab-item layui-show">
-                                <div class="com_form " >
+                                <div class="com_form row" >
                                     <form id="dynamic-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="<?php echo url('dynamic/add'); ?>">
-                                        <div class="layui-form-item layui-form-text">
-                                            <div>
-                                                <textarea  placeholder="和大家分享点什么吧" class="layui-textarea form-control" id="saytext" name="content" data-rule="require"></textarea>
-                                            </div>
+                                        <div class="col-md-10 col-xs-10">
+                                            <textarea  placeholder="和大家分享点什么吧" class="layui-textarea form-control" id="saytext" name="content" data-rule="require"></textarea>
                                             <i  class="layui-icon layui-icon-face-smile emotion" style="font-size: 20px; color: #e60020;"></i>
+                                        </div>
+                                        <div class="col-md-2 col-xs-2" style="padding: 0">
+                                            <button class="btn btn-xs btn-primary"  ><i class="layui-icon layui-icon-release"></i>  <?php echo __('Publish'); ?></button>
                                         </div>
                                         <div class="upload-img-box layui-form-item">
                                             <dd class="upload-icon-img " >
@@ -261,19 +263,14 @@
                                                 </div>
                                             </dd>
                                         </div>
-                                        <div class="layui-form-item">
-                                            <div >
-                                                <button class=" btn btn-primary" lay-submit="" lay-filter="formDemo"><?php echo __('Publish'); ?></button>
-                                            </div>
-                                        </div>
                                     </form>
                                 </div>
                                 <ul class="layui-timeline" id="LAY-FLOW">
 
                                 </ul>
                             </div>
-                            <div class="layui-tab-item"><?php echo __('Photo album'); ?></div>
-                            <div class="layui-tab-item"><?php echo __('Video'); ?></div>
+                            <div class="layui-tab-item"></div>
+                            <div class="layui-tab-item"></div>
                         </div>
                     </div>
                 </div>
@@ -399,7 +396,7 @@
                 layer.msg(res.msg);
                 setTimeout(function(){
                     window.location.reload();
-                },2000);
+                },1500);
             } else {
                 layer.msg(res.msg);
             }
