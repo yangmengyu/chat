@@ -2,8 +2,8 @@
 
 namespace app\index\controller;
 
+use app\api\controller\MDAvatars;
 use app\common\controller\Frontend;
-use app\index\controller\rongyunapi\RongCloud;
 use app\index\model\Photo;
 use app\index\model\PhotoAlbum;
 use think\Config;
@@ -20,8 +20,8 @@ class User extends Frontend
 {
 
     protected $layout = 'default';
-    protected $noNeedLogin = ['login', 'register', 'third'];
-    protected $noNeedRight = ['dynamic','photo','photolist'];
+    protected $noNeedLogin = ['login', 'register', 'third','test'];
+    protected $noNeedRight = ['logout','dynamic','photo','photolist'];
 
     public function _initialize()
     {
@@ -412,5 +412,15 @@ class User extends Frontend
         }else{
             $this->error(__('Upload failed'));
         }
+    }
+    //test测试头像
+    public function test(){
+        $OutputSize = min(512, empty($_GET['size'])?36:intval($_GET['size']));
+        $char = '笑';
+        $Avatar = new MDAvatars($char,512);
+
+/*        $Avatar->Output2Browser($OutputSize);*/
+        $filename = ROOT_PATH . '/public/uploads/avatar/'.time().'-.png';
+        $Avatar->Save($filename, 256);
     }
 }

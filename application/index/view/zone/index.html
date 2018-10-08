@@ -70,48 +70,85 @@
 <div id="content-container" class="container">
     <div class="row">
         <div class="col-md-3">
-            {include file="common/sidenav" /}
+            {include file="common/sidenav_index" /}
         </div>
         <div class="col-md-9">
             <div class="panel panel-default ">
                 <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('%s personal space',$userzone.nickname)}
+                    </h2>
+                    <div class="row user-baseinfo">
+                        <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
+                            <span class="avatar-img"><img src="{$userzone.avatar}" alt=""></span>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-10">
+                            <!-- Content -->
+                            <div class="ui-content">
+                                <h3>
+                                    {$userzone.nickname}
+                                    {if $userzone.isvip==1}<i class="iconfont" style="color:#e60020;margin-left: 20px;">&#xe601;</i>{/if}
+                                </h3>
+                                <br>
+                                <div class="layui-card">
+                                    <div class="layui-card-header">
+                                        {:__($userzone.country)},
+                                        {$userzone.height}cm,
+                                        {$userzone.weight}kg,
+                                        ID:{$userzone.id}
+                                    </div>
+                                    <div class="layui-card-body">
+                                        {:__('Intro')}：{$userzone.bio|default=__("This guy hasn't written anything yet")}
+                                    </div>
+                                    <div class="layui-card-body">
+                                        {volist name="$userzone.interest" id="interest"}
+                                        <span class="label label-success">{:__($interest)}</span>
+                                        {/volist}
+                                    </div>
+                                </div>
 
-                    {include file="user/userinfo" /}
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="layui-tab layui-tab-brief" lay-filter="demo">
                         <ul class="layui-tab-title">
-                            <li data-url="{:url('user/index')}" >{:__('Home page')}</li>
-                            <li data-url="{:url('user/dynamic')}" class="layui-this">{:__('Dynamic state')}</li>
-                            <li data-url="{:url('user/photo')}">{:__('Photo album')}</li>
+                            <li data-url="{:url('zone/index',['id'=>$userzone.id])}" class="layui-this">{:__('Home page')}</li>
+                            <li data-url="{:url('zone/photo',['id'=>$userzone.id])}">{:__('Photo album')}</li>
                             <!--<li data-url="{:url('user/video')}">{:__('Video')}</li>-->
                         </ul>
                         <div class="layui-tab-content ">
-                            <div class="layui-tab-item "></div>
                             <div class="layui-tab-item layui-show">
-                                <div class="com_form row" >
-                                    <form id="dynamic-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('dynamic/add')}">
-                                        <div class="col-md-10 col-xs-10">
-                                            <textarea  placeholder="和大家分享点什么吧" class="layui-textarea form-control" id="saytext" name="content" data-rule="require"></textarea>
-                                            <i  class="layui-icon layui-icon-face-smile emotion" style="font-size: 20px; color: #e60020;"></i>
-                                        </div>
-                                        <div class="col-md-2 col-xs-2" style="padding: 0">
-                                            <button class="btn btn-xs btn-primary"  ><i class="layui-icon layui-icon-release"></i>  {:__('Publish')}</button>
-                                        </div>
-                                        <div class="upload-img-box layui-form-item">
-                                            <dd class="upload-icon-img " >
-                                                <div class="upload-pre-item">
-                                                    <img src="__CDN__/assets/home/img/upload.png" class="img" id="upload_img_icon" style="cursor: pointer;border: 3px #ccc dashed;" alt="上传图片">
-                                                </div>
-                                            </dd>
-                                        </div>
-                                    </form>
-                                </div>
                                 <ul class="layui-timeline" id="LAY-FLOW">
+                                    <li class="layui-timeline-item">
+                                        <i class="layui-icon layui-timeline-axis"></i>
+                                        <div class="layui-timeline-content layui-text">
 
+                                            <p class="layui-timeline-title"> 测</p>
+                                            <div class="tz-gallery container" style="width: 100%;padding-left: 0;"><div class="tz-img">
+                                                <a class="lightbox" href="/uploads/20180721/060a2bf9226d3a32af59ae71a24dc50a.jpg">
+                                                    <img src="/uploads/20180721/060a2bf9226d3a32af59ae71a24dc50a.jpg">
+                                                </a>
+                                            </div>
+                                                <div class="tz-img">
+                                                <a class="lightbox" href="/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg">
+                                                    <img src="/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg">
+                                                </a>
+                                            </div></div>
+                                            <h6 style="margin-top: 10px;">
+                                                <span>2018-07-21 14:58:29 </span>
+                                                <span>
+                                                    <i class="fa fa-thumbs-up fa-fw"></i>12
+                                                    <i class="fa fa-commenting fa-fw"></i>12
+                                                </span>
+                                            </h6>
+
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="layui-tab-item"></div>
-                            <!--<div class="layui-tab-item"></div>-->
+                            <!--<div class="layui-tab-item">{:__('Video')}</div>-->
                         </div>
                     </div>
                 </div>
@@ -121,47 +158,21 @@
 </div>
 <script type="text/javascript" src="__CDN__/assets/home/js/jquery.qqFace.js"></script>
 <script type="text/javascript" src="__CDN__/assets/home/js/dynamic.js"></script>
-<script type="text/javascript">
-    baguetteBox.run('.tz-gallery');
-</script>
-<script>
 
-    layui.use(['layer','upload','element','flow'], function(){
-        var element = layui.element,flow = layui.flow;
+<script>
+    layui.use(['element','flow'], function(){
+        var element = layui.element,upload = layui.upload,flow = layui.flow;
 
         //一些事件监听
         element.on('tab(demo)', function(data){
             var url = $(this).data('url');
             window.location.href = url;
         });
-        var layer = layui.layer;
-        var upload = layui.upload;
-        upload.render({ //上传图片
-            elem: '#upload_img_icon',
-            url: '/api/common/upload',
-            multiple: true, //是否允许多文件上传。设置 true即可开启。不支持ie8/9
-            auto:true,//自动上传
-            before: function(obj) {
-                layer.msg('图片上传中...', {
-                    icon: 16,
-                    shade: 0.01,
-                    time: 0
-                })
-            },
-            done: function(res) {
-                layer.close(layer.msg('{:__("Upload successful")}'));
-                $('.upload-img-box').append('<dd class="upload-icon-img " ><div class="upload-pre-item"><i onclick="deleteImg($(this))"   class="layui-icon"></i><img src="' + res.data.url + '" class="img" ><input type="hidden" name="case_images[]" value="' + res.data.url + '" /></div></dd>');
-            }
-            ,error: function(){
-                layer.msg('{:__("You have no permission")}');
-            }
-        });
-
         flow.load({
             elem: '#LAY-FLOW' //流加载容器
             ,done: function(page, next){ //执行下一页的回调
-                var url = '{:url("user/dynamic")}';
-                $.post(url, {page:page}, function(res){
+                var url = '{:url("zone/dynamic")}',user_id = '{$user_id}';
+                $.post(url, {page:page,user_id:user_id}, function(res){
                     if(res.code == 1){
                         var lis = [];
                         layui.each(res.data.dynamic, function(index, item){
@@ -195,52 +206,12 @@
                 });
             }
         });
-    });
-    function deleteImg(obj){
-        //删除页面信息
-        obj.parent().parent('.upload-icon-img').remove();
-        //删除本地图片（ajax)
-        //删除数据库图片
-    }
-
-
-    $(function(){
-        $('.emotion').qqFace({
-            id : 'facebox',
-            assign:'saytext',
-            path:'__CDN__/assets/home/arclist/'	//表情存放的路径
-        });
-        $(".sub_btn").click(function(){
-            var str = $("#saytext").val();
-            $("#show").html(replace_em(str));
-        });
-    });
-
-    //查看结果
-
-    function replace_em(str){
-        str = str.replace(/\</g,'&lt;');
-        str = str.replace(/\>/g,'&gt;');
-        str = str.replace(/\n/g,'<br/>');
-        str = str.replace(/\[em_([0-9]*)\]/g,'<img src="__CDN__/assets/home/arclist/$1.gif" border="0" />');
-        return str;
-    }
-    //发布动态
-
-    $('#dynamic-form').on('valid.form', function(){
-
-        var self = $(this);
-        $.post(self.attr("action"), self.serialize(), success, "json");
-        return false;
-        function success(res) {
-            if (res.code) {
-                layer.msg(res.msg);
-                setTimeout(function(){
-                    window.location.reload();
-                },1500);
-            } else {
-                layer.msg(res.msg);
-            }
+        function replace_em(str){
+            str = str.replace(/\</g,'&lt;');
+            str = str.replace(/\>/g,'&gt;');
+            str = str.replace(/\n/g,'<br/>');
+            str = str.replace(/\[em_([0-9]*)\]/g,'<img src="__CDN__/assets/home/arclist/$1.gif" border="0" />');
+            return str;
         }
     });
 </script>

@@ -62,7 +62,8 @@
                     if(res.code == 1){
                         var lis = [];
                         layui.each(res.data.data, function(index, item){
-                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="/uploads/images/park.jpg"> <img src="'+item.avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3>';
+                            var url = "/index/zone/index/id/"+item.id;
+                            var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="'+url+'"> <img src="'+item.avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3>';
                             if(item.gender == '0'){
                                 str += '<span><i class="fa fa-venus text-danger fa-fw"></i>'+item.nickname+'</span>';
                             }else if(item.gender == '1'){

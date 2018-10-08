@@ -2,6 +2,7 @@
 
 namespace app\common\library;
 
+use app\api\controller\MDAvatars;
 use app\api\controller\Rongcloud;
 use app\common\model\User;
 use app\common\model\UserRule;
@@ -162,6 +163,7 @@ class Auth
             'email'    => $email,
             'mobile'   => $mobile,
             'level'    => 1,
+            'group_id' => 1,
             'score'    => 0,
             'avatar'   => '',
         ];
@@ -201,6 +203,13 @@ class Auth
         try
         {
             $user = User::create($params);
+            $char = $user->nickname;
+            $Avatar = new MDAvatars($char,512);
+            $filename = '/uploads/avatar/'.$time.'-'.$user->id.'.png';
+            $dir = ROOT_PATH . 'public' . DS . 'uploads/avatar/'.$time.'-'.$user->id.'.png';
+            $Avatar->Save($dir, 256);
+            $user->avatar = $filename;
+            $user->save();
             Db::commit();
 
             // 此时的Model中只包含部分数据
