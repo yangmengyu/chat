@@ -1,0 +1,6 @@
+过滤词1
+过滤词2
+过滤词3
+过滤词一行一个
+下载链接: https://pan.baidu.com/s/12RcZ8-jNHMAR__VscRUDfQ 密码: qmcw
+下载后将此文件内容替换成CensorWords.txt的内容

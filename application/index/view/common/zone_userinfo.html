@@ -1,0 +1,35 @@
+<h2 class="page-header">
+    {:__('%s personal space',$userzone.nickname)}
+</h2>
+<div class="row user-baseinfo">
+    <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
+        <span class="avatar-img"><img src="{$userzone.avatar}" alt=""></span>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-10">
+        <!-- Content -->
+        <div class="ui-content">
+            <h3>
+                {$userzone.nickname}
+                {if $userzone.isvip==1}<i class="iconfont" style="color:#e60020;margin-left: 20px;">&#xe601;</i>{/if}
+            </h3>
+            <br>
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    {:__($userzone.country)},
+                    {$userzone.height}cm,
+                    {$userzone.weight}kg,
+                    ID:{$userzone.id}
+                </div>
+                <div class="layui-card-body">
+                    {:__('Intro')}：{$userzone.bio|default=__("This guy hasn't written anything yet")}
+                </div>
+                <div class="layui-card-body">
+                    {volist name="$userzone.interest" id="interest"}
+                    <span class="label label-success">{:__($interest)}</span>
+                    {/volist}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

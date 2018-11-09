@@ -60,14 +60,14 @@ layui.define(['jquery', 'layer', 'rmlib', 'protobuf','contextMenu','form','mobil
                     });
                     //添加好友（如果检测到该socket）
                     layui.ext.init(); //更新右键点击事件
-                    layim.addList({
+                   /* layim.addList({
                         type: 'group'
                         , avatar: "static/img/tel.jpg"
                         , groupname: '海贼世界'
                         , id: "1"
                         , members: 0
                     });
-                    im.joinGroup('1', '海贼世界');  //加入融云群组*/
+                    im.joinGroup('1', '海贼世界');*/  //加入融云群组*/
                 });
 
                 //监听查看群员
@@ -125,19 +125,7 @@ layui.define(['jquery', 'layer', 'rmlib', 'protobuf','contextMenu','form','mobil
                             break;
                         case lib.ConnectionStatus.KICKED_OFFLINE_BY_OTHER_CLIENT://其他设备登录
                             console.log('其他设备登录');
-                            layer.open({
-                                content: '该账号已在别处登录，请重新登录'
-                                ,btn: ['确定']
-                                ,yes: function(index, layero){
-                                    //按钮【按钮一】的回调
-                                    window.location.href = cachedata.base.logout;
-                                }
-                                ,cancel: function(){
-                                    //右上角关闭回调
-                                    window.location.href = cachedata.base.logout;
-                                    return false ;
-                                }
-                            });
+
                             break;
                         case lib.ConnectionStatus.ConnectionStatus.NETWORK_UNAVAILABLE: //网络不可用
                             console.log('网络不可用');

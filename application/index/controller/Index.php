@@ -23,11 +23,11 @@ class Index extends Frontend
     public function index()
     {
 
+        $this->loadlang('country');
         //获取会员信息
         if($this->request->isAjax()){
-
-            $this->loadlang('country');
             $page = $this->request->request('page');
+
             if($page>1){
                 $controllername = strtolower($this->request->controller());
                 $actionname = strtolower($this->request->action());

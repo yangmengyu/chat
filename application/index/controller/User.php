@@ -21,7 +21,7 @@ class User extends Frontend
 
     protected $layout = 'default';
     protected $noNeedLogin = ['login', 'register', 'third','test'];
-    protected $noNeedRight = ['logout','dynamic','photo','photolist'];
+    protected $noNeedRight = ['logout','dynamic','photo','photolist','changepwd','sign'];
 
     public function _initialize()
     {

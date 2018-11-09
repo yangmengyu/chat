@@ -1,0 +1,38 @@
+<!-- Header Carousel -->
+
+
+<!-- Page Content -->
+<div class="container">
+
+        <div class="col-md-12">
+            <!-- 社会化评论插件 start -->
+            <!-- 参数介绍请查看 https://www.fastadmin.net/store/comment.html -->
+            <div class="ds-thread" id="ds-thread" data-key="{$dynamic.id}" data-title="{$dynamic.content}" data-url=""></div>
+            <script type="text/javascript">
+                /**
+                 *
+                 * name: 后台评论站点管理中配置的站点名称(唯一)
+                 * site: 站点标题,任意修改
+                 * domain: 评论插件系统的完整URL,如果将script部署在其它网站,请务必修改,如果部署在二级目录,注意添加上相应目录,注意不要以/结尾
+                 * static: 评论插件系统的静态文件前缀URL,如果你的静态资源文件没有使用CDN部署,请保持和domain值相同
+                 *
+                 * @type {{name: string, site: string, domain: string, static: string}}
+                 */
+                var commentOptions = {name: 'test', site: 'FastAdmin', domain: '{:request()->root(true)}', static: '__CDN__'};
+                (function () {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';
+                    ds.async = true;
+                    ds.src = commentOptions.static + '/assets/addons/comment/js/embed.min.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!-- 社会化评论插件 end -->
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+</div>

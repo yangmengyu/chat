@@ -54,9 +54,13 @@
 }
 .tz-img{
     float: left;
-    width: 19%;
+    width: 30%;
     height:auto;
     margin-left: 5px;
+}
+.tz-gallery{
+    height: auto;
+    width:30%;
 }
 @media(max-width: 768px) {
     body {
@@ -78,9 +82,8 @@
         height:auto;
         margin-left: 5px;
     }
+    .tz-gallery{
+        width:100%;}
 }
 
 
-.tz-gallery{
-    height: auto;
-}

@@ -65,6 +65,8 @@
     .qqFace table td { padding: 0px; }
     .qqFace table td img { cursor: pointer; border: 1px #fff solid; }
     .qqFace table td img:hover { border: 1px #0066cc solid; }
+    .bianda{transform: scale(1.4);}
+
 </style>
 <link rel="stylesheet" href="__CDN__/assets/home/css/gallery-grid.css">
 <div id="content-container" class="container">
@@ -75,76 +77,53 @@
         <div class="col-md-9">
             <div class="panel panel-default ">
                 <div class="panel-body">
-                    <h2 class="page-header">
-                        {:__('%s personal space',$userzone.nickname)}
-                    </h2>
-                    <div class="row user-baseinfo">
-                        <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
-                            <span class="avatar-img"><img src="{$userzone.avatar}" alt=""></span>
-                        </div>
-                        <div class="col-md-9 col-sm-9 col-xs-10">
-                            <!-- Content -->
-                            <div class="ui-content">
-                                <h3>
-                                    {$userzone.nickname}
-                                    {if $userzone.isvip==1}<i class="iconfont" style="color:#e60020;margin-left: 20px;">&#xe601;</i>{/if}
-                                </h3>
-                                <br>
-                                <div class="layui-card">
-                                    <div class="layui-card-header">
-                                        {:__($userzone.country)},
-                                        {$userzone.height}cm,
-                                        {$userzone.weight}kg,
-                                        ID:{$userzone.id}
-                                    </div>
-                                    <div class="layui-card-body">
-                                        {:__('Intro')}：{$userzone.bio|default=__("This guy hasn't written anything yet")}
-                                    </div>
-                                    <div class="layui-card-body">
-                                        {volist name="$userzone.interest" id="interest"}
-                                        <span class="label label-success">{:__($interest)}</span>
-                                        {/volist}
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    {include file="common/zone_userinfo" /}
 
                     <div class="layui-tab layui-tab-brief" lay-filter="demo">
                         <ul class="layui-tab-title">
-                            <li data-url="{:url('zone/index',['id'=>$userzone.id])}" class="layui-this">{:__('Home page')}</li>
-                            <li data-url="{:url('zone/photo',['id'=>$userzone.id])}">{:__('Photo album')}</li>
+                            <li data-url="{:url('zone/index',['u'=>$userzone.id])}" class="layui-this">{:__('Home page')}</li>
+                            <li data-url="{:url('zone/photo',['u'=>$userzone.id])}">{:__('Photo album')}</li>
                             <!--<li data-url="{:url('user/video')}">{:__('Video')}</li>-->
                         </ul>
                         <div class="layui-tab-content ">
                             <div class="layui-tab-item layui-show">
                                 <ul class="layui-timeline" id="LAY-FLOW">
-                                    <li class="layui-timeline-item">
+                                    <!--<li class="layui-timeline-item">
                                         <i class="layui-icon layui-timeline-axis"></i>
                                         <div class="layui-timeline-content layui-text">
 
-                                            <p class="layui-timeline-title"> 测</p>
+                                            <p class="layui-timeline-title"> 测试<img src="/assets/home/arclist/21.gif" border="0"></p>
                                             <div class="tz-gallery container" style="width: 100%;padding-left: 0;"><div class="tz-img">
-                                                <a class="lightbox" href="/uploads/20180721/060a2bf9226d3a32af59ae71a24dc50a.jpg">
-                                                    <img src="/uploads/20180721/060a2bf9226d3a32af59ae71a24dc50a.jpg">
+                                                <a class="lightbox" href="/uploads/20181109/b80920b334cbbb168923c37cbd0ea51a.png">
+                                                    <img src="/uploads/20181109/b80920b334cbbb168923c37cbd0ea51a.png">
                                                 </a>
                                             </div>
                                                 <div class="tz-img">
-                                                <a class="lightbox" href="/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg">
-                                                    <img src="/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg">
-                                                </a>
-                                            </div></div>
+                                                    <a class="lightbox" href="/uploads/20181109/61079d7175cb637af5200c47f6538d70.png">
+                                                        <img src="/uploads/20181109/61079d7175cb637af5200c47f6538d70.png">
+                                                    </a>
+                                                </div>
+                                                <div class="tz-img">
+                                                    <a class="lightbox" href="/uploads/20181109/9729d73a1cc5675e6d70f504c507e094.png">
+                                                        <img src="/uploads/20181109/9729d73a1cc5675e6d70f504c507e094.png">
+                                                    </a>
+                                                </div>
+                                                <div class="tz-img">
+                                                    <a class="lightbox" href="/uploads/20181109/5e3a0e84c0d5b4ed7956b6c9333fd995.png">
+                                                        <img src="/uploads/20181109/5e3a0e84c0d5b4ed7956b6c9333fd995.png">
+                                                    </a>
+                                                </div>
+                                            </div>
                                             <h6 style="margin-top: 10px;">
-                                                <span>2018-07-21 14:58:29 </span>
+                                                <span>1小时前 </span>
                                                 <span>
-                                                    <i class="fa fa-thumbs-up fa-fw"></i>12
-                                                    <i class="fa fa-commenting fa-fw"></i>12
+                                                    <i class="fa fa-thumbs-up fa-fw dianzan" data-dynamic_id="19" style="cursor: pointer" onclick="dianzan($(this))"></i> <span>1</span>
+                                                    <i class="fa fa-commenting fa-fw pinglun" data-dynamic_id="&quot;+item.id+&quot;" style="cursor: pointer" onclick="pinglun($(this))"></i> <span>2</span>
                                                 </span>
                                             </h6>
-
+                                            <iframe src="{:url('addons/comment/index')}?dynamic_id=19" style="width: 100%"  frameborder="0" scrolling="no" id="external-frame" onload="setIframeHeight(this)"></iframe>
                                         </div>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                             <div class="layui-tab-item"></div>
@@ -156,6 +135,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript" src="__CDN__/assets/home/js/jquery.qqFace.js"></script>
 <script type="text/javascript" src="__CDN__/assets/home/js/dynamic.js"></script>
 
@@ -171,12 +151,12 @@
         flow.load({
             elem: '#LAY-FLOW' //流加载容器
             ,done: function(page, next){ //执行下一页的回调
-                var url = '{:url("zone/dynamic")}',user_id = '{$user_id}';
+                var url = '{:url("zone/dynamic")}?user_id='+'{$user_id}',user_id = '{$user_id}';
                 $.post(url, {page:page,user_id:user_id}, function(res){
                     if(res.code == 1){
                         var lis = [];
                         layui.each(res.data.dynamic, function(index, item){
-                            var str = '<li class="layui-timeline-item">\n' +
+                            /*var str = '<li class="layui-timeline-item">\n' +
                                 '<i class="layui-icon layui-timeline-axis"></i>\n' +
                                 '<div class="layui-timeline-content layui-text">\n' +
                                 '<h3 class="layui-timeline-title">'+item.createtime+'</h3>\n' +
@@ -193,7 +173,35 @@
                             }
                             str += '</div>\n' +
                                 '</div>\n' +
-                                '</li>';
+                                '</li>';*/
+                           var str = "<li class=\"layui-timeline-item\">\n" +
+                               "<i class=\"layui-icon layui-timeline-axis\"></i>\n" +
+                               "<div class=\"layui-timeline-content layui-text\">\n" +
+                               "\n" +
+                               "<p class=\"layui-timeline-title\"> "+replace_em(item.content)+"</p>\n" +
+                               "<div class=\"tz-gallery row\" style=\"padding-left: 0;\">" ;
+                            if(item.images){
+                                layui.each(item.images, function(index1, item1){
+                                    str += "<div class=\"tz-img\">\n" +
+                                        "<a class=\"lightbox\" href='"+item1.url+"'>\n" +
+                                        "<img src='"+item1.url+"'>\n" +
+                                        " </a>\n" +
+                                        " </div>\n";
+                                })
+                            }
+
+
+                               str +="</div>\n" +
+                               "<h6 style=\"margin-top: 10px;\">\n" +
+                               "<span>"+item.createtime+" </span>\n" +
+                               "<span>\n" +
+                               " <i class=\"fa fa-thumbs-up fa-fw dianzan\" data-dynamic_id='"+item.id+"' style='cursor: pointer' onclick='dianzan($(this))'></i> <span>"+item.zannum+"</span>\n" +
+                               "<i class=\"fa fa-commenting fa-fw pinglun\"data-dynamic_id='"+item.id+"' style='cursor: pointer' onclick='pinglun($(this))'></i> <span>"+item.pinglunnum+"</span>\n" +
+                               " </span>\n" +
+                               " </h6>\n" +
+                               "\n" +
+                               " </div>\n" +
+                               "</li>";
                             lis.push(str);
                         });
                         //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
@@ -206,6 +214,7 @@
                 });
             }
         });
+        /*转换表情*/
         function replace_em(str){
             str = str.replace(/\</g,'&lt;');
             str = str.replace(/\>/g,'&gt;');
@@ -214,4 +223,40 @@
             return str;
         }
     });
+
+    /*
+    * 点赞
+    */
+    function dianzan(obj){
+        var dynamic_id =obj.data('dynamic_id');
+        $.post('{:url("zone/praise")}',{'dynamic_id':dynamic_id},function (res) {
+            if(res.code == 1){
+                layer.msg(res.msg);
+                obj.addClass('bianda');
+                setInterval(function () {
+                    obj.removeClass('bianda');
+                },500);
+                obj.next('span').text(Number(obj.next('span').text())+1);
+            }else{
+                layer.msg(res.msg);
+                obj.next('span').text(Number(obj.next('span').text())-1);
+            }
+        })
+    }
+
+    /*
+    * 评论
+    * */
+    function pinglun(obj) {
+        var dynamic_id =obj.data('dynamic_id');
+        layer.open({
+            type: 2,
+            title: '查看评论',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['{$ismobile?"90%":"70%"}', '90%'],
+            content: '{:url("addons/comment/index")}?dynamic_id='+dynamic_id //iframe的url
+        });
+    }
+
 </script>

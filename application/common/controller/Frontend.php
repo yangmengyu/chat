@@ -48,6 +48,11 @@ class Frontend extends Controller
         $controllername = strtolower($this->request->controller());
         $actionname = strtolower($this->request->action());
 
+        //判断浏览设备
+        if(ismobile()){
+            $this->assign('ismobile','1');
+        }
+
         // 如果有使用模板布局
         if ($this->layout) {
             $this->view->engine->layout('layout/' . $this->layout);

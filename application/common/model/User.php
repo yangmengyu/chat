@@ -28,7 +28,7 @@ class User Extends Model
      */
     public function getUrlAttr($value, $data)
     {
-        return "/u/" . $data['id'];
+        return "/index/zone/index/u/" . $data['id'];
     }
 
     /**

@@ -8,7 +8,21 @@
         <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h2 class="page-header">{:__('Profile')}</h2>
+                    <div class="layui-carousel" id="test10">
+                        <div carousel-item="">
+                            <div><img src="//res.layui.com/images/layui/demo/1.png"></div>
+                            <div><img src="//res.layui.com/images/layui/demo/2.png"></div>
+                            <div><img src="//res.layui.com/images/layui/demo/3.png"></div>
+                            <div><img src="//res.layui.com/images/layui/demo/4.png"></div>
+                            <div><img src="//res.layui.com/images/layui/demo/5.png"></div>
+                            <div><img src="//res.layui.com/images/layui/demo/6.png"></div>
+                            <div><img src="//res.layui.com/images/layui/demo/7.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <h2 class="page-header">站内会员</h2>
                     <div class="tz-gallery">
 
                         <div class="row">
@@ -50,9 +64,18 @@
     </div>
 </div>
 <script>
-    layui.use('flow', function(){
+    layui.use(['flow','carousel'], function(){
         var flow = layui.flow
+            ,carousel = layui.carousel
             ,param =  location.search;
+
+        //图片轮播
+        carousel.render({
+            elem: '#test10'
+            ,width: '760px'
+            ,height: '260px'
+            ,interval: 5000
+        });
 
         flow.load({
             elem: '#LAY_demo1' //流加载容器
@@ -62,7 +85,7 @@
                     if(res.code == 1){
                         var lis = [];
                         layui.each(res.data.data, function(index, item){
-                            var url = "/index/zone/index/id/"+item.id;
+                            var url = "/index/zone/index/u/"+item.id;
                             var str = '<li class="col-sm-6 col-md-4"> <div class="thumbnail"> <a class="lightbox" href="'+url+'"> <img src="'+item.avatar+'" alt="Park"> </a> <div class="caption caption_1"> <h3>';
                             if(item.gender == '0'){
                                 str += '<span><i class="fa fa-venus text-danger fa-fw"></i>'+item.nickname+'</span>';
