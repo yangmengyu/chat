@@ -121,7 +121,7 @@ class Api extends Controller
     /**
      * 点赞
      */
-    public function like()
+    public function dianzan()
     {
         $id = $this->request->request('id');
         $commentPost = Post::get($id);

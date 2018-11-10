@@ -11,7 +11,7 @@ return array (
       1 => '开启',
       0 => '关闭',
     ),
-    'value' => '0',
+    'value' => '1',
     'rule' => 'required',
     'msg' => '',
     'tip' => '是否Markdown解析评论内容',

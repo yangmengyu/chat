@@ -73,7 +73,7 @@
                 <h2>{$key}</h2>
                 <hr>
                 {foreach name="docs" id="api" }
-                <div class="panel panel-default">
+                <div class="panel panel-danger">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <span class="label {$api.method_label}">{$api.method|strtoupper}</span> <a data-toggle="collapse" data-parent="#accordion{$api.id}" href="#collapseOne{$api.id}"> {$api.route}</a>
@@ -96,7 +96,7 @@
                                     <div class="well">
                                         {$api.summary}
                                     </div>
-                                    <div class="panel panel-default">
+                                    <div class="panel panel-danger">
                                         <div class="panel-heading"><strong>{$lang.Headers}</strong></div>
                                         <div class="panel-body">
                                             {if $api.headerslist}
@@ -125,7 +125,7 @@
                                             {/if}
                                         </div>
                                     </div>
-                                    <div class="panel panel-default">
+                                    <div class="panel panel-danger">
                                         <div class="panel-heading"><strong>{$lang.Parameters}</strong></div>
                                         <div class="panel-body">
                                             {if $api.paramslist}
@@ -154,7 +154,7 @@
                                             {/if}
                                         </div>
                                     </div>
-                                    <div class="panel panel-default">
+                                    <div class="panel panel-danger">
                                         <div class="panel-heading"><strong>{$lang.Body}</strong></div>
                                         <div class="panel-body">
                                             {$api.body|default='无'}
@@ -166,7 +166,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             {if $api.headerslist}
-                                            <div class="panel panel-default">
+                                            <div class="panel panel-danger">
                                                 <div class="panel-heading"><strong>{$lang.Headers}</strong></div>
                                                 <div class="panel-body">
                                                     <div class="headers">
@@ -180,7 +180,7 @@
                                                 </div>
                                             </div>
                                             {/if}
-                                            <div class="panel panel-default">
+                                            <div class="panel panel-danger">
                                                 <div class="panel-heading"><strong>{$lang.Parameters}</strong></div>
                                                 <div class="panel-body">
                                                     <form enctype="application/x-www-form-urlencoded" role="form" action="{$api.route}" method="{$api.method}" name="form{$api.id}" id="form{$api.id}">
@@ -202,7 +202,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <div class="panel panel-default">
+                                            <div class="panel panel-danger">
                                                 <div class="panel-heading"><strong>{$lang.Response}</strong></div>
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -213,7 +213,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel panel-default">
+                                            <div class="panel panel-danger">
                                                 <div class="panel-heading"><strong>{$lang.ReturnParameters}</strong></div>
                                                 <div class="panel-body">
                                                     {if $api.returnparamslist}

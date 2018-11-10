@@ -36,7 +36,7 @@
             {include file="common/sidenav" /}
         </div>
         <div class="col-md-9">
-            <div class="panel panel-default">
+            <div class="panel panel">
                 <div class="panel-body">
                     <h2 class="page-header">{:__('Profile')}</h2>
                     <form id="profile-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/user/profile')}">
@@ -270,7 +270,7 @@
             layer.open({
                 type: 2,
                 title: "{:__('Edit email')}",
-                area: ['300px','300px'],
+                area: ['{$ismobile?"90%":"620px"}','400px'],
                 content: ['{:url("user/remail")}','no'],
                 success: function(layero, index){
                     var body = layer.getChildFrame('body', index);

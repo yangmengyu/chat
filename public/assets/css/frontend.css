@@ -372,7 +372,6 @@ main.content {
   -moz-background-clip: padding;
   border-radius: 4px;
   background-clip: padding-box;
-  border: 1px solid #f7e3e3;
 }
 .sidenav .list-group:last-child {
   margin-bottom: 0;

@@ -210,6 +210,11 @@ class Auth
             $Avatar->Save($dir, 256);
             $user->avatar = $filename;
             $user->save();
+            $mygroup = [
+                'user_id'=>$user->id,
+                'groupname'=>'我的好友',
+            ];
+            Db::name('mygroup')->insert($mygroup);
             Db::commit();
 
             // 此时的Model中只包含部分数据
@@ -221,11 +226,7 @@ class Auth
 
             //注册成功的事件
             Hook::listen("user_register_successed", $this->_user);
-            $mygroup = [
-                'user_id'=>$user->id,
-                'groupname'=>'我的好友',
-            ];
-            Db::name('mygroup')->insert($mygroup);
+
             return TRUE;
         }
         catch (Exception $e)

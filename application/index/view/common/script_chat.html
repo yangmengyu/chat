@@ -73,6 +73,41 @@
             ,removeFriends:'{:url("chat/removeFriends")}' //删除好友接口
             ,logout: '{:url("user/logout")}' //退出登录
         });
+        //添加好友
+        $('.add').click(function () {
+            var obj = $(this), cache = parent.layui.layim.cache();
+            var name = obj.data('name')
+                ,uid = obj.data('uid')
+                ,avatar = obj.data('avatar')
+                ,group = cache.friend || []
+                ,type = 'friend';
+            layui.layim.add({  /*弹出添加好友对话框*/
+                username:name || []
+                ,uid:uid
+                ,avatar:avatar?avatar:default_avatar
+                ,group:cache.friend || []
+                ,type:type
+                ,submit:function (group,remark,index) {  /*确认发送添加请求*/
+                    if(type == 'friend'){
+                        $.post('{:url("chat/addMsg")}', {to: uid,msgType:1,remark:remark,mygroupid:group}, function (res) {
+                            if (res.code !== 0) {
+                                layer.msg(res.msg);
+                            }else{
+                                layer.msg(res.msg);
+                            }
+                        });
 
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                    layer.close(index);
+                }
+            })
+        })
+
+        //上墙
+        $('.onwall').click(function () {
+            alert(1);
+        })
     });
 </script>

@@ -550,7 +550,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
             ,anim: 2
             ,offset: 'rb'
             ,resize: false
-            ,content: '<img src="'+ (cache.mine.avatar||(layui.cache.dir+'css/pc/layim/skin/default_avatar.jpg')) +'"><span>'+ (content||cache.base.title||'我的LayIM') +'</span>'
+            ,content: '<img src="'+ (cache.mine.avatar||('/assets/home/img/default_avatar.jpg')) +'"><span>'+ (content||cache.base.title||'我的LayIM') +'</span>'
             ,move: '#layui-layim-close img'
             ,success: function(layero, index){
                 layimClose = layero;
@@ -913,7 +913,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
     var sendMessage = function(){
         var data = {
             username: cache.mine ? cache.mine.username : '访客'
-            ,avatar: cache.mine ? cache.mine.avatar : (layui.cache.dir+'css/pc/layim/skin/default_avatar.jpg')
+            ,avatar: cache.mine ? cache.mine.avatar : ('/assets/home/img/default_avatar.jpg')
             ,id: cache.mine ? cache.mine.id : null
             ,mine: true
         };

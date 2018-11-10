@@ -86,7 +86,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 Layer.open({
                     type: 1,
                     title: "修改",
-                    area: ["400px", "250px"],
+                    area: [Config.ismobile?"90%":"620px", "250px"],
                     content: content,
                     success: function (layero) {
                         var form = $("form", layero);

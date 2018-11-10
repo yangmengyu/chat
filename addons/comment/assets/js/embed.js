@@ -254,7 +254,7 @@
         setPath: function () {
             S.PATH = {
                 comment: S.APIURL + "comment",
-                like: S.APIURL + "like",
+                like: S.APIURL + "dianzan",
                 delete: S.APIURL + "delete",
                 submit: S.APIURL + "create",
                 cookie: S.APIURL + "cookie",

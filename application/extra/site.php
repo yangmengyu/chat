@@ -37,4 +37,5 @@ return array (
   'mail_from' => 'xiaoyudian@xydbaby.com',
   'ry_key' => '6tnym1br642o7',
   'ry_secret' => 'aT0f2lpquPm0p',
+  'onwall_score' => '10',
 );

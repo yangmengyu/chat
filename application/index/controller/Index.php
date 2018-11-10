@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use app\common\controller\Frontend;
 use app\common\library\Token;
+use app\common\model\Onwall;
 use think\Cache;
 use think\Cookie;
 use think\Db;
@@ -12,7 +13,7 @@ class Index extends Frontend
 {
 
     protected $noNeedLogin = '';
-    protected $noNeedRight = 'index,like';
+    protected $noNeedRight = 'index,like,onwall';
     protected $layout = 'default';
 
     public function _initialize()
@@ -20,9 +21,12 @@ class Index extends Frontend
         parent::_initialize();
     }
 
+    /*
+     * 首页
+     * */
     public function index()
     {
-
+        $user_model = new \app\common\model\User();
         $this->loadlang('country');
         //获取会员信息
         if($this->request->isAjax()){
@@ -46,7 +50,7 @@ class Index extends Frontend
                 ->limit($limit)
                 ->page($page)
                 ->select();
-            $user_model = new \app\common\model\User();
+
             foreach ($data['data'] as $key=>$value){
                 if($value['group_id']>1){
                     $data['data'][$key]['isvip'] = 1;
@@ -62,8 +66,22 @@ class Index extends Frontend
             $data['total'] = ceil($count/$limit);
             $this->success('','',$data);
         }
+        $where['onwall.expires_time'] = ['>',time()];
+        $where['onwall.status'] = 'normal';
+        $onwallModel = new Onwall();
+        $onwall = $onwallModel->with(['user'])->where($where)->select();
+        foreach ($onwall as $row) {
+
+            $row->getRelation('user')->visible(['id','nickname','avatar','status']);
+        }
+        $onwall = collection($onwall)->toArray();
+        $this->view->assign('onwall',$onwall);
         return $this->view->fetch();
     }
+
+    /*
+     * 添加喜欢
+     * */
     public function like(){
         $to = $this->request->request('to');
         $from = $this->auth->id;
@@ -77,5 +95,13 @@ class Index extends Frontend
         }
     }
 
+    /*
+     * 上墙
+     * */
+    public function onwall(){
+
+        $this->view->engine->layout(false);
+        return $this->view->fetch();
+    }
 
 }

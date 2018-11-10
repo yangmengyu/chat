@@ -8,49 +8,51 @@
 
 </head>
 <body style="padding-top: 0">
-<div class="panel-heading">
-    <h2>{:__('my sign')}
-        <a class="btn btn-success pull-right btn-signin {if $sign}disabled{/if}" href="javascript:;">
-            <i class="fa fa-location-arrow"></i> <span id="js-just-qiandao">{if $sign}{:__('Signed in')}{else}{:__('Sign in')}{/if}</span>
-        </a>
-        <a href="javascript:;" class="btn btn-default pull-right btn-rule">
-            <i class="fa fa-question-circle"></i>
-            {:__('sign rule')}
-        </a>
-    </h2>
-</div>
-{if $sign}
-<div class="alert alert-warning-light">
-    {:__('sign success tip','<b>'.$sign.max_sign.'</b>')}，{:__('Sign in tomorrow and get %s points','<b>'.$sign.next_sign.'</b>')}
-</div>
-{else}
-<div class="alert alert-warning-light">
-    {:__('Please click sign in to receive your reward today')}
-</div>
-{/if}
-<div id='schedule-box' class="boxshaw">
+<div class="panel">
+    <div class="panel-heading">
+        <h2>{:__('my sign')}
+            <a class="btn btn-success pull-right btn-signin {if $sign}disabled{/if}" href="javascript:;">
+                <i class="fa fa-location-arrow"></i> <span id="js-just-qiandao">{if $sign}{:__('Signed in')}{else}{:__('Sign in')}{/if}</span>
+            </a>
+            <a href="javascript:;" class="btn btn-default pull-right btn-rule">
+                <i class="fa fa-question-circle"></i>
+                {:__('sign rule')}
+            </a>
+        </h2>
+    </div>
+    {if $sign}
+    <div class="alert alert-warning-light">
+        {:__('sign success tip','<b>'.$sign.max_sign.'</b>')}，{:__('Sign in tomorrow and get %s points','<b>'.$sign.next_sign.'</b>')}
+    </div>
+    {else}
+    <div class="alert alert-warning-light">
+        {:__('Please click sign in to receive your reward today')}
+    </div>
+    {/if}
+    <div id='schedule-box' class="boxshaw">
 
-</div>
-<div>
-    <h3 id='h3Ele'></h3>
-</div>
-<div id="rule_html" class="layui-layer-content hidden" >
-    <table class="table table-striped" style="width: 80%;margin: 0 auto">
-        <thead>
-        <tr>
-            <th>{:__('continuous check-in')}</th>
-            <th>{:__('Get point')}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {volist name='rule'  id='vo'}
-        <tr>
-            <th scope="row">{:__('The %s day',$key)}</th>
-            <td>{$vo}</td>
-        </tr>
-        {/volist}
-        </tbody>
-    </table>
+    </div>
+    <div>
+        <h3 id='h3Ele'></h3>
+    </div>
+    <div id="rule_html" class="layui-layer-content hidden" >
+        <table class="table table-striped" style="width: 80%;margin: 0 auto">
+            <thead>
+            <tr>
+                <th>{:__('continuous check-in')}</th>
+                <th>{:__('Get point')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name='rule'  id='vo'}
+            <tr>
+                <th scope="row">{:__('The %s day',$key)}</th>
+                <td>{$vo}</td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 <script>
