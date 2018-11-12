@@ -4,13 +4,17 @@
 @import url("../css/iconfont.css");
 @import url("../libs/font-awesome/css/font-awesome.min.css");
 @import url("../libs/toastr/toastr.min.css");
-@import url("../libs/layer/dist/theme/default/layer.css");
+@import url("../libs/fastadmin-layer/dist/theme/default/layer.css");
 @import url("../libs/bootstrap-table/dist/bootstrap-table.min.css");
 @import url("../libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css");
 @import url("../libs/bootstrap-daterangepicker/daterangepicker.css");
 @import url("../libs/nice-validator/dist/jquery.validator.css");
 @import url("../libs/bootstrap-select/dist/css/bootstrap-select.min.css");
 @import url("../libs/fastadmin-selectpage/selectpage.css");
+html,
+body {
+  height: 100%;
+}
 body {
   background: #f1f4f6;
   font-size: 13px;
@@ -44,17 +48,18 @@ html.ios-fix body {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
+.wrapper {
+  height: 100%;
+}
 #header {
   background: #fff;
 }
 .content-wrapper {
   position: relative;
+  height: 100%;
 }
 .control-relative {
   position: relative;
-}
-.tab-addtabs {
-  overflow: hidden;
 }
 .tab-addtabs .tab-pane {
   height: 100%;
@@ -104,10 +109,6 @@ html.ios-fix body {
   width: 100%;
   margin-bottom: 0;
   padding: 10px;
-}
-/* 包裹在layer外层 */
-.layer-footer {
-  display: none;
 }
 table.table-template {
   overflow: hidden;
@@ -164,6 +165,9 @@ table.table-template {
 }
 .is-dialog #main {
   background: #fff;
+}
+.is-dialog .layer-footer {
+  display: none;
 }
 form.form-horizontal .control-label {
   font-weight: normal;
@@ -864,13 +868,13 @@ table.table-nowrap thead > tr > th {
 }
 .layui-layer-fast-msg {
   min-width: 100px;
-  border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
 }
-.layui-layer-fast-msg .layui-layer-content {
-  padding: 12px 25px;
-  text-align: center;
+.layui-layer-fast-tab .layui-layer-title .layui-this {
+  color: #333;
+}
+.layui-layer-fast-tab .layui-layer-content .layui-layer-tabmain {
+  margin: 0;
+  padding: 0;
 }
 .n-bootstrap .input-group > .n-right {
   position: absolute;
@@ -983,5 +987,13 @@ table.table-nowrap thead > tr > th {
 }
 .wipecache li a {
   color: #444444 !important;
+}
+/*修正开关关闭下的颜色值*/
+.btn-switcher.disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.btn-switcher .text-gray {
+  color: #d2d6de !important;
 }
 /*# sourceMappingURL=../css/backend.css.map */

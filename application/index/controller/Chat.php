@@ -19,7 +19,7 @@ use think\Request;
 
 class Chat extends Frontend
 {
-    protected $noNeedLogin = '';
+    protected $noNeedLogin = [''];
     protected $noNeedRight = ['addchatlog','information','chatlog','chatLogTotal','find','getRecommend','getMsgBox','modifyMsg','subscribed','getFindFriend','getmsgboxnum','setAllRead','changeSign','changeOnline','removeFriends'];
     protected $layout = '';
 
@@ -31,7 +31,6 @@ class Chat extends Frontend
     public function get_user_data(){
         //获取我的信息
         $user_id = $this->auth->id;
-
 
         //获取我的好友分组
         $mygroup = Db::name('mygroup')->where('user_id',$user_id)->order('weight asc')->select();
