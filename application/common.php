@@ -320,16 +320,16 @@ if (!function_exists('time_tran')) {
             return $the_time;
         } else {
             if ($dur < 60) {
-                return $dur . '秒前';
+                return $dur .' '.__('Seconds').' '. __('Before');
             } else {
                 if ($dur < 3600) {
-                    return floor($dur / 60) . '分钟前';
+                    return floor($dur / 60) .' '.__('Minutes').' '. __('Before');
                 } else {
                     if ($dur < 86400) {
-                        return floor($dur / 3600) . '小时前';
+                        return floor($dur / 3600) .' '. __('Hours').' '.__('Before');
                     } else {
                         if ($dur < 259200) {//3天内
-                            return floor($dur / 86400) . '天前';
+                            return floor($dur / 86400) .' '.__('Days').' '. __('Before');
                         } else {
                             return $the_time;
                         }

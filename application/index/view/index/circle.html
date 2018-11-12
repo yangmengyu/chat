@@ -1,0 +1,265 @@
+<style>
+    .basicinfo {
+        margin: 15px 0;
+    }
+
+    .basicinfo .row > .col-xs-4 {
+        padding-right: 0;
+    }
+
+    .basicinfo .row > div {
+        margin: 5px 0;
+    }
+    .box{
+        margin-top: 10%;
+        margin-bottom: 10px;
+        color: #FF5722;
+        font-size: 18px;
+        margin-left: 45%;
+    }
+    .box1{
+        width: 900px;
+        height: 500px;
+        margin-left: auto;
+        border:solid  1px;
+        margin-right:auto;
+    }
+    .box1 .controls{
+
+    }
+    .upload-icon-img{
+        height: 100%;
+    }
+    .upload-pre-item{
+        position: relative;
+    }
+    .upload-pre-item .img{
+        margin-top: 5px;
+        width:100px;
+        height: 100px;
+    }
+    .upload-pre-item i {
+        position: absolute;
+        cursor: pointer;
+        top: 5px;
+        background: #2F4056;
+        padding: 2px;
+        line-height: 15px;
+        text-align: center;
+        color: #fff;
+        margin-left: 1px;
+        /* float: left; */
+        filter: alpha(opacity=80);
+        -moz-opacity: .8;
+        -khtml-opacity: .8;
+        opacity: .8;
+        transition: 1s;
+    }
+    .upload-pre-item i:hover{transform:rotate(360deg);}
+    .upload-pre-item,.upload-icon-img{
+        width:120px;
+        float: left;
+        margin-left: 8px;
+    }
+    .qqFace { margin-top: 4px; background: #fff; padding: 2px; border: 1px #dfe6f6 solid; }
+    .qqFace table td { padding: 0px; }
+    .qqFace table td img { cursor: pointer; border: 1px #fff solid; }
+    .qqFace table td img:hover { border: 1px #0066cc solid; }
+    .bianda{transform: scale(1.4);}
+
+</style>
+
+<link rel="stylesheet" href="__CDN__/assets/home/css/gallery-grid.css">
+
+<div id="content-container" class="container">
+    {include file="common/onwall"}
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav_index" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel">
+                <div class="panel-body">
+                    <h2 class="page-header">{:__('Circle Of Friends')}</h2>
+                    <div id="LAY-FLOW">
+                        <!--<div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" data-src="/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg" alt="64x64" style="width: 64px; height: 64px;" src="/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg" data-holder-rendered="true">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Media heading</h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                <div class="tz-gallery row" style="padding-left: 15px;"><div class="tz-img">
+                                    <a class="lightbox" href="/uploads/20181109/b80920b334cbbb168923c37cbd0ea51a.png">
+                                        <img src="/uploads/20181109/b80920b334cbbb168923c37cbd0ea51a.png">
+                                    </a>
+                                </div>
+                                    <div class="tz-img">
+                                        <a class="lightbox" href="/uploads/20181109/61079d7175cb637af5200c47f6538d70.png">
+                                            <img src="/uploads/20181109/61079d7175cb637af5200c47f6538d70.png">
+                                        </a>
+                                    </div>
+                                    <div class="tz-img">
+                                        <a class="lightbox" href="/uploads/20181109/9729d73a1cc5675e6d70f504c507e094.png">
+                                            <img src="/uploads/20181109/9729d73a1cc5675e6d70f504c507e094.png">
+                                        </a>
+                                    </div>
+                                    <div class="tz-img">
+                                        <a class="lightbox" href="/uploads/20181109/5e3a0e84c0d5b4ed7956b6c9333fd995.png">
+                                            <img src="/uploads/20181109/5e3a0e84c0d5b4ed7956b6c9333fd995.png">
+                                        </a>
+                                    </div>
+                                </div>
+                                <h6 style="margin-top: 10px;">
+                                    <span>2天前 </span>
+                                    <span>
+                                 <i class="fa fa-thumbs-up fa-fw dianzan" data-dynamic_id="19" style="cursor: pointer" onclick="dianzan($(this))"></i> <span>1</span>
+                                <i class="fa fa-commenting fa-fw pinglun" data-dynamic_id="19" style="cursor: pointer" onclick="pinglun($(this))"></i> <span>11</span>
+                                 </span>
+                                </h6>
+                            </div>
+                            <hr>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="__CDN__/assets/home/js/jquery.qqFace.js"></script>
+<script type="text/javascript" src="__CDN__/assets/home/js/dynamic.js"></script>
+
+<script>
+    layui.use(['element','flow'], function(){
+        var element = layui.element,upload = layui.upload,flow = layui.flow;
+
+        //一些事件监听
+        element.on('tab(demo)', function(data){
+            var url = $(this).data('url');
+            window.location.href = url;
+        });
+        flow.load({
+            elem: '#LAY-FLOW' //流加载容器
+            ,done: function(page, next){ //执行下一页的回调
+                var url = '{:url("index/circle")}';
+                $.post(url, {page:page}, function(res){
+                    if(res.code == 1){
+                        var lis = [];
+                        layui.each(res.data.dynamic, function(index, item){
+                            /*var str = "<li class=\"layui-timeline-item\">\n" +
+                                "<i class=\"layui-icon layui-timeline-axis\"></i>\n" +
+                                "<div class=\"layui-timeline-content layui-text\">\n" +
+                                "\n" +
+                                "<p class=\"layui-timeline-title\"> "+replace_em(item.content)+"</p>\n" +
+                                "<div class=\"tz-gallery row\" style=\"padding-left: 0;\">" ;
+                            if(item.images){
+                                layui.each(item.images, function(index1, item1){
+                                    str += "<div class=\"tz-img\">\n" +
+                                        "<a class=\"lightbox\" href='"+item1.url+"'>\n" +
+                                        "<img src='"+item1.url+"'>\n" +
+                                        " </a>\n" +
+                                        " </div>\n";
+                                })
+                            }
+                            str +="</div>\n" +
+                                "<h6 style=\"margin-top: 10px;\">\n" +
+                                "<span>"+item.createtime+" </span>\n" +
+                                "<span>\n" +
+                                " <i class=\"fa fa-thumbs-up fa-fw dianzan\" data-dynamic_id='"+item.id+"' style='cursor: pointer' onclick='dianzan($(this))'></i> <span>"+item.zannum+"</span>\n" +
+                                "<i class=\"fa fa-commenting fa-fw pinglun\"data-dynamic_id='"+item.id+"' style='cursor: pointer' onclick='pinglun($(this))'></i> <span>"+item.pinglunnum+"</span>\n" +
+                                " </span>\n" +
+                                " </h6>\n" +
+                                "\n" +
+                                " </div>\n" +
+                                "</li>";*/
+                            var str = "<div class=\"media\">\n" +
+                                "         <div class=\"media-left\">\n" +
+                                "              <a href='"+item.user.url+"'>\n" +
+                                "                   <img class=\"media-object\" data-src='"+item.user.avatar+"' alt=\"64x64\" style=\"width: 64px; height: 64px;\" src='"+item.user.avatar+"' data-holder-rendered=\"true\">\n" +
+                                "                         </a>\n" +
+                                "                            </div>\n" +
+                                "                            <div class=\"media-body\">\n" +
+                                "                                <h4 class=\"media-heading\">"+item.user.nickname+"</h4>\n" + replace_em(item.content)+
+                                "                                <div class=\"tz-gallery row\" style=\"padding-left: 15px;\">";
+                                if(item.images){
+                                    layui.each(item.images, function(index1, item1){
+                                        str += "<div class=\"tz-img\">\n" +
+                                            "<a class=\"lightbox\" href='"+item1.url+"'>\n" +
+                                            "<img src='"+item1.url+"'>\n" +
+                                            " </a>\n" +
+                                            " </div>\n";
+                                    })
+                                }
+                                str += "                                </div>\n" +
+                                "                                <h6 style=\"margin-top: 10px;\">\n" +
+                                "                                    <span>"+item.createtime+"  </span>\n" +
+                                "                                    <span>\n" +
+                                "                                 <i class=\"fa fa-thumbs-up fa-fw dianzan\" data-dynamic_id="+item.id+" style=\"cursor: pointer\" onclick=\"dianzan($(this))\"></i> <span>"+item.zannum+"</span>\n" +
+                                "                                <i class=\"fa fa-commenting fa-fw pinglun\" data-dynamic_id="+item.id+" style=\"cursor: pointer\" onclick=\"pinglun($(this))\"></i> <span>"+item.pinglunnum+"</span>\n" +
+                                "                                 </span>\n" +
+                                "                                </h6>\n" +
+                                "                            </div>\n" +
+                                "                            <hr>\n" +
+                                "                        </div>";
+
+                            lis.push(str);
+                        });
+                        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                        next(lis.join(''), page < res.data.total);
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                    baguetteBox.run('.tz-gallery');
+                });
+            }
+        });
+        /*转换表情*/
+        function replace_em(str){
+            str = str.replace(/\</g,'&lt;');
+            str = str.replace(/\>/g,'&gt;');
+            str = str.replace(/\n/g,'<br/>');
+            str = str.replace(/\[em_([0-9]*)\]/g,'<img src="__CDN__/assets/home/arclist/$1.gif" border="0" />');
+            return str;
+        }
+    });
+
+    /*
+    * 点赞
+    */
+    function dianzan(obj){
+        var dynamic_id =obj.data('dynamic_id');
+        $.post('{:url("zone/praise")}',{'dynamic_id':dynamic_id},function (res) {
+            if(res.code == 1){
+                layer.msg(res.msg);
+                obj.addClass('bianda');
+                setInterval(function () {
+                    obj.removeClass('bianda');
+                },500);
+                obj.next('span').text(Number(obj.next('span').text())+1);
+            }else{
+                layer.msg(res.msg);
+                obj.next('span').text(Number(obj.next('span').text())-1);
+            }
+        })
+    }
+
+    /*
+    * 评论
+    * */
+    function pinglun(obj) {
+        var dynamic_id =obj.data('dynamic_id');
+        layer.open({
+            type: 2,
+            title: '查看评论',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['{$ismobile?"90%":"70%"}', '90%'],
+            content: '{:url("addons/comment/index")}?dynamic_id='+dynamic_id //iframe的url
+        });
+    }
+
+</script>

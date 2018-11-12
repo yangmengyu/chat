@@ -84,7 +84,8 @@
 							<img src="{{item.avatar}}">
 							<span>{{item.nickname}}({{item.id}})</span>
 							<p>{{item.bio}}  {{#  if(item.bio == ''){ }}我很懒，懒得写签名{{#  } }} </p>
-							<button class="layui-btn layui-btn-mini btncolor add" data-type="friend" data-uid="{{ item.id }}" data-name="{{item.nickname}}" data-avatar="{{item.avatar}}><i class="layui-icon">&#xe654;</i>加好友</button>
+							<button class="layui-btn layui-btn-mini btncolor add" data-type="friend" data-uid="{{ item.id }}" data-name="{{item.nickname}}" data-avatar="{{item.avatar}}">
+							<i class="layui-icon">&#xe654;</i>加好友</button>
 						</li>
 					</div>
 					{{#  }); }}

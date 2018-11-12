@@ -165,24 +165,34 @@
                     if(res.code == 1){
                         var lis = [];
                         layui.each(res.data.dynamic, function(index, item){
-                            var str = '<li class="layui-timeline-item">\n' +
-                                '<i class="layui-icon layui-timeline-axis"></i>\n' +
-                                '<div class="layui-timeline-content layui-text">\n' +
-                                '<h3 class="layui-timeline-title">'+item.createtime+'</h3>\n' +
-                                '<p style="margin-bottom: 10px;"> '+replace_em(item.content)+'</p>\n' +
-                                '<div class="tz-gallery container" style="width: 100%;padding-left: 0;">';
+                            var str = "<li class=\"layui-timeline-item\">\n" +
+                                "<i class=\"layui-icon layui-timeline-axis\"></i>\n" +
+                                "<div class=\"layui-timeline-content layui-text\">\n" +
+                                "\n" +
+                                "<p class=\"layui-timeline-title\"> "+replace_em(item.content)+"</p>\n" +
+                                "<div class=\"tz-gallery row\" style=\"padding-left: 0;\">" ;
                             if(item.images){
                                 layui.each(item.images, function(index1, item1){
-                                    str += '<div class="tz-img">\n' +
-                                        '<a class="lightbox" href="'+item1.url+'">\n' +
-                                        '<img src="'+item1.url+'">\n' +
-                                        '</a>\n' +
-                                        '</div>';
+                                    str += "<div class=\"tz-img\">\n" +
+                                        "<a class=\"lightbox\" href='"+item1.url+"'>\n" +
+                                        "<img src='"+item1.url+"'>\n" +
+                                        " </a>\n" +
+                                        " </div>\n";
                                 })
                             }
-                            str += '</div>\n' +
-                                '</div>\n' +
-                                '</li>';
+
+
+                            str +="</div>\n" +
+                                "<h6 style=\"margin-top: 10px;\">\n" +
+                                "<span>"+item.createtime+" </span>\n" +
+                                "<span>\n" +
+                                " <i class=\"fa fa-thumbs-up fa-fw dianzan\" data-dynamic_id='"+item.id+"' style='cursor: pointer' onclick='dianzan($(this))'></i> <span>"+item.zannum+"</span>\n" +
+                                "<i class=\"fa fa-commenting fa-fw pinglun\"data-dynamic_id='"+item.id+"' style='cursor: pointer' onclick='pinglun($(this))'></i> <span>"+item.pinglunnum+"</span>\n" +
+                                " </span>\n" +
+                                " </h6>\n" +
+                                "\n" +
+                                " </div>\n" +
+                                "</li>";
                             lis.push(str);
                         });
                         //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
@@ -243,4 +253,39 @@
             }
         }
     });
+
+    /*
+    * 点赞
+    */
+    function dianzan(obj){
+        var dynamic_id =obj.data('dynamic_id');
+        $.post('{:url("zone/praise")}',{'dynamic_id':dynamic_id},function (res) {
+            if(res.code == 1){
+                layer.msg(res.msg);
+                obj.addClass('bianda');
+                setInterval(function () {
+                    obj.removeClass('bianda');
+                },500);
+                obj.next('span').text(Number(obj.next('span').text())+1);
+            }else{
+                layer.msg(res.msg);
+                obj.next('span').text(Number(obj.next('span').text())-1);
+            }
+        })
+    }
+
+    /*
+    * 评论
+    * */
+    function pinglun(obj) {
+        var dynamic_id =obj.data('dynamic_id');
+        layer.open({
+            type: 2,
+            title: '查看评论',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['{$ismobile?"90%":"70%"}', '90%'],
+            content: '{:url("addons/comment/index")}?dynamic_id='+dynamic_id //iframe的url
+        });
+    }
 </script>

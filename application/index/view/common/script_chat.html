@@ -1,3 +1,4 @@
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
     //layui绑定扩展
     layui.config({
@@ -74,7 +75,7 @@
             ,logout: '{:url("user/logout")}' //退出登录
         });
         //添加好友
-        $('.add').click(function () {
+        $('.add_friends').click(function () {
             var obj = $(this), cache = parent.layui.layim.cache();
             var name = obj.data('name')
                 ,uid = obj.data('uid')
@@ -103,7 +104,23 @@
                     layer.close(index);
                 }
             })
-        })
+        });
+
+        //发起聊天
+        $('.add_chat').click(function () {
+            var obj = $(this), cache = parent.layui.layim.cache();
+            var name = obj.data('name')
+                ,uid = obj.data('uid')
+                ,avatar = obj.data('avatar')
+                ,group = cache.friend || []
+                ,type = 'friend';
+            layim.chat({
+                name: name //名称
+                ,type: type //聊天类型
+                ,avatar: avatar //头像
+                ,id: uid //好友id
+            })
+        });
 
         //上墙
         $('.onwall').click(function () {

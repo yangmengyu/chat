@@ -329,6 +329,8 @@ class User extends Frontend
                         $dynamic[$key]['images'] = $images;
                     }
                     $dynamic[$key]['createtime'] = time_tran($value['createtime']);
+                    $dynamic[$key]['zannum'] = Db::name('dynamic_praise')->where('dynamic_id',$value['id'])->count();
+                    $dynamic[$key]['pinglunnum'] = Db::name('comment_post')->where('article_id',$value['id'])->count();
                 }
                 $data['dynamic'] = $dynamic;
                 $this->success('','',$data);

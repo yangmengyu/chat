@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="__CDN__/assets/home/swiper/dist/css/swiper.min.css">
+<div class="col-md-12 panel " >
+    <div class="panel-body">
+        <div class="col-md-1" style="padding-left: 0">
+            <div class="onwall" style="background: url({$user.avatar});background-size: 100%;width: 80px;height: 80px;opacity: 0.5;cursor: pointer;">
+                <img src="__CDN__/assets/home/img/arrow.png" alt="">
+            </div>
+            <!--<img style="width: 80px;" src="{$user.avatar}" alt="">-->
+        </div>
+        <div class="swiper-container col-md-11">
+            <div class="swiper-wrapper">
+                {foreach name="onwall" id="wall"}
+                <div class="swiper-slide">
+                    <a href="{$wall.user.url}">
+                        <img style="width: 80px;" src="{$wall.user.avatar}" alt="">
+                    </a>
+                </div>
+                {/foreach}
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__CDN__/assets/home/swiper/dist/js/swiper.min.js"></script>
+<script language="javascript">
+    var mySwiper = new Swiper('.swiper-container',{
+        loop: true,
+        effect: 'slide',
+        slidesPerView: 11,
+        spaceBetween: 1,
+        slidesPerGroup: 2,
+        autoplay: 3000,
+        breakpoints: {
+            1024: {
+                slidesPerView: 8,
+                spaceBetween: 5
+            },
+            768: {
+                slidesPerView: 6,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            }
+        },
+        //spaceBetween : '10%',//按container的百分比
+    })
+</script>

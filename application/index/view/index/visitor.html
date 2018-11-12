@@ -1,0 +1,242 @@
+<style>
+    .basicinfo {
+        margin: 15px 0;
+    }
+
+    .basicinfo .row > .col-xs-4 {
+        padding-right: 0;
+    }
+
+    .basicinfo .row > div {
+        margin: 5px 0;
+    }
+    .box{
+        margin-top: 10%;
+        margin-bottom: 10px;
+        color: #FF5722;
+        font-size: 18px;
+        margin-left: 45%;
+    }
+    .box1{
+        width: 900px;
+        height: 500px;
+        margin-left: auto;
+        border:solid  1px;
+        margin-right:auto;
+    }
+    .box1 .controls{
+
+    }
+    .upload-icon-img{
+        height: 100%;
+    }
+    .upload-pre-item{
+        position: relative;
+    }
+    .upload-pre-item .img{
+        margin-top: 5px;
+        width:100px;
+        height: 100px;
+    }
+    .upload-pre-item i {
+        position: absolute;
+        cursor: pointer;
+        top: 5px;
+        background: #2F4056;
+        padding: 2px;
+        line-height: 15px;
+        text-align: center;
+        color: #fff;
+        margin-left: 1px;
+        /* float: left; */
+        filter: alpha(opacity=80);
+        -moz-opacity: .8;
+        -khtml-opacity: .8;
+        opacity: .8;
+        transition: 1s;
+    }
+    .upload-pre-item i:hover{transform:rotate(360deg);}
+    .upload-pre-item,.upload-icon-img{
+        width:120px;
+        float: left;
+        margin-left: 8px;
+    }
+    .qqFace { margin-top: 4px; background: #fff; padding: 2px; border: 1px #dfe6f6 solid; }
+    .qqFace table td { padding: 0px; }
+    .qqFace table td img { cursor: pointer; border: 1px #fff solid; }
+    .qqFace table td img:hover { border: 1px #0066cc solid; }
+    .bianda{transform: scale(1.4);}
+
+</style>
+
+<link rel="stylesheet" href="__CDN__/assets/home/css/gallery-grid.css">
+
+<div id="content-container" class="container">
+    {include file="common/onwall"}
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav_index" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel">
+                <div class="panel-body">
+                    <h2 class="page-header">{:__('Recent visitors')}</h2>
+                    <div id="LAY-FLOW">
+                        <!--<div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTFkODliNWU1YiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1MWQ4OWI1ZTViIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading col-md-12">Media heading</h4>
+                                <div class="col-md-8" style="min-height: 100px">
+                                    Cras sit amet nibh libero
+                                    <h6 style="margin-top: 10px;">
+                                        <span>2018-11-09 13:55:58  </span>
+                                    </h6>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary add_chat" href="javascript:;" data-uid="" data-avatar="" data-name=""><i class="fa fa-comment fa-fw"></i> {:__('Chat')}</a>
+                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                                            <span class="fa fa-caret-down"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="javascript:;" class="add_friends" data-uid="" data-avatar="" data-name=""><i class="fa fa-user-plus"></i>{:__('Add friends')}</a></li>
+                                            <li><a href="javascript:;" class="give_gift"><i class="fa fa-gift "></i>  {:__('Give a gift')}</a></li>
+                                            <li class="divider"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="__CDN__/assets/home/js/jquery.qqFace.js"></script>
+<script type="text/javascript" src="__CDN__/assets/home/js/dynamic.js"></script>
+
+<script>
+    layui.use(['element','flow'], function(){
+        var element = layui.element,upload = layui.upload,flow = layui.flow;
+
+        //一些事件监听
+        element.on('tab(demo)', function(data){
+            var url = $(this).data('url');
+            window.location.href = url;
+        });
+        flow.load({
+            elem: '#LAY-FLOW' //流加载容器
+            ,done: function(page, next){ //执行下一页的回调
+                var url = '{:url("index/visitor")}';
+                $.post(url, {page:page}, function(res){
+                    if(res.code == 1){
+                        var lis = [];
+                        layui.each(res.data.visitor, function(index, item){
+
+                            var str = "<div class=\"media\">\n" +
+                                "                            <div class=\"media-left\">\n" +
+                                "                                <a href=\"/index/zone/index/u/"+item.from+"\">\n" +
+                                "                                    <img class=\"media-object\" data-src='"+item.avatar+"' alt=\"64x64\" style=\"width: 64px; height: 64px;\" src='"+item.avatar+"' data-holder-rendered=\"true\">\n" +
+                                "                                </a>\n" +
+                                "                            </div>\n" +
+                                "                            <div class=\"media-body\">\n" +
+                                "                                <h4 class=\"media-heading col-md-12\">";
+                                if(item.gender == '0'){
+                                    str += '<i class="fa fa-venus text-danger fa-fw"></i>';
+                                }else if(item.gender == '1'){
+                                    str += '<i class="fa fa-mars text-info fa-fw"></i>';
+                                }else{
+                                    str += '<i class="fa fa-genderless text-success fa-fw"></i>';
+                                }
+                               str += item.nickname+" , "+item.age+" , "+item.country;
+                            //是否在线
+                            if(item.online == 'online') {
+                                str += ' <i class="layui-icon layui-icon-radio text-success"></i>';
+                            }else{
+                                str += ' <i class="layui-icon layui-icon-radio"></i>';
+                            }
+                               str += "  </h4>\n      <div class=\"col-md-8\" style=\"min-height: 100px\">\n" + item.bio+
+                                "                                    <h6 style=\"margin-top: 10px;\">\n" +
+                                "                                        <span>"+item.accesstime+" </span>\n" +
+                                "                                    </h6>\n" +
+                                "                                </div>\n" +
+                                "                                <div class=\"col-md-4\">\n" +
+                                "                                    <div class=\"btn-group\">\n" +
+                                "                                        <a class=\"btn btn-primary add_chat\" href=\"javascript:;\" data-uid="+item.from+" data-avatar="+item.avatar+" data-name="+item.nickname+"><i class=\"fa fa-comment fa-fw\"></i> {:__('Chat')}</a>\n" +
+                                "                                        <a class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" href=\"javascript:;\">\n" +
+                                "                                            <span class=\"fa fa-caret-down\"></span></a>\n" +
+                                "                                        <ul class=\"dropdown-menu\">\n" +
+                                "                                            <li><a href=\"javascript:;\" class=\"add_friends\" data-uid="+item.from+" data-avatar="+item.avatar+" data-name="+item.nickname+"><i class=\"fa fa-user-plus\"></i>{:__('Add friends')}</a></li>\n" +
+                                "                                            <li><a href=\"javascript:;\" class=\"give_gift\"><i class=\"fa fa-gift \"></i>  {:__('Give a gift')}</a></li>\n" +
+                                "                                            <li class=\"divider\"></li>\n" +
+                                "                                        </ul>\n" +
+                                "                                    </div>\n" +
+                                "                                </div>\n" +
+                                "\n" +
+                                "                            </div>\n" +
+                                "                        </div>";
+
+                            lis.push(str);
+                        });
+                        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                        next(lis.join(''), page < res.data.total);
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                    baguetteBox.run('.tz-gallery');
+                });
+            }
+        });
+        /*转换表情*/
+        function replace_em(str){
+            str = str.replace(/\</g,'&lt;');
+            str = str.replace(/\>/g,'&gt;');
+            str = str.replace(/\n/g,'<br/>');
+            str = str.replace(/\[em_([0-9]*)\]/g,'<img src="__CDN__/assets/home/arclist/$1.gif" border="0" />');
+            return str;
+        }
+    });
+
+    /*
+    * 点赞
+    */
+    function dianzan(obj){
+        var dynamic_id =obj.data('dynamic_id');
+        $.post('{:url("zone/praise")}',{'dynamic_id':dynamic_id},function (res) {
+            if(res.code == 1){
+                layer.msg(res.msg);
+                obj.addClass('bianda');
+                setInterval(function () {
+                    obj.removeClass('bianda');
+                },500);
+                obj.next('span').text(Number(obj.next('span').text())+1);
+            }else{
+                layer.msg(res.msg);
+                obj.next('span').text(Number(obj.next('span').text())-1);
+            }
+        })
+    }
+
+    /*
+    * 评论
+    * */
+    function pinglun(obj) {
+        var dynamic_id =obj.data('dynamic_id');
+        layer.open({
+            type: 2,
+            title: '查看评论',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['{$ismobile?"90%":"70%"}', '90%'],
+            content: '{:url("addons/comment/index")}?dynamic_id='+dynamic_id //iframe的url
+        });
+    }
+
+</script>

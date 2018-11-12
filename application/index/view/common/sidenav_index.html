@@ -18,10 +18,9 @@
             <i class="layui-icon layui-icon-diamond" style="font-size: 20px; color: #e60020;"></i>
             {$user.score}
         </li>
-        <li class="list-group-item {:$config['actionname']=='index'?'active':''}"> <a href="{:url('user/index')}"><i class="fa fa-heart fa-fw"></i> {:__('The person I like')}</a> </li>
-        <li class="list-group-item {:$config['actionname']=='profile'?'active':''}"> <a href="{:url('user/profile')}"><i class="fa fa-heart-o fa-fw"></i> {:__('People who like me')}</a> </li>
-        <li class="list-group-item {:$config['actionname']=='changepwd'?'active':''}"> <a href="{:url('user/changepwd')}"><i class="fa fa-heartbeat fa-fw"></i> {:__('Like each other')}</a> </li>
-        <li class="list-group-item {:$config['actionname']=='changepwd'?'active':''}"> <a href="{:url('user/changepwd')}"><i class="fa fa-users fa-fw"></i> {:__('Visitor')}</a> </li>
+        <li class="list-group-item {if $config['actionname']=='ilike' || $config['actionname']=='likeme' || $config['actionname']=='likeeach'}active{/if}"> <a href="{:url('index/ilike')}"><i class="fa fa-heart fa-fw"></i> {:__('The person I like')}</a> </li>
+        <li class="list-group-item {if $config['actionname']=='circle'}active{/if}"> <a href="{:url('index/circle')}"><i class="fa fa-star fa-fw"></i> {:__('Circle Of Friends')}</a> </li>
+        <li class="list-group-item {:$config['actionname']=='visitor'?'active':''}"> <a href="{:url('index/visitor')}"><i class="fa fa-users fa-fw"></i> {:__('Visitor')}</a> </li>
 
     </ul>
 </div>

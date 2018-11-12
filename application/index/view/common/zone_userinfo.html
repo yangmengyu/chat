@@ -9,11 +9,14 @@
         <!-- Content -->
         <div class="ui-content">
             <h3>
-                <i class="fa fa-user-plus text-blue add" style="cursor: pointer" data-uid="{$userzone.id}" data-avatar="{$userzone.avatar}" data-name="{$userzone.nickname}" ></i>
+                <i class="fa fa-user-plus text-blue add_friends" style="cursor: pointer" data-uid="{$userzone.id}" data-avatar="{$userzone.avatar}" data-name="{$userzone.nickname}" ></i>
                 {$userzone.nickname}
                 {if $userzone.isvip==1}<i class="iconfont" style="color:#e60020;margin-left: 20px;">&#xe601;</i>{/if}
+
             </h3>
-            <br>
+
+            <hr>
+
             <div class="layui-card">
                 <div class="layui-card-header">
                     {:__($userzone.country)},
@@ -29,6 +32,16 @@
                     <span class="label label-success">{:__($interest)}</span>
                     {/volist}
                 </div>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-primary add_chat" href="javascript:;" data-uid="{$userzone.id}" data-avatar="{$userzone.avatar}" data-name="{$userzone.nickname}"><i class="fa fa-comment fa-fw"></i> {:__('Chat')}</a>
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                    <span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:;" class="add_friends" data-uid="{$userzone.id}" data-avatar="{$userzone.avatar}" data-name="{$userzone.nickname}"><i class="fa fa-user-plus"></i>{:__('Add friends')}</a></li>
+                    <li><a href="javascript:;" class="give_gift"><i class="fa fa-gift "></i>  {:__('Give a gift')}</a></li>
+                    <!--<li class="divider"></li>-->
+                </ul>
             </div>
 
         </div>

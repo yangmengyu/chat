@@ -42,8 +42,19 @@ class Zone extends Frontend
      * 会员空间
      * */
     public function index(){
-
-
+        $to = input('u');
+        $from = $this->auth->id;
+        $where = ['from'=>$from,'to'=>$to];
+        $vistor = Db::name('visitor')->where($where)->find();
+        if($vistor){
+            Db::name('visitor')->where('id',$vistor['id'])->update(['accesstime'=>time()]);
+        }else{
+            Db::name('visitor')->insert([
+                'from'=>$from,
+                'to'=>$to,
+                'accesstime'=>time()
+            ]);
+        }
         return $this->view->fetch();
     }
 
