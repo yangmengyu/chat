@@ -102,7 +102,20 @@
                                         </legend>
                                         <div class="layui-field-box">
                                             <div class="tz-gallery" id="LAY-FLOW" style="width: 100%">
-
+                                                <!--<div class="tz-img45">
+                                                    <a class="lightbox" href="/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg">
+                                                        <img src="/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg">
+                                                    </a>
+                                                    <div class="btn-group pull-right" style="position: relative;bottom: 30px;">
+                                                        <a class="btn btn-default btn-xs" href="javascript:;"><i class="fa fa-cog fa-fw"></i> </a>
+                                                        <a class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" href="javascript:;">
+                                                            <span class="fa fa-caret-down"></span></a>
+                                                        <ul class="dropdown-menu" style="min-width: 90px;">
+                                                            <li><a href="javascript:;"><i class="fa fa-picture-o fa-fw"></i> {:__('Set to cover')}</a></li>
+                                                            <li><a href="javascript:;"><i class="fa fa-trash-o fa-fw"></i> {:__('Delete')}</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </fieldset>
@@ -149,6 +162,15 @@
                                 "<a class=\"lightbox\" href='"+item.image+"'>\n" +
                                 "<img src='"+item.image+"'>\n" +
                                 "</a>\n" +
+                                "<div class=\"btn-group pull-right\" style=\"position: relative;bottom: 27px;\">\n" +
+                                "     <a class=\"btn btn-default btn-xs\" href=\"javascript:;\"><i class=\"fa fa-cog fa-fw\"></i> </a>\n" +
+                                "     <a class=\"btn btn-default dropdown-toggle btn-xs\" data-toggle=\"dropdown\" href=\"javascript:;\">\n" +
+                                "     <span class=\"fa fa-caret-down\"></span></a>\n" +
+                                "     <ul class=\"dropdown-menu\" style=\"min-width: 90px;\">\n" +
+                                "          <li><a href=\"javascript:;\" class='setcover' data-photo_id='"+item.id+"' data-album_id='"+item.album_id+"'><i class=\"fa fa-picture-o fa-fw\"></i> {:__('Set to cover')}</a></li>\n" +
+                                "          <li><a href=\"javascript:;\" class='deletephoto' data-photo_id='"+item.id+"'><i class=\"fa fa-trash-o fa-fw\"></i> {:__('Delete')}</a></li>\n" +
+                                "     </ul>\n" +
+                                " </div>" +
                                 "</div>";
                             lis.push(str);
                         });
@@ -185,6 +207,32 @@
             ,error: function(){
                 layer.msg('{:__("You have no permission")}');
             }
+        });
+        $("#LAY-FLOW").on("click",'.setcover',function(){
+            var  photo_id = $(this).data('photo_id'),
+                album_id = $(this).data('album_id');
+            $.post('{:url("user/setcover")}',{photo_id:photo_id,album_id:album_id},function (res) {
+                if(res.code ==1){
+                    layer.msg(res.msg);
+                }else{
+                    layer.msg(res.msg)
+                }
+            });
+
+        });
+        $("#LAY-FLOW").on("click",'.deletephoto',function(){
+            var  photo_id = $(this).data('photo_id');
+            $.post('{:url("user/deletephoto")}',{photo_id:photo_id},function (res) {
+                if(res.code ==1){
+                    setTimeout(function(){
+                        window.location.reload();
+                    },1500);
+                    layer.msg(res.msg);
+                }else{
+                    layer.msg(res.msg)
+                }
+            });
+
         });
     });
 

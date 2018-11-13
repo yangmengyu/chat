@@ -148,5 +148,6 @@ return [
     'Hours' => '小时',
     'Days' => '小时',
     'Before' => '前',
+    'Set to cover' => '设为封面',
 
 ];

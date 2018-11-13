@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-12 18:47:38
+Date: 2018-11-13 10:13:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `fa_admin` (
 -- ----------------------------
 -- Records of fa_admin
 -- ----------------------------
-INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1541986662', '1492186163', '1541986662', 'f68f8a9e-8e34-435e-be4d-782a0ee31670', 'normal');
+INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1542071924', '1492186163', '1542071924', 'fbeeef93-9090-4a4d-9a4e-9dbb74868780', 'normal');
 INSERT INTO `fa_admin` VALUES ('2', 'admin2', 'admin2', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '/assets/img/avatar.png', 'admin2@fastadmin.net', '0', '1505450906', '1492186163', '1505450906', 'df45fdd5-26f4-45ca-83b3-47e4491a315a', 'normal');
 INSERT INTO `fa_admin` VALUES ('3', 'admin3', 'admin3', '1c11f945dfcd808a130a8c2a8753fe62', 'WOKJEn', '/assets/img/avatar.png', 'admin3@fastadmin.net', '0', '1530863546', '1492186201', '1530863607', '', 'normal');
 
@@ -60,7 +60,7 @@ CREATE TABLE `fa_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=457 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=458 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of fa_admin_log
@@ -521,6 +521,7 @@ INSERT INTO `fa_admin_log` VALUES ('453', '1', 'admin', '/admin/command/get_cont
 INSERT INTO `fa_admin_log` VALUES ('454', '1', 'admin', '/admin/command/command/action/command', '在线命令管理 执行命令', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"1\",\"controllerfile_text\":\"\",\"controllerfile\":\"Dynamic.php\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542005772');
 INSERT INTO `fa_admin_log` VALUES ('455', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"1\",\"controllerfile_text\":\"\",\"controllerfile\":\"Dynamic.php\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542005772');
 INSERT INTO `fa_admin_log` VALUES ('456', '1', 'admin', '/admin/user/user/index', '会员管理 会员管理 查看', '{\"searchTable\":\"tbl\",\"searchKey\":\"id\",\"searchValue\":\"1000\",\"orderBy\":[[\"nickname\",\"ASC\"]],\"showField\":\"nickname\",\"keyField\":\"id\",\"keyValue\":\"1000\",\"searchField\":[\"nickname\"]}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542005926');
+INSERT INTO `fa_admin_log` VALUES ('457', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Faddon%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/addon?ref=addtabs\",\"__token__\":\"23b2cab139cbf0ce5d479af27c4bf794\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542071924');
 
 -- ----------------------------
 -- Table structure for fa_area
@@ -5497,7 +5498,6 @@ INSERT INTO `fa_photo` VALUES ('0000000004', '5', '/uploads/20180721/8e8e51c4ce2
 INSERT INTO `fa_photo` VALUES ('0000000005', '5', '/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg', '0', '1532166819', '1532166819');
 INSERT INTO `fa_photo` VALUES ('0000000006', '5', '/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg', '0', '1532166824', '1532166824');
 INSERT INTO `fa_photo` VALUES ('0000000007', '5', '/uploads/20181109/acfcaf715a64cf92bec6354e125cb9d5.png', '0', '1541733745', '1541733745');
-INSERT INTO `fa_photo` VALUES ('0000000008', '5', '/uploads/20181109/b80920b334cbbb168923c37cbd0ea51a.png', '0', '1541756175', '1541756175');
 INSERT INTO `fa_photo` VALUES ('0000000009', '5', '/uploads/20181109/9729d73a1cc5675e6d70f504c507e094.png', '0', '1541756180', '1541756180');
 
 -- ----------------------------
@@ -5508,19 +5508,21 @@ CREATE TABLE `fa_photo_album` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `user_id` int(11) DEFAULT NULL COMMENT '会员',
   `name` varchar(255) DEFAULT NULL COMMENT '相册名称',
+  `cover_image` varchar(255) DEFAULT NULL COMMENT '封面图片',
   `createtime` int(11) DEFAULT NULL COMMENT '创建时间',
   `updatetime` int(11) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_photo_album
 -- ----------------------------
-INSERT INTO `fa_photo_album` VALUES ('0000000005', '1000', '第一个', '1532163272', '1532163272');
-INSERT INTO `fa_photo_album` VALUES ('0000000006', '1000', '2', '1532166887', '1532166887');
-INSERT INTO `fa_photo_album` VALUES ('0000000007', '1000', '3', '1532166892', '1532166892');
-INSERT INTO `fa_photo_album` VALUES ('0000000008', '1000', '4', '1532166898', '1532166898');
-INSERT INTO `fa_photo_album` VALUES ('0000000009', '1000', '5', '1532166903', '1532166903');
+INSERT INTO `fa_photo_album` VALUES ('0000000005', '1000', '第一个', '/uploads/20180721/8e8e51c4ce20fa4a20df09988e925e90.jpg', '1532163272', '1532163272');
+INSERT INTO `fa_photo_album` VALUES ('0000000006', '1000', '2', null, '1532166887', '1532166887');
+INSERT INTO `fa_photo_album` VALUES ('0000000007', '1000', '3', null, '1532166892', '1532166892');
+INSERT INTO `fa_photo_album` VALUES ('0000000008', '1000', '4', null, '1532166898', '1532166898');
+INSERT INTO `fa_photo_album` VALUES ('0000000009', '1000', '5', null, '1532166903', '1532166903');
+INSERT INTO `fa_photo_album` VALUES ('0000000010', '1000', '6', '/assets/home/img/no-album.jpg', '1542075155', '1542075155');
 
 -- ----------------------------
 -- Table structure for fa_sms
@@ -5588,7 +5590,7 @@ CREATE TABLE `fa_user` (
 -- Records of fa_user
 -- ----------------------------
 INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', null, null, null, null, '0', '1', '2', '1541755117', '1541988006', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1541988006', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('3', '2', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/avatar/1531791614-3.png', '1', '0', '2018-06-30', '', '150', '165', 'Andorra', '[\"hairdressing\",\"animal husbandry\"]', '0', '1', '3', '1541994306', '1542019412', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1542019412', '', 'normal', '', 'online');
+INSERT INTO `fa_user` VALUES ('3', '2', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/avatar/1531791614-3.png', '1', '0', '2018-06-30', '', '150', '165', 'Andorra', '[\"hairdressing\",\"animal husbandry\"]', '0', '2', '3', '1542019412', '1542071589', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1542071589', '', 'normal', '', 'online');
 INSERT INTO `fa_user` VALUES ('1000', '2', 'yangmengyu', 'yangmengyu', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '2', '2', '0000-00-00', '', '180', '65', 'Afghanistan', '[\"hairdressing\",\"animal husbandry\"]', '89', '1', '5', '1541992763', '1542019427', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1542019427', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
 
 -- ----------------------------
@@ -5759,9 +5761,10 @@ CREATE TABLE `fa_visitor` (
   `to` int(11) DEFAULT NULL COMMENT '被访者',
   `accesstime` int(11) DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_visitor
 -- ----------------------------
 INSERT INTO `fa_visitor` VALUES ('0000000001', '3', '1000', '1542016578');
+INSERT INTO `fa_visitor` VALUES ('0000000002', '1000', '3', '1542071470');

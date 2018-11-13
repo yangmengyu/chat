@@ -21,7 +21,7 @@ class User extends Frontend
 
     protected $layout = 'default';
     protected $noNeedLogin = ['login', 'register', 'third','test'];
-    protected $noNeedRight = ['logout','dynamic','photo','photolist','changepwd','sign','remail'];
+    protected $noNeedRight = ['logout','dynamic','photo','photolist','changepwd','sign','remail','setcover','deletephoto'];
 
     public function _initialize()
     {
@@ -357,14 +357,14 @@ class User extends Frontend
             $user_id = $this->auth->id;
             $count = PhotoAlbum::where('user_id',$user_id)->count();
             $photoAlbum = PhotoAlbum::where('user_id',$user_id)->limit($limit)->page($page)->select();
-            foreach ($photoAlbum as $key=>$album){
+            /*foreach ($photoAlbum as $key=>$album){
                 $photo = Photo::where(['album_id'=>$album->id,'is_cover'=>1])->find();
                 if($photo){
                     $photoAlbum[$key]['image'] = $photo['image'];
                 }else{
                     $photoAlbum[$key]['image'] = '/assets/home/img/no-album.jpg';
                 }
-            }
+            }*/
             $data['total'] = ceil($count/$limit);
             $data['photoAlbum'] = $photoAlbum;
             $this->success('','',$data);
@@ -388,12 +388,41 @@ class User extends Frontend
         $this->view->assign('album_id',$id);
         return $this->view->fetch();
     }
+
+    /*
+     * 设为封面
+     * */
+    public function setcover(){
+        $photo_id = $this->request->request('photo_id');
+        $album_id = $this->request->request('album_id');
+        $image = Photo::where('id',$photo_id)->value('image');
+        $res = PhotoAlbum::where('id',$album_id)->update(['cover_image'=>$image]);
+        if($res){
+            $this->success(__('Cover set successfully'));
+        }else{
+            $this->error(__('Operation failed'));
+        }
+    }
+
+    /*
+     * 删除照片
+     * */
+    public function deletephoto(){
+        $photo_id = $this->request->request('photo_id');
+        $res = Photo::destroy($photo_id);
+        if($res){
+            $this->success(__('Delete successfully'));
+        }else{
+            $this->error(__('Operation failed'));
+        }
+    }
     //创建相册
     public function createAlbum(){
         $name = $this->request->request('name');
         $res = PhotoAlbum::create([
             'user_id'=>$this->auth->id,
-            'name'=>$name
+            'name'=>$name,
+            'cover_image'=>'/assets/home/img/no-album.jpg'
         ]);
         if($res->id){
             $this->success(__('Create successful'));
