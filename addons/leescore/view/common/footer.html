@@ -1,0 +1,29 @@
+
+<div class="clearfix"></div>
+
+<div class="visible-xs">
+	<br>
+	<br>
+	<nav class="bottom-nav">
+		<div class="visible-xs nav-bottom-mobile navbar-fixed-bottom text-center">
+<!-- 			<div class="col-xs-3 no-padding">
+	<a href="/" target="_blank"><i class="fa fa-home"></i> {:__('Home')}</a>
+</div> -->
+			<div class="col-xs-4 no-padding">
+				<a href="{:addon_url('leescore/index')}"><i class="fa fa-home"></i> {:__('Home')}</a>
+			</div>
+			<div class="col-xs-4 no-padding">
+				<a href="{:addon_url('leescore/order')}"><i class="fa fa-shopping-cart"></i> {:__('store order')}</a>
+			</div>
+			<div class="col-xs-4 no-padding">
+				<a href="{:url('index/user/index')}"><i class="fa fa-user-circle"></i> {:__('User center')}</a>
+			</div>
+		</div>
+	</nav>
+</div>
+
+<div class="hidden-xs">
+	<footer class="foot-leescore clearfix">
+	    <p class="copyright">Copyright&nbsp;©&nbsp;{$site.name} <?php echo date('Y',time());?>. All Rights Reserved. <a href="http://www.miibeian.gov.cn" target="_blank">{$site.beian}</a></p>
+	</footer>
+</div>

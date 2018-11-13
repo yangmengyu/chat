@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<title>{:__('goods list')} - {$site.name}</title>
+        {include file="common/meta"}
+    </head>
+    <body class="bg-grays">
+		<div class="visible-xs order-mobile-top navbar-fixed-top">
+			<div class="col-xs-1">
+				<a href="{:addon_url('leescore/index/index')}">
+					<i class="glyphicon glyphicon-menu-left"></i>
+				</a>
+			</div>
+			<div class="col-xs-10">{:__('goods list')}</div>
+			<div class="col-xs-1 no-padding">
+				<a href="/">
+					<i class="glyphicon glyphicon-home"></i>
+				</a>
+			</div>
+		</div>
+		{include file="common/nav"}
+        <div class="container padding page-content">
+        	<div class="row">
+	        	<div class="col-md-3 hidden-xs">
+					<div class="goods-left">
+						<div class="box box-danger radius-none">
+							<div class="box-header with-border">
+								<h3 class="box-title">{:__('convert')}</h3>
+							<!-- /.box-tools -->
+							</div>
+							<!-- /.box-header -->
+							<div>
+								{volist name="usenumdesc" id="vo"}
+									<div class="padding-top padding-bottom goods-detail-li {if($i % 2 == 0)}goods-double{/if}">
+										<div class="col-xs-5">
+											<a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}"><img class="img-responsive center-block" style="max-height: 150px;" src="{$vo.thumb}" /></a>
+										</div>
+										<div class="col-xs-7 no-padding no-margin">
+											<h4 class="more"><a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}">{$vo.name}</a></h4>
+											<div class="text-area row">
+												<div class="col-xs-12 text-muted">
+													{:__('score')}：{$vo.scoreprice}
+												</div>
+												<div class="col-xs-12 text-muted">
+													{:__('use stocks')}：{$vo.usenum}
+												</div>
+											</div>
+											<a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}" class="btn btn-danger btn-xs btn-block btn-flat">{:__('buy')}</a>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								{/volist}
+							</div>
+							<!-- /.box-body -->
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9 col-sm-12">
+					<!-- 面包屑路径导航 -->
+						<ol class="breadcrumb hidden-xs">
+							<li><a href="{:addon_url('leescore/index/index')}">{:__('store title')}</a></li>
+							<li class="active">{:__('goods list')}</li>
+						</ol>
+					<!-- 面包屑路径导航 -->
+					<div class="goods-right">
+						<div class="clearfix search padding box box-danger radius-none">
+							<form action="" name="myForm" class="form-horizontal myForm" method="get">
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label class="col-sm-4 control-label">{:__('type')}</label>
+										<div class="col-sm-8">
+											<select class="form-control select2" id="type" name="type">
+												<option {if condition="!input('?get.type')"}selected="selected"{/if} value="">{:__('all')}</option>
+												<option {if condition="input('?get.type') AND input('get.type') eq 0"}selected="selected"{/if} value="0">{:__('type product')}</option>
+												<option {if condition="input('?get.type') AND input('get.type') eq 1"}selected="selected"{/if} value="1">{:__('type virtual')}</option>
+											</select>
+											</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="col-sm-4 control-label">{:__('flag type')}</label>
+										<div class="col-sm-8">
+											<select class="form-control select2" id="flag" name="flag">
+												<option {if condition="!input('?get.flag')"}selected="selected"{/if} value="">{:__('all')}</option>
+												<option {if condition="input('?get.flag') AND input('get.flag') eq 'hot'"}selected="selected"{/if} value="hot">{:__('hot')}</option>
+												<option {if condition="input('?get.flag') AND input('get.flag') eq 'index'"}selected="selected"{/if} value="index">{:__('flag index')}</option>
+												<option {if condition="input('?get.flag') AND input('get.flag') eq 'new'"}selected="selected"{/if} value="new">{:__('flag new')}</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label class="col-sm-2 col-xs-12 control-label">{:__('score')}</label>
+										<div class="col-sm-4 col-xs-5">
+											<input type="Number" id="score-start" name="score-start" class="form-control" {if condition="input('?get.score-start')"}value="{:input('get.score-start')}"{/if} placeholder="0">
+										</div>
+										<div class="col-sm-4 col-xs-5">
+											<input type="Number" id="score-end" name="score-end" class="form-control" {if condition="input('?get.score-end')"}value="{:input('get.score-end')}"{/if} placeholder="100" />
+										</div>
+										<div class="col-sm-2 col-xs-12 ">
+											<div class="visible-xs margin-top clearfix">
+												<button class="btn btn-danger btn-flat radius-xs btn-block search" type="button">{:__('search')}</button>
+											</div>
+											<div class="hidden-xs">
+												<button class="btn btn-danger btn-flat radius-xs search" type="button"> <i class="fa fa-search"></i></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="page-header">
+							<div class="text-right">
+								<label class="h4 hidden-xs">{:__('order')}：</label>
+								<button type="button" data-field="updatetime" data-status="" class="btn btn-xs btn-flat bg-maroon order-btn active">{:__('order by time')}</button>
+								<button type="button" data-field="usenum" data-status="" class="btn btn-xs btn-flat bg-maroon order-btn">{:__('order by usenum')}</button>
+								<button type="button" data-field="scoreprice" data-status="" class="btn btn-xs btn-flat bg-maroon order-btn">{:__('order by scoreprice')}</button>
+								<button type="button" data-field="stock" data-status="" class="btn btn-xs btn-flat bg-maroon  order-btn">{:__('order by stock')}</button>
+							</div>
+						</div>
+						<div class="goods-list">
+						</div>
+						<div class="col-sm-12 padding text-center page">
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        {include file="common/footer"}
+        {include file="common/script"}
+        <script>
+        	$(document).ready(function() {
+        		$(".recommend-li").last().removeClass('recommend-li');
+        		$(".search").on('click', function() {
+	        		//查询条件
+	        		var flag = $("#flag").val();
+	        		var type = $("#type").find("option:selected").val();
+	        		var start = $("#score-start").val();
+	        		var end = $("#score-end").val();
+	        		var param = {"flag":flag, "type":type, "start":start, "end":end};
+        			getDataList('updatetime','desc',param);
+        		});
+        	/* 对排序控件进行初始化 */
+        		//初始化排序
+        		if($.cookie('orderby') === undefined)
+        		{
+        			$.cookie('orderby','fa-angle-down');
+        		}
+        		//查询条件
+        		var flag = $("#flag").val();
+        		var type = $("#type").find("option:selected").val();
+        		var start = $("#score-start").val();
+        		var end = $("#score-end").val();
+        		var param = {"flag":flag, "type":type, "start":start, "end":end};
+        		var cookie = $.cookie("orderby");
+        		//排序
+        		var toStr = "<i class=\"fa "+ cookie +"\"></i>";
+        		$(".order-btn").eq(0).append(toStr).attr('data-status',"fa-angle-down");
+        		$.cookie("field", $(".order-btn").eq(0).attr("data-field"));
+        		//数据提取
+        		getDataList('updatetime','desc',param);
+        	/* 排序控件进行初始化完成 */
+        		$(".order-btn").on('click', function(event) {
+	        		//查询条件
+	        		var flag = $("#flag").val();
+	        		var type = $("#type").find("option:selected").val();
+	        		var start = $("#score-start").val();
+	        		var end = $("#score-end").val();
+	        		var param = {"flag":flag, "type":type, "start":start, "end":end};
+        			if($(this).attr('data-status') == '')
+        			{
+        				$(this).attr('data-status','fa-angle-down')
+        			}
+        			var status = $(this).attr('data-status');
+        			var field = $(this).attr('data-field');
+        			$.cookie('field',field);
+        			if(field == $.cookie('field') && status == 'fa-angle-down')
+        			{
+        				toStr = "<i class=\"fa fa-angle-up\"></i>";
+        				$(this).attr("data-status","fa-angle-up");
+        				$.cookie('orderby','fa-angle-up');
+        				var paramOrder = 'asc';
+        			}
+        			else if(field == $.cookie('field') && status == 'fa-angle-up')
+        			{
+        				toStr = "<i class=\"fa fa-angle-down\"></i>";
+        				$(this).attr("data-status","fa-angle-down");
+        				$.cookie('orderby','fa-angle-down');
+        				var paramOrder = 'desc';
+        			}
+        			getDataList(field, paramOrder, param);
+        			$(".order-btn").removeClass('active');
+        			$(".order-btn i").remove();
+        			$(this).addClass('active').append(toStr);
+        		});
+        	});
+        	//请求分页数据
+        	function getDataList(field,sort,param)
+        	{
+        		param.field = field;
+        		param.sort = sort;
+        		var uri = "{:addon_url('leescore/goods/getList')}";
+        		$.ajax({
+        			url: uri,
+        			type: 'GET',
+        			dataType: 'json',
+        			data: param,
+        			success: function(list)
+        			{
+        				$(".page").html(list.page);
+        				$(".goods-list").html(list.list);
+        			},
+        			error: function(error)
+        			{
+        				console.log(error);
+        			}
+        		});
+        	}
+	    	function ajaxPage(page){
+	    		//排序
+	       		var url = "{:addon_url('leescore/goods/getList')}";
+	       		var sort = $.cookie('orderby') ? (($.cookie('orderby') == 'fa-angle-down') ? 'desc' : 'asc') : 'desc';
+        		//查询条件
+        		var flag = $("#flag").val();
+        		var type = $("#type").find("option:selected").val();
+        		var start = $("#score-start").val();
+        		var end = $("#score-end").val();
+	       		var param = {"flag":flag, "type":type, "start":start, "end":end , "field": $.cookie('field'), "sort": sort, "page": page};
+	            $.ajax({
+	                url:url,
+	                type:'post',
+	                dataType:'json',
+	                data: param,
+	                success:function(list){
+        				$(".page").html(list.page);
+        				$(".goods-list").html(list.list);
+	                }
+	            });
+	        }
+        </script>
+    </body>
+</html>

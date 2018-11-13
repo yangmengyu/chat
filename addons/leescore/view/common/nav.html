@@ -1,0 +1,69 @@
+<div class="hidden-xs">
+	<nav id="mainNav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed radius-none" style="height: 50px !important; color: #fff !important;" data-toggle="collapse" data-target="#navbar-collapse-menu">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar text-white"></span><span class="icon-bar"></span>
+				</button>
+				<a class="page-scroll" style="height: 50px;" href="{:addon_url('leescore/index/index')}"><img style="max-height: 45px;" class="img-responsive" src="__CDN__/assets/img/logo.png" alt=""></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse-menu">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- <li><a href="/">{:__('Home')}</a></li> -->
+					<li><a href="{:addon_url('leescore/index')}">{:__('store title')}</a></li>
+					<li><a href="{:addon_url('leedraw/index/index')}">{:__('Lucky Draw')}</a></li>
+					<li><a href="{:addon_url('leescore/order')}">{:__('store order')}</a></li>
+					<li class="dropdown">
+						{if $user}
+						<a href="{:url('index/user/index')}" class="dropdown-toggle" data-toggle="dropdown" style="height: 50px;padding:10px 0;">
+							<span class="avatar-img"><img style="height: 100%;" src="{$user.avatar}" alt=""> </span> <span style="height: 30px; line-height: 30px; text-transform: capitalize; letter-spacing: 0px;">{$user.username} ({$user.score} Points)<b class="caret"></b></span>
+						</a>
+						{else /}
+						<a href="{:url('index/user/index')}" class="dropdown-toggle" data-toggle="dropdown">{:__('User center')} <b class="caret"></b></a>
+						{/if}
+						<ul class="dropdown-menu">
+							{if $user}
+							<li><a href="{:url('index/user/index')}"><i class="fa fa-user-circle"></i>{:__('User center')}</a></li>
+							<li><a href="{:url('index/user/profile')}"><i class="fa fa-user-o"></i>{:__('Profile')}</a></li>
+							<li><a href="{:url('index/user/changepwd')}"><i class="fa fa-key"></i>{:__('Change password')}</a></li>
+							<li><a href="{:url('index/user/logout')}"><i class="fa fa-sign-out"></i>{:__('Sign out')}</a></li>
+							{else /}
+							<li><a href="{:url('index/user/login')}"><i class="fa fa-sign-in"></i> {:__('Sign in')}</a></li>
+							<li><a href="{:url('index/user/register')}"><i class="fa fa-user-o"></i> {:__('Sign up')}</a></li>
+							{/if}
+						</ul>
+					</li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i> Language <b class="caret"></b></a>
+                        <?php							
+
+                        	$addon = input('?param.addon') ? input('param.addon') : "leescore";
+                        	$controller = input('?param.controller') ? input('param.controller') :  request()->controller();
+                        	$action = input('?param.action') ? input('param.action') : request()->action();
+							$uri = $addon. "/". $controller. "/". $action;
+							$arr = input('param.');
+							unset($arr['addon']);
+							unset($arr['controller']);
+							unset($arr['action']);
+
+							$cn_arr = $arr;
+							$cn_arr['lang'] = 'zh-cn';
+
+							$en_arr = $arr;
+							$en_arr['lang'] = 'us-en';
+							$cn = addon_url($uri, $cn_arr);
+							$en = addon_url($uri, $en_arr);
+                        ?>
+                        <ul class="dropdown-menu">
+                        	<li><a href="{$cn}">简体中文</a></li>
+                            <li><a href="{$en}">English</a></li>
+                        </ul>
+                    </li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+</div>

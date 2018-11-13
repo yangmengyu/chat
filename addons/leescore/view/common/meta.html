@@ -1,0 +1,27 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="renderer" content="webkit">
+{if isset($keywords)}
+<meta name="keywords" content="{$keywords}">
+{/if}
+{if isset($description)}
+<meta name="description" content="{$description}">
+{/if}
+<meta name="author" content="{:__('The fastest framework based on ThinkPHP5 and Bootstrap')}">
+
+<link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
+<!-- Loading Bootstrap -->
+<link href="__CDN__/assets/css/frontend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet" />
+<!-- Bootstrap Core CSS -->
+
+<link href="__CDN__/assets/css/index.css" rel="stylesheet" />
+<link href="__ADDON__/css/score-base.css" rel="stylesheet" />
+
+<!-- Plugin CSS -->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/simple-line-icons@2.4.1/css/simple-line-icons.css" rel="stylesheet" />
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+  <script src="__CDN__/assets/js/html5shiv.js"></script>
+  <script src="__CDN__/assets/js/respond.min.js"></script>
+<![endif]-->

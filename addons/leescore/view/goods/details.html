@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<title>{:__('goods detail')} - {$site.name}</title>
+        {include file="common/meta"}
+    </head>
+    <body class="bg-grays">
+		<div class="visible-xs order-mobile-top navbar-fixed-top">
+			<div class="col-xs-1">
+				<a href="{:addon_url('leescore/goods/index')}">
+					<i class="glyphicon glyphicon-menu-left"></i>
+				</a>
+			</div>
+			<div class="col-xs-10">{:__('goods detail')}</div>
+			<div class="col-xs-1 no-padding">
+				<a href="/">
+					<i class="glyphicon glyphicon-home"></i>
+				</a>
+			</div>
+		</div>
+
+		{include file="common/nav"}
+        <div class="container padding page-content">
+        	<div class="row">
+	        	<div class="col-md-3 hidden-xs">
+					<div class="goods-left">
+						<div class="box box-danger radius-none">
+							<div class="box-header with-border">
+								<h3 class="box-title">{:__('convert')}</h3>
+							<!-- /.box-tools -->
+							</div>
+							<!-- /.box-header -->
+							<div>
+								{volist name="usenumdesc" id="vo"}
+									<div class="padding-top padding-bottom goods-detail-li {if($i % 2 == 0)}goods-double{/if}">
+										<div class="col-xs-5">
+											<a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}"><img class="img-responsive center-block" style="max-height: 150px;" src="{$vo.thumb}" /></a>
+										</div>
+										<div class="col-xs-7 no-padding no-margin">
+											<h4 class="more"><a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}">{$vo.name}</a></h4>
+											<div class="text-area row">
+												<div class="col-xs-12 text-muted">
+													{:__('score')}：{$vo.scoreprice}
+												</div>
+
+												<div class="col-xs-12 text-muted">
+													{:__('use stocks')}：{$vo.usenum}
+												</div>
+											</div>
+											<a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}" class="btn btn-danger btn-xs btn-block btn-flat">{:__('buy')}</a>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								{/volist}
+							</div>
+							<!-- /.box-body -->
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-9">
+
+					<!-- 面包屑路径导航 -->
+						<ol class="breadcrumb hidden-xs">
+							<li><a href="{:addon_url('leescore/index/index')}">{:__('store title')}</a></li>
+							<li><a href="{:addon_url('leescore/goods/index')}">{:__('goods list')}</a></li>
+							<li class="active">{:__('goods detail')}</li>
+						</ol>
+					<!-- 面包屑路径导航 -->
+
+					<div class="goods-right">
+						<div class="row">
+							<div class="col-md-7 thumb-view-area">
+								<img src="{$item.thumb}" id="thumb-view" class="img-responsive img-thumbnail radius-none" width="100%" />
+							</div>
+							<div class="col-md-5">
+								<div class="visible-xs clearfix">
+									<div class="box-detail-thumbs">
+										<?php 
+											$images = explode(",",$item['pics']);
+										 ?>
+										<div class="col-xs-3 padding-min">
+											<a href="javascript:;" class="thumbnail details-thumb thumb-active radius-none" style="margin-bottom: 7px;">
+												<img src="{$item.thumb}" class="img-responsive details-thumb-img " width="100%" />
+											</a>
+										</div>
+										{if($images[0] != '')}
+											{volist name="$images" id="pic"}
+												<div class="col-xs-3 padding-min">
+													<a href="javascript:;" class="thumbnail details-thumb radius-none" style="margin-bottom: 7px;">
+														<img src="{$pic}" class="img-responsive details-thumb-img " width="100%" />
+													</a>
+												</div>
+											{/volist}
+										{/if}
+									</div>
+								</div>
+
+								<h3><strong>{$item.name}</strong></h3>
+								<div class="hidden-xs"><br /></div>
+								
+								<h4>{:__('score')}：<span class="h3 text-orange">{$item.scoreprice} {:__('score')}</span></h4>
+								<h4>{:__('order by stock')}：{$item.stock}</h4>
+								<h4>{:__('use num')}：{$item.usenum}</h4>
+								{if condition="$item.stock gt 0"}
+									<div class="visible-xs">
+										<a href="javascript:;" {if($item.type == 1)}data-toggle="true"{/if} data-param="{$item.id}" class="btn btn-sm bg-orange  buy_order btn-flat btn-block" >{:__('buy')}</a>
+									</div>
+									<div class="hidden-xs">
+										<a href="javascript:;" {if($item.type == 1)}data-toggle="true"{/if} data-param="{$item.id}" class="btn btn-lg bg-orange buy_order" >{:__('buy')}</a>
+									</div>
+									
+								{else /}
+									<div class="visible-xs">
+										<a href="javascript:;" class="btn btn-sm btn-flat btn-block bg-orange disabled" >{:__('min stock')}</a>
+									</div>
+									<div class="hidden-xs">
+										<a href="javascript:;" class="btn btn-lg bg-orange disabled" >{:__('min stock')}</a>
+									</div>
+								{/if}
+
+								<div class="hidden-xs">
+									<br>
+									<br>
+									<div class="row box-detail-thumbs">
+										<?php 
+											$images = explode(",",$item['pics']);
+										 ?>
+										<div class="col-xs-3 padding-min">
+											<a href="javascript:;" class="thumbnail details-thumb thumb-active radius-none" style="margin-bottom: 7px;">
+												<img src="{$item.thumb}" class="img-responsive details-thumb-img" width="100%" />
+											</a>
+										</div>
+										{if($images[0] != '')}
+											{volist name="$images" id="pic"}
+												<div class="col-xs-3 padding-min">
+													<a href="javascript:;" class="thumbnail details-thumb radius-none" style="margin-bottom: 7px;">
+														<img src="{$pic}" class="img-responsive details-thumb-img" width="100%" />
+													</a>
+												</div>
+											{/volist}
+										{/if}
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="detail-rule row clearfix margin-top">
+							<!-- 切换卡：兑换规则、兑换说明 -->
+							<div class="col-md-12">
+					        	<!-- Custom Tabs -->
+					        	<div class="nav-tabs-custom radius-none">
+						            <ul class="nav nav-tabs">
+						            	<li class="active"><a href="#desc" data-toggle="tab">{:__('product detail info')}</a></li>
+						            	<li><a href="#rule" data-toggle="tab">{:__('goods rule')}</a></li>
+						            </ul>
+						            <div class="tab-content">
+						            	<div class="tab-pane active" id="desc">
+											<div class="padding">
+												{$item.body}
+											</div>
+						            	</div>
+						            	<!-- /.tab-pane -->
+						            	<div class="tab-pane" id="rule">
+											<div class="padding">
+												{$item.rule}
+											</div>
+						            	</div>
+						            	<!-- /.tab-pane -->
+						            </div>
+					            <!-- /.tab-content -->
+					        	</div>
+					        	<!-- nav-tabs-custom -->
+							</div>
+							<!-- ./ 切换卡：兑换规则、兑换说明 -->
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        {include file="common/footer"}
+        {include file="common/script"}
+		<!-- Layer -->
+		<script src="__ADDON__/js/layer/src/layer.js"></script>
+        <script>
+        	$(document).ready(function() {
+        		//订单确认
+        		$('.buy_order').on('click', function() {
+        			var vir = $(this).attr('data-toggle');
+        			var id = $(this).attr('data-param');
+        			if(vir == true || vir == 'true')
+        			{
+						layer.confirm('{:__("goods replace ask")}', {
+							btn: ['{:__("yes")}','{:__("cancel")}'] //按钮
+						}, function(){
+
+							var uri = '{:addon_url("leescore/order/couponCreate")}';
+							uri = uri + "?id=" + id;
+			        		$.ajax({
+			        			url: uri,
+			        			type: 'post',
+			        			dataType: 'json',
+			        			data: {id: id},
+
+			        			success: function(json)
+			        			{
+			        				if(json.code !== true)
+			        				{
+			        					layer.msg(json.msg);
+			        					return false;
+			        				}else{
+										layer.msg(json.msg);
+			        				}
+			        			}
+			        		});
+
+						}, function(){
+							layer.close();
+						});
+        			}else{
+	        			var bwith = $("body").width();
+		        		var w = bwith < 768 ? '100%' : '80%';
+		        		var url = '{:addon_url("leescore/goods/createOrder")}';
+		        		url = url + "?id=" + id;
+
+		        		$.ajax({
+		        			url: '{:addon_url("leescore/goods/isCheck")}',
+		        			type: 'get',
+		        			dataType: 'json',
+		        			data: {id: id},
+
+		        			success: function(json)
+		        			{
+		        				if(json.code !== true)
+		        				{
+		        					layer.msg(json.msg);
+		        					return false;
+		        				}else{
+									layer.open({
+										type: 2,
+										title: '{:__("create order")}',
+										shadeClose: true,
+										shade: 0.7,
+										area: [w, w],
+										content: url //iframe的url
+									});
+		        				}
+		        			}
+		        		});
+        			}
+
+
+        		});
+
+
+        		$(".details-thumb").on('click', function() {
+        			var thisPath = $(this).children('img').attr("src");
+        			$(".details-thumb").removeClass('thumb-active');
+        			$(this).addClass('thumb-active');
+        			$("#thumb-view").attr('src', thisPath);
+        		});
+
+        		$("#buy_num").on('keyup', function() {
+        			if($(this).val() <= 0 ){
+        				$(this).val(1);
+        			}
+        		});
+
+        		$(".recommend-li").last().removeClass('recommend-li');
+        	});
+        </script>
+    </body>
+</html>

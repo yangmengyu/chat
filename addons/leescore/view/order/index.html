@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<title>{:__('order list')} - {$site.name}</title>
+        {include file="common/meta"}
+    </head>
+    <body class="bg-grays">
+		<!-- Mobile-Nav && Top -->
+		<!-- 头部状态栏 -->
+		<div class="visible-xs order-mobile-top navbar-fixed-top">
+			<div class="col-xs-1">
+				<a href="{:addon_url('leescore/index/index')}">
+					<i class="glyphicon glyphicon-menu-left"></i>
+				</a>
+			</div>
+			<div class="col-xs-10">{:__('store order')}</div>
+			<div class="col-xs-1 no-padding">
+				<a href="/">
+					<i class="glyphicon glyphicon-home"></i>
+				</a>
+			</div>
+		</div>
+		<!-- ./ 头部状态栏 -->
+		<!-- 订单 && 地址栏切换按钮 -->
+		<div class="btn-group padding-min visible-xs" style="width: 100%">
+			<a href="{:addon_url('leescore/order/index')}" class="btn btn-flat btn-block btn-warning" style="width: 50%;">{:__('store order')}</a>
+			<a href="{:addon_url('leescore/address/index')}" class="btn btn-flat btn-block btn-default btn-block" style="width: 50%; margin-top: 0px;">{:__('address manage')}</a>
+		</div>
+		<!-- ./订单 && 地址栏切换按钮 -->
+		<div class="clearfix"></div>
+		<!-- 按订单状态查看 -->
+		<div class="visible-xs text-muted" style="background-color: #fff; margin-top: 5px; overflow-x: auto;">
+			<ul class="order-nav" style="overflow-x: auto;">
+		        <li style="text-align: center" {if condition="!input('?get.listType') OR input('get.listType') eq ''"}class="order-active" {else /}class=""{/if}> <a href="?"><i class="fa fa-user-circle hidden-xs"></i> {:__('all order')}</a> </li>
+		        <li style="text-align: center" {if condition="input('?get.listType') AND input('get.listType') eq '1'"}class="order-active" {else /}class=""{/if}> <a href="?listType=1"><i class="fa fa-user-o hidden-xs"></i>  {:__('paid')}</a> </li>
+		        <li style="text-align: center" {if condition="input('?get.listType') AND input('get.listType') eq '2'"}class="order-active" {else /}class=""{/if}> <a href="?listType=2"><i class="fa fa-key hidden-xs"></i> {:__('shipped')}</a> </li>
+		        <li style="text-align: center" {if condition="input('?get.listType') AND input('get.listType') eq '3'"}class="order-active" {else /}class=""{/if}> <a href="?listType=3"><i class="fa fa-sign-out hidden-xs"></i> {:__('sign for')}</a> </li>
+		        <li style="text-align: center" {if condition="input('?get.listType') AND input('get.listType') eq '-2'"}class="order-active" {else /}class=""{/if}> <a href="{:addon_url('leescore/order/index',array('listType' => -2))}"><i class="fa fa-sign-out hidden-xs"></i> {:__('admin faild')}</a> </li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<!-- Mobile-Nav && Top-->
+
+		{if($list->isEmpty())}
+			<div class="box-body radius-none visible-xs">
+				{:__('empty')}
+			</div>
+		{/if}
+
+		<div class="visible-xs">
+			{volist name="list" id="vo"}
+				<div class="row margin-top-small">
+					<div class="box box-solid radius-none no-margin">
+			            <div class="box-header with-border padding-min">
+			            	<div class="col-xs-8">
+			            		<h4 class="text-muted">{:__('order_id')}：{$vo.order_id}</h4>
+			            	</div>
+			            	<div class="col-xs-4 text-orange">
+			            		<h4 class="text-orange text-right">
+									{switch name="vo.status"}
+										{case value="-2"} {:__('admin faild')} {/case}
+										{case value="0"} {:__('unpaid')} {/case}
+										{case value="1"} {:__('paid')} {/case}
+										{case value="2"} {:__('shipped')} {/case}
+										{case value="3"} {:__('sign for')} {/case}
+										{case value="4"} {:__('outing')} {/case}
+										{case value="5"} {:__('out success')} {/case}
+										{default /} {:__('order error')}
+									{/switch}
+								</h4>
+			            	</div>
+			            </div>
+			            <!-- /.box-header -->
+			           	<a  href="javascript:;" data-id="{$vo.id}" class="show-details">
+				            <div class="box-body text-center bg-grays">
+					            <div class="col-xs-3">
+					              	<img src="{$vo.goodsDetail.thumb}" class="img-responsive" style="height: 60px; width: 60px;" />
+					            </div>
+					            
+				              	<div class="col-xs-6 no-padding">
+				              		<h4 class="more text-left">{$vo.goodsDetail.name}</h4>
+				              		<h4 class="text-muted more text-left">{:__('address')}：{$vo.addressInfo.address}</h4>
+				              		<h4 class="text-muted more text-left">{:__('create time')}：{$vo.createtime|date="m-d-Y H:i",###}</h4>
+				              	</div>
+				            	
+				              	<div class="col-xs-3">
+				              		<h4 class="text-right">#{$vo.score}</h4>
+				              		<h4 class="text-right text-muted">${$vo.money}</h4>
+				              		<h4 class="text-right text-muted">*{$vo.buy_num}</h4>
+				              	</div>
+				            </div>
+			            </a>
+			            <div class="box-footer">
+			            	<div class="col-xs-12 text-right">
+								<a  href="javascript:;" data-id="{$vo.id}" class="btn btn-default btn-xs show-details">
+									{:__('detail')}
+								</a>
+								{in name="$vo.status" value="3,5,-2"}
+									<a href="javascript:;" data-param="{$vo.id}" class="btn btn-danger btn-xs order-delete">{:__('delete order')}</a>
+								{/in}
+								{in name="$vo.status" value="2"}
+									<a href="javascript:;" data-param="{$vo.id}" class="btn btn-warning btn-xs order-sign">{:__('order sign')}</a>
+								{/in}
+			            	</div>
+			            </div>
+			            <!-- /.box-body -->
+					</div>
+				</div>
+			{/volist}
+		</div>
+		{if($list->render() != null)}
+			<div class="box-footer visible-xs clearfix text-center">
+				{$list->render()}
+			</div>
+		{/if}
+
+    	<div class="hidden-xs">
+        	{include file="common/nav"}
+        </div>
+
+        <div class="container padding hidden-xs page-content">
+        	<div class="row">
+	        	<div class="col-md-3">
+					<div class="sidenav radius-none">
+					    <ul class="list-group">
+					    	<li class="list-group-heading">{:__('address manage')}</li>
+					    	<li {if condition="input('?get.listType') AND input('get.listType') eq 'address'"}class="list-group-item active" {else /}class="list-group-item"{/if}> <a href="{:addon_url('leescore/address/index',array('listType' => 'address'))}"><i class="fa fa-map-marker"></i> {:__('address list')}</a> </li>
+							<br>
+					        <li class="list-group-heading">{:__('store order')} </li>
+					        <li {if condition="!input('?get.listType') OR input('get.listType') eq ''"}class="list-group-item active" {else /}class="list-group-item"{/if}> <a href="?"><i class="fa fa-user-circle"></i> {:__('all order')}</a> </li>
+					        <li {if condition="input('?get.listType') AND input('get.listType') eq '1'"}class="list-group-item active" {else /}class="list-group-item"{/if}> <a href="?listType=1"><i class="fa fa-user-o"></i>  {:__('paid')}</a> </li>
+					        <li {if condition="input('?get.listType') AND input('get.listType') eq '2'"}class="list-group-item active" {else /}class="list-group-item"{/if}> <a href="?listType=2"><i class="fa fa-key"></i> {:__('shipped')}</a> </li>
+					        <li {if condition="input('?get.listType') AND input('get.listType') eq '3'"}class="list-group-item active" {else /}class="list-group-item"{/if}> <a href="?listType=3"><i class="fa fa-sign-out"></i> {:__('sign for')}</a> </li>
+					        <li {if condition="input('?get.listType') AND input('get.listType') eq '-2'"}class="list-group-item active" {else /}class="list-group-item"{/if}> <a href="{:addon_url('leescore/order/index',array('listType' => -2))}"><i class="fa fa-sign-out"></i> {:__('admin faild')}</a> </li>
+
+					    </ul>
+					</div>
+				</div>
+
+				<div class="col-md-9">
+					<!-- 面包屑路径导航 -->
+						<ol class="breadcrumb hidden-xs">
+							<li><a href="{:addon_url('leescore/index/index')}">{:__('store title')}</a></li>
+							<li class="active">{:__('order list')}</li>
+						</ol>
+					<!-- 面包屑路径导航 -->
+
+					<div class="goods-right">
+							<div class="box radius-none">
+								<div class="box-header">
+									<h3 class="box-title hidden-xs">{:__('order list')}</h3>
+									<div class="visible-xs"><br /></div>
+									<div class="box-tools">
+										<form action="{:addon_url('leescore/order/index',array('listType' => input('get.listType')))}" method="POST" name="Search" class="form-inline">
+											<div class="input-group input-group-sm" style="width: 250px;">
+												<input type="text" value="{$keywords}" name="keywords" class="form-control pull-right radius-none" placeholder="{:__('Please enter the order number')}">
+												<input type="hidden" name="status" value="{:input('get.listType')}" />
+												<div class="input-group-btn">
+													<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<!-- /.box-header -->
+								<div class="box-body table-responsive no-padding">
+									<table class="table table-responsive no-margin">
+										<tbody>
+											<tr class="active">
+												<th colspan="2">{:__('order_id')}</th>
+												<th>{:__('goods name')} & {:__('buy num')}</th>
+												<th>{:__('order status')}</th>
+												<th>{:__("create time")}</th>
+												<th>{:__('action')}</th>
+											</tr>
+											{if($list->isEmpty())}
+												<tr>
+													<td colspan="6">{:__('empty')}</td>
+												</tr>
+											{/if}
+
+											{volist name="list" id="vo"}
+												<tr>
+													<td><a href="{:addon_url('leescore/goods/details',array('gid' => $vo.goodsDetail.id))}"><img src="{$vo.goodsDetail.thumb}" class="img-responsive" style="height: 60px; width: 60px;" /></a></td>
+													<td>{$vo.order_id}</td>
+													<td>{$vo.goodsDetail.name} <h5>*{$vo.buy_num}</h5></td>
+													<td>
+														{switch name="vo.status"}
+															{case value="-2"} <span class="label label-danger">{:__('admin faild')}</span> {/case}
+															{case value="0"} <span class="label label-default">{:__('unpaid')}</span> {/case}
+															{case value="1"} <span class="label label-success">{:__('paid')}</span> {/case}
+															{case value="2"} <span class="label label-info">{:__('shipped')}</span> {/case}
+															{case value="3"} <span class="label label-primary">{:__('sign for')}</span> {/case}
+															{case value="4"} <span class="label label-warning">{:__('outing')}</span> {/case}
+															{case value="5"} <span class="label label-danger">{:__('out success')}</span> {/case}
+															{default /} {:__('order error')}
+														{/switch}
+
+													</td>
+													<td>{$vo.createtime|date="m-d-Y H:i",###}</td>
+													<td>
+														<a  href="javascript:;" data-id="{$vo.id}" class="btn btn-default btn-xs show-details">
+															{:__('detail')}
+														</a>
+														{in name="$vo.status" value="3,5,-2"}
+															<a href="javascript:void(0);" data-param="{$vo.id}" class="btn btn-danger btn-xs order-delete">{:__('delete order')}</a>
+														{/in}
+														{in name="$vo.status" value="2"}
+															<a href="javascript:void(0);" data-param="{$vo.id}" class="btn btn-warning btn-xs order-sign">{:__('order sign')}</a>
+														{/in}
+													</td>
+												</tr>
+											{/volist}
+										</tbody>
+									</table>
+								</div>
+								<!-- /.box-body -->
+								{if($list->render() != null)}
+									<div class="box-footer clearfix text-center">
+										{$list->render()}
+									</div>
+								{/if}
+							</div>
+						</div>
+
+						<div class="goods-list">
+
+						</div>
+						<div class="col-sm-12 padding text-center page">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        {include file="common/footer"}
+        {include file="common/script"}
+
+		<!-- Layer -->
+		<script src="__ADDON__/js/layer/src/layer.js"></script>
+        <script>
+        	$(document).ready(function() {
+        		//内容详情
+        		$('.show-details').on('click', function() {
+        			var bwith = $("body").width();
+	        		var id = $(this).attr('data-id');
+	        		var w = bwith < 768 ? '100%' : '80%';
+	        		var url = '{:addon_url("leescore/order/details")}';
+	        		url = url + "?id=" + id;
+					layer.open({
+						type: 2,
+						title: '{:__("order detail")}',
+						shadeClose: true,
+						shade: 0.7,
+						area: [w, w],
+						content: url //iframe的url
+					});
+        		});
+
+        		/*条件菜单宽度计算*/
+
+        			// body宽度
+	        		var bodyw = $("body").width();
+	        		var wsum = 0;
+	        		$(".order-nav li").each(function(index, el) {
+	        			//容器宽度+左右内间距
+	        			var w = $(this).width() + 20;
+	        			wsum = wsum + w;
+	        		});
+
+	        		// 转换成百分比
+	        		var odd = (wsum / bodyw) > 1 ? (wsum / bodyw) * 100 : 1 * 100;
+
+	        		// 设置容器宽度
+	        		$(".order-nav").width(odd+"%");
+	        		$(".order-nav").parent("div.text-muted").width(odd+"%");
+
+        		/*条件菜单宽度计算*/
+
+        		//删除选中订单
+        		$(document).on('click', 'a.order-delete', function() {
+        			var id = $(this).attr('data-param');
+        			var btn = $(this);
+					layer.confirm('{:__("delete order tip")}', {
+						icon: 2,
+						title: '{:__("action tips")}',
+						btn: ['{:__("yes")}','{:__("no")}'] //按钮
+					}, function(){
+						var uri = '{:addon_url("leescore/order/delete")}';
+						$.ajax({
+							url: uri,
+							type: 'post',
+							dataType: 'json',
+							data: {id: id},
+
+							success: function(result){
+								if(result != true)
+								{
+									console.log(result);
+								}else
+								{
+									btn.parent("td").parent("tr").remove();
+									layer.msg('{:__("action success")}');
+								}
+							}
+						});
+						
+					}, function(){
+						layer.close();
+					});
+        		});
+
+        		//确认收货
+        		$(".order-sign").on('click', function() {
+        			var id = $(this).attr('data-param');
+        			var btn = $(this);
+					layer.confirm('{:__("order sign tip")}', {
+						icon: 3,
+						title: '{:__("action tips")}',
+						btn: ['{:__("yes")}','{:__("no")}'] //按钮
+					}, function(){
+						var uri = '{:addon_url("leescore/order/orderSign")}';
+						$.ajax({
+							url: uri,
+							type: 'post',
+							dataType: 'json',
+							data: {id: id},
+
+							success: function(result){
+								if(result != true)
+								{
+									console.log(result);
+								}else
+								{
+									btn.parent("td").prev("td").prev("td").html("<span class=\"label label-primary\">{:__('sign for')}</span>");
+
+									btn.parent("td").append("<a href=\"javascript:void(0);\" data-param=\""+ id +"\" class=\"btn btn-danger btn-xs order-delete\">{:__('delete order')}</a>").children('a.order-sign').remove();
+									layer.msg('{:__("action success")}');
+								}
+							}
+						});
+						
+					}, function(){
+						layer.close();
+					});
+        		});
+        	});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89be0c51-7dd3-4023-9c35-ca254aa00623" name="默认更改列表" comment="相册  首页更改">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime/log/201811/09.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime/log/201811/10.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime/log/201811/1541758297-09.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime/log/201811/1541834170-10.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime/log/201811/1541841986-10.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime/log/201811/1541846078-10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/cache/4e/819c837d54a6ed09abc77a8560a66f.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/cache/4e/819c837d54a6ed09abc77a8560a66f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/cache/60/0d0afab678c1718e00d901e65a0321.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/cache/cb/78ef4a9130f39208ff10858ddd8377.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/cache/cb/78ef4a9130f39208ff10858ddd8377.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/04.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/05_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/06_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/07_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/09_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/10_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/11_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/12.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/12_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/13_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/14_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530761507-05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530781775-05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530847017-06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530862807-06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530868540-06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530930484-07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530944903-07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530951688-07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1530957867-07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531217828-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531295045-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531300310-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531551830-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531558169-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531726986-16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531790213-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531790366-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531790730-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531790868-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531791994-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/1531809085-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/16_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201807/17_cli.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1114b9e9e89eaa5a4cdfeaa73db12d5c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2a8b835215197c6869e0a2e9a064a803.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4888e5c3784f170dcac8e65f8aefe2db.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/5a66f2bab54ab9099192f36b9c958a0b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/7174714ef33d0927aabdb2dbc6619b66.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b0c867641c076893e47b70f311144fe9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c7e0bd2a0f0efc098d6d0da2fb8a4d0c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cef287baab03d59ee93c54854dd78499.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d5e5e3c0b1d705694b08b385eccdbc1a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d9ec27137faaf2ed90f802940c818235.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f2a1def54898f08de7429a1d0d4d5a1f.php" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tel.jpg</find>
+      <find>tz-gallery</find>
+      <find>com_form</find>
+      <find>S.PATH.like</find>
+      <find>PATH</find>
+      <find>ds-post-likes</find>
+      <find>ds-logo</find>
+      <find>like</find>
+      <find>USERINFO</find>
+      <find>approval</find>
+      <find>panel</find>
+      <find>panel panel-default</find>
+      <find>default_avatar</find>
+      <find>css/pc/layim/skin/default_avatar.jpg</find>
+      <find>cache</find>
+      <find>rollback</find>
+      <find>panel-danger</find>
+      <find>$_logined</find>
+      <find>60px</find>
+      <find>Dynamic</find>
+      <find>icon-email</find>
+      <find>add</find>
+      <find>Th</find>
+      <find>Sign up successful</find>
+      <find>Change password successful</find>
+      <find>Email is incorrect</find>
+      <find>失败</find>
+      <find>LAY_demo1</find>
+      <find>delete</find>
+      <find>删除</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>panel panel-danger</replace>
+      <replace>panel panel-default</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>E:\PHPstudy\PHPTutorial\WWW\chat\addons</dir>
+      <dir>E:\PHPstudy\PHPTutorial\WWW\chat\application\index</dir>
+      <dir>E:\PHPstudy\PHPTutorial\WWW\chat</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/addons/comment/view/layout/default.html" />
+        <option value="$PROJECT_DIR$/addons/comment/controller/Api.php" />
+        <option value="$PROJECT_DIR$/public/assets/addons/comment/js/embed.min.js" />
+        <option value="$PROJECT_DIR$/application/index/view/common/meta_chat.html" />
+        <option value="$PROJECT_DIR$/public/assets/home/layui/lay/modules/layim.js" />
+        <option value="$PROJECT_DIR$/application/index/view/zone/index.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/backend/onwall.js" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Onwall.php" />
+        <option value="$PROJECT_DIR$/application/index/view/user/index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/sign.html" />
+        <option value="$PROJECT_DIR$/addons/leesign/view/index/index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/onwall.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/frontend/user.js" />
+        <option value="$PROJECT_DIR$/application/index/view/user/remail.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/profile.html" />
+        <option value="$PROJECT_DIR$/public/assets/home/js/socket.js" />
+        <option value="$PROJECT_DIR$/application/index/controller/Chat.php" />
+        <option value="$PROJECT_DIR$/application/common/controller/Frontend.php" />
+        <option value="$PROJECT_DIR$/application/common/library/Auth.php" />
+        <option value="$PROJECT_DIR$/application/common/library/Token.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/frontend.css" />
+        <option value="$PROJECT_DIR$/public/assets/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/application/index/view/chat/find.html" />
+        <option value="$PROJECT_DIR$/application/index/view/common/sidenav_index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/common/onwall.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/likeeach.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/ilike.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/likeme.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Dynamic.php" />
+        <option value="$PROJECT_DIR$/application/admin/lang/zh-cn/dynamic.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/backend/dynamic.js" />
+        <option value="$PROJECT_DIR$/application/index/view/index/circle.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/dynamic.html" />
+        <option value="E:/下载文件/.env" />
+        <option value="$PROJECT_DIR$/../yiliao/public/assets/js/index.html" />
+        <option value="$PROJECT_DIR$/../yujian/phpcms/templates/yujian/content/index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/layout/default.html" />
+        <option value="$PROJECT_DIR$/application/index/view/common/script_chat.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/index.html" />
+        <option value="$PROJECT_DIR$/application/common/model/Dynamic.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Zone.php" />
+        <option value="$PROJECT_DIR$/application/common.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Index.php" />
+        <option value="$PROJECT_DIR$/application/index/view/common/zone_userinfo.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/visitor.html" />
+        <option value="$PROJECT_DIR$/application/index/lang/zh-cn.php" />
+        <option value="$PROJECT_DIR$/application/index/view/user/photolist.html" />
+        <option value="$PROJECT_DIR$/application/index/lang/zh-cn/user.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/application/index/view/user/photo.html" />
+        <option value="$PROJECT_DIR$/addons/leescore/Leescore.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/mtdowling/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/karsonzhang/fastadmin-addons" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/endroid/qr-code" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/socialite" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/pinyin" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/wechat" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/workerman/gateway-worker" />
+      <path value="$PROJECT_DIR$/vendor/workerman/workerman" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="leescore" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="leescore" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PHPstudy\PHPTutorial\WWW\chat\application\index\view\index" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="leescore" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/addons/leescore" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.leescore" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89be0c51-7dd3-4023-9c35-ca254aa00623" name="默认更改列表" comment="" />
+      <created>1541732858701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541732858701</updated>
+      <workItem from="1541732860054" duration="21224000" />
+      <workItem from="1541760632524" duration="1942000" />
+      <workItem from="1541809442329" duration="4337000" />
+      <workItem from="1541833549613" duration="7487000" />
+      <workItem from="1541841701637" duration="18000" />
+      <workItem from="1541841739799" duration="4703000" />
+      <workItem from="1541982407885" duration="18529000" />
+      <workItem from="1542013322827" duration="6459000" />
+      <workItem from="1542068926819" duration="6307000" />
+      <workItem from="1542077516938" duration="1341000" />
+    </task>
+    <task id="LOCAL-00001" summary="相册  首页更改">
+      <created>1541762162687</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541762162687</updated>
+    </task>
+    <task id="LOCAL-00002" summary="相册  首页更改">
+      <created>1541846430749</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541846430749</updated>
+    </task>
+    <task id="LOCAL-00003" summary="相册  首页更改">
+      <created>1541988559158</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541988559158</updated>
+    </task>
+    <task id="LOCAL-00004" summary="相册  首页更改">
+      <created>1542019680803</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542019680803</updated>
+    </task>
+    <task id="LOCAL-00005" summary="相册  首页更改">
+      <created>1542069955915</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542069955915</updated>
+    </task>
+    <task id="LOCAL-00006" summary="相册  首页更改">
+      <created>1542075275244</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542075275245</updated>
+    </task>
+    <task id="LOCAL-00007" summary="相册  首页更改">
+      <created>1542079009058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542079009058</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="72347000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="调试" order="7" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32805908" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32946146" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32946146" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/fastadmin" />
+    </ignored-roots>
+    <MESSAGE value="相册  首页更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="相册  首页更改" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/common/library/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="92" column="23" lean-forward="true" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/controller/Frontend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="70" column="36" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PayPal.log" />
+    <entry file="file://$PROJECT_DIR$/public/assets/css/frontend.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="374" selection-start-line="374" selection-end-line="374" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="1077" column="28" selection-start-line="1077" selection-start-column="28" selection-end-line="1077" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="100" selection-start-line="100" selection-end-line="111" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/chat/find.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="86" column="185" selection-start-line="86" selection-start-column="185" selection-end-line="86" selection-end-column="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/common/onwall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="81" selection-start-column="81" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/likeeach.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/likeme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-950">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/lang/zh-cn/user/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="66" column="81" selection-start-line="66" selection-start-column="81" selection-end-line="66" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/ilike.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="64" column="22" selection-start-line="13" selection-start-column="16" selection-end-line="64" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/下载文件/.env" />
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7999">
+          <caret line="441" column="37" selection-start-line="441" selection-start-column="37" selection-end-line="441" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/dynamic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="289" column="5" selection-start-line="289" selection-start-column="5" selection-end-line="289" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/lang/zh-cn/dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yiliao/public/assets/js/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="57" selection-start-column="57" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/home/js/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8791">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yujian/phpcms/templates/yujian/content/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/zone/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3934">
+          <caret line="263" selection-start-line="263" selection-end-line="263" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/lang/zh-cn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2431" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/common/meta_chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/layout/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/common/script_chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1388">
+          <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Zone.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/circle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="94" column="46" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6289">
+          <caret line="331" column="60" selection-start-line="331" selection-start-column="60" selection-end-line="331" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/backend/dynamic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="102" selection-start-line="28" selection-start-column="102" selection-end-line="28" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/backend/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/common/sidenav_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="177" selection-start-line="21" selection-start-column="151" selection-end-line="21" selection-end-column="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/common/zone_userinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/visitor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="161" column="73" selection-start-line="161" selection-start-column="73" selection-end-line="161" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/lang/zh-cn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="150" column="27" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="352" column="13" selection-start-line="352" selection-start-column="13" selection-end-line="352" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="121" column="11" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/photolist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="1752" column="27" selection-start-line="1752" selection-start-column="27" selection-end-line="1752" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/lang/zh-cn/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="23" column="120" selection-start-line="23" selection-start-column="120" selection-end-line="23" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="148" column="56" selection-start-line="148" selection-start-column="56" selection-end-line="148" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/leescore/Leescore.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/leescore/controller/Goods_TP5.1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/leescore/controller/Goods_TP5.0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1723">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/leescore/controller/Goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

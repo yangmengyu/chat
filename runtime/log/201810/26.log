@@ -1,0 +1,173 @@
+---------------------------------------------------------------
+[ 2018-10-26T18:25:44+08:00 ] 127.0.0.1 POST /index.php/admin/index/login
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `fa_admin`  SET `logintime`=1540549544,`token`='4bbff31b-02cd-4416-a102-434eb1d32c7f',`updatetime`=1540549544  WHERE  `id` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"__token__\":\"52f28ea477aaa14295ab5a720a4e9e91\",\"username\":\"admin\"}' , '/index.php/admin/index/login' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549544) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:44+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:44+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.023000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `fa_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:57+08:00 ] 127.0.0.1 POST /index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command' , '在线命令管理' , 'fa fa-terminal' , 1 , 0 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.004000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/index' , '查看' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/add' , '添加' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/detail' , '详情' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/execute' , '运行' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/del' , '删除' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"command\",\"faversion\":\"1.0.0.20180911_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549557) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:57+08:00 ] 127.0.0.1 POST /index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_auth_rule` WHERE  `name` = 'general' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `remark` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('general/database' , '数据库管理' , 'fa fa-database' , '可在线进行一些简单的数据库表优化或修复,查看表结构和数据。也可以进行SQL语句的操作' , 1 , 2 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.004000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('general/database/index' , '查看' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('general/database/query' , '查询' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('general/database/backup' , '备份' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('general/database/restore' , '恢复' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1540549557 , 1540549557) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"database\",\"faversion\":\"1.0.0.20180911_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549557) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:58+08:00 ] 127.0.0.1 POST /index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example' , '开发示例管理' , 'fa fa-magic' , 1 , 0 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.005000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/bootstraptable' , '表格完整示例' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/bootstraptable/index' , '查看' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/bootstraptable/detail' , '详情' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/bootstraptable/change' , '变更' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/bootstraptable/del' , '删除' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/bootstraptable/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/customsearch' , '自定义搜索' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.003000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/customsearch/index' , '查看' , 0 , 'fa fa-circle-o' , 104 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/customsearch/del' , '删除' , 0 , 'fa fa-circle-o' , 104 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/customsearch/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 104 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/colorbadge' , '彩色角标' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/colorbadge/index' , '查看' , 0 , 'fa fa-circle-o' , 108 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/colorbadge/del' , '删除' , 0 , 'fa fa-circle-o' , 108 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/colorbadge/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 108 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/controllerjump' , '控制器间跳转' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.003000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/controllerjump/index' , '查看' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/controllerjump/del' , '删除' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/controllerjump/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/cxselect' , '多级联动' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/cxselect/index' , '查看' , 0 , 'fa fa-circle-o' , 116 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/cxselect/del' , '删除' , 0 , 'fa fa-circle-o' , 116 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/cxselect/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 116 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.003000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/multitable' , '多表格示例' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/multitable/index' , '查看' , 0 , 'fa fa-circle-o' , 120 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/multitable/del' , '删除' , 0 , 'fa fa-circle-o' , 120 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/multitable/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 120 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/relationmodel' , '关联模型示例' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/relationmodel/index' , '查看' , 0 , 'fa fa-circle-o' , 124 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/relationmodel/del' , '删除' , 0 , 'fa fa-circle-o' , 124 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/relationmodel/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 124 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/tabletemplate' , '表格模板示例' , 'fa fa-table' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/tabletemplate/index' , '查看' , 0 , 'fa fa-circle-o' , 128 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/tabletemplate/detail' , '详情' , 0 , 'fa fa-circle-o' , 128 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/tabletemplate/del' , '删除' , 0 , 'fa fa-circle-o' , 128 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/tabletemplate/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 128 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/baidumap' , '百度地图示例' , 'fa fa-map-pin' , 1 , 97 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/baidumap/index' , '查看' , 0 , 'fa fa-circle-o' , 133 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.003000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/baidumap/map' , '详情' , 0 , 'fa fa-circle-o' , 133 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('example/baidumap/del' , '删除' , 0 , 'fa fa-circle-o' , 133 , 'normal' , 1540549558 , 1540549558) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"example\",\"faversion\":\"1.0.0.20180911_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549558) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:58+08:00 ] 127.0.0.1 POST /index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"summernote\",\"faversion\":\"1.0.0.20180911_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549558) [ RunTime:0.011000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:25:59+08:00 ] 127.0.0.1 POST /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549559) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:26:00+08:00 ] 127.0.0.1 POST /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549560) [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:26:00+08:00 ] 127.0.0.1 POST /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549560) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:26:01+08:00 ] 127.0.0.1 POST /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_admin_log` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] INSERT INTO `fa_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36' , '127.0.0.1' , 1540549561) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:26:06+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:26:07+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:26:07+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:host=127.0.0.1;dbname=fastadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_group_access` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `fa_auth_group_access` `aga` LEFT JOIN `fa_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_auth_rule` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `fa_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `fa_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000000s ]
