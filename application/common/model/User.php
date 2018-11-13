@@ -75,8 +75,8 @@ class User Extends Model
     }
 
     /**
-     * 变更会员积分
-     * @param int $score    积分
+     * 变更会员钻石
+     * @param int $score    钻石
      * @param int $user_id  会员ID
      * @param string $memo  备注
      */
@@ -96,8 +96,8 @@ class User Extends Model
     }
 
     /**
-     * 根据积分获取等级
-     * @param int $score 积分
+     * 根据钻石获取等级
+     * @param int $score 钻石
      * @return int
      */
     public static function nextlevel($score = 0)

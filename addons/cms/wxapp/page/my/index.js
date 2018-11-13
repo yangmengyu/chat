@@ -32,7 +32,7 @@ Page({
   showTips: function (event) {
     var tips = {
       balance: '余额通过插件的出售获得',
-      score: '积分可以通过回答问题获得',
+      score: '钻石可以通过回答问题获得',
       level: '等级通过官网活跃进行升级',
     };
     var type = event.currentTarget.dataset.type;

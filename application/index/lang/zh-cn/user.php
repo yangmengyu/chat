@@ -9,7 +9,7 @@ return [
     'Email'                                 => '邮箱',
     'Captcha'                               => '验证码',
     'Lv'                                    => 'Lv',
-    'Score'                                 => '积分',
+    'Score'                                 => '钻石',
     'Day'                                   => '天',
     'Intro'                                 => '个性签名',
     'Successions'                           => '连续登录',

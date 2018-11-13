@@ -24,7 +24,7 @@
       <view class="zan-col zan-col-8">
         <view bindtap="showTips" data-type="score">
           <view class="nums">{{ userInfo.score }}</view>
-          <view class="placeholder">积分</view>
+          <view class="placeholder">钻石</view>
         </view>
       </view>
       <view class="zan-col zan-col-8">

@@ -128,7 +128,7 @@ class Index extends Controller
         //本月签到数
         $len = $this->model->where($w)->order('sign_time desc')->count();
 
-        //额外获得积分数
+        //额外获得钻石数
         $extra_total = $this->model->where($w)->sum('sign_extra_reward');
         $extra_total = $extra_total ? $extra_total : 0;
 
@@ -230,12 +230,12 @@ class Index extends Controller
 
         if ($this->model->insert($data))
         {
-            //签到积分增加日志
+            //签到钻石增加日志
             \app\common\model\User::score($score, $this->auth->id, '连续签到奖励');
 
             if ($extra_reward > 0)
             {
-                //额外获得积分记录
+                //额外获得钻石记录
                 \app\common\model\User::score($extra_reward, $this->auth->id, '额外签到奖励');
             }
             $this->result(['max_sign' => $max_sign_num, 'month_sign_num' => $len, 'reward' => ($score + $extra_reward)], 1, __('sign success tip', $max_sign_num));

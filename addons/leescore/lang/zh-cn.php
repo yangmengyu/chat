@@ -1,9 +1,9 @@
 <?php
 
-//积分商城
+//钻石商城
 return [
     'empty'              => '没有此类信息',
-    'store title'        => '积分商城',
+    'store title'        => '钻石商城',
     'store order'        => '订单管理',
     'store order detail' => '订单详情',
 
@@ -12,10 +12,10 @@ return [
 
     'sign btn'                                           => '签到有奖',
     'tab buy'                                            => '换购实物',
-    'score buy'                                          => '积分兑换',
+    'score buy'                                          => '钻石兑换',
     'Lucky Draw'                                         => '抽奖大转盘',
-    'le zhuan ji fen'                                    => '乐赚积分',
-    'score prize'                                        => '积分抽奖',
+    'le zhuan ji fen'                                    => '乐赚钻石',
+    'score prize'                                        => '钻石抽奖',
     'hello'                                              => 'Hi，你好',
     'welcome'                                            => '欢迎',
     'login'                                              => '登录',
@@ -26,7 +26,7 @@ return [
     'hot goods'                                          => '热门兑换',
     'more'                                               => '更多',
     'price'                                              => '价格',
-    'score'                                              => '积分',
+    'score'                                              => '积钻石',
     'money'                                              => '元',
     'use num'                                            => '已购买人数',
     'ren'                                                => '人',
@@ -50,7 +50,7 @@ return [
     'order'                                              => '排序',
     'order by time'                                      => '发布时间',
     'order by usenum'                                    => '兑换数量',
-    'order by scoreprice'                                => '积分价格',
+    'order by scoreprice'                                => '钻石价格',
     'order by stock'                                     => '库存',
     'min stock'                                          => '库存不足',
     'goods name'                                         => '商品名称',
@@ -59,7 +59,7 @@ return [
     'address list'                                       => '地址管理',
     'goods detail'                                       => '商品详情',
     'create order'                                       => '创建订单',
-    'min score'                                          => '积分不足',
+    'min score'                                          => '钻石不足',
     'replace pay'                                        => '结算',
     'replace result info'                                => '回馈信息',
     'sn_order'                                           => '兑换码 / 快递单号',

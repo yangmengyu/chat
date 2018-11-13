@@ -42,7 +42,7 @@ class Goods extends Controller
 		//商品类型  虚拟商品-实物商品
 		(input('?get.type') && input('get.type') != '') && $w['type'] = input('get.type');
 
-		//积分查询
+		//钻石查询
 		$score_start = (input('?get.start') && !empty(input('get.start'))) ? abs(input("get.start")) : false;
 		$score_end = (input('?get.end') && !empty(input('get.end'))) ? abs(input("get.end")) : false;
 
@@ -57,7 +57,7 @@ class Goods extends Controller
         $w['firsttime'] = ['elt',time()];
         //结束展示时间
         $w['lasttime'] = ['egt',time()];
-		//仅显示积分兑换模式下的商品
+		//仅显示钻石兑换模式下的商品
 		$w['paytype'] = 0;
 
 		$page = request()->param('page');
@@ -102,7 +102,7 @@ class Goods extends Controller
 			return json($result);
 		}
 
-		//积分验证
+		//钻石验证
 		$id = input('get.id');
 		$info = $this->model->where("id = $id")->find();
 		if($this->auth->score < $info['scoreprice'])

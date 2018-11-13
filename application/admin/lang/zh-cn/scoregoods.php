@@ -19,7 +19,7 @@ return [
     'Pics'  =>  '商品图集',
     'Weigh'  =>  '权重排序',
     'Stock'  =>  '商品库存',
-    'Scoreprice'  =>  '兑换积分',
+    'Scoreprice'  =>  '兑换钻石',
     'Firsttime'  =>  '开放时间',
     'Lasttime'  =>  '结束时间',
     'Money'  =>  '价格',
@@ -32,8 +32,8 @@ return [
     'updatetime'    => '更新时间',
     'depot'           => '仓库',
     'selling'       => '出售中',
-    'score mode'    => '积分模式',
+    'score mode'    => '钻石模式',
     'money mode'         => '金钱模式',
-    'hunhe mode'         => '金币+积分',
+    'hunhe mode'         => '金币+钻石',
 
 ];

@@ -66,7 +66,7 @@ class Order extends Controller
         //商品类型  虚拟商品-实物商品
         (input('?get.type') && !empty(trim(input('get.type')))) && $w['type'] = input('get.type');
 
-        //积分查询
+        //钻石查询
         $score_start = (input('?get.score-start') && empty(trim(input('get.score-start')))) ? input("get.score-start") : false;
         $score_end = (input('?get.score-end') && empty(trim(input('get.score-end')))) ? input("get.score-end") : false;
 
@@ -77,7 +77,7 @@ class Order extends Controller
         //上架中的商品  0=删除，2=上架中，1=仓库中
         $w['status'] = 2;
 
-        //仅显示积分兑换模式下的商品
+        //仅显示钻石兑换模式下的商品
         $w['paytype'] = 0;
 
         //所属该用户的订单
@@ -163,7 +163,7 @@ class Order extends Controller
         }
         $this->member = $this->auth->getUserInfo();
 
-        //积分验证
+        //钻石验证
         $id = input('get.id');
         $info = $this->goods->where("id = $id")->find();
         if ($this->member['score'] < $info['scoreprice']) {
@@ -199,7 +199,7 @@ class Order extends Controller
             $data['goods_id'] = $row['id'];//商品ID
             $data['buy_num'] = 1;//购买数量 默认只能换1个
             $data['goods_type'] = 1; //该商品为虚拟物品 goods_type = 1 为虚拟物品  =0是普通实物
-            $data['type'] = 0; // 0= 积分商城， 1=购物商城。
+            $data['type'] = 0; // 0= 钻石商城， 1=购物商城。
             $data['money'] = $row['money'];
             $data['score'] = $row['scoreprice'];
             $data['pay'] = 1;
@@ -214,8 +214,8 @@ class Order extends Controller
             try {
                 //实例化用户模型
                 $score_log = new \app\common\model\User();
-                //写入积分日志
-                $score_log->score(-$row['scoreprice'], $this->auth->id, '消费积分兑换商品');
+                //写入钻石日志
+                $score_log->score(-$row['scoreprice'], $this->auth->id, '消费钻石兑换商品');
                 //操作库存
                 $this->goods->where("id = $id")->setDec('stock');
                 $this->goods->where("id = $id")->setInc('usenum');
@@ -255,14 +255,14 @@ class Order extends Controller
         $data['goods_id'] = $goodsInfo['id'];//商品ID
         $data['buy_num'] = 1;//购买数量 默认只能换1个
         $data['goods_type'] = 0; //该商品为实物 goods_type = 1 为虚拟物品  = 0是普通实物
-        $data['type'] = 0; // 0= 积分商城， 1=购物商城。
+        $data['type'] = 0; // 0= 钻石商城， 1=购物商城。
         $data['money'] = $goodsInfo['money'];
         $data['score'] = $goodsInfo['scoreprice'];
         $data['address_id'] = $address;
         $data['pay'] = 1;
         $data['status'] = 1;
         $data['paytime'] = time();
-        $data['paytype'] = 'score';//付款方式，score = 积分付款, weixin = 微信支付 , alipay = 支付宝 , paypal = paypal
+        $data['paytype'] = 'score';//付款方式，score = 钻石付款, weixin = 微信支付 , alipay = 支付宝 , paypal = paypal
         $data['isdel'] = 0;
         $data['createtime'] = time();
         $data['other'] = $other;
@@ -270,8 +270,8 @@ class Order extends Controller
         //多表操作，启动事务,确保数据一致性。
         Db::startTrans();
         try {
-            //写入积分日志
-            \app\common\model\User::score(-$goodsInfo['scoreprice'], $this->auth->id, '消费积分兑换商品');
+            //写入钻石日志
+            \app\common\model\User::score(-$goodsInfo['scoreprice'], $this->auth->id, '消费钻石兑换商品');
             //操作库存
             $this->goods->where("id = $gid")->setDec('stock');
             $this->goods->where("id = $gid")->setInc('usenum');

@@ -19,14 +19,14 @@ return array (
   1 => 
   array (
     'name' => 'signnum',
-    'title' => '签到所得积分',
+    'title' => '签到所得钻石',
     'type' => 'number',
     'content' => 
     array (
     ),
     'value' => '0',
     'rule' => 'number',
-    'msg' => '积分必须为正整数',
+    'msg' => '钻石必须为正整数',
     'tip' => '必须为正整数，可以为0',
     'ok' => '符合要求',
     'extend' => '',

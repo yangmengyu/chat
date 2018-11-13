@@ -149,5 +149,6 @@ return [
     'Days' => '小时',
     'Before' => '前',
     'Set to cover' => '设为封面',
+    'store title' => '钻石商城',
 
 ];

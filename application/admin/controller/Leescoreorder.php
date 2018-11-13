@@ -50,8 +50,8 @@ class Leescoreorder extends Backend
             Db::name('leescore_order')->where("id",$id)->update($data);
             //实例化用户模型
             $score_log = new \app\common\model\User();
-            //写入积分日志
-            $score_log->score($row['score'], $row['uid'], '订单驳回返还积分');
+            //写入钻石日志
+            $score_log->score($row['score'], $row['uid'], '订单驳回返还钻石');
             Db::commit();
             $this->success(__('order faild tip success'));
         } catch (Exception $e) {

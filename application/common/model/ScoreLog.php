@@ -5,7 +5,7 @@ namespace app\common\model;
 use think\Model;
 
 /**
- * 会员积分日志模型
+ * 会员钻石日志模型
  */
 class ScoreLog Extends Model
 {
