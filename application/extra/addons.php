@@ -12,6 +12,10 @@ return array (
     array (
       0 => 'epay',
     ),
+    'leescorehook' => 
+    array (
+      0 => 'leescore',
+    ),
     'leesignhook' => 
     array (
       0 => 'leesign',
@@ -34,6 +38,10 @@ return array (
     '/example/d/[:name]' => 'example/demo/index',
     '/example/d1/[:name]' => 'example/demo/demo1',
     '/example/d2/[:name]' => 'example/demo/demo2',
+    '/leescoregoods$' => 'leescore/goods/index',
+    '/leescoreorder$' => 'leescore/order/index',
+    '/score$' => 'leescore/index/index',
+    '/address$' => 'leescore/address/index',
     '/leesign$' => 'leesign/index/index',
     '/third$' => 'third/index/index',
     '/third/connect/[:platform]' => 'third/index/connect',

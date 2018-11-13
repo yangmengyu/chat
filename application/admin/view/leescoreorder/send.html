@@ -1,0 +1,111 @@
+<form id="send-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+	<fieldset>
+		<legend>
+			{:__('order detail info')}
+		</legend>
+		<!-- 订单信息 -->
+		<div class="col-md-10 col-md-offset-1 col-sm-12">
+			<div class="box radius-none">
+				<div class="box-header with-border">
+					{:__('order id')}：{$vo.order_id}
+				</div>
+				<div class="box-body">
+					<div class="col-md-6 padding">
+						{:__('goods name')}: {$vo.goodsDetail.name}
+					</div>
+					<div class="col-md-6 padding">
+						{:__('buy num')}: {$vo.buy_num}
+					</div>
+					<div class="col-md-6 padding">
+						{:__('price')}: {$vo.score}{:__('score')}
+					</div>
+					<div class="col-md-6 padding">
+						{:__('order status')}: 
+						{switch name="vo.status"}
+							{case value="-2"} <span class="label label-danger">{:__('order faild')}</span> {/case}
+							{case value="-1"} <span class="label label-default">{:__('Status -1')}</span> {/case}
+							{case value="0"} <span class="label label-default">{:__('unpaid')}</span> {/case}
+							{case value="1"} <span class="label label-success">{:__('paid')}</span> {/case}
+							{case value="2"} <span class="label label-info">{:__('shipped')}</span> {/case}
+							{case value="3"} <span class="label label-primary">{:__('sign for')}</span> {/case}
+							{case value="4"} <span class="label label-warning">{:__('outing')}</span> {/case}
+							{case value="5"} <span class="label label-danger">{:__('out success')}</span> {/case}
+							{default /} {:__('order error')}
+						{/switch}
+					</div>
+					<div class="col-md-6 padding">
+						{:__('pay time')}: {$vo.paytime|date="m-d-Y H:i:s",###}
+					</div>
+					<div class="col-md-6 padding">
+						{:__('pay type')}: {:__($vo['paytype'])}{:__('pay text')}
+					</div>
+					<div class="col-md-12 padding">
+						{:__('order other')}: {$vo.other}
+						<p></p>
+					</div>
+					<div class="col-md-12 padding">
+						<fieldset>
+							{if($vo.goods_type == 0)}
+								<legend><h3>{:__('consignee user info')}</h3></legend>
+								<div class="col-md-6 padding">
+									{:__('country')}: {$vo.addressInfo.country}
+								</div>
+								<div class="col-md-6 padding">
+									{:__('province / Region')}: {$vo.addressInfo.region}
+								</div>
+								<div class="col-md-6 padding">
+									{:__('city')}: {$vo.addressInfo.city}
+								</div>
+								<div class="col-md-6 padding">
+									{:__('zip code')}: {$vo.addressInfo.zip}
+								</div>
+								<div class="col-md-6 padding">
+									{:__('mobile')}: {$vo.addressInfo.mobile}
+								</div>
+								<div class="col-md-12 padding">
+									{:__('detail address')}: {$vo.addressInfo.address}
+								</div>
+							{/if}
+						</fieldset>
+
+						<fieldset>
+							<legend><h3>{:__('replace result info')}</h3></legend>
+								<div class="form-group">
+									<input type="hidden" name="ids" id="ids" value="{$vo.id}">
+									<label for="c-virtual_sn" class="control-label col-xs-12 col-sm-2">{:__('virtual sn')}:</label>
+									<div class="col-xs-12 col-sm-8">
+										<input placeholder="驳回时无需填写" id="c-virtual_sn" data-rule="required" class="form-control" name="virtual_sn" type="text" value="{$vo.virtual_sn}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="c-virtual_name" class="control-label col-xs-12 col-sm-2">{:__('virtual name')}:</label>
+									<div class="col-xs-12 col-sm-8">
+										<input placeholder="驳回时无需填写" id="c-virtual_name" class="form-control" name="virtual_name" type="text" value="{$vo.virtual_name}">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="c-virtual_other" class="control-label col-xs-12 col-sm-2">{:__('virtual other')}:</label>
+									<div class="col-xs-12 col-sm-8">
+										<textarea name="virtual_other" id="c-virtual_other" class="form-control" rows="10">{$vo.result_other}</textarea>
+									</div>
+								</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 订单信息 -->
+	</fieldset>
+
+	{in name="$vo.status" value="0,1"}
+		<div class="form-group layer-footer">
+			<label class="control-label col-xs-12 col-sm-2"></label>
+			<div class="col-xs-12 col-sm-8">
+				<button type="button" id="send" data-type="send" class="btn btn-success btn-embossed">{:__('send btn')}</button>
+				<button type="button" id="faild" data-type="result" class="btn btn-warning btn-embossed">{:__('order faild')}</button>
+			</div>
+		</div>
+	{/in}
+</form>
