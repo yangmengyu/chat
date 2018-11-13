@@ -101,7 +101,7 @@
 								<br>
 								<br>
 							{else /}
-								<a class="text-white hover-gray" href="{:url('index/user/index')}">{:__('welcome')}, {$user.nickname}(56 Points)</a>
+								<a class="text-white hover-gray" href="{:url('index/user/index')}">{:__('welcome')}, {$user.nickname}(56 {:__('Score')})</a>
 								<br />
 								<a class="text-white hover-gray" href="{:addon_url('leescore/order/index')}">{:__('my orders')}</a>&nbsp;&nbsp;&nbsp;
 								<a class="text-white hover-gray" href="{:url('index/user/logout')}">{:__('logout')}</a>
@@ -111,7 +111,7 @@
 							<div class="row margin-top">
 								<div class="col-md-10 col-md-offset-1">
 									{if($user)}
-										<a target="_blank" href="{:addon_url('leesign/index/index')}" class="btn btn-block btn-default border-none border-radius-big">{:__('sign btn')}</a>
+										<a target="_blank" href="{:url('index/user/sign')}" class="btn btn-block btn-default border-none border-radius-big">{:__('sign btn')}</a>
 									{else /}
 										<a href="{:url('index/user/login')}" class="btn btn-block btn-default border-none border-radius-big">{:__('login')}</a>
 									{/if}
@@ -224,7 +224,7 @@
 											<div class="col-xs-6"><a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}"><img src="{$vo.thumb}" style="max-height: 120px;" class="img-responsive" /></a></div>
 											<div class="col-xs-6">
 												<h4><a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}">{$vo.name}</a></h4>
-												<span class="text-red"><i class="text-yellow fa fa-meetup"></i> <strong>{$vo.scoreprice}</strong> {:__('score')}</span>
+												<span class="text-red"> <i class="fa fa-diamond" style=" color: #e60020;"></i> <strong>{$vo.scoreprice}</strong> {:__('score')}</span>
 												<h5 class="text-muted">{:__('use num')}：{$vo.usenum} {:__('ren')}</h5>
 												<h5>{:__('stock')}：{$vo.stock}</h5>
 												<a href="{:addon_url('leescore/goods/details',array('gid' => $vo['id']))}" class="btn btn-warning border-radius-big border-none btn-block">{:__('buy')}</a>

@@ -26,7 +26,7 @@ return [
     'hot goods'                                          => '热门兑换',
     'more'                                               => '更多',
     'price'                                              => '价格',
-    'score'                                              => '积钻石',
+    'score'                                              => '钻石',
     'money'                                              => '元',
     'use num'                                            => '已购买人数',
     'ren'                                                => '人',
