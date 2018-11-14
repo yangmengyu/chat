@@ -31,12 +31,22 @@
 									{case value="-2"} <span class="label label-danger">{:__('admin faild')}</span> {/case}
 									{case value="0"} <span class="label label-default">{:__('unpaid')}</span> {/case}
 									{case value="1"} <span class="label label-success">{:__('paid')}</span> {/case}
-									{case value="2"} <span class="label label-info">{:__('shipped')}</span> {/case}
+									{case value="2"}
+
+									<span class="label label-info">{:__('shipped')}</span>
+									{if $vo.uid !== $vo.giver_id}
+									<button class="btn btn-danger btn-xs" id="rejection" data-order_id="{$vo.id}">{:__('rejection')}</button>
+									{/if}
+									{/case}
 									{case value="3"} <span class="label label-primary">{:__('sign for')}</span> {/case}
 									{case value="4"} <span class="label label-warning">{:__('outing')}</span> {/case}
 									{case value="5"} <span class="label label-danger">{:__('out success')}</span> {/case}
+									{case value="6"} <span class="label label-default">{:__('rejection')}</span> {/case}
 									{default /} {:__('order error')}
 								{/switch}
+							</div>
+							<div class="col-md-6 padding">
+								{:__('Benefactor')}: {$vo.giverUser.nickname}
 							</div>
 							<div class="col-md-6 padding">
 								{:__('pay time')}: {$vo.paytime|date="m-d-Y H:i:s",###}
@@ -44,7 +54,7 @@
 							<div class="col-md-6 padding">
 								{:__('pay type')}: {:__($vo['paytype'])}{:__('pay text')}
 							</div>
-							<div class="col-md-12 padding">
+							<div class="col-md-6 padding">
 								{:__('order other')}: {$vo.other}
 								<p></p>
 							</div>
@@ -69,6 +79,7 @@
 										</div>
 									{/if}
 								</fieldset>
+								{if($vo.goods_type == 0)}
 								<fieldset>
 									<legend><h3>{:__('replace result info')}</h3></legend>
 									{if($vo.status > 1 || $vo.status == -2)}
@@ -98,6 +109,7 @@
 										</div>
 									{/if}
 								</fieldset>
+								{/if}
 							</div>
 						</div>
 					</div>
@@ -107,4 +119,46 @@
         </div>
         {include file="common/script"}
     </body>
+
+	<script src="__ADDON__/js/layer/src/layer.js"></script>
+	<script>
+        $(document).ready(function() {
+            $('#rejection').on('click', function() {
+                var order_id = $(this).data('order_id');
+                layer.confirm('{:__("Make sure to reject the gift (the diamond of gift consumption will be returned to the giver)")}', {
+                    icon: 2,
+                    title: '{:__("action tips")}',
+                    btn: ['{:__("yes")}','{:__("no")}'] //按钮
+                }, function(){
+                    var uri = '{:addon_url("leescore/order/rejection")}';
+                    $.ajax({
+                        url: uri,
+                        type: 'post',
+                        dataType: 'json',
+                        data: {'order_id': order_id},
+
+                        success: function(result){
+                            if(result.code != true)
+                            {
+                                console.log(result);
+                            }else
+                            {
+                                layer.msg('{:__("action success")}');
+                                parent.layer.close(index);
+
+                            }
+                        }
+                    });
+
+                }, function(){
+
+                });
+
+                setInterval(function () {
+                    window.parent.location.reload();
+                },1500)
+                parent.layer.close(index);
+			});
+		});
+	</script>
 </html>

@@ -37,27 +37,27 @@
 										{$item.scoreprice} {:__('score')}
 									{/switch}
 								</div>
-								{if($item.type != 1)}
-									<div class="padding">
-										{:__('order other')}
-										<br>
-										<br>
-										<textarea name="other" id="other" class="form-control" rows="8"></textarea>
-									</div>
-								{/if}
+
+								<div class="padding">
+									{:__('order other')}
+									<br>
+									<br>
+									<textarea name="other" id="other" class="form-control" rows="8"></textarea>
+								</div>
+
 								<br>
 								<br>
 								<div class="col-md-6 clearfix">
-									<a href="javascript:;" data-param="{$item.id}" id="order_pay" class="btn btn-block btn-warning">{:__('replace pay')}</a>
+									<a href="javascript:;" data-param="{$item.id}" data-goods_type="{$item.type}" id="order_pay" class="btn btn-block btn-warning">{:__('replace pay')}</a>
 								</div>
 							</div>
 							
-							{if($item.type != 1)}
+
 								<div class="col-md-6">
-									<h3>{:__('address list')} <a href="javascript:;" class="btn btn-sm btn-warning insert-address pull-right insert-address">{:__('add')}{:__('address')}</a></h3>
+									<h3>{:__('Select recipient')} <a href="javascript:;" class="btn btn-sm btn-warning <!--insert-address--> pull-right search-member">{:__('Search')}{:__('Member')}</a></h3>
 									<br>
 									<ul class="goods-order-address">
-										{if(empty($add))}
+										<!--{if(empty($add))}
 											<li>
 												{:__('empty')}
 											</li>
@@ -81,10 +81,26 @@
 											</li>
 
 										{/volist}
-										<input type="hidden" value="" name="address_id" id="address_id" />
+
+										<li class="margin-bottom item">
+											<div class="media" style="padding: 5px">
+												<div class="media-left">
+													<a href="/index/zone/index/u/3">
+														<img class="media-object" data-src="/uploads/avatar/1531791614-3.png" alt="64x64" style="width: 64px; height: 64px;" src="/uploads/avatar/1531791614-3.png" data-holder-rendered="true">
+													</a>
+												</div>
+												<div class="media-body">
+													<h4 class="media-heading col-md-12"><i class="fa fa-venus text-danger fa-fw"></i>yangmengyu1 , 1 , 安道尔   </h4>
+													<div class="col-md-12">
+														这个人很懒,啥也没写
+													</div>
+												</div>
+											</div>
+										</li>-->
 									</ul>
+									<input type="hidden" value="" name="uid" id="uid" />
 								</div>
-							{/if}
+
 								
 						</div>
 					</div>
@@ -105,7 +121,7 @@
         			$('.goods-order-address .item').eq(0).addClass('active');
         		}
 
-        		$("#address_id").val($('.goods-order-address .active').attr("data-param"));
+        		$("#giver_id").val($('.goods-order-address .active').attr("data-param"));
 
         		
         		//核对收货地址数量最多10个
@@ -133,50 +149,101 @@
         			});
         		});
 
+        		//搜索会员
+                $('.search-member').on('click', function() {
+                    var aurl = "{:addon_url('leescore/order/searchmember')}";
+                    layer.prompt({title: '请输入会员编号或昵称进行搜索', formType: 3}, function(keywords, index){
+                        $.ajax({
+                            url: aurl,
+                            type: 'post',
+                            dataType: 'json',
+                            data: {'keywords':keywords},
+                            success: function(json){
+                                var html = "";
+                                if(json.code == true){
+                                    $.each(json.data,function(key,item) {
+                                        console.log(item);
+                                        html += "<li class=\"margin-bottom item\"  data-param='"+item.id+"'>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t<div class=\"media\" style=\"padding: 5px\">\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"media-left\">\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/index/zone/index/u/3\">\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"media-object\" data-src='"+item.avatar+"' alt='"+item.nickname+"' style=\"width: 64px; height: 64px;\" src='"+item.avatar+"' data-holder-rendered=\"true\">\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"media-body\">\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"media-heading col-md-12\"><i class=\"fa fa-venus text-danger fa-fw\"></i>"+item.nickname+" , "+item.birthday+" , "+item.country+"   </h4>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-12\">\n" ;
+                                        if(item.bio){
+                                            html += item.bio;
+                                        }else{
+                                            html += "{:__('This guy hasnot written anything yet')}";
+                                        }
+                                        html +=  "\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                            "\t\t\t\t\t\t\t\t\t\t</li>";
+                                    });
+								}else{
+									html += "<li>"+"{:__('empty')}"+"</li>";
+								}
+                               $('.goods-order-address').html(html);
+                            }
+                        });
+                        layer.close(index);
+                    });
+				});
+
         		//提交订单
         		$("#order_pay").on('click', function() {
         			var other = $("#other").val();
         			var aurl = "{:addon_url('leescore/order/pay')}";
-        			var address = $("#address_id");
-        			if(address.length > 0 && address.val() == ''){
-        				$("#address_id").focus();
+        			var uid = $("#uid");
+        			var gid = $('#order_pay').data('param');
+        			var goods_type = $('#order_pay').data('goods_type');
+        			if(uid.length > 0 && uid.val() == ''){
+        				$("#uid").focus();
         				layer.msg("{:__('art empty tip')}");
         				return false;
         			}
+                    layer.confirm("{:__('Make sure to exchange the goods')}", {
+                        btn: ['{:__("yes")}','{:__("no")}'] //按钮
+                    }, function(){
+                        $.ajax({
+                            url: aurl,
+                            type: 'post',
+                            dataType: 'json',
+                            data: {gid: gid,other: other, uid: uid.val(),'goods_type':goods_type},
+                            success: function(json){
+                                if(json.code == true)
+                                {
+                                    //关闭iframe
+                                    /*
+                                    parent.layer.alert(json.msg, {
+                                        icon: 1,
+                                        skin: 'layer-ext-moon'
+                                    });
+                                    */
+                                    layer.confirm(json.msg, {
+                                        btn: ['{:__("yes")}','{:__("no")}'] //按钮
+                                    }, function(){
+                                        parent.location.href = "{:addon_url('leescore/order/index')}";
+                                    }, function(){
+                                        parent.layer.close(index);
+                                    });
 
-        			$.ajax({
-        				url: aurl,
-        				type: 'post',
-        				dataType: 'json',
-        				data: {gid: $(this).attr("data-param"),other: other, address: address.val()},
 
-        				success: function(json){
-        					if(json.code == true)
-        					{
-        						//关闭iframe
-        						/*
-								parent.layer.alert(json.msg, {
-									icon: 1,
-									skin: 'layer-ext-moon' 
-								});
-								*/
-								layer.confirm(json.msg, {
-									btn: ['{:__("yes")}','{:__("no")}'] //按钮
-								}, function(){
-									parent.location.href = "{:addon_url('leescore/order/index')}";
-								}, function(){
-									parent.layer.close(index);
-								});
+                                }else{
+                                    layer.alert(json.msg, {
+                                        icon: 2,
+                                        skin: 'layer-ext-moon'
+                                    });
+                                }
+                            }
+                        });
+                    }, function(){
 
-							    
-        					}else{
-        						layer.alert(json.msg, {
-        							icon: 2,
-        							skin: 'layer-ext-moon'
-        						});
-        					}
-        				}
-        			});	
+                    });
+
         		});
 
 
@@ -198,11 +265,10 @@
 						content: eurl //iframe的url
 					});
         		});
-
-        		$('.goods-order-address .item').on('click', function() {
+                $(".goods-order-address").on("click",'.item',function(){
         			$('.goods-order-address .item').removeClass('active');
         			$(this).addClass('active');
-        			$("#address_id").val($(this).attr("data-param"));
+        			$("#uid").val($(this).attr("data-param"));
         		});
         	});
         </script>

@@ -6,9 +6,11 @@ return [
     'store title'        => '钻石商城',
     'store order'        => '订单管理',
     'store order detail' => '订单详情',
+    'Languages' => '多语言',
 
     'User center'     => '个人中心',
     'Change password' => '修改密码',
+    'Member' => '会员',
 
     'sign btn'                                           => '签到有奖',
     'tab buy'                                            => '换购实物',
@@ -68,7 +70,7 @@ return [
     'virtual sign time'                                  => '签收时间',
     'goods replace ask'                                  => '该商品需要等待管理员审核，您确定要兑换该商品吗？',
     'coupon order success'                               => '您的兑换申请已经提交，管理员会在48小时内为您处理，请您耐心等待，谢谢！',
-    'gift order success'                                 => '兑换成功，我们将会在3个工作日内与您取得联系，并给您发货，您可以在订单中心查看订单状态，您是否立即前往订单中心查看？',
+    'gift order success'                                 => '兑换成功，您可以在订单中心查看订单状态，您是否立即前往订单中心查看？',
 
 
     //detail
@@ -96,9 +98,14 @@ return [
     'order detail'                                       => '订单详情',
     'order sign'                                         => '确认收货',
     'order sign tip'                                     => '您确定已经收到商家给您发的包裹，并进行签收操作吗？',
+    'virtual order sign tip'                            => '您确定接收此礼品并在个人空间中展示？',
     'delete order tip'                                   => '您确定要删除该订单吗？',
     'Waiting for the administrator to deliver the goods' => '等待管理员发货中',
     'admin faild'                                        => '驳回',
+    'Select recipient'                                        => '选择收礼人',
+    'This guy hasnot written anything yet' => '这个人很懒,啥也没写',
+    'Benefactor' => '赠送者',
+    'Select the shipping address' => '选择收货地址',
 
     //order details
     'order detail param error'                           => '没有找到您要找的订单',
@@ -113,6 +120,10 @@ return [
     'weixin'                                             => '微信',
     'alipay'                                             => '支付宝',
     'pay text'                                           => '支付',
+    'rejection'                                           => '拒收',
+    'Make sure to reject the gift (the diamond of gift consumption will be returned to the giver)' => '确定拒绝该礼物(礼物消费的钻石将返还给赠送者)',
+    'Buying diamonds for goods' => '消费钻石兑换商品',
+    'Gifts refused to be returned to diamond' => '赠送礼物拒收返还钻石',
 
 
     //Address
@@ -145,5 +156,7 @@ return [
     'now register'                                       => '立即注册',
     'province / city / xian'                             => '省/市/区',
     'use stocks'                                         => '已兑换',
+    'Make sure to exchange the goods'                                         => '确定兑换该商品？',
+
 
 ];

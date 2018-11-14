@@ -11,7 +11,8 @@ class Order extends Controller
     protected $model = null;
     protected $member = null;
     protected $goods = null;
-
+    protected $noNeedLogin = '';
+    protected $noNeedRight = '*';
     public function _initialize()
     {
         parent::_initialize();
@@ -29,24 +30,24 @@ class Order extends Controller
     {
 
         //当前会员的订单
-        $w['uid'] = $this->member['id'];
+        $w['order.uid'] = $this->member['id'];
         //正常订单
-        $w['isdel'] = array('neq', 1);
+        $w['order.isdel'] = array('neq', 1);
         $listType = input('?get.listType') ? input('get.listType') : false;
 
-        $listType ? ($w['status'] = $listType) : $w['status'] = array('neq', -1);
+        $listType ? ($w['order.status'] = $listType) : $w['order.status'] = array('neq', -1);
         $keywords = '';
         if ($this->request->isPost()) {
             $keywords = trim(input('post.keywords'));
-            $w['order_id'] = array('like', "%$keywords%");
+            $w['order.order_id'] = array('like', "%$keywords%");
         }
 
         $list = $this->model
             ->with('goodsDetail')
+            ->with('giverUser')
             ->where($w)
             ->order('createtime desc')
             ->paginate(10, false, ['param' => $this->request->param()]);
-
         $this->view->assign('list', $list);
         $this->view->assign('keywords', $keywords);
         return $this->fetch();
@@ -114,11 +115,35 @@ class Order extends Controller
         }
 
         // $this->model = model('order');
-        $detail = $this->model->where("id = $id")->find();
+        $detail = $this->model
+            ->with('giverUser')
+            ->where("order.id = $id")
+            ->find();
         //dump($detail->addressInfo->address);
-
         $this->view->assign('vo', $detail);
         return $this->fetch();
+    }
+
+    /*
+     * 选择地址
+     * */
+    public function selectaddress(){
+        if($this->request->isAjax()){
+            $order_id = $this->request->request('order_id');
+            $address_id = $this->request->request('address_id');
+            $res = $this->model->where('id',$order_id)->update(['address_id'=>$address_id]);
+            if($res){
+                $this->success();
+            }else{
+                $this->error();
+            }
+        }
+        $user_id = $this->auth->id;
+        $order_id = $this->request->request('id');
+        $address = \addons\leescore\model\Address::where('userid',$user_id)->select();
+        $this->view->assign('address',$address);
+        $this->view->assign('order_id',$order_id);
+        return $this->view->fetch();
     }
 
     public function delete()
@@ -236,17 +261,23 @@ class Order extends Controller
         }
     }
 
+    //普通商品兑换
     public function pay()
     {
         $gid = input('post.gid');
         $other = trim(input('post.other'));
-        $address = input("post.address");
+        $uid = input("post.uid");
+        $goods_type = input("post.goods_type");
+
+        $address_id = input("post.address_id",0);
+        $is_gift = input("post.is_gift",1);
         $goodsInfo = $this->goods->where("id = $gid")->find();
+
 
         //插件配置
         $add_config = get_addon_config('leescore');
         //用户编号
-        $data['uid'] = $this->auth->id;
+        $data['uid'] = $uid;
         $data['address_id'] = 0; //虚拟物品不需要填写收货地址
         //生成订单号  表前缀 + 随机数2位 + 时间戳10位 + 微秒3位 + 用户编号3位
         $sn = ucfirst(trim($add_config['order_prefix'])) . mt_rand(10, 99) . sprintf("%010d", (time() - 946656000)) . sprintf("%03d", (float)microtime() * 1000) . sprintf("%03d", $this->member['id']);
@@ -254,24 +285,25 @@ class Order extends Controller
 
         $data['goods_id'] = $goodsInfo['id'];//商品ID
         $data['buy_num'] = 1;//购买数量 默认只能换1个
-        $data['goods_type'] = 0; //该商品为实物 goods_type = 1 为虚拟物品  = 0是普通实物
+        $data['goods_type'] = $goods_type; //该商品为实物 goods_type = 1 为虚拟物品  = 0是普通实物
         $data['type'] = 0; // 0= 钻石商城， 1=购物商城。
         $data['money'] = $goodsInfo['money'];
         $data['score'] = $goodsInfo['scoreprice'];
-        $data['address_id'] = $address;
+        $data['address_id'] = $address_id;
         $data['pay'] = 1;
-        $data['status'] = 1;
+        $data['status'] = $goods_type ? 2 : 1;//如果是虚拟物品状态直接为已发货
         $data['paytime'] = time();
         $data['paytype'] = 'score';//付款方式，score = 钻石付款, weixin = 微信支付 , alipay = 支付宝 , paypal = paypal
         $data['isdel'] = 0;
         $data['createtime'] = time();
         $data['other'] = $other;
-
+        $data['is_gift'] = $is_gift;
+        $data['giver_id'] = $this->auth->id;
         //多表操作，启动事务,确保数据一致性。
         Db::startTrans();
         try {
             //写入钻石日志
-            \app\common\model\User::score(-$goodsInfo['scoreprice'], $this->auth->id, '消费钻石兑换商品');
+            \app\common\model\User::score(-$goodsInfo['scoreprice'], $this->auth->id, __('Buying diamonds for goods'));
             //操作库存
             $this->goods->where("id = $gid")->setDec('stock');
             $this->goods->where("id = $gid")->setInc('usenum');
@@ -290,6 +322,48 @@ class Order extends Controller
             die($e->getMessage());
         }
 
+    }
+
+    //搜索会员
+    public function searchmember(){
+        $keywords = $this->request->request('keywords');
+        $user_model = new \app\common\model\User();
+        $users = Db::name('user')
+            ->field('id,avatar,nickname,birthday,country,bio')
+            ->where('nickname','like',"%$keywords%")
+            ->whereOr('id',$keywords)
+            ->where('status','normal')
+            ->select();
+        if($users){
+            foreach ($users as $key => $user){
+                $users[$key]['birthday'] = $user_model->birthday($user['birthday']);
+            }
+        }else{
+            $this->error();
+        }
+        $this->success('','',$users);
+    }
+
+    //拒收订单处理
+    public function rejection(){
+        $order_id = $this->request->request('order_id');
+        $row = $this->model->where("id = $order_id")->find();
+        $data = [ 'status' => '6'];
+        // 启动事务
+        Db::startTrans();
+        try {
+            Db::name('leescore_order')->where("id",$order_id)->update($data);
+            //实例化用户模型
+            $score_log = new \app\common\model\User();
+            //写入钻石日志
+            $score_log->score($row['score'], $row['giver_id'], __('Gifts refused to be returned to diamond'));
+            Db::commit();
+            $this->success();
+        } catch (Exception $e) {
+            // 回滚事务
+            Db::rollback();
+            die($e->getMessage());
+        }
     }
 
 }

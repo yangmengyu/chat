@@ -37,4 +37,8 @@ class Order Extends Model
     {
         return $this->belongsTo('Address','address_id');
     }
+    public function giverUser()
+    {
+        return $this->belongsTo('User', 'giver_id')->setEagerlyType(0);
+    }
 }

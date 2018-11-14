@@ -51,6 +51,11 @@ class LeescoreOrder extends Model
         return ['0' => __('Type 0'),'1' => __('Type 1')];
     }
 
+    public function getGoodsTypeList()
+    {
+        return ['0' => __('Goodstype 0'),'1' => __('Goodstype 1')];
+    }
+
     public function getPayList()
     {
         return ['0' => __('Pay 0'),'1' => __('Pay 1'),'2' => __('Pay 2')];

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{:__('store title')} – {:__('Select the shipping address')}</title>
+    {include file="common/meta"}
+</head>
+<body class="padding-top">
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- 确认订单信息 -->
+        <div class="col-sm-12">
+            <div class="box-body">
+
+                <div class="row">
+
+
+                    <div class="col-md-12">
+                        <h3>{:__('address list')} <a href="javascript:;" class="btn btn-sm btn-warning insert-address pull-right insert-address">{:__('add')}{:__('address')}</a></h3>
+                        <br>
+                        <ul class="goods-order-address">
+                            {if(empty($address))}
+                            <li>
+                                {:__('empty')}
+                            </li>
+                            {/if}
+                            {volist name="address" id="vi"}
+                            <li {if($vi.status == 1)}class="margin-bottom item active" {else /}class="margin-bottom item"{/if} data-param="{$vi.id}">
+                            <div class="col-sm-10 padding">
+                                <ul>
+                                    <li class="pull-left">
+                                        {:__('zip code')}：{$vi.zip} {:__('mobile')}：{$vi.mobile}  {:__('consignee')}：{$vi.firstname} {$vi.lastname}
+                                        <p class="padding-top h5 bg-default">{:__('address')}：{$vi.country} {$vi.region} {$vi.city} {$vi.address}</p>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-xs-2 no-padding">
+                                <a href="javascript:;" data-id="{$vi.id}" style="height: 100%; line-height: 100%" class="btn btn-flat btn-info btn-block edit-btn">{:__('edit')}</a>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            </li>
+
+                            {/volist}
+                            <input type="hidden" value="" name="address_id" id="address_id" />
+                            <input type="hidden" value="{$order_id}" name="order_id" id="order_id" />
+                        </ul>
+                        <div class="col-md-6 clearfix">
+                            <a href="javascript:;"  class="btn btn-block btn-success save-btn">{:__('save')}</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- ./ 确认订单信息 -->
+    </div>
+</div>
+{include file="common/script"}
+<!-- Layer -->
+<script src="__ADDON__/js/layer/src/layer.js"></script>
+<script>
+    $(document).ready(function() {
+        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+        var active = $(".goods-order-address .active");
+
+        if(active.length < 1)
+        {
+            $('.goods-order-address .item').eq(0).addClass('active');
+        }
+
+        $("#address_id").val($('.goods-order-address .active').attr("data-param"));
+
+
+        //核对收货地址数量最多10个
+        $('.insert-address').on('click', function() {
+            $.ajax({
+                url: '{:addon_url("leescore/address/check")}',
+                type: 'get',
+                dataType: 'json',
+
+                success: function (result)
+                {
+                    if(result >= 10) return false;
+                    layer.open({
+                        type: 2,
+                        title: '{:__("address")}{:__("add")}',
+                        cancel: function(){
+                            window.location.reload();
+                        },
+                        shadeClose: true,
+                        shade: 0.7,
+                        area: ['100%', '100%'],
+                        content: '{:addon_url("leescore/address/add")}' //iframe的url
+                    });
+                }
+            });
+        });
+        $('.save-btn').on('click', function() {
+
+            var address = $('#address_id'),order_id = $('#order_id').val(),address_id = address.val();
+
+            if(address.length > 0 && address.val() == ''){
+                layer.msg("{:__('art empty tip')}");
+                return false;
+            }
+
+            $.ajax({
+                url: '{:addon_url("leescore/order/selectaddress")}',
+                type: 'post',
+                dataType: 'json',
+                data: {'order_id':order_id,'address_id':address_id},
+                success: function (result)
+                {
+                    if(result.code != true)
+                    {
+                        layer.msg('{:__("action error")}');
+                        console.log(result);
+                    }else
+                    {
+                        layer.msg('{:__("action success")}');
+
+                        setInterval(function () {
+                            window.parent.location.reload();
+                        },1500);
+                    }
+
+                }
+            });
+
+
+        });
+
+        $('.edit-btn').on('click', function() {
+            var bwith = $("body").width();
+            var id = $(this).attr('data-id');
+            var w = bwith < 768 ? '100%' : '100%';
+            var eurl = '{:addon_url("leescore/address/edit")}';
+            eurl = eurl + "?id="+ id;
+            layer.open({
+                type: 2,
+                title: '{:__("address")}{:__("edit")}',
+                shadeClose: true,
+                cancel: function(){
+                    window.location.reload();
+                },
+                shade: 0.7,
+                area: [w, w],
+                content: eurl //iframe的url
+            });
+        });
+
+        $('.goods-order-address .item').on('click', function() {
+            $('.goods-order-address .item').removeClass('active');
+            $(this).addClass('active');
+            $("#address_id").val($(this).attr("data-param"));
+        });
+    });
+</script>
+</body>
+</html>

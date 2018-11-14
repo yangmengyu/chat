@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-13 18:21:49
+Date: 2018-11-14 18:25:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `fa_admin` (
 -- ----------------------------
 -- Records of fa_admin
 -- ----------------------------
-INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1542102784', '1492186163', '1542102784', '31dd6d4c-64e9-4da9-9636-d1684c40c635', 'normal');
+INSERT INTO `fa_admin` VALUES ('1', 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', '0', '1542156328', '1492186163', '1542156328', 'f77c909f-11f7-48e6-b687-8c28d5086ddd', 'normal');
 INSERT INTO `fa_admin` VALUES ('2', 'admin2', 'admin2', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '/assets/img/avatar.png', 'admin2@fastadmin.net', '0', '1505450906', '1492186163', '1505450906', 'df45fdd5-26f4-45ca-83b3-47e4491a315a', 'normal');
 INSERT INTO `fa_admin` VALUES ('3', 'admin3', 'admin3', '1c11f945dfcd808a130a8c2a8753fe62', 'WOKJEn', '/assets/img/avatar.png', 'admin3@fastadmin.net', '0', '1530863546', '1492186201', '1530863607', '', 'normal');
 
@@ -60,7 +60,7 @@ CREATE TABLE `fa_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=470 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=484 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of fa_admin_log
@@ -534,6 +534,20 @@ INSERT INTO `fa_admin_log` VALUES ('466', '1', 'admin', '/admin/leescoregoods/ed
 INSERT INTO `fa_admin_log` VALUES ('467', '1', 'admin', '/admin/leescoregoods/edit/ids/7?dialog=1', '', '{\"dialog\":\"1\",\"row\":{\"category_id\":\"1\",\"name\":\"\\u8fd9\\u53ea\\u662f\\u4e00\\u6761\\u6d4b\\u8bd5\\u6570\\u636e\",\"paytype\":\"1\",\"type\":\"1\",\"status\":\"2\",\"thumb\":\"\\/uploads\\/20181022\\/2065ed66c1b78922febe2c276ae8deba.jpg\",\"pics\":\"\\/uploads\\/20181022\\/2065ed66c1b78922febe2c276ae8deba.jpg,\\/uploads\\/20181022\\/908ff9adc1f336d0307089b002e8e89b.png,\\/uploads\\/20181022\\/178ca4936e6b303f7257c2f504aa12f9.jpg\",\"weigh\":\"7\",\"stock\":\"99998\",\"scoreprice\":\"1\",\"firsttime\":\"2018-10-22 15:50:22\",\"lasttime\":\"2019-10-22 15:50:22\",\"money\":\"1\",\"usenum\":\"1\",\"flag\":[\"index\",\"hot\",\"recommend\",\"new\"],\"rule\":\"\\u4e0d\\u9650\\u5236\\u5151\\u6362\\u6b21\\u6570\\uff0c\\u6d3b\\u52a8\\u6709\\u6548\\u671f1\\u5e74\\uff0c\\u7ed3\\u675f\\u540e\\u4e0d\\u53ef\\u5151\\u6362\",\"body\":\"\\u4e0d\\u9650\\u5236\\u5151\\u6362\\u6b21\\u6570\\uff0c\\u6d3b\\u52a8\\u6709\\u6548\\u671f1\\u5e74\\uff0c\\u7ed3\\u675f\\u540e\\u4e0d\\u53ef\\u5151\\u6362\"},\"ids\":\"7\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542087696');
 INSERT INTO `fa_admin_log` VALUES ('468', '1', 'admin', '/admin/leescoreorder/send', '', '{\"ids\":\"6\",\"virtual_sn\":\"\\u6d4b\\u8bd5\",\"virtual_name\":\"\\u6d4b\\u8bd5\",\"virtual_other\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542087850');
 INSERT INTO `fa_admin_log` VALUES ('469', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Faddon%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/addon?ref=addtabs\",\"__token__\":\"27ad1c2dacc49f123be32a29f06b764f\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542102784');
+INSERT INTO `fa_admin_log` VALUES ('470', '1', 'admin', '/admin/index/login?url=%2Fadmin%2Faddon%3Fref%3Daddtabs', '登录', '{\"url\":\"\\/admin\\/addon?ref=addtabs\",\"__token__\":\"e2027b8af2f6ab13cb54943b9ea9804c\",\"username\":\"admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542156328');
+INSERT INTO `fa_admin_log` VALUES ('471', '1', 'admin', '/admin/command/get_field_list', '', '{\"table\":\"fa_admin\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177283');
+INSERT INTO `fa_admin_log` VALUES ('472', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"1\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177295');
+INSERT INTO `fa_admin_log` VALUES ('473', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"2\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177298');
+INSERT INTO `fa_admin_log` VALUES ('474', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"3\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177299');
+INSERT INTO `fa_admin_log` VALUES ('475', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"4\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177299');
+INSERT INTO `fa_admin_log` VALUES ('476', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"5\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177300');
+INSERT INTO `fa_admin_log` VALUES ('477', '1', 'admin', '/admin/command/get_controller_list', '', '{\"q_word\":[\"\"],\"pageNumber\":\"5\",\"pageSize\":\"10\",\"andOr\":\"AND\",\"orderBy\":[[\"name\",\"ASC\"]],\"searchTable\":\"tbl\",\"showField\":\"name\",\"keyField\":\"id\",\"searchField\":[\"name\"],\"name\":\"\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177303');
+INSERT INTO `fa_admin_log` VALUES ('478', '1', 'admin', '/admin/command/command/action/command', '在线命令管理 执行命令', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"1\",\"controllerfile_text\":\"\",\"controllerfile\":\"Leescoreorder.php\",\"action\":\"command\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177306');
+INSERT INTO `fa_admin_log` VALUES ('479', '1', 'admin', '/admin/command/command/action/execute', '在线命令管理 执行命令', '{\"commandtype\":\"menu\",\"allcontroller\":\"0\",\"delete\":\"0\",\"force\":\"1\",\"controllerfile_text\":\"\",\"controllerfile\":\"Leescoreorder.php\",\"action\":\"execute\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177307');
+INSERT INTO `fa_admin_log` VALUES ('480', '1', 'admin', '/admin/auth/rule/edit/ids/388?dialog=1', '权限管理 规则管理 编辑', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"385\",\"name\":\"admin\\/leescoreorder\\/index\",\"title\":\"\\u8ba2\\u5355\\u7ba1\\u7406\",\"icon\":\"fa fa-list\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"},\"ids\":\"388\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177437');
+INSERT INTO `fa_admin_log` VALUES ('481', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177438');
+INSERT INTO `fa_admin_log` VALUES ('482', '1', 'admin', '/admin/auth/rule/edit/ids/388?dialog=1', '权限管理 规则管理 编辑', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"385\",\"name\":\"leescoreorder\",\"title\":\"\\u8ba2\\u5355\\u7ba1\\u7406\",\"icon\":\"fa fa-list\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"},\"ids\":\"388\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177504');
+INSERT INTO `fa_admin_log` VALUES ('483', '1', 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36', '1542177506');
 
 -- ----------------------------
 -- Table structure for fa_area
@@ -4503,7 +4517,7 @@ CREATE TABLE `fa_auth_rule` (
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `pid` (`pid`),
   KEY `weigh` (`weigh`)
-) ENGINE=InnoDB AUTO_INCREMENT=390 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
+) ENGINE=InnoDB AUTO_INCREMENT=397 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
 
 -- ----------------------------
 -- Records of fa_auth_rule
@@ -4676,8 +4690,15 @@ INSERT INTO `fa_auth_rule` VALUES ('384', 'file', '379', 'dynamic/multi', '批�
 INSERT INTO `fa_auth_rule` VALUES ('385', 'file', '0', 'leescore', '积分商城', 'fa fa-list', '', '', '1', '1542078486', '1542078486', '0', 'normal');
 INSERT INTO `fa_auth_rule` VALUES ('386', 'file', '385', 'leescorecategory', '分类管理', 'fa fa-file-text-o', '', '', '1', '1542078486', '1542078486', '0', 'normal');
 INSERT INTO `fa_auth_rule` VALUES ('387', 'file', '385', 'leescoregoods', '商品管理', 'fa fa-list', '', '', '1', '1542078486', '1542078486', '0', 'normal');
-INSERT INTO `fa_auth_rule` VALUES ('388', 'file', '385', 'leescoreorder', '订单管理', 'fa fa-list', '', '', '1', '1542078486', '1542078486', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('388', 'file', '385', 'leescoreorder', '订单管理', 'fa fa-list', '', '', '1', '1542078486', '1542177504', '0', 'normal');
 INSERT INTO `fa_auth_rule` VALUES ('389', 'file', '385', 'leescoreads', '广告位管理', 'fa fa-list', '', '', '1', '1542078486', '1542078486', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('390', 'file', '388', 'leescoreorder/faild', '默认生成的控制器所继承的父类中有index/add/edit/del/multi五个基础方法、des', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('391', 'file', '388', 'leescoreorder/send', 'Send', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('392', 'file', '388', 'leescoreorder/index', '查看', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('393', 'file', '388', 'leescoreorder/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('394', 'file', '388', 'leescoreorder/add', '添加', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('395', 'file', '388', 'leescoreorder/del', '删除', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
+INSERT INTO `fa_auth_rule` VALUES ('396', 'file', '388', 'leescoreorder/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1542177307', '1542177307', '0', 'normal');
 
 -- ----------------------------
 -- Table structure for fa_category
@@ -5029,7 +5050,7 @@ CREATE TABLE `fa_command` (
   `updatetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` enum('successed','failured') NOT NULL DEFAULT 'failured' COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='在线命令表';
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='在线命令表';
 
 -- ----------------------------
 -- Records of fa_command
@@ -5093,6 +5114,7 @@ INSERT INTO `fa_command` VALUES ('63', 'crud', '[\"--force=1\",\"--table=fa_onwa
 INSERT INTO `fa_command` VALUES ('64', 'crud', '[\"--force=1\",\"--table=fa_onwall\",\"--local=0\",\"--relation=fa_user\",\"--relationmode=belongsto\",\"--relationforeignkey=user_id\",\"--relationprimarykey=id\",\"--relationfields=id,nickname,avatar,status\"]', 'php think crud --force=1 --table=fa_onwall --local=0 --relation=fa_user --relationmode=belongsto --relationforeignkey=user_id --relationprimarykey=id --relationfields=id,nickname,avatar,status', 'Build Successed', '1541839262', '1541839262', '1541839262', 'successed');
 INSERT INTO `fa_command` VALUES ('65', 'crud', '[\"--force=1\",\"--table=fa_dynamic\",\"--local=0\",\"--relation=fa_user\",\"--relationmode=belongsto\",\"--relationforeignkey=user_id\",\"--relationprimarykey=id\",\"--relationfields=username,nickname\"]', 'php think crud --force=1 --table=fa_dynamic --local=0 --relation=fa_user --relationmode=belongsto --relationforeignkey=user_id --relationprimarykey=id --relationfields=username,nickname', 'Build Successed', '1542005757', '1542005757', '1542005757', 'successed');
 INSERT INTO `fa_command` VALUES ('66', 'menu', '[\"--controller=Dynamic\"]', 'php think menu --controller=Dynamic', 'Build Successed!', '1542005772', '1542005772', '1542005772', 'successed');
+INSERT INTO `fa_command` VALUES ('67', 'menu', '[\"--controller=Leescoreorder\"]', 'php think menu --controller=Leescoreorder', 'Build Successed!', '1542177307', '1542177307', '1542177307', 'successed');
 
 -- ----------------------------
 -- Table structure for fa_comment_article
@@ -5391,14 +5413,15 @@ CREATE TABLE `fa_leescore_address` (
   `lastname` varchar(255) DEFAULT NULL COMMENT '名字',
   `isdel` int(11) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_leescore_address
 -- ----------------------------
 INSERT INTO `fa_leescore_address` VALUES ('1', '2', '531000', '123123123', '中国', '广西壮族自治区/南宁市/兴宁区', null, null, '123231', '0', '1527133237', '123123', '123123', '0');
 INSERT INTO `fa_leescore_address` VALUES ('2', '3', '12323', '12345678912', '中国', '广西壮族自治区/南宁市/西乡塘区', null, null, '123', '1', '1527727978', '123', '123', '0');
-INSERT INTO `fa_leescore_address` VALUES ('3', '1000', '450000', '17603852737', '中国', '河南省/郑州市/中原区', null, null, '123', '1', '1542081658', '杨', '梦雨', '0');
+INSERT INTO `fa_leescore_address` VALUES ('3', '1000', '450001', '17603852737', '中国', '河南省/郑州市/中原区', null, null, '123', '1', '1542189551', '杨', '梦雨', '0');
+INSERT INTO `fa_leescore_address` VALUES ('4', '1000', '450000', '17603852737', '中国', '安徽省/芜湖市/弋江区', null, null, 'ce', '0', '1542160759', '杨', '梦雨', '0');
 
 -- ----------------------------
 -- Table structure for fa_leescore_ads
@@ -5482,6 +5505,16 @@ INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '4');
 INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '5');
 INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '6');
 INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '7');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '3', '8');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '4', '9');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '4', '10');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '4', '11');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '4', '12');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '4', '13');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '14');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '15');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '16');
+INSERT INTO `fa_leescore_exchangelog` VALUES ('1000', '7', '17');
 
 -- ----------------------------
 -- Table structure for fa_leescore_goods
@@ -5516,10 +5549,10 @@ CREATE TABLE `fa_leescore_goods` (
 -- ----------------------------
 INSERT INTO `fa_leescore_goods` VALUES ('1', '1', 'Aspire Skystar Kit', '0', '0', '2', '1524537773', '', '兑换规则', '/uploads/20180424/6d3b6f0ba9f15d0745b7e78af3e749ad.jpg', '', '1', '1540194600', '9999', '66', '1524537663', '1546310463', '0.00', '0', 'index');
 INSERT INTO `fa_leescore_goods` VALUES ('2', '1', 'Typhon', '0', '0', '2', '1524537830', '', '', '/uploads/20180424/136705ff1c507a00cc75c0bc58dbada5.jpg', '', '2', '1524625923', '0', '99999', '1524537776', '1546310576', '0.00', '0', 'index,recommend');
-INSERT INTO `fa_leescore_goods` VALUES ('3', '1', 'Revvo Tank', '0', '0', '2', '1524537898', '这只是一条测试数据', '兑换需要1积分', '/uploads/20180424/a58ef81083e57a1973c7f46011725b5e.jpg', '', '3', '1540195178', '9999', '1', '1524537834', '1546310634', '0.00', '0', 'index,recommend,new');
-INSERT INTO `fa_leescore_goods` VALUES ('4', '1', 'Speeder Revvo Kit', '0', '0', '2', '1524537976', '这仅仅是一条测试数据', '每次兑换需要1点积分，积分可以通过签到插件获取', '/uploads/20180424/72d71dec04b1503db2cdb50e3f587a57.jpg', '', '4', '1540195138', '9999', '1', '1524537915', '1546310715', '0.00', '1', 'index,hot,recommend,new');
+INSERT INTO `fa_leescore_goods` VALUES ('3', '1', 'Revvo Tank', '0', '0', '2', '1524537898', '这只是一条测试数据', '兑换需要1积分', '/uploads/20180424/a58ef81083e57a1973c7f46011725b5e.jpg', '', '3', '1540195178', '9998', '1', '1524537834', '1546310634', '0.00', '1', 'index,recommend,new');
+INSERT INTO `fa_leescore_goods` VALUES ('4', '1', 'Speeder Revvo Kit', '0', '0', '2', '1524537976', '这仅仅是一条测试数据', '每次兑换需要1点积分，积分可以通过签到插件获取', '/uploads/20180424/72d71dec04b1503db2cdb50e3f587a57.jpg', '', '4', '1540195138', '9994', '1', '1524537915', '1546310715', '0.00', '6', 'index,hot,recommend,new');
 INSERT INTO `fa_leescore_goods` VALUES ('6', '1', '测试商品请勿兑换', '0', '0', '2', '1524561477', '这只是一条测试数据', '活动有效期为5年', '/uploads/20180423/908ff9adc1f336d0307089b002e8e89b.png', '', '6', '1540194539', '9999', '99', '1524561438', '1704014238', '0.00', '2', 'index,hot,recommend,new');
-INSERT INTO `fa_leescore_goods` VALUES ('7', '1', '这只是一条测试数据', '1', '1', '2', '1540194739', '不限制兑换次数，活动有效期1年，结束后不可兑换', '不限制兑换次数，活动有效期1年，结束后不可兑换', '/uploads/20181022/2065ed66c1b78922febe2c276ae8deba.jpg', '/uploads/20181022/2065ed66c1b78922febe2c276ae8deba.jpg,/uploads/20181022/908ff9adc1f336d0307089b002e8e89b.png,/uploads/20181022/178ca4936e6b303f7257c2f504aa12f9.jpg', '7', '1542087636', '99995', '1', '1540194622', '1571730622', '1.00', '4', 'index,hot,recommend,new');
+INSERT INTO `fa_leescore_goods` VALUES ('7', '1', '这只是一条测试数据', '1', '1', '2', '1540194739', '不限制兑换次数，活动有效期1年，结束后不可兑换', '不限制兑换次数，活动有效期1年，结束后不可兑换', '/uploads/20181022/2065ed66c1b78922febe2c276ae8deba.jpg', '/uploads/20181022/2065ed66c1b78922febe2c276ae8deba.jpg,/uploads/20181022/908ff9adc1f336d0307089b002e8e89b.png,/uploads/20181022/178ca4936e6b303f7257c2f504aa12f9.jpg', '7', '1542087636', '99991', '1', '1540194622', '1571730622', '1.00', '8', 'index,hot,recommend,new');
 
 -- ----------------------------
 -- Table structure for fa_leescore_order
@@ -5539,7 +5572,7 @@ CREATE TABLE `fa_leescore_order` (
   `score` int(11) DEFAULT '0' COMMENT '积分',
   `createtime` int(11) DEFAULT NULL COMMENT '创建时间',
   `pay` enum('0','1','2') DEFAULT '0' COMMENT '付款状态:0=未付款,1=已付款,2=已退款',
-  `status` enum('-2','-1','0','1','2','3','4','5') DEFAULT '0' COMMENT '订单状态:-2=驳回, -1=取消订单,0=未支付,1=已支付,2=已发货,3=已签收,4=退货中,5=已退款',
+  `status` enum('-2','-1','0','1','2','3','4','5','6') DEFAULT '0' COMMENT '订单状态:-2=驳回, -1=取消订单,0=未支付,1=已支付,2=已发货,3=已签收,4=退货中,5=已退款,6=拒收',
   `paytime` int(11) DEFAULT NULL COMMENT '付款时间',
   `paytype` enum('score','paypal','alipay','weixin') DEFAULT 'score' COMMENT '支付方式',
   `isdel` int(11) DEFAULT '0' COMMENT '1',
@@ -5549,19 +5582,30 @@ CREATE TABLE `fa_leescore_order` (
   `virtual_go_time` int(11) DEFAULT NULL COMMENT '发货时间',
   `virtual_sign_time` int(11) DEFAULT NULL COMMENT '签收时间',
   `result_other` varchar(255) DEFAULT NULL COMMENT '回馈备注',
+  `is_gift` enum('1','0') DEFAULT '0' COMMENT '是否为礼物:0=否,1=是',
+  `giver_id` int(11) DEFAULT NULL COMMENT '送礼人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fa_leescore_order
 -- ----------------------------
-INSERT INTO `fa_leescore_order` VALUES ('1', '10', '1', 'SN260577905753149010', '', '6', '1', '0', '0', '0', '0', '1524561753', '1', '-2', '1524561753', 'score', '1', '测', null, null, null, null, null);
-INSERT INTO `fa_leescore_order` VALUES ('2', '2', '1', 'SN410580477493410002', '', '4', '1', '0', '0', '0', '0', '1527133493', '1', '1', '1527133493', 'score', '0', '测试', null, null, null, null, null);
-INSERT INTO `fa_leescore_order` VALUES ('3', '3', '2', 'SN180581071981360003', '', '6', '1', '0', '0', '0', '0', '1527727981', '1', '-2', '1527727981', 'score', '0', '13', null, null, null, null, null);
-INSERT INTO `fa_leescore_order` VALUES ('4', '1000', '3', 'SN1205954256617831000', null, '7', '1', '0', '0', '1', '1', '1542081661', '1', '3', '1542081661', 'score', '0', '', '123', '12444', '1542081772', null, '');
-INSERT INTO `fa_leescore_order` VALUES ('5', '1000', '0', 'SN7205954317098091000', null, '7', '1', '1', '0', '1', '1', '1542087709', '1', '1', '1542087709', 'score', '0', null, null, null, null, null, null);
-INSERT INTO `fa_leescore_order` VALUES ('6', '1000', '0', 'SN9605954317152921000', null, '7', '1', '1', '0', '1', '1', '1542087715', '1', '3', '1542087715', 'score', '0', null, '测试', '测试', '1542087849', '1542087849', '');
-INSERT INTO `fa_leescore_order` VALUES ('7', '1000', '0', 'SN3605954317688621000', null, '7', '1', '1', '0', '1', '1', '1542087768', '1', '1', '1542087768', 'score', '0', null, null, null, null, null, null);
+INSERT INTO `fa_leescore_order` VALUES ('1', '10', '1', 'SN260577905753149010', '', '6', '1', '0', '0', '0', '0', '1524561753', '1', '-2', '1524561753', 'score', '1', '测', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('2', '2', '1', 'SN410580477493410002', '', '4', '1', '0', '0', '0', '0', '1527133493', '1', '1', '1527133493', 'score', '0', '测试', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('3', '3', '2', 'SN180581071981360003', '', '6', '1', '0', '0', '0', '0', '1527727981', '1', '-2', '1527727981', 'score', '0', '13', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('4', '1000', '3', 'SN1205954256617831000', null, '7', '1', '0', '0', '1', '1', '1542081661', '1', '3', '1542081661', 'score', '0', '', '123', '12444', '1542081772', null, '', '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('5', '1000', '0', 'SN7205954317098091000', null, '7', '1', '1', '0', '1', '1', '1542087709', '1', '1', '1542087709', 'score', '0', null, null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('6', '1000', '0', 'SN9605954317152921000', null, '7', '1', '1', '0', '1', '1', '1542087715', '1', '3', '1542087715', 'score', '0', null, '测试', '测试', '1542087849', '1542087849', '', '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('7', '1000', '0', 'SN3605954317688621000', null, '7', '1', '1', '0', '1', '1', '1542087768', '1', '1', '1542087768', 'score', '0', null, null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('8', '1000', '3', 'SN3005955044475941000', null, '3', '1', '0', '0', '0', '1', '1542160447', '1', '1', '1542160447', 'score', '0', '', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('9', '1000', null, 'SN2205955075414861000', null, '4', '1', '0', '0', '0', '1', '1542163541', '1', '1', '1542163541', 'score', '0', '', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('10', '1000', '1000', 'SN6005955088633391000', null, '4', '1', '0', '0', '0', '1', '1542164863', '1', '1', '1542164863', 'score', '0', '', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('11', '1000', '1000', 'SN6105955090184781000', null, '4', '1', '0', '0', '0', '1', '1542165018', '1', '1', '1542165018', 'score', '0', '', null, null, null, null, null, '0', null);
+INSERT INTO `fa_leescore_order` VALUES ('12', '1000', null, 'SN4005955094151601000', null, '4', '1', '0', '0', '0', '1', '1542165415', '1', '1', '1542165415', 'score', '0', '', null, null, null, null, null, '0', '0');
+INSERT INTO `fa_leescore_order` VALUES ('13', '1000', '0', 'SN8505955100754271000', null, '4', '1', '0', '0', '0', '1', '1542166075', '1', '1', '1542166075', 'score', '0', '', null, null, null, null, null, '1', '1000');
+INSERT INTO `fa_leescore_order` VALUES ('15', '1000', '0', 'SN1805955195172251000', null, '7', '1', '1', '0', '1', '1', '1542175517', '1', '6', '1542175517', 'score', '0', '', null, null, null, null, null, '1', '3');
+INSERT INTO `fa_leescore_order` VALUES ('16', '1000', '0', 'SN2905955199275991000', null, '7', '1', '1', '0', '1', '1', '1542175927', '1', '1', '1542175927', 'score', '0', 'ces', null, null, null, null, null, '1', '3');
+INSERT INTO `fa_leescore_order` VALUES ('17', '1000', '3', 'SN9805955250284241000', null, '7', '1', '0', '0', '1', '1', '1542181028', '1', '1', '1542181028', 'score', '0', '', null, null, null, null, null, '1', '3');
 
 -- ----------------------------
 -- Table structure for fa_leesign
@@ -5800,8 +5844,8 @@ CREATE TABLE `fa_user` (
 -- Records of fa_user
 -- ----------------------------
 INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', 'c13f62012fd6a8fdf06b3452a94430e5', 'rpR6Bv', 'admin@163.com', '13888888888', '/assets/img/avatar.png', '0', '0', '2017-04-15', '', null, null, null, null, '0', '1', '2', '1541755117', '1541988006', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1541988006', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('3', '2', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/avatar/1531791614-3.png', '1', '0', '2018-06-30', '', '150', '165', 'Andorra', '[\"hairdressing\",\"animal husbandry\"]', '0', '2', '3', '1542019412', '1542071589', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1542071589', '', 'normal', '', 'online');
-INSERT INTO `fa_user` VALUES ('1000', '2', 'yangmengyu', 'yangmengyu', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '2', '2', '0000-00-00', '', '180', '65', 'Afghanistan', '[\"hairdressing\",\"animal husbandry\"]', '87', '2', '5', '1542019427', '1542089874', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1542090432', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
+INSERT INTO `fa_user` VALUES ('3', '2', 'yangmengyu1', 'yangmengyu1', '397580ce3b577e165527b1c7754b3701', 'Kkd9Su', '3631265233@qq.com', '17603852733', '/uploads/avatar/1531791614-3.png', '1', '0', '2018-06-30', '', '150', '165', 'Andorra', '[\"hairdressing\",\"animal husbandry\"]', '1', '2', '3', '1542019412', '1542071589', '127.0.0.1', '0', '127.0.0.1', '1530261856', '1530261856', '1542190314', '', 'normal', '', 'online');
+INSERT INTO `fa_user` VALUES ('1000', '2', 'yangmengyu', 'yangmengyu', 'd7b0b5235f378bbf69460a8c826de1eb', 'VkJepL', '363126523@qq.com', '17603852737', '/uploads/20180713/9f4be87510289a6a312efb28d86d5bb5.jpg', '2', '2', '2018-11-14', '', '180', '65', 'Afghanistan', '[\"hairdressing\",\"animal husbandry\"]', '87', '2', '5', '1542019427', '1542089874', '127.0.0.1', '0', '127.0.0.1', '1530253221', '1530253221', '1542184492', '', 'normal', '{\"email\":1,\"mobile\":0}', 'online');
 
 -- ----------------------------
 -- Table structure for fa_user_group
@@ -5891,7 +5935,7 @@ CREATE TABLE `fa_user_score_log` (
   `memo` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员积分变动表';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员积分变动表';
 
 -- ----------------------------
 -- Records of fa_user_score_log
@@ -5923,6 +5967,27 @@ INSERT INTO `fa_user_score_log` VALUES ('24', '1000', '-1', '87', '86', '消费�
 INSERT INTO `fa_user_score_log` VALUES ('25', '1000', '-1', '86', '85', '消费积分兑换商品', '1542087768');
 INSERT INTO `fa_user_score_log` VALUES ('26', '1000', '0', '85', '85', '连续签到奖励', '1542090432');
 INSERT INTO `fa_user_score_log` VALUES ('27', '1000', '2', '85', '87', '额外签到奖励', '1542090432');
+INSERT INTO `fa_user_score_log` VALUES ('28', '1000', '-1', '87', '86', '消费钻石兑换商品', '1542160447');
+INSERT INTO `fa_user_score_log` VALUES ('29', '1000', '-1', '86', '85', '消费钻石兑换商品', '1542163541');
+INSERT INTO `fa_user_score_log` VALUES ('30', '1000', '-1', '85', '84', '消费钻石兑换商品', '1542164863');
+INSERT INTO `fa_user_score_log` VALUES ('31', '1000', '-1', '84', '83', '消费钻石兑换商品', '1542165018');
+INSERT INTO `fa_user_score_log` VALUES ('32', '1000', '-1', '83', '82', '消费钻石兑换商品', '1542165415');
+INSERT INTO `fa_user_score_log` VALUES ('33', '1000', '-1', '82', '81', '消费钻石兑换商品', '1542166075');
+INSERT INTO `fa_user_score_log` VALUES ('34', '1000', '-1', '81', '80', '消费钻石兑换商品', '1542175308');
+INSERT INTO `fa_user_score_log` VALUES ('35', '1000', '-1', '80', '79', '消费钻石兑换商品', '1542175517');
+INSERT INTO `fa_user_score_log` VALUES ('36', '1000', '-1', '79', '78', '消费钻石兑换商品', '1542175927');
+INSERT INTO `fa_user_score_log` VALUES ('37', '1000', '-1', '78', '77', '消费钻石兑换商品', '1542181028');
+INSERT INTO `fa_user_score_log` VALUES ('38', '1000', '1', '77', '78', '赠送礼物拒收返还钻石', '1542183404');
+INSERT INTO `fa_user_score_log` VALUES ('39', '1000', '1', '78', '79', '赠送礼物拒收返还钻石', '1542183459');
+INSERT INTO `fa_user_score_log` VALUES ('40', '1000', '1', '79', '80', '赠送礼物拒收返还钻石', '1542183473');
+INSERT INTO `fa_user_score_log` VALUES ('41', '1000', '1', '80', '81', '赠送礼物拒收返还钻石', '1542183529');
+INSERT INTO `fa_user_score_log` VALUES ('42', '1000', '1', '81', '82', '赠送礼物拒收返还钻石', '1542184111');
+INSERT INTO `fa_user_score_log` VALUES ('43', '1000', '1', '82', '83', '赠送礼物拒收返还钻石', '1542184220');
+INSERT INTO `fa_user_score_log` VALUES ('44', '1000', '1', '83', '84', '赠送礼物拒收返还钻石', '1542184274');
+INSERT INTO `fa_user_score_log` VALUES ('45', '1000', '1', '84', '85', '赠送礼物拒收返还钻石', '1542184351');
+INSERT INTO `fa_user_score_log` VALUES ('46', '1000', '1', '85', '86', '赠送礼物拒收返还钻石', '1542184380');
+INSERT INTO `fa_user_score_log` VALUES ('47', '1000', '1', '86', '87', '赠送礼物拒收返还钻石', '1542184492');
+INSERT INTO `fa_user_score_log` VALUES ('48', '3', '1', '0', '1', '赠送礼物拒收返还钻石', '1542190314');
 
 -- ----------------------------
 -- Table structure for fa_user_token
@@ -5984,4 +6049,4 @@ CREATE TABLE `fa_visitor` (
 -- Records of fa_visitor
 -- ----------------------------
 INSERT INTO `fa_visitor` VALUES ('0000000001', '3', '1000', '1542016578');
-INSERT INTO `fa_visitor` VALUES ('0000000002', '1000', '3', '1542071470');
+INSERT INTO `fa_visitor` VALUES ('0000000002', '1000', '3', '1542156271');

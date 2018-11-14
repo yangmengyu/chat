@@ -44,7 +44,7 @@ class Goods extends Controller
 		(input('?get.type') && input('get.type') != '') && $w['type'] = input('get.type');
 
 		//钻石查询
-		$score_start = (input('?get.start') && !empty(input('get.start'))) ? abs((int)input("get.start")) : false;
+		$score_start = (input('?get.start') && !empty(input('get.start'))) ? abs((int)input("get.start")) : 1;
 		$score_end = (input('?get.end') && !empty(input('get.end'))) ? abs((int)input("get.end")) : false;
 
 		if($score_start && $score_end)
